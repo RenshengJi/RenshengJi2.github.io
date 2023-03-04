@@ -237,24 +237,29 @@
                 
 
                 <h3 class="home-article-title">
-                    <a href="/2020/04/12/week-1/">
-                        第1周 计算
+                    <a href="/2023/02/28/module_3rd/">
+                        3rd模块
                     </a>
                 </h3>
 
                 <div class="home-article-content markdown-body">
                     
-                        以下为个人学习笔记和习题整理课程：零基础学Java语言-浙江大学-翁恺 @ 中国大学MOOChttps://www.icourse163.org/course/ZJU-1001541001 
-课堂笔记读输入、字符串输出scanner123456789...
+                        模块总览该模块用于保存本项目用到的两个第三方库的源码：
+
+fmt
+nlohmann json
+
+在编译本项目时，除了编译与自瞄相关的代码，还会编译这两个第三方库，并将三者链接。
+fmt库简介fmt库为c++提供了一种类似python的输出格式化方法，...
                     
                 </div>
 
                 <div class="home-article-meta-info-container">
     <div class="home-article-meta-info">
         <span><i class="fa-solid fa-calendars"></i>&nbsp;
-            <span class="home-article-date" data-date="Sun Apr 12 2020 20:46:25 GMT+0800">
+            <span class="home-article-date" data-date="Tue Feb 28 2023 22:32:45 GMT+0800">
                 
-                    2020-04-12
+                    2023-02-28
                 
             </span>
         </span>
@@ -264,19 +269,7 @@
                     
                         <li>
                             
-                            <a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6/">计算机科学</a>&nbsp;
-                        </li>
-                    
-                    
-                        <li>
-                            &gt; 
-                            <a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6/Java/">Java</a>&nbsp;
-                        </li>
-                    
-                    
-                        <li>
-                            &gt; 
-                            <a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6/Java/%E9%9B%B6%E5%9F%BA%E7%A1%80%E5%AD%A6Java%E8%AF%AD%E8%A8%80-%E6%B5%99%E6%B1%9F%E5%A4%A7%E5%AD%A6-%E7%BF%81%E6%81%BA/">零基础学Java语言-浙江大学-翁恺</a>&nbsp;
+                            <a href="/categories/RM2022/">RM2022</a>&nbsp;
                         </li>
                     
                     
@@ -286,7 +279,325 @@
         
     </div>
 
-    <a href="/2020/04/12/week-1/">阅读全文<span class="seo-reader-text">第1周 计算</span>&nbsp;<i class="fa-solid fa-angle-right"></i></a>
+    <a href="/2023/02/28/module_3rd/">阅读全文<span class="seo-reader-text">3rd模块</span>&nbsp;<i class="fa-solid fa-angle-right"></i></a>
+</div>
+
+            </li>
+        
+            <li class="home-article-item">
+
+                
+
+                
+
+                <h3 class="home-article-title">
+                    <a href="/2023/02/28/module_armor/">
+                        armor模块
+                    </a>
+                </h3>
+
+                <div class="home-article-content markdown-body">
+                    
+                        
+对应代码: 为 include/armor 和 src/armor 文件夹
+功能：识别装甲板
+输入当前帧的图片
+输出识别到的图片中装甲板的位置
+
+
+
+大致思路
+使用 yolofastedv2 检测装甲板(但是深度学习方法检测到的装甲板边缘位置不稳定...
+                    
+                </div>
+
+                <div class="home-article-meta-info-container">
+    <div class="home-article-meta-info">
+        <span><i class="fa-solid fa-calendars"></i>&nbsp;
+            <span class="home-article-date" data-date="Tue Feb 28 2023 22:32:45 GMT+0800">
+                
+                    2023-02-28
+                
+            </span>
+        </span>
+        
+            <span class="home-article-category"><i class="fa-solid fa-folders"></i></i>&nbsp;
+                <ul>
+                    
+                        <li>
+                            
+                            <a href="/categories/RM2022/">RM2022</a>&nbsp;
+                        </li>
+                    
+                    
+                </ul>
+            </span>
+        
+        
+    </div>
+
+    <a href="/2023/02/28/module_armor/">阅读全文<span class="seo-reader-text">armor模块</span>&nbsp;<i class="fa-solid fa-angle-right"></i></a>
+</div>
+
+            </li>
+        
+            <li class="home-article-item">
+
+                
+
+                
+
+                <h3 class="home-article-title">
+                    <a href="/2023/02/28/module_assets/">
+                        assets模块
+                    </a>
+                </h3>
+
+                <div class="home-article-content markdown-body">
+                    
+                        模块总览该模块用于保存一些与程序无关的文件。
+
+model_(bin|aug).onnx  训练好的装甲板分类器
+noclass.onnx  训练好的目标检测器
+test.onnx  最早的目标检测器，已弃用
+params.json  程序运行时的参...
+                    
+                </div>
+
+                <div class="home-article-meta-info-container">
+    <div class="home-article-meta-info">
+        <span><i class="fa-solid fa-calendars"></i>&nbsp;
+            <span class="home-article-date" data-date="Tue Feb 28 2023 22:32:45 GMT+0800">
+                
+                    2023-02-28
+                
+            </span>
+        </span>
+        
+            <span class="home-article-category"><i class="fa-solid fa-folders"></i></i>&nbsp;
+                <ul>
+                    
+                        <li>
+                            
+                            <a href="/categories/RM2022/">RM2022</a>&nbsp;
+                        </li>
+                    
+                    
+                </ul>
+            </span>
+        
+        
+    </div>
+
+    <a href="/2023/02/28/module_assets/">阅读全文<span class="seo-reader-text">assets模块</span>&nbsp;<i class="fa-solid fa-angle-right"></i></a>
+</div>
+
+            </li>
+        
+            <li class="home-article-item">
+
+                
+
+                
+
+                <h3 class="home-article-title">
+                    <a href="/2023/02/28/module_detector/">
+                        detector模块
+                    </a>
+                </h3>
+
+                <div class="home-article-content markdown-body">
+                    
+                        模块总览该模块实现了目标检测分类器的加载以及前向传播过程，并且提供了两种实现方式：
+
+cv::dnn模块
+nvidia推理框架TensorRT
+
+其中cv::dnn版本仅依赖OpenCV，但是前向传播的速度慢，因此用于在本机进行调试；TensorRT...
+                    
+                </div>
+
+                <div class="home-article-meta-info-container">
+    <div class="home-article-meta-info">
+        <span><i class="fa-solid fa-calendars"></i>&nbsp;
+            <span class="home-article-date" data-date="Tue Feb 28 2023 22:32:45 GMT+0800">
+                
+                    2023-02-28
+                
+            </span>
+        </span>
+        
+            <span class="home-article-category"><i class="fa-solid fa-folders"></i></i>&nbsp;
+                <ul>
+                    
+                        <li>
+                            
+                            <a href="/categories/RM2022/">RM2022</a>&nbsp;
+                        </li>
+                    
+                    
+                </ul>
+            </span>
+        
+        
+    </div>
+
+    <a href="/2023/02/28/module_detector/">阅读全文<span class="seo-reader-text">detector模块</span>&nbsp;<i class="fa-solid fa-angle-right"></i></a>
+</div>
+
+            </li>
+        
+            <li class="home-article-item">
+
+                
+
+                
+
+                <h3 class="home-article-title">
+                    <a href="/2023/02/28/module_logger/">
+                        logger模块
+                    </a>
+                </h3>
+
+                <div class="home-article-content markdown-body">
+                    
+                        模块总览该模块基于c++第三方库fmt实现了一个logger用于保存程序运行时的一些信息。支持以下功能：
+
+提供3种级别的log：
+MSG：输出一些基本的信息，例如当前目标的数量，解算出的世界坐标
+WARINING：输出一些警告信息，例如串口收到的数...
+                    
+                </div>
+
+                <div class="home-article-meta-info-container">
+    <div class="home-article-meta-info">
+        <span><i class="fa-solid fa-calendars"></i>&nbsp;
+            <span class="home-article-date" data-date="Tue Feb 28 2023 22:32:45 GMT+0800">
+                
+                    2023-02-28
+                
+            </span>
+        </span>
+        
+            <span class="home-article-category"><i class="fa-solid fa-folders"></i></i>&nbsp;
+                <ul>
+                    
+                        <li>
+                            
+                            <a href="/categories/RM2022/">RM2022</a>&nbsp;
+                        </li>
+                    
+                    
+                </ul>
+            </span>
+        
+        
+    </div>
+
+    <a href="/2023/02/28/module_logger/">阅读全文<span class="seo-reader-text">logger模块</span>&nbsp;<i class="fa-solid fa-angle-right"></i></a>
+</div>
+
+            </li>
+        
+            <li class="home-article-item">
+
+                
+
+                
+
+                <h3 class="home-article-title">
+                    <a href="/2023/02/28/module_params/">
+                        params模块
+                    </a>
+                </h3>
+
+                <div class="home-article-content markdown-body">
+                    
+                        模块总览该模块允许我们把自瞄算法的参数保存在配置文件（json）中，并在程序运行时把配置文件加载到内存中。
+好处：每次修改算法参数后，不需要重新编译整个程序（耗时大概5min），所以能够减少程序编译耗时，提高代码调试速度。
+一个例子：
+1234567...
+                    
+                </div>
+
+                <div class="home-article-meta-info-container">
+    <div class="home-article-meta-info">
+        <span><i class="fa-solid fa-calendars"></i>&nbsp;
+            <span class="home-article-date" data-date="Tue Feb 28 2023 22:32:45 GMT+0800">
+                
+                    2023-02-28
+                
+            </span>
+        </span>
+        
+            <span class="home-article-category"><i class="fa-solid fa-folders"></i></i>&nbsp;
+                <ul>
+                    
+                        <li>
+                            
+                            <a href="/categories/RM2022/">RM2022</a>&nbsp;
+                        </li>
+                    
+                    
+                </ul>
+            </span>
+        
+        
+    </div>
+
+    <a href="/2023/02/28/module_params/">阅读全文<span class="seo-reader-text">params模块</span>&nbsp;<i class="fa-solid fa-angle-right"></i></a>
+</div>
+
+            </li>
+        
+            <li class="home-article-item">
+
+                
+
+                
+
+                <h3 class="home-article-title">
+                    <a href="/2023/02/28/module_robot_io/">
+                        robot_io模块
+                    </a>
+                </h3>
+
+                <div class="home-article-content markdown-body">
+                    
+                        模块总览自瞄程序需要在运行时读取相机的画面以及从串口读取机器人自身的信息，在目标定位完成后还要向串口写入机器人控制信息。
+该模块对相机跟串口这两个硬件进行了封装，提供简单的api来实现以下功能：
+
+视频文件&#x2F;相机设备的读取
+串口信息的读取&...
+                    
+                </div>
+
+                <div class="home-article-meta-info-container">
+    <div class="home-article-meta-info">
+        <span><i class="fa-solid fa-calendars"></i>&nbsp;
+            <span class="home-article-date" data-date="Tue Feb 28 2023 22:32:45 GMT+0800">
+                
+                    2023-02-28
+                
+            </span>
+        </span>
+        
+            <span class="home-article-category"><i class="fa-solid fa-folders"></i></i>&nbsp;
+                <ul>
+                    
+                        <li>
+                            
+                            <a href="/categories/RM2022/">RM2022</a>&nbsp;
+                        </li>
+                    
+                    
+                </ul>
+            </span>
+        
+        
+    </div>
+
+    <a href="/2023/02/28/module_robot_io/">阅读全文<span class="seo-reader-text">robot_io模块</span>&nbsp;<i class="fa-solid fa-angle-right"></i></a>
 </div>
 
             </li>

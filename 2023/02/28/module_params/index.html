@@ -9,18 +9,18 @@
     <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-redefine.png">
     <!--- Seo Part-->
     
-    <link rel="canonical" href="https://RenshengJi.github.io/categories/计算机科学/java/零基础学java语言-浙江大学-翁恺/"/>
+    <link rel="canonical" href="https://RenshengJi.github.io/2023/02/28/module_params/"/>
     <meta name="robots" content="index,follow">
     <meta name="googlebot" content="index,follow">
     <meta name="revisit-after" content="1 days">
     <meta property="og:type" content="article">
-    <meta property="og:title" content="人生几何">
+    <meta property="og:title" content="params模块">
     <meta property="og:description" content="Hexo Theme Redefine">
-    <meta property="og:url" content="https://RenshengJi.github.iocategories/计算机科学/Java/零基础学Java语言-浙江大学-翁恺/index.html">
+    <meta property="og:url" content="https://RenshengJi.github.io2023/02/28/module_params/">
     <meta property="og:image" content="/images/redefine-logo.svg">
     <meta property="og:site_name" content="人生几何">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="人生几何">
+    <meta name="twitter:title" content="params模块">
     <meta name="twitter:description" content="Hexo Theme Redefine">
     <meta name="twitter:image" content="/images/redefine-logo.svg">
     <!--- Icon Part-->
@@ -31,7 +31,7 @@
     
     <title>
         
-            分类: 零基础学Java语言-浙江大学-翁恺 -
+            params模块 -
         
         人生几何
     </title>
@@ -166,42 +166,184 @@
 
                 
                     <div class="fade-in-down-animation">
-    <div class="category-container">
-        <div class="category-name">
-            <i class="fa-solid fa-folder"></i>&nbsp;零基础学Java语言-浙江大学-翁恺
-        </div>
-        <div class="category-post-list">
+    <div class="post-page-container">
+        <div class="article-content-container">
+
             
-<div class="archive-list-container">
-    
-        <section class="archive-item">
-            <div class="archive-item-header">
-                <span class="archive-year">2020</span>
-                <span class="archive-year-post-count">[1]</span>
-            </div>
-            <ul class="article-list">
+            
+                <div class="article-title">
+                    <h1 class="article-title-regular">params模块</h1>
+                </div>
+            
                 
-                    <li class="article-item">
-                        <a class="article-title"
-                           href="/2020/04/12/week-1/"
-                        >第1周 计算</a>
-                        <span class="article-date">04-12</span>
+            
+
+            
+                <div class="article-header">
+                    <div class="avatar">
+                        <img src="/images/redefine-avatar.svg">
+                    </div>
+                    <div class="info">
+                        <div class="author">
+                            <span class="name">人生几何</span>
+                            
+                                <span class="author-label">lol</span>
+                            
+                        </div>
+                        <div class="meta-info">
+                            <div class="article-meta-info">
+    <span class="article-date article-meta-item">
+        <i class="fa-regular fa-pen-fancy"></i>&nbsp;
+        <span class="pc">2023-02-28 22:32:45</span>
+        <span class="mobile">2023-02-28 22:32</span>
+        <span class="hover-info">创建时间</span>
+    </span>
+    
+        <span class="article-date article-meta-item">
+            <i class="fa-regular fa-wrench"></i>&nbsp;
+            <span class="pc">2023-03-04 11:25:26</span>
+            <span class="mobile">2023-03-04 11:25</span>
+            <span class="hover-info">更新时间</span>
+        </span>
+    
+
+    
+        <span class="article-categories article-meta-item">
+            <i class="fa-regular fa-folders"></i>&nbsp;
+            <ul>
+                
+                    <li>
+                        <a href="/categories/RM2022/">RM2022</a>&nbsp;
                     </li>
                 
             </ul>
-        </section>
+        </span>
+    
+    
+
+    
+    
+    
+    
+        <span class="article-pv article-meta-item">
+            <i class="fa-regular fa-eye"></i>&nbsp;<span id="busuanzi_value_page_pv"></span>
+        </span>
     
 </div>
 
+                        </div>
+                    </div>
+                </div>
+            
+
+            <div class="article-content markdown-body">
+                <h2 id="模块总览"><a href="#模块总览" class="headerlink" title="模块总览"></a>模块总览</h2><p>该模块允许我们把自瞄算法的参数保存在配置文件（json）中，并在程序运行时把配置文件加载到内存中。</p>
+<p>好处：每次修改算法参数后，不需要重新编译整个程序（耗时大概5min），所以能够减少程序编译耗时，提高代码调试速度。</p>
+<p>一个例子：</p>
+<div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">// json文件：</span><br><span class="line">// &#123;</span><br><span class="line">//     &quot;key1&quot;: 0.5,</span><br><span class="line">//     &quot;key2&quot;: &quot;string&quot;,</span><br><span class="line">//     &quot;key3&quot;: &#123;</span><br><span class="line">//         &quot;key1&quot;: [1, 2, 3]</span><br><span class="line">//     &#125;</span><br><span class="line">// &#125;</span><br><span class="line">// 代码：</span><br><span class="line">ParamsManager&amp; obj = *ParamsManager::GetInstance();</span><br><span class="line">obj.load(&quot;path/to/your/json/file&quot;);</span><br><span class="line"></span><br><span class="line">float x = obj[&quot;key1];</span><br><span class="line">std::string y = obj[&quot;key2];</span><br><span class="line">std::vector&lt;int&gt; z = obj[&quot;key3][&quot;key1];</span><br></pre></td></tr></table></figure></div>
+
+<h2 id="代码解析"><a href="#代码解析" class="headerlink" title="代码解析"></a>代码解析</h2><h3 id="params-manager-h"><a href="#params-manager-h" class="headerlink" title="params_manager.h"></a>params_manager.h</h3><p><a class="link"   target="_blank" rel="noopener" href="https://gitee.com/tju-rm-cv/tjurm-2022/blob/master/include/params/params_manager.h" >代码地址（头文件） <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
+<p>使用ParamsManager类来读取（写入）配置文件，这个类也使用了单例模式。关键代码如下：</p>
+<ul>
+<li><code>nlohmann::json params_</code><br>  实际保存json文件的json对象。</li>
+<li><code>load(const std::string&amp;)</code><br>  加载json文件。</li>
+<li><code>dump(const std::string&amp;)</code><br>  将json对象保存成json文件。</li>
+<li><code>nlohmann::json&amp; operator[](const std::string&amp;)</code><br>  提供[]操作符，输入一个字符串（key），返回一个json对象（value），由于json对象也支持[]操作符，所以用起来就跟python字典很像。</li>
+</ul>
+<p>nlohmann json这个库实际上做的事情是：</p>
+<ol>
+<li><p>将json文件里的各个值读取成nlohmann::json对象</p>
+</li>
+<li><p>当我们将json对象赋值给某一个变量时，会触发一个函数：</p>
+ <div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">template&lt;typename T&gt;</span><br><span class="line">void from_json(nlohmann::json&amp; j, T&amp; p);</span><br></pre></td></tr></table></figure></div>
+
+<p> 与该函数类似的还有一个to_json，该函数的作用是将json对象转化为对应的变量类型，对于内置类型，例如float, string, vector等，库本身已经实现好了对应的from_json&#x2F;to_json函数。</p>
+<p> 而对于自定义类型，我们需要自行提供对应的转换函数。</p>
+</li>
+</ol>
+<p>以下这段代码就实现了cv::Mat与json的转换：</p>
+<div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">// 我记得是一定要放在cv这个命名空间里的，否则找不到</span><br><span class="line">namespace cv &#123;</span><br><span class="line">void to_json(nlohmann::json&amp; j, const cv::Mat&amp; p);</span><br><span class="line">void from_json(const nlohmann::json&amp; j, cv::Mat&amp; p);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+
+<p>代码实现很简单，就不讲了~</p>
+
+            </div>
+
+            
+                <div class="post-copyright-info">
+                    <div class="article-copyright-info-container">
+    <ul>
+        <li>本文标题：params模块</li>
+        <li>本文作者：人生几何</li>
+        <li>创建时间：2023-02-28 22:32:45</li>
+        <li>
+            本文链接：https://renshengji.github.io/2023/02/28/module_params/
+        </li>
+        <li>
+            版权声明：本博客所有文章除特别声明外，均采用 <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">BY-NC-SA</a> 许可协议。转载请注明出处！
+        </li>
+    </ul>
+</div>
+
+                </div>
+            
+
+            
+
+            
+
+            
+                <div class="article-nav">
+                    
+                        <div class="article-prev">
+                            <a class="prev"
+                            rel="prev"
+                            href="/2023/02/28/module_logger/"
+                            >
+                                <span class="left arrow-icon flex-center">
+                                    <i class="fa-solid fa-chevron-left"></i>
+                                </span>
+                                <span class="title flex-center">
+                                    <span class="post-nav-title-item">logger模块</span>
+                                    <span class="post-nav-item">上一篇</span>
+                                </span>
+                            </a>
+                        </div>
+                    
+                    
+                        <div class="article-next">
+                            <a class="next"
+                            rel="next"
+                            href="/2023/02/28/module_robot_io/"
+                            >
+                                <span class="title flex-center">
+                                    <span class="post-nav-title-item">robot_io模块</span>
+                                    <span class="post-nav-item">下一篇</span>
+                                </span>
+                                <span class="right arrow-icon flex-center">
+                                    <i class="fa-solid fa-chevron-right"></i>
+                                </span>
+                            </a>
+                        </div>
+                    
+                </div>
+            
+
+
+            
         </div>
+
+        
+            <div class="toc-content-container">
+                <div class="post-toc-wrap">
+    <div class="post-toc">
+        <div class="toc-title">此页目录</div>
+        <div class="page-title">params模块</div>
+        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%A8%A1%E5%9D%97%E6%80%BB%E8%A7%88"><span class="nav-text">模块总览</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BB%A3%E7%A0%81%E8%A7%A3%E6%9E%90"><span class="nav-text">代码解析</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#params-manager-h"><span class="nav-text">params_manager.h</span></a></li></ol></li></ol>
+
     </div>
-    <div class="category-paginator">
-        <div class="paginator">
-    
-
-    
 </div>
-
+            </div>
+        
     </div>
 </div>
 
@@ -281,6 +423,23 @@
     </div>
 
     
+        <div class="post-tools">
+            <div class="post-tools-container">
+    <ul class="tools-list">
+        <!-- TOC aside toggle -->
+        
+            <li class="right-bottom-tools page-aside-toggle">
+                <i class="fa-regular fa-outdent"></i>
+            </li>
+        
+
+        <!-- go comment -->
+        
+    </ul>
+</div>
+
+        </div>
+    
 
     <div class="right-bottom-side-tools">
         <div class="side-tools-container">
@@ -356,6 +515,8 @@
 
 
 <div class="post-scripts pjax">
+    
+        <script src="//evan.beee.top/projects/hexo-theme-redefine/v1.1.3/source/js/tools/toc-toggle.js"></script><script src="//evan.beee.top/projects/hexo-theme-redefine/v1.1.3/source/js/libs/anime.min.js"></script><script src="//evan.beee.top/projects/hexo-theme-redefine/v1.1.3/source/js/layouts/toc.js"></script><script src="//evan.beee.top/projects/hexo-theme-redefine/v1.1.3/source/js/plugins/tabs.js"></script>
     
     
 </div>

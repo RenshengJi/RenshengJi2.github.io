@@ -1,27 +1,18 @@
 <?xml version="1.0"?>
-<feed xmlns="http://www.w3.org/2005/Atom">
-    <id>https://RenshengJi.github.io</id>
-    <title>人生几何</title>
-    <link href="https://RenshengJi.github.io" />
-    <updated>2023-02-28T14:32:45.000Z</updated>
-    <entry>
-        <id>https://renshengji.github.io/2023/02/28/HelloWorld/</id>
-        <title>HelloWorld</title>
-        <link rel="alternate" href="https://renshengji.github.io/2023/02/28/HelloWorld/"/>
-        <content type="html">&lt;p&gt;为什么要建立我的博客&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;好记性不如烂笔头，&lt;code&gt;记录一些学到的技术&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;分享一些有趣的事&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;……&lt;/li&gt;
-&lt;/ul&gt;
-</content>
-        <updated>2023-02-28T14:32:45.000Z</updated>
-    </entry>
-    <entry>
-        <id>https://renshengji.github.io/2023/02/28/module_3rd/</id>
-        <title>3rd模块</title>
-        <link rel="alternate" href="https://renshengji.github.io/2023/02/28/module_3rd/"/>
-        <content type="html">&lt;h2 id=&#34;模块总览&#34;&gt;&lt;a href=&#34;#模块总览&#34; class=&#34;headerlink&#34; title=&#34;模块总览&#34;&gt;&lt;/a&gt;模块总览&lt;/h2&gt;&lt;p&gt;该模块用于保存本项目用到的两个第三方库的源码：&lt;/p&gt;
+<rss version="2.0">
+    <channel>
+        <title>人生几何 • Posts by &#34;rm2022&#34; category</title>
+        <link>https://RenshengJi.github.io</link>
+        <description></description>
+        <language>zh-CN</language>
+        <pubDate>Tue, 28 Feb 2023 22:32:45 +0800</pubDate>
+        <lastBuildDate>Tue, 28 Feb 2023 22:32:45 +0800</lastBuildDate>
+        <item>
+            <guid isPermalink="true">https://renshengji.github.io/2023/02/28/module_3rd/</guid>
+            <title>3rd模块</title>
+            <link>https://renshengji.github.io/2023/02/28/module_3rd/</link>
+            <pubDate>Tue, 28 Feb 2023 22:32:45 +0800</pubDate>
+            <description><![CDATA[ &lt;h2 id=&#34;模块总览&#34;&gt;&lt;a href=&#34;#模块总览&#34; class=&#34;headerlink&#34; title=&#34;模块总览&#34;&gt;&lt;/a&gt;模块总览&lt;/h2&gt;&lt;p&gt;该模块用于保存本项目用到的两个第三方库的源码：&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;fmt&lt;/li&gt;
 &lt;li&gt;nlohmann json&lt;/li&gt;
@@ -33,14 +24,14 @@
 &lt;h2 id=&#34;nlohmann-json库简介&#34;&gt;&lt;a href=&#34;#nlohmann-json库简介&#34; class=&#34;headerlink&#34; title=&#34;nlohmann json库简介&#34;&gt;&lt;/a&gt;nlohmann json库简介&lt;/h2&gt;&lt;p&gt;nlohmann json库为c++提供了读取json文件的功能，现有的c++ json库很多，nlohmann只是一种，不过它的速度跟易用性都是比较优秀的。&lt;/p&gt;
 &lt;p&gt;具体用法详见&lt;code&gt;3rd/json&lt;/code&gt;中的&lt;a class=&#34;link&#34;   href=&#34;https://gitee.com/tju-rm-cv/tjurm-2022/blob/master/3rd/json/README.md&#34; &gt;readme文件 &lt;i class=&#34;fa-regular fa-arrow-up-right-from-square fa-sm&#34;&gt;&lt;/i&gt;&lt;/a&gt;。&lt;/p&gt;
 &lt;p&gt;本项目将程序运行时的各种参数保存在&lt;a class=&#34;link&#34;   href=&#34;https://gitee.com/tju-rm-cv/tjurm-2022/blob/master/assets/params.json&#34; &gt;json文件 &lt;i class=&#34;fa-regular fa-arrow-up-right-from-square fa-sm&#34;&gt;&lt;/i&gt;&lt;/a&gt;中，并使用这个库来读取json文件。&lt;/p&gt;
-</content>
-        <updated>2023-02-28T14:32:45.000Z</updated>
-    </entry>
-    <entry>
-        <id>https://renshengji.github.io/2023/02/28/module_armor/</id>
-        <title>armor模块</title>
-        <link rel="alternate" href="https://renshengji.github.io/2023/02/28/module_armor/"/>
-        <content type="html">&lt;ul&gt;
+ ]]></description>
+        </item>
+        <item>
+            <guid isPermalink="true">https://renshengji.github.io/2023/02/28/module_armor/</guid>
+            <title>armor模块</title>
+            <link>https://renshengji.github.io/2023/02/28/module_armor/</link>
+            <pubDate>Tue, 28 Feb 2023 22:32:45 +0800</pubDate>
+            <description><![CDATA[ &lt;ul&gt;
 &lt;li&gt;对应代码: 为 &lt;code&gt;include/armor&lt;/code&gt; 和 &lt;code&gt;src/armor&lt;/code&gt; 文件夹&lt;/li&gt;
 &lt;li&gt;功能：识别装甲板&lt;ul&gt;
 &lt;li&gt;输入当前帧的图片&lt;/li&gt;
@@ -258,14 +249,14 @@
 &lt;h3 id=&#34;knn-h-kmeans-h-dataset-h&#34;&gt;&lt;a href=&#34;#knn-h-kmeans-h-dataset-h&#34; class=&#34;headerlink&#34; title=&#34;knn.h, kmeans.h, dataset.h&#34;&gt;&lt;/a&gt;knn.h, kmeans.h, dataset.h&lt;/h3&gt;&lt;p&gt;这三个文件共同实现了一个 knn 分类器，理解了 knn 算法，就能看到这部分代码。&lt;/p&gt;
 &lt;p&gt;knn 分类方法最后并没有使用，直接用 MLP 的方法就行。&lt;/p&gt;
 &lt;h1 id=&#34;其他&#34;&gt;&lt;a href=&#34;#其他&#34; class=&#34;headerlink&#34; title=&#34;其他&#34;&gt;&lt;/a&gt;其他&lt;/h1&gt;&lt;p&gt;&lt;a class=&#34;link&#34;   href=&#34;https://gitee.com/cbxgss/learn-cmake&#34; &gt;cmake简单例子 &lt;i class=&#34;fa-regular fa-arrow-up-right-from-square fa-sm&#34;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/p&gt;
-</content>
-        <updated>2023-02-28T14:32:45.000Z</updated>
-    </entry>
-    <entry>
-        <id>https://renshengji.github.io/2023/02/28/module_assets/</id>
-        <title>assets模块</title>
-        <link rel="alternate" href="https://renshengji.github.io/2023/02/28/module_assets/"/>
-        <content type="html">&lt;h2 id=&#34;模块总览&#34;&gt;&lt;a href=&#34;#模块总览&#34; class=&#34;headerlink&#34; title=&#34;模块总览&#34;&gt;&lt;/a&gt;模块总览&lt;/h2&gt;&lt;p&gt;该模块用于保存一些与程序无关的文件。&lt;/p&gt;
+ ]]></description>
+        </item>
+        <item>
+            <guid isPermalink="true">https://renshengji.github.io/2023/02/28/module_assets/</guid>
+            <title>assets模块</title>
+            <link>https://renshengji.github.io/2023/02/28/module_assets/</link>
+            <pubDate>Tue, 28 Feb 2023 22:32:45 +0800</pubDate>
+            <description><![CDATA[ &lt;h2 id=&#34;模块总览&#34;&gt;&lt;a href=&#34;#模块总览&#34; class=&#34;headerlink&#34; title=&#34;模块总览&#34;&gt;&lt;/a&gt;模块总览&lt;/h2&gt;&lt;p&gt;该模块用于保存一些与程序无关的文件。&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;model_(bin|aug).onnx&lt;br&gt;  训练好的装甲板分类器&lt;/li&gt;
 &lt;li&gt;noclass.onnx&lt;br&gt;  训练好的目标检测器&lt;/li&gt;
@@ -273,14 +264,14 @@
 &lt;li&gt;params.json&lt;br&gt;  程序运行时的参数配置文件&lt;/li&gt;
 &lt;li&gt;test-light.png&lt;br&gt;  一张没啥用的测试图片&lt;/li&gt;
 &lt;/ul&gt;
-</content>
-        <updated>2023-02-28T14:32:45.000Z</updated>
-    </entry>
-    <entry>
-        <id>https://renshengji.github.io/2023/02/28/module_detector/</id>
-        <title>detector模块</title>
-        <link rel="alternate" href="https://renshengji.github.io/2023/02/28/module_detector/"/>
-        <content type="html">&lt;h2 id=&#34;模块总览&#34;&gt;&lt;a href=&#34;#模块总览&#34; class=&#34;headerlink&#34; title=&#34;模块总览&#34;&gt;&lt;/a&gt;模块总览&lt;/h2&gt;&lt;p&gt;该模块实现了目标检测分类器的加载以及前向传播过程，并且提供了两种实现方式：&lt;/p&gt;
+ ]]></description>
+        </item>
+        <item>
+            <guid isPermalink="true">https://renshengji.github.io/2023/02/28/module_detector/</guid>
+            <title>detector模块</title>
+            <link>https://renshengji.github.io/2023/02/28/module_detector/</link>
+            <pubDate>Tue, 28 Feb 2023 22:32:45 +0800</pubDate>
+            <description><![CDATA[ &lt;h2 id=&#34;模块总览&#34;&gt;&lt;a href=&#34;#模块总览&#34; class=&#34;headerlink&#34; title=&#34;模块总览&#34;&gt;&lt;/a&gt;模块总览&lt;/h2&gt;&lt;p&gt;该模块实现了目标检测分类器的加载以及前向传播过程，并且提供了两种实现方式：&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;cv::dnn模块&lt;/li&gt;
 &lt;li&gt;nvidia推理框架TensorRT&lt;/li&gt;
@@ -313,14 +304,14 @@
 &lt;h4 id=&#34;load-from-cache-…&#34;&gt;&lt;a href=&#34;#load-from-cache-…&#34; class=&#34;headerlink&#34; title=&#34;load_from_cache(…)&#34;&gt;&lt;/a&gt;load_from_cache(…)&lt;/h4&gt;&lt;p&gt;直接加载.engine文件。&lt;/p&gt;
 &lt;h4 id=&#34;bind&#34;&gt;&lt;a href=&#34;#bind&#34; class=&#34;headerlink&#34; title=&#34;bind()&#34;&gt;&lt;/a&gt;bind()&lt;/h4&gt;&lt;p&gt;根据计算图的信息（输出tensor的个数，大小）来分配cpu内存与gpu内存。&lt;/p&gt;
 &lt;h4 id=&#34;detect&#34;&gt;&lt;a href=&#34;#detect&#34; class=&#34;headerlink&#34; title=&#34;detect()&#34;&gt;&lt;/a&gt;detect()&lt;/h4&gt;&lt;p&gt;看注释。&lt;/p&gt;
-</content>
-        <updated>2023-02-28T14:32:45.000Z</updated>
-    </entry>
-    <entry>
-        <id>https://renshengji.github.io/2023/02/28/module_logger/</id>
-        <title>logger模块</title>
-        <link rel="alternate" href="https://renshengji.github.io/2023/02/28/module_logger/"/>
-        <content type="html">&lt;h2 id=&#34;模块总览&#34;&gt;&lt;a href=&#34;#模块总览&#34; class=&#34;headerlink&#34; title=&#34;模块总览&#34;&gt;&lt;/a&gt;模块总览&lt;/h2&gt;&lt;p&gt;该模块基于c++第三方库&lt;code&gt;fmt&lt;/code&gt;实现了一个logger用于保存程序运行时的一些信息。支持以下功能：&lt;/p&gt;
+ ]]></description>
+        </item>
+        <item>
+            <guid isPermalink="true">https://renshengji.github.io/2023/02/28/module_logger/</guid>
+            <title>logger模块</title>
+            <link>https://renshengji.github.io/2023/02/28/module_logger/</link>
+            <pubDate>Tue, 28 Feb 2023 22:32:45 +0800</pubDate>
+            <description><![CDATA[ &lt;h2 id=&#34;模块总览&#34;&gt;&lt;a href=&#34;#模块总览&#34; class=&#34;headerlink&#34; title=&#34;模块总览&#34;&gt;&lt;/a&gt;模块总览&lt;/h2&gt;&lt;p&gt;该模块基于c++第三方库&lt;code&gt;fmt&lt;/code&gt;实现了一个logger用于保存程序运行时的一些信息。支持以下功能：&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;提供3种级别的log：&lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;MSG&lt;/strong&gt;：输出一些基本的信息，例如当前目标的数量，解算出的世界坐标&lt;/li&gt;
@@ -373,14 +364,14 @@
 &lt;div class=&#34;highlight-container&#34; data-rel=&#34;Plaintext&#34;&gt;&lt;figure class=&#34;iseeu highlight plaintext&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;// format 3rd types&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;template&amp;lt;&amp;gt; struct fmt::formatter&amp;lt;cv::Point3f&amp;gt; &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    char presentation = &amp;#x27;f&amp;#x27;;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    ...&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&amp;#125;;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/div&gt;
 
 &lt;p&gt;fmt::print是会报错的，因为它不知道该怎么格式化cv::Point3f。如何编写这个自定义格式化代码：&lt;a class=&#34;link&#34;   href=&#34;https://zhuanlan.zhihu.com/p/601744791&#34; &gt;https://zhuanlan.zhihu.com/p/601744791 &lt;i class=&#34;fa-regular fa-arrow-up-right-from-square fa-sm&#34;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/p&gt;
-</content>
-        <updated>2023-02-28T14:32:45.000Z</updated>
-    </entry>
-    <entry>
-        <id>https://renshengji.github.io/2023/02/28/module_params/</id>
-        <title>params模块</title>
-        <link rel="alternate" href="https://renshengji.github.io/2023/02/28/module_params/"/>
-        <content type="html">&lt;h2 id=&#34;模块总览&#34;&gt;&lt;a href=&#34;#模块总览&#34; class=&#34;headerlink&#34; title=&#34;模块总览&#34;&gt;&lt;/a&gt;模块总览&lt;/h2&gt;&lt;p&gt;该模块允许我们把自瞄算法的参数保存在配置文件（json）中，并在程序运行时把配置文件加载到内存中。&lt;/p&gt;
+ ]]></description>
+        </item>
+        <item>
+            <guid isPermalink="true">https://renshengji.github.io/2023/02/28/module_params/</guid>
+            <title>params模块</title>
+            <link>https://renshengji.github.io/2023/02/28/module_params/</link>
+            <pubDate>Tue, 28 Feb 2023 22:32:45 +0800</pubDate>
+            <description><![CDATA[ &lt;h2 id=&#34;模块总览&#34;&gt;&lt;a href=&#34;#模块总览&#34; class=&#34;headerlink&#34; title=&#34;模块总览&#34;&gt;&lt;/a&gt;模块总览&lt;/h2&gt;&lt;p&gt;该模块允许我们把自瞄算法的参数保存在配置文件（json）中，并在程序运行时把配置文件加载到内存中。&lt;/p&gt;
 &lt;p&gt;好处：每次修改算法参数后，不需要重新编译整个程序（耗时大概5min），所以能够减少程序编译耗时，提高代码调试速度。&lt;/p&gt;
 &lt;p&gt;一个例子：&lt;/p&gt;
 &lt;div class=&#34;highlight-container&#34; data-rel=&#34;Plaintext&#34;&gt;&lt;figure class=&#34;iseeu highlight plaintext&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;15&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;// json文件：&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;// &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;//     &amp;quot;key1&amp;quot;: 0.5,&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;//     &amp;quot;key2&amp;quot;: &amp;quot;string&amp;quot;,&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;//     &amp;quot;key3&amp;quot;: &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;//         &amp;quot;key1&amp;quot;: [1, 2, 3]&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;//     &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;// &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;// 代码：&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;ParamsManager&amp;amp; obj = *ParamsManager::GetInstance();&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;obj.load(&amp;quot;path/to/your/json/file&amp;quot;);&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;float x = obj[&amp;quot;key1];&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;std::string y = obj[&amp;quot;key2];&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;std::vector&amp;lt;int&amp;gt; z = obj[&amp;quot;key3][&amp;quot;key1];&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/div&gt;
@@ -408,14 +399,14 @@
 &lt;div class=&#34;highlight-container&#34; data-rel=&#34;Plaintext&#34;&gt;&lt;figure class=&#34;iseeu highlight plaintext&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;// 我记得是一定要放在cv这个命名空间里的，否则找不到&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;namespace cv &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;void to_json(nlohmann::json&amp;amp; j, const cv::Mat&amp;amp; p);&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;void from_json(const nlohmann::json&amp;amp; j, cv::Mat&amp;amp; p);&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/div&gt;
 
 &lt;p&gt;代码实现很简单，就不讲了~&lt;/p&gt;
-</content>
-        <updated>2023-02-28T14:32:45.000Z</updated>
-    </entry>
-    <entry>
-        <id>https://renshengji.github.io/2023/02/28/module_robot_io/</id>
-        <title>robot_io模块</title>
-        <link rel="alternate" href="https://renshengji.github.io/2023/02/28/module_robot_io/"/>
-        <content type="html">&lt;h2 id=&#34;模块总览&#34;&gt;&lt;a href=&#34;#模块总览&#34; class=&#34;headerlink&#34; title=&#34;模块总览&#34;&gt;&lt;/a&gt;模块总览&lt;/h2&gt;&lt;p&gt;自瞄程序需要在运行时读取相机的画面以及从串口读取机器人自身的信息，在目标定位完成后还要向串口写入机器人控制信息。&lt;/p&gt;
+ ]]></description>
+        </item>
+        <item>
+            <guid isPermalink="true">https://renshengji.github.io/2023/02/28/module_robot_io/</guid>
+            <title>robot_io模块</title>
+            <link>https://renshengji.github.io/2023/02/28/module_robot_io/</link>
+            <pubDate>Tue, 28 Feb 2023 22:32:45 +0800</pubDate>
+            <description><![CDATA[ &lt;h2 id=&#34;模块总览&#34;&gt;&lt;a href=&#34;#模块总览&#34; class=&#34;headerlink&#34; title=&#34;模块总览&#34;&gt;&lt;/a&gt;模块总览&lt;/h2&gt;&lt;p&gt;自瞄程序需要在运行时读取相机的画面以及从串口读取机器人自身的信息，在目标定位完成后还要向串口写入机器人控制信息。&lt;/p&gt;
 &lt;p&gt;该模块对相机跟串口这两个硬件进行了封装，提供简单的api来实现以下功能：&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;视频文件&amp;#x2F;相机设备的读取&lt;/li&gt;
@@ -486,7 +477,7 @@
 &lt;p&gt;也就是把子类指针转化为父类指针，后续代码就只需要使用video_interface的read接口即可，这样做的好处就是我们要改变视频流时，只需要改初始化，不需要修改后续的读取代码。&lt;/p&gt;
 &lt;p&gt;同时，如果后续需要添加新的相机的话，也只需要继承这个类就行，不用更改别的代码。&lt;/p&gt;
 &lt;p&gt;相机类的代码大部分都是参考的大恒SDK文档，而且已经能用了，等大家需要修改的时候再看文档也行。&lt;/p&gt;
-</content>
-        <updated>2023-02-28T14:32:45.000Z</updated>
-    </entry>
-</feed>
+ ]]></description>
+        </item>
+    </channel>
+</rss>

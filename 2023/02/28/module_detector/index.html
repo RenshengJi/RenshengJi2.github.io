@@ -9,18 +9,18 @@
     <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-redefine.png">
     <!--- Seo Part-->
     
-    <link rel="canonical" href="https://RenshengJi.github.io/archives/2020/"/>
+    <link rel="canonical" href="https://RenshengJi.github.io/2023/02/28/module_detector/"/>
     <meta name="robots" content="index,follow">
     <meta name="googlebot" content="index,follow">
     <meta name="revisit-after" content="1 days">
     <meta property="og:type" content="article">
-    <meta property="og:title" content="人生几何">
+    <meta property="og:title" content="detector模块">
     <meta property="og:description" content="Hexo Theme Redefine">
-    <meta property="og:url" content="https://RenshengJi.github.ioarchives/2020/index.html">
+    <meta property="og:url" content="https://RenshengJi.github.io2023/02/28/module_detector/">
     <meta property="og:image" content="/images/redefine-logo.svg">
     <meta property="og:site_name" content="人生几何">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="人生几何">
+    <meta name="twitter:title" content="detector模块">
     <meta name="twitter:description" content="Hexo Theme Redefine">
     <meta name="twitter:image" content="/images/redefine-logo.svg">
     <!--- Icon Part-->
@@ -31,7 +31,7 @@
     
     <title>
         
-            归档: 2020 -
+            detector模块 -
         
         人生几何
     </title>
@@ -166,48 +166,192 @@
 
                 
                     <div class="fade-in-down-animation">
-    <div class="archive-container ">
-        
-<div class="archive-list-container">
-    
-        <section class="archive-item">
-            <div class="archive-item-header">
-                <span class="archive-year">2023</span>
-                <span class="archive-year-post-count">[1]</span>
-            </div>
-            <ul class="article-list">
+    <div class="post-page-container">
+        <div class="article-content-container">
+
+            
+            
+                <div class="article-title">
+                    <h1 class="article-title-regular">detector模块</h1>
+                </div>
+            
                 
-                    <li class="article-item">
-                        <a class="article-title"
-                           href="/2023/02/28/HelloWorld/"
-                        >HelloWorld</a>
-                        <span class="article-date">02-28</span>
+            
+
+            
+                <div class="article-header">
+                    <div class="avatar">
+                        <img src="/images/redefine-avatar.svg">
+                    </div>
+                    <div class="info">
+                        <div class="author">
+                            <span class="name">人生几何</span>
+                            
+                                <span class="author-label">lol</span>
+                            
+                        </div>
+                        <div class="meta-info">
+                            <div class="article-meta-info">
+    <span class="article-date article-meta-item">
+        <i class="fa-regular fa-pen-fancy"></i>&nbsp;
+        <span class="pc">2023-02-28 22:32:45</span>
+        <span class="mobile">2023-02-28 22:32</span>
+        <span class="hover-info">创建时间</span>
+    </span>
+    
+        <span class="article-date article-meta-item">
+            <i class="fa-regular fa-wrench"></i>&nbsp;
+            <span class="pc">2023-03-04 11:25:08</span>
+            <span class="mobile">2023-03-04 11:25</span>
+            <span class="hover-info">更新时间</span>
+        </span>
+    
+
+    
+        <span class="article-categories article-meta-item">
+            <i class="fa-regular fa-folders"></i>&nbsp;
+            <ul>
+                
+                    <li>
+                        <a href="/categories/RM2022/">RM2022</a>&nbsp;
                     </li>
                 
             </ul>
-        </section>
+        </span>
     
-        <section class="archive-item">
-            <div class="archive-item-header">
-                <span class="archive-year">2020</span>
-                <span class="archive-year-post-count">[1]</span>
-            </div>
-            <ul class="article-list">
-                
-                    <li class="article-item">
-                        <a class="article-title"
-                           href="/2020/04/12/week-1/"
-                        >第1周 计算</a>
-                        <span class="article-date">04-12</span>
-                    </li>
-                
-            </ul>
-        </section>
+    
+
+    
+    
+    
+    
+        <span class="article-pv article-meta-item">
+            <i class="fa-regular fa-eye"></i>&nbsp;<span id="busuanzi_value_page_pv"></span>
+        </span>
     
 </div>
 
+                        </div>
+                    </div>
+                </div>
+            
+
+            <div class="article-content markdown-body">
+                <h2 id="模块总览"><a href="#模块总览" class="headerlink" title="模块总览"></a>模块总览</h2><p>该模块实现了目标检测分类器的加载以及前向传播过程，并且提供了两种实现方式：</p>
+<ul>
+<li>cv::dnn模块</li>
+<li>nvidia推理框架TensorRT</li>
+</ul>
+<p>其中cv::dnn版本仅依赖OpenCV，但是前向传播的速度慢，因此用于在本机进行调试；TensorRT安装繁琐，但可以加速前向传播的计算速度，因此在minipc上使用。</p>
+<p>两种版本可以通过宏定义切换。</p>
+<h2 id="前置知识"><a href="#前置知识" class="headerlink" title="前置知识"></a>前置知识</h2><h3 id="cuda"><a href="#cuda" class="headerlink" title="cuda"></a>cuda</h3><p>cuda可以看作是第三方库，可以用于控制nvidia显卡。</p>
+<p>在使用cuda时，我们会把内存分成两种，一种是cpu内存，一种是gpu内存（显存），cuda可以完成：</p>
+<ul>
+<li>申请、释放gpu内存：cudaMalloc，cudaFree</li>
+<li>在cpu内存与gpu内存之间拷贝数据；cudaMemcpy</li>
+<li>让gpu执行核函数进行计算：有兴趣自行学习。</li>
+</ul>
+<p>一个典型的cuda程序的流程：</p>
+<ol>
+<li>在cpu上把数据准备好</li>
+<li>把数据从cpu拷贝到gpu</li>
+<li>调用核函数进行计算</li>
+<li>把计算结果拷贝回cpu</li>
+</ol>
+<h3 id="TensorRT"><a href="#TensorRT" class="headerlink" title="TensorRT"></a>TensorRT</h3><p>nvidia专门为深度学习编写的神经网络推理框架，可以优化网络的前向传播速度。它首先会读取.onnx里的网络，然后对网络的计算图进行优化，优化后的计算图我们可以保存下来，变成.engine文件。</p>
+<p>在使用时，我们只需要负责数据的拷贝，前向传播计算由TensorRT来完成。</p>
+<h2 id="代码解析"><a href="#代码解析" class="headerlink" title="代码解析"></a>代码解析</h2><h3 id="common-h"><a href="#common-h" class="headerlink" title="common.h"></a>common.h</h3><p>没什么用，想删但是懒得删。</p>
+<h3 id="logging-h"><a href="#logging-h" class="headerlink" title="logging.h"></a>logging.h</h3><p>nvidia提供的，与TensorRT相关的头文件，不用看，但是必须要有。</p>
+<h3 id="utils-h"><a href="#utils-h" class="headerlink" title="utils.h"></a>utils.h</h3><p>提供了一些detector的辅助函数，比如说解析网络输出的结果，nms等。不讲。</p>
+<h3 id="dnn-h"><a href="#dnn-h" class="headerlink" title="dnn.h"></a>dnn.h</h3><p>让大家写过，不讲。</p>
+<h3 id="trt-h-amp-trt-cc"><a href="#trt-h-amp-trt-cc" class="headerlink" title="trt.h &amp; trt.cc"></a>trt.h &amp; trt.cc</h3><p>使用TensorRT完成前向传播。TRT类各个成员函数的功能如下：</p>
+<h4 id="load-from-onnx-…"><a href="#load-from-onnx-…" class="headerlink" title="load_from_onnx(…)"></a>load_from_onnx(…)</h4><p>加载onnx文件并进行计算图的优化，优化这一步很耗时，大概10~20min。</p>
+<h4 id="save-engine-…"><a href="#save-engine-…" class="headerlink" title="save_engine(…)"></a>save_engine(…)</h4><p>将优化后的计算图保存到磁盘中，变成.engine文件。</p>
+<h4 id="load-from-cache-…"><a href="#load-from-cache-…" class="headerlink" title="load_from_cache(…)"></a>load_from_cache(…)</h4><p>直接加载.engine文件。</p>
+<h4 id="bind"><a href="#bind" class="headerlink" title="bind()"></a>bind()</h4><p>根据计算图的信息（输出tensor的个数，大小）来分配cpu内存与gpu内存。</p>
+<h4 id="detect"><a href="#detect" class="headerlink" title="detect()"></a>detect()</h4><p>看注释。</p>
+
+            </div>
+
+            
+                <div class="post-copyright-info">
+                    <div class="article-copyright-info-container">
+    <ul>
+        <li>本文标题：detector模块</li>
+        <li>本文作者：人生几何</li>
+        <li>创建时间：2023-02-28 22:32:45</li>
+        <li>
+            本文链接：https://renshengji.github.io/2023/02/28/module_detector/
+        </li>
+        <li>
+            版权声明：本博客所有文章除特别声明外，均采用 <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">BY-NC-SA</a> 许可协议。转载请注明出处！
+        </li>
+    </ul>
+</div>
+
+                </div>
+            
+
+            
+
+            
+
+            
+                <div class="article-nav">
+                    
+                        <div class="article-prev">
+                            <a class="prev"
+                            rel="prev"
+                            href="/2023/02/28/module_assets/"
+                            >
+                                <span class="left arrow-icon flex-center">
+                                    <i class="fa-solid fa-chevron-left"></i>
+                                </span>
+                                <span class="title flex-center">
+                                    <span class="post-nav-title-item">assets模块</span>
+                                    <span class="post-nav-item">上一篇</span>
+                                </span>
+                            </a>
+                        </div>
+                    
+                    
+                        <div class="article-next">
+                            <a class="next"
+                            rel="next"
+                            href="/2023/02/28/module_logger/"
+                            >
+                                <span class="title flex-center">
+                                    <span class="post-nav-title-item">logger模块</span>
+                                    <span class="post-nav-item">下一篇</span>
+                                </span>
+                                <span class="right arrow-icon flex-center">
+                                    <i class="fa-solid fa-chevron-right"></i>
+                                </span>
+                            </a>
+                        </div>
+                    
+                </div>
+            
+
+
+            
+        </div>
+
+        
+            <div class="toc-content-container">
+                <div class="post-toc-wrap">
+    <div class="post-toc">
+        <div class="toc-title">此页目录</div>
+        <div class="page-title">detector模块</div>
+        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%A8%A1%E5%9D%97%E6%80%BB%E8%A7%88"><span class="nav-text">模块总览</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%89%8D%E7%BD%AE%E7%9F%A5%E8%AF%86"><span class="nav-text">前置知识</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#cuda"><span class="nav-text">cuda</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#TensorRT"><span class="nav-text">TensorRT</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BB%A3%E7%A0%81%E8%A7%A3%E6%9E%90"><span class="nav-text">代码解析</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#common-h"><span class="nav-text">common.h</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#logging-h"><span class="nav-text">logging.h</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#utils-h"><span class="nav-text">utils.h</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#dnn-h"><span class="nav-text">dnn.h</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#trt-h-amp-trt-cc"><span class="nav-text">trt.h &amp; trt.cc</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#load-from-onnx-%E2%80%A6"><span class="nav-text">load_from_onnx(…)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#save-engine-%E2%80%A6"><span class="nav-text">save_engine(…)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#load-from-cache-%E2%80%A6"><span class="nav-text">load_from_cache(…)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#bind"><span class="nav-text">bind()</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#detect"><span class="nav-text">detect()</span></a></li></ol></li></ol></li></ol>
+
     </div>
 </div>
+            </div>
+        
+    </div>
+</div>
+
 
                 
 
@@ -284,6 +428,23 @@
     </div>
 
     
+        <div class="post-tools">
+            <div class="post-tools-container">
+    <ul class="tools-list">
+        <!-- TOC aside toggle -->
+        
+            <li class="right-bottom-tools page-aside-toggle">
+                <i class="fa-regular fa-outdent"></i>
+            </li>
+        
+
+        <!-- go comment -->
+        
+    </ul>
+</div>
+
+        </div>
+    
 
     <div class="right-bottom-side-tools">
         <div class="side-tools-container">
@@ -359,6 +520,8 @@
 
 
 <div class="post-scripts pjax">
+    
+        <script src="//evan.beee.top/projects/hexo-theme-redefine/v1.1.3/source/js/tools/toc-toggle.js"></script><script src="//evan.beee.top/projects/hexo-theme-redefine/v1.1.3/source/js/libs/anime.min.js"></script><script src="//evan.beee.top/projects/hexo-theme-redefine/v1.1.3/source/js/layouts/toc.js"></script><script src="//evan.beee.top/projects/hexo-theme-redefine/v1.1.3/source/js/plugins/tabs.js"></script>
     
     
 </div>
