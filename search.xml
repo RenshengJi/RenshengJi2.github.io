@@ -1,6 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>HelloWorld</title>
+    <url>/2023/02/28/HelloWorld/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>为什么要建立我的博客</p>
+<ul>
+<li>好记性不如烂笔头，<code>记录一些学到的技术</code></li>
+<li><code>分享一些有趣的事</code></li>
+<li>……</li>
+</ul>
+]]></content>
+      <categories>
+        <category>杂谈</category>
+      </categories>
+  </entry>
+  <entry>
     <title>armor模块</title>
     <url>/2023/02/28/module_armor/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><ul>
@@ -227,6 +241,26 @@
       </categories>
   </entry>
   <entry>
+    <title>3rd模块</title>
+    <url>/2023/02/28/module_3rd/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="模块总览"><a href="#模块总览" class="headerlink" title="模块总览"></a>模块总览</h2><p>该模块用于保存本项目用到的两个第三方库的源码：</p>
+<ol>
+<li>fmt</li>
+<li>nlohmann json</li>
+</ol>
+<p>在编译本项目时，除了编译与自瞄相关的代码，还会编译这两个第三方库，并将三者链接。</p>
+<h2 id="fmt库简介"><a href="#fmt库简介" class="headerlink" title="fmt库简介"></a>fmt库简介</h2><p>fmt库为c++提供了一种类似python的输出格式化方法，比cout与printf更加的方便与安全。</p>
+<p>具体用法详见<code>3rd/fmt</code>中的<a class="link"   href="https://gitee.com/tju-rm-cv/tjurm-2022/blob/master/3rd/fmt/README.rst" >readme文件 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a>。</p>
+<p>本项目使用这个库来实现logger模块。</p>
+<h2 id="nlohmann-json库简介"><a href="#nlohmann-json库简介" class="headerlink" title="nlohmann json库简介"></a>nlohmann json库简介</h2><p>nlohmann json库为c++提供了读取json文件的功能，现有的c++ json库很多，nlohmann只是一种，不过它的速度跟易用性都是比较优秀的。</p>
+<p>具体用法详见<code>3rd/json</code>中的<a class="link"   href="https://gitee.com/tju-rm-cv/tjurm-2022/blob/master/3rd/json/README.md" >readme文件 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a>。</p>
+<p>本项目将程序运行时的各种参数保存在<a class="link"   href="https://gitee.com/tju-rm-cv/tjurm-2022/blob/master/assets/params.json" >json文件 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a>中，并使用这个库来读取json文件。</p>
+]]></content>
+      <categories>
+        <category>RM2022</category>
+      </categories>
+  </entry>
+  <entry>
     <title>assets模块</title>
     <url>/2023/02/28/module_assets/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="模块总览"><a href="#模块总览" class="headerlink" title="模块总览"></a>模块总览</h2><p>该模块用于保存一些与程序无关的文件。</p>
@@ -237,47 +271,6 @@
 <li>params.json<br>  程序运行时的参数配置文件</li>
 <li>test-light.png<br>  一张没啥用的测试图片</li>
 </ul>
-]]></content>
-      <categories>
-        <category>RM2022</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>detector模块</title>
-    <url>/2023/02/28/module_detector/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="模块总览"><a href="#模块总览" class="headerlink" title="模块总览"></a>模块总览</h2><p>该模块实现了目标检测分类器的加载以及前向传播过程，并且提供了两种实现方式：</p>
-<ul>
-<li>cv::dnn模块</li>
-<li>nvidia推理框架TensorRT</li>
-</ul>
-<p>其中cv::dnn版本仅依赖OpenCV，但是前向传播的速度慢，因此用于在本机进行调试；TensorRT安装繁琐，但可以加速前向传播的计算速度，因此在minipc上使用。</p>
-<p>两种版本可以通过宏定义切换。</p>
-<h2 id="前置知识"><a href="#前置知识" class="headerlink" title="前置知识"></a>前置知识</h2><h3 id="cuda"><a href="#cuda" class="headerlink" title="cuda"></a>cuda</h3><p>cuda可以看作是第三方库，可以用于控制nvidia显卡。</p>
-<p>在使用cuda时，我们会把内存分成两种，一种是cpu内存，一种是gpu内存（显存），cuda可以完成：</p>
-<ul>
-<li>申请、释放gpu内存：cudaMalloc，cudaFree</li>
-<li>在cpu内存与gpu内存之间拷贝数据；cudaMemcpy</li>
-<li>让gpu执行核函数进行计算：有兴趣自行学习。</li>
-</ul>
-<p>一个典型的cuda程序的流程：</p>
-<ol>
-<li>在cpu上把数据准备好</li>
-<li>把数据从cpu拷贝到gpu</li>
-<li>调用核函数进行计算</li>
-<li>把计算结果拷贝回cpu</li>
-</ol>
-<h3 id="TensorRT"><a href="#TensorRT" class="headerlink" title="TensorRT"></a>TensorRT</h3><p>nvidia专门为深度学习编写的神经网络推理框架，可以优化网络的前向传播速度。它首先会读取.onnx里的网络，然后对网络的计算图进行优化，优化后的计算图我们可以保存下来，变成.engine文件。</p>
-<p>在使用时，我们只需要负责数据的拷贝，前向传播计算由TensorRT来完成。</p>
-<h2 id="代码解析"><a href="#代码解析" class="headerlink" title="代码解析"></a>代码解析</h2><h3 id="common-h"><a href="#common-h" class="headerlink" title="common.h"></a>common.h</h3><p>没什么用，想删但是懒得删。</p>
-<h3 id="logging-h"><a href="#logging-h" class="headerlink" title="logging.h"></a>logging.h</h3><p>nvidia提供的，与TensorRT相关的头文件，不用看，但是必须要有。</p>
-<h3 id="utils-h"><a href="#utils-h" class="headerlink" title="utils.h"></a>utils.h</h3><p>提供了一些detector的辅助函数，比如说解析网络输出的结果，nms等。不讲。</p>
-<h3 id="dnn-h"><a href="#dnn-h" class="headerlink" title="dnn.h"></a>dnn.h</h3><p>让大家写过，不讲。</p>
-<h3 id="trt-h-amp-trt-cc"><a href="#trt-h-amp-trt-cc" class="headerlink" title="trt.h &amp; trt.cc"></a>trt.h &amp; trt.cc</h3><p>使用TensorRT完成前向传播。TRT类各个成员函数的功能如下：</p>
-<h4 id="load-from-onnx-…"><a href="#load-from-onnx-…" class="headerlink" title="load_from_onnx(…)"></a>load_from_onnx(…)</h4><p>加载onnx文件并进行计算图的优化，优化这一步很耗时，大概10~20min。</p>
-<h4 id="save-engine-…"><a href="#save-engine-…" class="headerlink" title="save_engine(…)"></a>save_engine(…)</h4><p>将优化后的计算图保存到磁盘中，变成.engine文件。</p>
-<h4 id="load-from-cache-…"><a href="#load-from-cache-…" class="headerlink" title="load_from_cache(…)"></a>load_from_cache(…)</h4><p>直接加载.engine文件。</p>
-<h4 id="bind"><a href="#bind" class="headerlink" title="bind()"></a>bind()</h4><p>根据计算图的信息（输出tensor的个数，大小）来分配cpu内存与gpu内存。</p>
-<h4 id="detect"><a href="#detect" class="headerlink" title="detect()"></a>detect()</h4><p>看注释。</p>
 ]]></content>
       <categories>
         <category>RM2022</category>
@@ -339,6 +332,47 @@
 <div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">// format 3rd types</span><br><span class="line">template&lt;&gt; struct fmt::formatter&lt;cv::Point3f&gt; &#123;</span><br><span class="line">    char presentation = &#x27;f&#x27;;</span><br><span class="line">    ...</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></div>
 
 <p>fmt::print是会报错的，因为它不知道该怎么格式化cv::Point3f。如何编写这个自定义格式化代码：<a class="link"   href="https://zhuanlan.zhihu.com/p/601744791" >https://zhuanlan.zhihu.com/p/601744791 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
+]]></content>
+      <categories>
+        <category>RM2022</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>detector模块</title>
+    <url>/2023/02/28/module_detector/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="模块总览"><a href="#模块总览" class="headerlink" title="模块总览"></a>模块总览</h2><p>该模块实现了目标检测分类器的加载以及前向传播过程，并且提供了两种实现方式：</p>
+<ul>
+<li>cv::dnn模块</li>
+<li>nvidia推理框架TensorRT</li>
+</ul>
+<p>其中cv::dnn版本仅依赖OpenCV，但是前向传播的速度慢，因此用于在本机进行调试；TensorRT安装繁琐，但可以加速前向传播的计算速度，因此在minipc上使用。</p>
+<p>两种版本可以通过宏定义切换。</p>
+<h2 id="前置知识"><a href="#前置知识" class="headerlink" title="前置知识"></a>前置知识</h2><h3 id="cuda"><a href="#cuda" class="headerlink" title="cuda"></a>cuda</h3><p>cuda可以看作是第三方库，可以用于控制nvidia显卡。</p>
+<p>在使用cuda时，我们会把内存分成两种，一种是cpu内存，一种是gpu内存（显存），cuda可以完成：</p>
+<ul>
+<li>申请、释放gpu内存：cudaMalloc，cudaFree</li>
+<li>在cpu内存与gpu内存之间拷贝数据；cudaMemcpy</li>
+<li>让gpu执行核函数进行计算：有兴趣自行学习。</li>
+</ul>
+<p>一个典型的cuda程序的流程：</p>
+<ol>
+<li>在cpu上把数据准备好</li>
+<li>把数据从cpu拷贝到gpu</li>
+<li>调用核函数进行计算</li>
+<li>把计算结果拷贝回cpu</li>
+</ol>
+<h3 id="TensorRT"><a href="#TensorRT" class="headerlink" title="TensorRT"></a>TensorRT</h3><p>nvidia专门为深度学习编写的神经网络推理框架，可以优化网络的前向传播速度。它首先会读取.onnx里的网络，然后对网络的计算图进行优化，优化后的计算图我们可以保存下来，变成.engine文件。</p>
+<p>在使用时，我们只需要负责数据的拷贝，前向传播计算由TensorRT来完成。</p>
+<h2 id="代码解析"><a href="#代码解析" class="headerlink" title="代码解析"></a>代码解析</h2><h3 id="common-h"><a href="#common-h" class="headerlink" title="common.h"></a>common.h</h3><p>没什么用，想删但是懒得删。</p>
+<h3 id="logging-h"><a href="#logging-h" class="headerlink" title="logging.h"></a>logging.h</h3><p>nvidia提供的，与TensorRT相关的头文件，不用看，但是必须要有。</p>
+<h3 id="utils-h"><a href="#utils-h" class="headerlink" title="utils.h"></a>utils.h</h3><p>提供了一些detector的辅助函数，比如说解析网络输出的结果，nms等。不讲。</p>
+<h3 id="dnn-h"><a href="#dnn-h" class="headerlink" title="dnn.h"></a>dnn.h</h3><p>让大家写过，不讲。</p>
+<h3 id="trt-h-amp-trt-cc"><a href="#trt-h-amp-trt-cc" class="headerlink" title="trt.h &amp; trt.cc"></a>trt.h &amp; trt.cc</h3><p>使用TensorRT完成前向传播。TRT类各个成员函数的功能如下：</p>
+<h4 id="load-from-onnx-…"><a href="#load-from-onnx-…" class="headerlink" title="load_from_onnx(…)"></a>load_from_onnx(…)</h4><p>加载onnx文件并进行计算图的优化，优化这一步很耗时，大概10~20min。</p>
+<h4 id="save-engine-…"><a href="#save-engine-…" class="headerlink" title="save_engine(…)"></a>save_engine(…)</h4><p>将优化后的计算图保存到磁盘中，变成.engine文件。</p>
+<h4 id="load-from-cache-…"><a href="#load-from-cache-…" class="headerlink" title="load_from_cache(…)"></a>load_from_cache(…)</h4><p>直接加载.engine文件。</p>
+<h4 id="bind"><a href="#bind" class="headerlink" title="bind()"></a>bind()</h4><p>根据计算图的信息（输出tensor的个数，大小）来分配cpu内存与gpu内存。</p>
+<h4 id="detect"><a href="#detect" class="headerlink" title="detect()"></a>detect()</h4><p>看注释。</p>
 ]]></content>
       <categories>
         <category>RM2022</category>
@@ -454,40 +488,6 @@
 <p>也就是把子类指针转化为父类指针，后续代码就只需要使用video_interface的read接口即可，这样做的好处就是我们要改变视频流时，只需要改初始化，不需要修改后续的读取代码。</p>
 <p>同时，如果后续需要添加新的相机的话，也只需要继承这个类就行，不用更改别的代码。</p>
 <p>相机类的代码大部分都是参考的大恒SDK文档，而且已经能用了，等大家需要修改的时候再看文档也行。</p>
-]]></content>
-      <categories>
-        <category>RM2022</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>HelloWorld</title>
-    <url>/2023/02/28/HelloWorld/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>为什么要建立我的博客</p>
-<ul>
-<li>好记性不如烂笔头，<code>记录一些学到的技术</code></li>
-<li><code>分享一些有趣的事</code></li>
-<li>……</li>
-</ul>
-]]></content>
-      <categories>
-        <category>杂谈</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>3rd模块</title>
-    <url>/2023/02/28/module_3rd/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="模块总览"><a href="#模块总览" class="headerlink" title="模块总览"></a>模块总览</h2><p>该模块用于保存本项目用到的两个第三方库的源码：</p>
-<ol>
-<li>fmt</li>
-<li>nlohmann json</li>
-</ol>
-<p>在编译本项目时，除了编译与自瞄相关的代码，还会编译这两个第三方库，并将三者链接。</p>
-<h2 id="fmt库简介"><a href="#fmt库简介" class="headerlink" title="fmt库简介"></a>fmt库简介</h2><p>fmt库为c++提供了一种类似python的输出格式化方法，比cout与printf更加的方便与安全。</p>
-<p>具体用法详见<code>3rd/fmt</code>中的<a class="link"   href="https://gitee.com/tju-rm-cv/tjurm-2022/blob/master/3rd/fmt/README.rst" >readme文件 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a>。</p>
-<p>本项目使用这个库来实现logger模块。</p>
-<h2 id="nlohmann-json库简介"><a href="#nlohmann-json库简介" class="headerlink" title="nlohmann json库简介"></a>nlohmann json库简介</h2><p>nlohmann json库为c++提供了读取json文件的功能，现有的c++ json库很多，nlohmann只是一种，不过它的速度跟易用性都是比较优秀的。</p>
-<p>具体用法详见<code>3rd/json</code>中的<a class="link"   href="https://gitee.com/tju-rm-cv/tjurm-2022/blob/master/3rd/json/README.md" >readme文件 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a>。</p>
-<p>本项目将程序运行时的各种参数保存在<a class="link"   href="https://gitee.com/tju-rm-cv/tjurm-2022/blob/master/assets/params.json" >json文件 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a>中，并使用这个库来读取json文件。</p>
 ]]></content>
       <categories>
         <category>RM2022</category>

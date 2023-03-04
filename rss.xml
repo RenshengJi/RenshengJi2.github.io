@@ -8,6 +8,19 @@
         <pubDate>Tue, 28 Feb 2023 22:32:45 +0800</pubDate>
         <lastBuildDate>Tue, 28 Feb 2023 22:32:45 +0800</lastBuildDate>
         <item>
+            <guid isPermalink="true">https://renshengji.github.io/2023/02/28/HelloWorld/</guid>
+            <title>HelloWorld</title>
+            <link>https://renshengji.github.io/2023/02/28/HelloWorld/</link>
+            <pubDate>Tue, 28 Feb 2023 22:32:45 +0800</pubDate>
+            <description><![CDATA[ &lt;link rel=&#34;stylesheet&#34; class=&#34;aplayer-secondary-style-marker&#34; href=&#34;/assets/css/APlayer.min.css&#34;&gt;&lt;script src=&#34;/assets/js/APlayer.min.js&#34; class=&#34;aplayer-secondary-script-marker&#34;&gt;&lt;/script&gt;&lt;p&gt;为什么要建立我的博客&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;好记性不如烂笔头，&lt;code&gt;记录一些学到的技术&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;分享一些有趣的事&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;……&lt;/li&gt;
+&lt;/ul&gt;
+ ]]></description>
+        </item>
+        <item>
             <guid isPermalink="true">https://renshengji.github.io/2023/02/28/module_armor/</guid>
             <title>armor模块</title>
             <link>https://renshengji.github.io/2023/02/28/module_armor/</link>
@@ -233,6 +246,25 @@
  ]]></description>
         </item>
         <item>
+            <guid isPermalink="true">https://renshengji.github.io/2023/02/28/module_3rd/</guid>
+            <title>3rd模块</title>
+            <link>https://renshengji.github.io/2023/02/28/module_3rd/</link>
+            <pubDate>Tue, 28 Feb 2023 22:32:45 +0800</pubDate>
+            <description><![CDATA[ &lt;link rel=&#34;stylesheet&#34; class=&#34;aplayer-secondary-style-marker&#34; href=&#34;/assets/css/APlayer.min.css&#34;&gt;&lt;script src=&#34;/assets/js/APlayer.min.js&#34; class=&#34;aplayer-secondary-script-marker&#34;&gt;&lt;/script&gt;&lt;h2 id=&#34;模块总览&#34;&gt;&lt;a href=&#34;#模块总览&#34; class=&#34;headerlink&#34; title=&#34;模块总览&#34;&gt;&lt;/a&gt;模块总览&lt;/h2&gt;&lt;p&gt;该模块用于保存本项目用到的两个第三方库的源码：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;fmt&lt;/li&gt;
+&lt;li&gt;nlohmann json&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;在编译本项目时，除了编译与自瞄相关的代码，还会编译这两个第三方库，并将三者链接。&lt;/p&gt;
+&lt;h2 id=&#34;fmt库简介&#34;&gt;&lt;a href=&#34;#fmt库简介&#34; class=&#34;headerlink&#34; title=&#34;fmt库简介&#34;&gt;&lt;/a&gt;fmt库简介&lt;/h2&gt;&lt;p&gt;fmt库为c++提供了一种类似python的输出格式化方法，比cout与printf更加的方便与安全。&lt;/p&gt;
+&lt;p&gt;具体用法详见&lt;code&gt;3rd/fmt&lt;/code&gt;中的&lt;a class=&#34;link&#34;   href=&#34;https://gitee.com/tju-rm-cv/tjurm-2022/blob/master/3rd/fmt/README.rst&#34; &gt;readme文件 &lt;i class=&#34;fa-regular fa-arrow-up-right-from-square fa-sm&#34;&gt;&lt;/i&gt;&lt;/a&gt;。&lt;/p&gt;
+&lt;p&gt;本项目使用这个库来实现logger模块。&lt;/p&gt;
+&lt;h2 id=&#34;nlohmann-json库简介&#34;&gt;&lt;a href=&#34;#nlohmann-json库简介&#34; class=&#34;headerlink&#34; title=&#34;nlohmann json库简介&#34;&gt;&lt;/a&gt;nlohmann json库简介&lt;/h2&gt;&lt;p&gt;nlohmann json库为c++提供了读取json文件的功能，现有的c++ json库很多，nlohmann只是一种，不过它的速度跟易用性都是比较优秀的。&lt;/p&gt;
+&lt;p&gt;具体用法详见&lt;code&gt;3rd/json&lt;/code&gt;中的&lt;a class=&#34;link&#34;   href=&#34;https://gitee.com/tju-rm-cv/tjurm-2022/blob/master/3rd/json/README.md&#34; &gt;readme文件 &lt;i class=&#34;fa-regular fa-arrow-up-right-from-square fa-sm&#34;&gt;&lt;/i&gt;&lt;/a&gt;。&lt;/p&gt;
+&lt;p&gt;本项目将程序运行时的各种参数保存在&lt;a class=&#34;link&#34;   href=&#34;https://gitee.com/tju-rm-cv/tjurm-2022/blob/master/assets/params.json&#34; &gt;json文件 &lt;i class=&#34;fa-regular fa-arrow-up-right-from-square fa-sm&#34;&gt;&lt;/i&gt;&lt;/a&gt;中，并使用这个库来读取json文件。&lt;/p&gt;
+ ]]></description>
+        </item>
+        <item>
             <guid isPermalink="true">https://renshengji.github.io/2023/02/28/module_assets/</guid>
             <title>assets模块</title>
             <link>https://renshengji.github.io/2023/02/28/module_assets/</link>
@@ -245,46 +277,6 @@
 &lt;li&gt;params.json&lt;br&gt;  程序运行时的参数配置文件&lt;/li&gt;
 &lt;li&gt;test-light.png&lt;br&gt;  一张没啥用的测试图片&lt;/li&gt;
 &lt;/ul&gt;
- ]]></description>
-        </item>
-        <item>
-            <guid isPermalink="true">https://renshengji.github.io/2023/02/28/module_detector/</guid>
-            <title>detector模块</title>
-            <link>https://renshengji.github.io/2023/02/28/module_detector/</link>
-            <pubDate>Tue, 28 Feb 2023 22:32:45 +0800</pubDate>
-            <description><![CDATA[ &lt;link rel=&#34;stylesheet&#34; class=&#34;aplayer-secondary-style-marker&#34; href=&#34;/assets/css/APlayer.min.css&#34;&gt;&lt;script src=&#34;/assets/js/APlayer.min.js&#34; class=&#34;aplayer-secondary-script-marker&#34;&gt;&lt;/script&gt;&lt;h2 id=&#34;模块总览&#34;&gt;&lt;a href=&#34;#模块总览&#34; class=&#34;headerlink&#34; title=&#34;模块总览&#34;&gt;&lt;/a&gt;模块总览&lt;/h2&gt;&lt;p&gt;该模块实现了目标检测分类器的加载以及前向传播过程，并且提供了两种实现方式：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;cv::dnn模块&lt;/li&gt;
-&lt;li&gt;nvidia推理框架TensorRT&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;其中cv::dnn版本仅依赖OpenCV，但是前向传播的速度慢，因此用于在本机进行调试；TensorRT安装繁琐，但可以加速前向传播的计算速度，因此在minipc上使用。&lt;/p&gt;
-&lt;p&gt;两种版本可以通过宏定义切换。&lt;/p&gt;
-&lt;h2 id=&#34;前置知识&#34;&gt;&lt;a href=&#34;#前置知识&#34; class=&#34;headerlink&#34; title=&#34;前置知识&#34;&gt;&lt;/a&gt;前置知识&lt;/h2&gt;&lt;h3 id=&#34;cuda&#34;&gt;&lt;a href=&#34;#cuda&#34; class=&#34;headerlink&#34; title=&#34;cuda&#34;&gt;&lt;/a&gt;cuda&lt;/h3&gt;&lt;p&gt;cuda可以看作是第三方库，可以用于控制nvidia显卡。&lt;/p&gt;
-&lt;p&gt;在使用cuda时，我们会把内存分成两种，一种是cpu内存，一种是gpu内存（显存），cuda可以完成：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;申请、释放gpu内存：cudaMalloc，cudaFree&lt;/li&gt;
-&lt;li&gt;在cpu内存与gpu内存之间拷贝数据；cudaMemcpy&lt;/li&gt;
-&lt;li&gt;让gpu执行核函数进行计算：有兴趣自行学习。&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;一个典型的cuda程序的流程：&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;在cpu上把数据准备好&lt;/li&gt;
-&lt;li&gt;把数据从cpu拷贝到gpu&lt;/li&gt;
-&lt;li&gt;调用核函数进行计算&lt;/li&gt;
-&lt;li&gt;把计算结果拷贝回cpu&lt;/li&gt;
-&lt;/ol&gt;
-&lt;h3 id=&#34;TensorRT&#34;&gt;&lt;a href=&#34;#TensorRT&#34; class=&#34;headerlink&#34; title=&#34;TensorRT&#34;&gt;&lt;/a&gt;TensorRT&lt;/h3&gt;&lt;p&gt;nvidia专门为深度学习编写的神经网络推理框架，可以优化网络的前向传播速度。它首先会读取.onnx里的网络，然后对网络的计算图进行优化，优化后的计算图我们可以保存下来，变成.engine文件。&lt;/p&gt;
-&lt;p&gt;在使用时，我们只需要负责数据的拷贝，前向传播计算由TensorRT来完成。&lt;/p&gt;
-&lt;h2 id=&#34;代码解析&#34;&gt;&lt;a href=&#34;#代码解析&#34; class=&#34;headerlink&#34; title=&#34;代码解析&#34;&gt;&lt;/a&gt;代码解析&lt;/h2&gt;&lt;h3 id=&#34;common-h&#34;&gt;&lt;a href=&#34;#common-h&#34; class=&#34;headerlink&#34; title=&#34;common.h&#34;&gt;&lt;/a&gt;common.h&lt;/h3&gt;&lt;p&gt;没什么用，想删但是懒得删。&lt;/p&gt;
-&lt;h3 id=&#34;logging-h&#34;&gt;&lt;a href=&#34;#logging-h&#34; class=&#34;headerlink&#34; title=&#34;logging.h&#34;&gt;&lt;/a&gt;logging.h&lt;/h3&gt;&lt;p&gt;nvidia提供的，与TensorRT相关的头文件，不用看，但是必须要有。&lt;/p&gt;
-&lt;h3 id=&#34;utils-h&#34;&gt;&lt;a href=&#34;#utils-h&#34; class=&#34;headerlink&#34; title=&#34;utils.h&#34;&gt;&lt;/a&gt;utils.h&lt;/h3&gt;&lt;p&gt;提供了一些detector的辅助函数，比如说解析网络输出的结果，nms等。不讲。&lt;/p&gt;
-&lt;h3 id=&#34;dnn-h&#34;&gt;&lt;a href=&#34;#dnn-h&#34; class=&#34;headerlink&#34; title=&#34;dnn.h&#34;&gt;&lt;/a&gt;dnn.h&lt;/h3&gt;&lt;p&gt;让大家写过，不讲。&lt;/p&gt;
-&lt;h3 id=&#34;trt-h-amp-trt-cc&#34;&gt;&lt;a href=&#34;#trt-h-amp-trt-cc&#34; class=&#34;headerlink&#34; title=&#34;trt.h &amp;amp; trt.cc&#34;&gt;&lt;/a&gt;trt.h &amp;amp; trt.cc&lt;/h3&gt;&lt;p&gt;使用TensorRT完成前向传播。TRT类各个成员函数的功能如下：&lt;/p&gt;
-&lt;h4 id=&#34;load-from-onnx-…&#34;&gt;&lt;a href=&#34;#load-from-onnx-…&#34; class=&#34;headerlink&#34; title=&#34;load_from_onnx(…)&#34;&gt;&lt;/a&gt;load_from_onnx(…)&lt;/h4&gt;&lt;p&gt;加载onnx文件并进行计算图的优化，优化这一步很耗时，大概10~20min。&lt;/p&gt;
-&lt;h4 id=&#34;save-engine-…&#34;&gt;&lt;a href=&#34;#save-engine-…&#34; class=&#34;headerlink&#34; title=&#34;save_engine(…)&#34;&gt;&lt;/a&gt;save_engine(…)&lt;/h4&gt;&lt;p&gt;将优化后的计算图保存到磁盘中，变成.engine文件。&lt;/p&gt;
-&lt;h4 id=&#34;load-from-cache-…&#34;&gt;&lt;a href=&#34;#load-from-cache-…&#34; class=&#34;headerlink&#34; title=&#34;load_from_cache(…)&#34;&gt;&lt;/a&gt;load_from_cache(…)&lt;/h4&gt;&lt;p&gt;直接加载.engine文件。&lt;/p&gt;
-&lt;h4 id=&#34;bind&#34;&gt;&lt;a href=&#34;#bind&#34; class=&#34;headerlink&#34; title=&#34;bind()&#34;&gt;&lt;/a&gt;bind()&lt;/h4&gt;&lt;p&gt;根据计算图的信息（输出tensor的个数，大小）来分配cpu内存与gpu内存。&lt;/p&gt;
-&lt;h4 id=&#34;detect&#34;&gt;&lt;a href=&#34;#detect&#34; class=&#34;headerlink&#34; title=&#34;detect()&#34;&gt;&lt;/a&gt;detect()&lt;/h4&gt;&lt;p&gt;看注释。&lt;/p&gt;
  ]]></description>
         </item>
         <item>
@@ -345,6 +337,46 @@
 &lt;div class=&#34;highlight-container&#34; data-rel=&#34;Plaintext&#34;&gt;&lt;figure class=&#34;iseeu highlight plaintext&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;// format 3rd types&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;template&amp;lt;&amp;gt; struct fmt::formatter&amp;lt;cv::Point3f&amp;gt; &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    char presentation = &amp;#x27;f&amp;#x27;;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    ...&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&amp;#125;;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/div&gt;
 
 &lt;p&gt;fmt::print是会报错的，因为它不知道该怎么格式化cv::Point3f。如何编写这个自定义格式化代码：&lt;a class=&#34;link&#34;   href=&#34;https://zhuanlan.zhihu.com/p/601744791&#34; &gt;https://zhuanlan.zhihu.com/p/601744791 &lt;i class=&#34;fa-regular fa-arrow-up-right-from-square fa-sm&#34;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/p&gt;
+ ]]></description>
+        </item>
+        <item>
+            <guid isPermalink="true">https://renshengji.github.io/2023/02/28/module_detector/</guid>
+            <title>detector模块</title>
+            <link>https://renshengji.github.io/2023/02/28/module_detector/</link>
+            <pubDate>Tue, 28 Feb 2023 22:32:45 +0800</pubDate>
+            <description><![CDATA[ &lt;link rel=&#34;stylesheet&#34; class=&#34;aplayer-secondary-style-marker&#34; href=&#34;/assets/css/APlayer.min.css&#34;&gt;&lt;script src=&#34;/assets/js/APlayer.min.js&#34; class=&#34;aplayer-secondary-script-marker&#34;&gt;&lt;/script&gt;&lt;h2 id=&#34;模块总览&#34;&gt;&lt;a href=&#34;#模块总览&#34; class=&#34;headerlink&#34; title=&#34;模块总览&#34;&gt;&lt;/a&gt;模块总览&lt;/h2&gt;&lt;p&gt;该模块实现了目标检测分类器的加载以及前向传播过程，并且提供了两种实现方式：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;cv::dnn模块&lt;/li&gt;
+&lt;li&gt;nvidia推理框架TensorRT&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;其中cv::dnn版本仅依赖OpenCV，但是前向传播的速度慢，因此用于在本机进行调试；TensorRT安装繁琐，但可以加速前向传播的计算速度，因此在minipc上使用。&lt;/p&gt;
+&lt;p&gt;两种版本可以通过宏定义切换。&lt;/p&gt;
+&lt;h2 id=&#34;前置知识&#34;&gt;&lt;a href=&#34;#前置知识&#34; class=&#34;headerlink&#34; title=&#34;前置知识&#34;&gt;&lt;/a&gt;前置知识&lt;/h2&gt;&lt;h3 id=&#34;cuda&#34;&gt;&lt;a href=&#34;#cuda&#34; class=&#34;headerlink&#34; title=&#34;cuda&#34;&gt;&lt;/a&gt;cuda&lt;/h3&gt;&lt;p&gt;cuda可以看作是第三方库，可以用于控制nvidia显卡。&lt;/p&gt;
+&lt;p&gt;在使用cuda时，我们会把内存分成两种，一种是cpu内存，一种是gpu内存（显存），cuda可以完成：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;申请、释放gpu内存：cudaMalloc，cudaFree&lt;/li&gt;
+&lt;li&gt;在cpu内存与gpu内存之间拷贝数据；cudaMemcpy&lt;/li&gt;
+&lt;li&gt;让gpu执行核函数进行计算：有兴趣自行学习。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;一个典型的cuda程序的流程：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;在cpu上把数据准备好&lt;/li&gt;
+&lt;li&gt;把数据从cpu拷贝到gpu&lt;/li&gt;
+&lt;li&gt;调用核函数进行计算&lt;/li&gt;
+&lt;li&gt;把计算结果拷贝回cpu&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;TensorRT&#34;&gt;&lt;a href=&#34;#TensorRT&#34; class=&#34;headerlink&#34; title=&#34;TensorRT&#34;&gt;&lt;/a&gt;TensorRT&lt;/h3&gt;&lt;p&gt;nvidia专门为深度学习编写的神经网络推理框架，可以优化网络的前向传播速度。它首先会读取.onnx里的网络，然后对网络的计算图进行优化，优化后的计算图我们可以保存下来，变成.engine文件。&lt;/p&gt;
+&lt;p&gt;在使用时，我们只需要负责数据的拷贝，前向传播计算由TensorRT来完成。&lt;/p&gt;
+&lt;h2 id=&#34;代码解析&#34;&gt;&lt;a href=&#34;#代码解析&#34; class=&#34;headerlink&#34; title=&#34;代码解析&#34;&gt;&lt;/a&gt;代码解析&lt;/h2&gt;&lt;h3 id=&#34;common-h&#34;&gt;&lt;a href=&#34;#common-h&#34; class=&#34;headerlink&#34; title=&#34;common.h&#34;&gt;&lt;/a&gt;common.h&lt;/h3&gt;&lt;p&gt;没什么用，想删但是懒得删。&lt;/p&gt;
+&lt;h3 id=&#34;logging-h&#34;&gt;&lt;a href=&#34;#logging-h&#34; class=&#34;headerlink&#34; title=&#34;logging.h&#34;&gt;&lt;/a&gt;logging.h&lt;/h3&gt;&lt;p&gt;nvidia提供的，与TensorRT相关的头文件，不用看，但是必须要有。&lt;/p&gt;
+&lt;h3 id=&#34;utils-h&#34;&gt;&lt;a href=&#34;#utils-h&#34; class=&#34;headerlink&#34; title=&#34;utils.h&#34;&gt;&lt;/a&gt;utils.h&lt;/h3&gt;&lt;p&gt;提供了一些detector的辅助函数，比如说解析网络输出的结果，nms等。不讲。&lt;/p&gt;
+&lt;h3 id=&#34;dnn-h&#34;&gt;&lt;a href=&#34;#dnn-h&#34; class=&#34;headerlink&#34; title=&#34;dnn.h&#34;&gt;&lt;/a&gt;dnn.h&lt;/h3&gt;&lt;p&gt;让大家写过，不讲。&lt;/p&gt;
+&lt;h3 id=&#34;trt-h-amp-trt-cc&#34;&gt;&lt;a href=&#34;#trt-h-amp-trt-cc&#34; class=&#34;headerlink&#34; title=&#34;trt.h &amp;amp; trt.cc&#34;&gt;&lt;/a&gt;trt.h &amp;amp; trt.cc&lt;/h3&gt;&lt;p&gt;使用TensorRT完成前向传播。TRT类各个成员函数的功能如下：&lt;/p&gt;
+&lt;h4 id=&#34;load-from-onnx-…&#34;&gt;&lt;a href=&#34;#load-from-onnx-…&#34; class=&#34;headerlink&#34; title=&#34;load_from_onnx(…)&#34;&gt;&lt;/a&gt;load_from_onnx(…)&lt;/h4&gt;&lt;p&gt;加载onnx文件并进行计算图的优化，优化这一步很耗时，大概10~20min。&lt;/p&gt;
+&lt;h4 id=&#34;save-engine-…&#34;&gt;&lt;a href=&#34;#save-engine-…&#34; class=&#34;headerlink&#34; title=&#34;save_engine(…)&#34;&gt;&lt;/a&gt;save_engine(…)&lt;/h4&gt;&lt;p&gt;将优化后的计算图保存到磁盘中，变成.engine文件。&lt;/p&gt;
+&lt;h4 id=&#34;load-from-cache-…&#34;&gt;&lt;a href=&#34;#load-from-cache-…&#34; class=&#34;headerlink&#34; title=&#34;load_from_cache(…)&#34;&gt;&lt;/a&gt;load_from_cache(…)&lt;/h4&gt;&lt;p&gt;直接加载.engine文件。&lt;/p&gt;
+&lt;h4 id=&#34;bind&#34;&gt;&lt;a href=&#34;#bind&#34; class=&#34;headerlink&#34; title=&#34;bind()&#34;&gt;&lt;/a&gt;bind()&lt;/h4&gt;&lt;p&gt;根据计算图的信息（输出tensor的个数，大小）来分配cpu内存与gpu内存。&lt;/p&gt;
+&lt;h4 id=&#34;detect&#34;&gt;&lt;a href=&#34;#detect&#34; class=&#34;headerlink&#34; title=&#34;detect()&#34;&gt;&lt;/a&gt;detect()&lt;/h4&gt;&lt;p&gt;看注释。&lt;/p&gt;
  ]]></description>
         </item>
         <item>
@@ -458,38 +490,6 @@
 &lt;p&gt;也就是把子类指针转化为父类指针，后续代码就只需要使用video_interface的read接口即可，这样做的好处就是我们要改变视频流时，只需要改初始化，不需要修改后续的读取代码。&lt;/p&gt;
 &lt;p&gt;同时，如果后续需要添加新的相机的话，也只需要继承这个类就行，不用更改别的代码。&lt;/p&gt;
 &lt;p&gt;相机类的代码大部分都是参考的大恒SDK文档，而且已经能用了，等大家需要修改的时候再看文档也行。&lt;/p&gt;
- ]]></description>
-        </item>
-        <item>
-            <guid isPermalink="true">https://renshengji.github.io/2023/02/28/HelloWorld/</guid>
-            <title>HelloWorld</title>
-            <link>https://renshengji.github.io/2023/02/28/HelloWorld/</link>
-            <pubDate>Tue, 28 Feb 2023 22:32:45 +0800</pubDate>
-            <description><![CDATA[ &lt;link rel=&#34;stylesheet&#34; class=&#34;aplayer-secondary-style-marker&#34; href=&#34;/assets/css/APlayer.min.css&#34;&gt;&lt;script src=&#34;/assets/js/APlayer.min.js&#34; class=&#34;aplayer-secondary-script-marker&#34;&gt;&lt;/script&gt;&lt;p&gt;为什么要建立我的博客&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;好记性不如烂笔头，&lt;code&gt;记录一些学到的技术&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;分享一些有趣的事&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;……&lt;/li&gt;
-&lt;/ul&gt;
- ]]></description>
-        </item>
-        <item>
-            <guid isPermalink="true">https://renshengji.github.io/2023/02/28/module_3rd/</guid>
-            <title>3rd模块</title>
-            <link>https://renshengji.github.io/2023/02/28/module_3rd/</link>
-            <pubDate>Tue, 28 Feb 2023 22:32:45 +0800</pubDate>
-            <description><![CDATA[ &lt;link rel=&#34;stylesheet&#34; class=&#34;aplayer-secondary-style-marker&#34; href=&#34;/assets/css/APlayer.min.css&#34;&gt;&lt;script src=&#34;/assets/js/APlayer.min.js&#34; class=&#34;aplayer-secondary-script-marker&#34;&gt;&lt;/script&gt;&lt;h2 id=&#34;模块总览&#34;&gt;&lt;a href=&#34;#模块总览&#34; class=&#34;headerlink&#34; title=&#34;模块总览&#34;&gt;&lt;/a&gt;模块总览&lt;/h2&gt;&lt;p&gt;该模块用于保存本项目用到的两个第三方库的源码：&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;fmt&lt;/li&gt;
-&lt;li&gt;nlohmann json&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;在编译本项目时，除了编译与自瞄相关的代码，还会编译这两个第三方库，并将三者链接。&lt;/p&gt;
-&lt;h2 id=&#34;fmt库简介&#34;&gt;&lt;a href=&#34;#fmt库简介&#34; class=&#34;headerlink&#34; title=&#34;fmt库简介&#34;&gt;&lt;/a&gt;fmt库简介&lt;/h2&gt;&lt;p&gt;fmt库为c++提供了一种类似python的输出格式化方法，比cout与printf更加的方便与安全。&lt;/p&gt;
-&lt;p&gt;具体用法详见&lt;code&gt;3rd/fmt&lt;/code&gt;中的&lt;a class=&#34;link&#34;   href=&#34;https://gitee.com/tju-rm-cv/tjurm-2022/blob/master/3rd/fmt/README.rst&#34; &gt;readme文件 &lt;i class=&#34;fa-regular fa-arrow-up-right-from-square fa-sm&#34;&gt;&lt;/i&gt;&lt;/a&gt;。&lt;/p&gt;
-&lt;p&gt;本项目使用这个库来实现logger模块。&lt;/p&gt;
-&lt;h2 id=&#34;nlohmann-json库简介&#34;&gt;&lt;a href=&#34;#nlohmann-json库简介&#34; class=&#34;headerlink&#34; title=&#34;nlohmann json库简介&#34;&gt;&lt;/a&gt;nlohmann json库简介&lt;/h2&gt;&lt;p&gt;nlohmann json库为c++提供了读取json文件的功能，现有的c++ json库很多，nlohmann只是一种，不过它的速度跟易用性都是比较优秀的。&lt;/p&gt;
-&lt;p&gt;具体用法详见&lt;code&gt;3rd/json&lt;/code&gt;中的&lt;a class=&#34;link&#34;   href=&#34;https://gitee.com/tju-rm-cv/tjurm-2022/blob/master/3rd/json/README.md&#34; &gt;readme文件 &lt;i class=&#34;fa-regular fa-arrow-up-right-from-square fa-sm&#34;&gt;&lt;/i&gt;&lt;/a&gt;。&lt;/p&gt;
-&lt;p&gt;本项目将程序运行时的各种参数保存在&lt;a class=&#34;link&#34;   href=&#34;https://gitee.com/tju-rm-cv/tjurm-2022/blob/master/assets/params.json&#34; &gt;json文件 &lt;i class=&#34;fa-regular fa-arrow-up-right-from-square fa-sm&#34;&gt;&lt;/i&gt;&lt;/a&gt;中，并使用这个库来读取json文件。&lt;/p&gt;
  ]]></description>
         </item>
     </channel>
