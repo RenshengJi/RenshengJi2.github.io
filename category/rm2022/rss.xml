@@ -233,6 +233,21 @@
  ]]></description>
         </item>
         <item>
+            <guid isPermalink="true">https://renshengji.github.io/2023/02/28/module_assets/</guid>
+            <title>assets模块</title>
+            <link>https://renshengji.github.io/2023/02/28/module_assets/</link>
+            <pubDate>Tue, 28 Feb 2023 22:32:45 +0800</pubDate>
+            <description><![CDATA[ &lt;link rel=&#34;stylesheet&#34; class=&#34;aplayer-secondary-style-marker&#34; href=&#34;/assets/css/APlayer.min.css&#34;&gt;&lt;script src=&#34;/assets/js/APlayer.min.js&#34; class=&#34;aplayer-secondary-script-marker&#34;&gt;&lt;/script&gt;&lt;h2 id=&#34;模块总览&#34;&gt;&lt;a href=&#34;#模块总览&#34; class=&#34;headerlink&#34; title=&#34;模块总览&#34;&gt;&lt;/a&gt;模块总览&lt;/h2&gt;&lt;p&gt;该模块用于保存一些与程序无关的文件。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;model_(bin|aug).onnx&lt;br&gt;  训练好的装甲板分类器&lt;/li&gt;
+&lt;li&gt;noclass.onnx&lt;br&gt;  训练好的目标检测器&lt;/li&gt;
+&lt;li&gt;test.onnx&lt;br&gt;  最早的目标检测器，已弃用&lt;/li&gt;
+&lt;li&gt;params.json&lt;br&gt;  程序运行时的参数配置文件&lt;/li&gt;
+&lt;li&gt;test-light.png&lt;br&gt;  一张没啥用的测试图片&lt;/li&gt;
+&lt;/ul&gt;
+ ]]></description>
+        </item>
+        <item>
             <guid isPermalink="true">https://renshengji.github.io/2023/02/28/module_3rd/</guid>
             <title>3rd模块</title>
             <link>https://renshengji.github.io/2023/02/28/module_3rd/</link>
@@ -249,21 +264,6 @@
 &lt;h2 id=&#34;nlohmann-json库简介&#34;&gt;&lt;a href=&#34;#nlohmann-json库简介&#34; class=&#34;headerlink&#34; title=&#34;nlohmann json库简介&#34;&gt;&lt;/a&gt;nlohmann json库简介&lt;/h2&gt;&lt;p&gt;nlohmann json库为c++提供了读取json文件的功能，现有的c++ json库很多，nlohmann只是一种，不过它的速度跟易用性都是比较优秀的。&lt;/p&gt;
 &lt;p&gt;具体用法详见&lt;code&gt;3rd/json&lt;/code&gt;中的&lt;a class=&#34;link&#34;   href=&#34;https://gitee.com/tju-rm-cv/tjurm-2022/blob/master/3rd/json/README.md&#34; &gt;readme文件 &lt;i class=&#34;fa-regular fa-arrow-up-right-from-square fa-sm&#34;&gt;&lt;/i&gt;&lt;/a&gt;。&lt;/p&gt;
 &lt;p&gt;本项目将程序运行时的各种参数保存在&lt;a class=&#34;link&#34;   href=&#34;https://gitee.com/tju-rm-cv/tjurm-2022/blob/master/assets/params.json&#34; &gt;json文件 &lt;i class=&#34;fa-regular fa-arrow-up-right-from-square fa-sm&#34;&gt;&lt;/i&gt;&lt;/a&gt;中，并使用这个库来读取json文件。&lt;/p&gt;
- ]]></description>
-        </item>
-        <item>
-            <guid isPermalink="true">https://renshengji.github.io/2023/02/28/module_assets/</guid>
-            <title>assets模块</title>
-            <link>https://renshengji.github.io/2023/02/28/module_assets/</link>
-            <pubDate>Tue, 28 Feb 2023 22:32:45 +0800</pubDate>
-            <description><![CDATA[ &lt;link rel=&#34;stylesheet&#34; class=&#34;aplayer-secondary-style-marker&#34; href=&#34;/assets/css/APlayer.min.css&#34;&gt;&lt;script src=&#34;/assets/js/APlayer.min.js&#34; class=&#34;aplayer-secondary-script-marker&#34;&gt;&lt;/script&gt;&lt;h2 id=&#34;模块总览&#34;&gt;&lt;a href=&#34;#模块总览&#34; class=&#34;headerlink&#34; title=&#34;模块总览&#34;&gt;&lt;/a&gt;模块总览&lt;/h2&gt;&lt;p&gt;该模块用于保存一些与程序无关的文件。&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;model_(bin|aug).onnx&lt;br&gt;  训练好的装甲板分类器&lt;/li&gt;
-&lt;li&gt;noclass.onnx&lt;br&gt;  训练好的目标检测器&lt;/li&gt;
-&lt;li&gt;test.onnx&lt;br&gt;  最早的目标检测器，已弃用&lt;/li&gt;
-&lt;li&gt;params.json&lt;br&gt;  程序运行时的参数配置文件&lt;/li&gt;
-&lt;li&gt;test-light.png&lt;br&gt;  一张没啥用的测试图片&lt;/li&gt;
-&lt;/ul&gt;
  ]]></description>
         </item>
         <item>
