@@ -9,7 +9,7 @@
             "url": "https://renshengji.github.io/2023/02/28/HelloWorld/",
             "title": "HelloWorld",
             "date_published": "2023-02-28T14:32:45.000Z",
-            "content_html": "<p>为什么要建立我的博客</p>\n<ul>\n<li>好记性不如烂笔头，<code>记录一些学到的技术</code></li>\n<li><code>分享一些有趣的事</code></li>\n<li>……</li>\n</ul>\n",
+            "content_html": "<link rel=\"stylesheet\" class=\"aplayer-secondary-style-marker\" href=\"/assets/css/APlayer.min.css\"><script src=\"/assets/js/APlayer.min.js\" class=\"aplayer-secondary-script-marker\"></script><p>为什么要建立我的博客</p>\n<ul>\n<li>好记性不如烂笔头，<code>记录一些学到的技术</code></li>\n<li><code>分享一些有趣的事</code></li>\n<li>……</li>\n</ul>\n",
             "tags": []
         }
     ]
