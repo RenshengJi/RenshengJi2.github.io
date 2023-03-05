@@ -374,66 +374,6 @@
         <updated>2023-02-28T14:32:45.000Z</updated>
     </entry>
     <entry>
-        <id>https://renshengji.github.io/2023/02/28/module_logger/</id>
-        <title>logger模块</title>
-        <link rel="alternate" href="https://renshengji.github.io/2023/02/28/module_logger/"/>
-        <content type="html">&lt;link rel=&#34;stylesheet&#34; class=&#34;aplayer-secondary-style-marker&#34; href=&#34;/assets/css/APlayer.min.css&#34;&gt;&lt;script src=&#34;/assets/js/APlayer.min.js&#34; class=&#34;aplayer-secondary-script-marker&#34;&gt;&lt;/script&gt;&lt;h2 id=&#34;模块总览&#34;&gt;&lt;a href=&#34;#模块总览&#34; class=&#34;headerlink&#34; title=&#34;模块总览&#34;&gt;&lt;/a&gt;模块总览&lt;/h2&gt;&lt;p&gt;该模块基于c++第三方库&lt;code&gt;fmt&lt;/code&gt;实现了一个logger用于保存程序运行时的一些信息。支持以下功能：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;提供3种级别的log：&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;MSG&lt;/strong&gt;：输出一些基本的信息，例如当前目标的数量，解算出的世界坐标&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;WARINING&lt;/strong&gt;：输出一些警告信息，例如串口收到的数据存在异常&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;ERROR&lt;/strong&gt;：输出一些错误信息，例如相机读取失败&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;能够在log信息输出到文件 or 终端。&lt;/li&gt;
-&lt;li&gt;能够保存图片到本地（未实际使用）&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&#34;前置知识&#34;&gt;&lt;a href=&#34;#前置知识&#34; class=&#34;headerlink&#34; title=&#34;前置知识&#34;&gt;&lt;/a&gt;前置知识&lt;/h2&gt;&lt;h3 id=&#34;关于logger&#34;&gt;&lt;a href=&#34;#关于logger&#34; class=&#34;headerlink&#34; title=&#34;关于logger&#34;&gt;&lt;/a&gt;关于logger&lt;/h3&gt;&lt;p&gt;正经的项目都会针对自己的需求设计一个logger用来保存程序运行时的信息，可以用于程序数据分析或者debug。&lt;/p&gt;
-&lt;p&gt;简单来说logger可以看作是一个稍微复杂的printf。它会包含一个前端，用于将你要输出的信息进行格式化，比如：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;信息产生的位置（文件名、函数名、行号、线程id）&lt;/li&gt;
-&lt;li&gt;信息的类型（error, msg, …）&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;请查看知乎上的&lt;a class=&#34;link&#34;   href=&#34;https://www.zhihu.com/question/293863155?sort=created&#34; &gt;关于c++ logger的讨论 &lt;i class=&#34;fa-regular fa-arrow-up-right-from-square fa-sm&#34;&gt;&lt;/i&gt;&lt;/a&gt;，这个问题下有一些人回答了logger的作用，怎么合理的设计一个logger等问题。&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;assets/log.h&#34;&gt;log.h&lt;/a&gt;文件中给了一个logger的示例，使用c&amp;#x2F;c++的宏定义 &amp;amp; printf实现一个最简单的logger。先试着用一下这个log.h。&lt;/p&gt;
-&lt;h3 id=&#34;关于c-单例模式&#34;&gt;&lt;a href=&#34;#关于c-单例模式&#34; class=&#34;headerlink&#34; title=&#34;关于c++单例模式&#34;&gt;&lt;/a&gt;关于c++单例模式&lt;/h3&gt;&lt;p&gt;单例模式的意思就是让某一个类只能实例化唯一的一个对象，比如说这里的logger，一个程序只会有一个logger，所以我们会把logger这个类设计成单例，程序运行期间所有的信息都会交给这个唯一的logger进行保存。&lt;/p&gt;
-&lt;p&gt;&lt;a class=&#34;link&#34;   href=&#34;https://zhuanlan.zhihu.com/p/62014096&#34; &gt;单例模式的实现方式 &lt;i class=&#34;fa-regular fa-arrow-up-right-from-square fa-sm&#34;&gt;&lt;/i&gt;&lt;/a&gt;，只需要查看其中的实现四即可。&lt;/p&gt;
-&lt;h2 id=&#34;代码解析&#34;&gt;&lt;a href=&#34;#代码解析&#34; class=&#34;headerlink&#34; title=&#34;代码解析&#34;&gt;&lt;/a&gt;代码解析&lt;/h2&gt;&lt;h3 id=&#34;log-h&#34;&gt;&lt;a href=&#34;#log-h&#34; class=&#34;headerlink&#34; title=&#34;log.h&#34;&gt;&lt;/a&gt;log.h&lt;/h3&gt;&lt;p&gt;&lt;a class=&#34;link&#34;   href=&#34;https://gitee.com/tju-rm-cv/tjurm-2022/blob/master/include/logger/log.h&#34; &gt;代码地址 &lt;i class=&#34;fa-regular fa-arrow-up-right-from-square fa-sm&#34;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;该头文件用宏定义提供了一些logger相关的api，我们在程序中可以使用这些api来调用logger。主要使用以下api：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;ERROR(format, …)：打印错误信息，会显示为红色，e.g.&lt;/p&gt;
-  &lt;div class=&#34;highlight-container&#34; data-rel=&#34;Plaintext&#34;&gt;&lt;figure class=&#34;iseeu highlight plaintext&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;ERROR(&amp;quot;parameter &amp;#x27;a&amp;#x27; should greater than zero, received &amp;#123;&amp;#125;&amp;quot;, a)&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/div&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;MSG(format, …)：打印普通信息，会显示为蓝色&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;TRACE(code, tag)：打印一段程序的运行时间，以ms为单位，tag用来标注这段程序的含义，e.g.&lt;/p&gt;
-  &lt;div class=&#34;highlight-container&#34; data-rel=&#34;Plaintext&#34;&gt;&lt;figure class=&#34;iseeu highlight plaintext&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;8&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;// 逗号前面是代码段，逗号后面是tag&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;TRACE(&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    for (int i = 0; i &amp;lt; 1000; i++)&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;        // do something ...&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    &amp;#125;,&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    &amp;quot;loop&amp;quot;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;)&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/div&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;…&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3 id=&#34;log-formatter-h-amp-log-type-h&#34;&gt;&lt;a href=&#34;#log-formatter-h-amp-log-type-h&#34; class=&#34;headerlink&#34; title=&#34;log_formatter.h &amp;amp; log_type.h&#34;&gt;&lt;/a&gt;log_formatter.h &amp;amp; log_type.h&lt;/h3&gt;&lt;p&gt;&lt;a class=&#34;link&#34;   href=&#34;https://gitee.com/tju-rm-cv/tjurm-2022/blob/master/include/logger/log_formatter.h&#34; &gt;代码地址(log_formatter.h) &lt;i class=&#34;fa-regular fa-arrow-up-right-from-square fa-sm&#34;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;a class=&#34;link&#34;   href=&#34;https://gitee.com/tju-rm-cv/tjurm-2022/blob/master/include/logger/log_type.h&#34; &gt;代码地址(log_type.h) &lt;i class=&#34;fa-regular fa-arrow-up-right-from-square fa-sm&#34;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;该头文件实现了一个LogFormatter类，提供一个format函数对程序信息进行格式化，很简单，不讲。&lt;/p&gt;
-&lt;h3 id=&#34;logger-h&#34;&gt;&lt;a href=&#34;#logger-h&#34; class=&#34;headerlink&#34; title=&#34;logger.h&#34;&gt;&lt;/a&gt;logger.h&lt;/h3&gt;&lt;p&gt;&lt;a class=&#34;link&#34;   href=&#34;https://gitee.com/tju-rm-cv/tjurm-2022/blob/master/include/logger/logger.h&#34; &gt;代码地址 &lt;i class=&#34;fa-regular fa-arrow-up-right-from-square fa-sm&#34;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;使用RMLogger类实现了logger。关键代码如下：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;code&gt;get_logger()&lt;/code&gt;&lt;br&gt;  获取唯一的logger对象的指针，使用的是最简单的单例模式。&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;_sync_print()&lt;/code&gt;&lt;br&gt;  实际上就是加了互斥锁的fmt::print，防止多个线程同时使用logger打印时输出结果混乱。&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;_sync_flush()&lt;/code&gt;&lt;br&gt;  与_sync_print()类似，只不过是把信息输出到文件。&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;save_log()&lt;/code&gt;&lt;br&gt;  保存日志信息，会在log.h中被调用。使用了可变参数模板用于接收任意多个参数，自行百度学习。&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;还有一些跟fmt库相关的代码，让fmt库能够格式化自定义的类型，e.g.&lt;/p&gt;
-&lt;div class=&#34;highlight-container&#34; data-rel=&#34;Plaintext&#34;&gt;&lt;figure class=&#34;iseeu highlight plaintext&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;cv::Point3f p = &amp;#123;1., 2., 3.&amp;#125;;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;fmt::print(&amp;quot;velocity = &amp;#123;&amp;#125;\n&amp;quot;, p);&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/div&gt;
-
-&lt;p&gt;如果不添加以下代码的话：&lt;/p&gt;
-&lt;div class=&#34;highlight-container&#34; data-rel=&#34;Plaintext&#34;&gt;&lt;figure class=&#34;iseeu highlight plaintext&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;// format 3rd types&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;template&amp;lt;&amp;gt; struct fmt::formatter&amp;lt;cv::Point3f&amp;gt; &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    char presentation = &amp;#x27;f&amp;#x27;;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    ...&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&amp;#125;;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/div&gt;
-
-&lt;p&gt;fmt::print是会报错的，因为它不知道该怎么格式化cv::Point3f。如何编写这个自定义格式化代码：&lt;a class=&#34;link&#34;   href=&#34;https://zhuanlan.zhihu.com/p/601744791&#34; &gt;https://zhuanlan.zhihu.com/p/601744791 &lt;i class=&#34;fa-regular fa-arrow-up-right-from-square fa-sm&#34;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/p&gt;
-</content>
-        <updated>2023-02-28T14:32:45.000Z</updated>
-    </entry>
-    <entry>
         <id>https://renshengji.github.io/2023/02/28/module_robot_io/</id>
         <title>robot_io模块</title>
         <link rel="alternate" href="https://renshengji.github.io/2023/02/28/module_robot_io/"/>
@@ -543,6 +483,66 @@
 &lt;div class=&#34;highlight-container&#34; data-rel=&#34;Plaintext&#34;&gt;&lt;figure class=&#34;iseeu highlight plaintext&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;// 我记得是一定要放在cv这个命名空间里的，否则找不到&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;namespace cv &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;void to_json(nlohmann::json&amp;amp; j, const cv::Mat&amp;amp; p);&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;void from_json(const nlohmann::json&amp;amp; j, cv::Mat&amp;amp; p);&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/div&gt;
 
 &lt;p&gt;代码实现很简单，就不讲了~&lt;/p&gt;
+</content>
+        <updated>2023-02-28T14:32:45.000Z</updated>
+    </entry>
+    <entry>
+        <id>https://renshengji.github.io/2023/02/28/module_logger/</id>
+        <title>logger模块</title>
+        <link rel="alternate" href="https://renshengji.github.io/2023/02/28/module_logger/"/>
+        <content type="html">&lt;link rel=&#34;stylesheet&#34; class=&#34;aplayer-secondary-style-marker&#34; href=&#34;/assets/css/APlayer.min.css&#34;&gt;&lt;script src=&#34;/assets/js/APlayer.min.js&#34; class=&#34;aplayer-secondary-script-marker&#34;&gt;&lt;/script&gt;&lt;h2 id=&#34;模块总览&#34;&gt;&lt;a href=&#34;#模块总览&#34; class=&#34;headerlink&#34; title=&#34;模块总览&#34;&gt;&lt;/a&gt;模块总览&lt;/h2&gt;&lt;p&gt;该模块基于c++第三方库&lt;code&gt;fmt&lt;/code&gt;实现了一个logger用于保存程序运行时的一些信息。支持以下功能：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;提供3种级别的log：&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;MSG&lt;/strong&gt;：输出一些基本的信息，例如当前目标的数量，解算出的世界坐标&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;WARINING&lt;/strong&gt;：输出一些警告信息，例如串口收到的数据存在异常&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;ERROR&lt;/strong&gt;：输出一些错误信息，例如相机读取失败&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;能够在log信息输出到文件 or 终端。&lt;/li&gt;
+&lt;li&gt;能够保存图片到本地（未实际使用）&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;前置知识&#34;&gt;&lt;a href=&#34;#前置知识&#34; class=&#34;headerlink&#34; title=&#34;前置知识&#34;&gt;&lt;/a&gt;前置知识&lt;/h2&gt;&lt;h3 id=&#34;关于logger&#34;&gt;&lt;a href=&#34;#关于logger&#34; class=&#34;headerlink&#34; title=&#34;关于logger&#34;&gt;&lt;/a&gt;关于logger&lt;/h3&gt;&lt;p&gt;正经的项目都会针对自己的需求设计一个logger用来保存程序运行时的信息，可以用于程序数据分析或者debug。&lt;/p&gt;
+&lt;p&gt;简单来说logger可以看作是一个稍微复杂的printf。它会包含一个前端，用于将你要输出的信息进行格式化，比如：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;信息产生的位置（文件名、函数名、行号、线程id）&lt;/li&gt;
+&lt;li&gt;信息的类型（error, msg, …）&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;请查看知乎上的&lt;a class=&#34;link&#34;   href=&#34;https://www.zhihu.com/question/293863155?sort=created&#34; &gt;关于c++ logger的讨论 &lt;i class=&#34;fa-regular fa-arrow-up-right-from-square fa-sm&#34;&gt;&lt;/i&gt;&lt;/a&gt;，这个问题下有一些人回答了logger的作用，怎么合理的设计一个logger等问题。&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;assets/log.h&#34;&gt;log.h&lt;/a&gt;文件中给了一个logger的示例，使用c&amp;#x2F;c++的宏定义 &amp;amp; printf实现一个最简单的logger。先试着用一下这个log.h。&lt;/p&gt;
+&lt;h3 id=&#34;关于c-单例模式&#34;&gt;&lt;a href=&#34;#关于c-单例模式&#34; class=&#34;headerlink&#34; title=&#34;关于c++单例模式&#34;&gt;&lt;/a&gt;关于c++单例模式&lt;/h3&gt;&lt;p&gt;单例模式的意思就是让某一个类只能实例化唯一的一个对象，比如说这里的logger，一个程序只会有一个logger，所以我们会把logger这个类设计成单例，程序运行期间所有的信息都会交给这个唯一的logger进行保存。&lt;/p&gt;
+&lt;p&gt;&lt;a class=&#34;link&#34;   href=&#34;https://zhuanlan.zhihu.com/p/62014096&#34; &gt;单例模式的实现方式 &lt;i class=&#34;fa-regular fa-arrow-up-right-from-square fa-sm&#34;&gt;&lt;/i&gt;&lt;/a&gt;，只需要查看其中的实现四即可。&lt;/p&gt;
+&lt;h2 id=&#34;代码解析&#34;&gt;&lt;a href=&#34;#代码解析&#34; class=&#34;headerlink&#34; title=&#34;代码解析&#34;&gt;&lt;/a&gt;代码解析&lt;/h2&gt;&lt;h3 id=&#34;log-h&#34;&gt;&lt;a href=&#34;#log-h&#34; class=&#34;headerlink&#34; title=&#34;log.h&#34;&gt;&lt;/a&gt;log.h&lt;/h3&gt;&lt;p&gt;&lt;a class=&#34;link&#34;   href=&#34;https://gitee.com/tju-rm-cv/tjurm-2022/blob/master/include/logger/log.h&#34; &gt;代码地址 &lt;i class=&#34;fa-regular fa-arrow-up-right-from-square fa-sm&#34;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;该头文件用宏定义提供了一些logger相关的api，我们在程序中可以使用这些api来调用logger。主要使用以下api：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;ERROR(format, …)：打印错误信息，会显示为红色，e.g.&lt;/p&gt;
+  &lt;div class=&#34;highlight-container&#34; data-rel=&#34;Plaintext&#34;&gt;&lt;figure class=&#34;iseeu highlight plaintext&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;ERROR(&amp;quot;parameter &amp;#x27;a&amp;#x27; should greater than zero, received &amp;#123;&amp;#125;&amp;quot;, a)&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/div&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;MSG(format, …)：打印普通信息，会显示为蓝色&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;TRACE(code, tag)：打印一段程序的运行时间，以ms为单位，tag用来标注这段程序的含义，e.g.&lt;/p&gt;
+  &lt;div class=&#34;highlight-container&#34; data-rel=&#34;Plaintext&#34;&gt;&lt;figure class=&#34;iseeu highlight plaintext&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;8&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;// 逗号前面是代码段，逗号后面是tag&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;TRACE(&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    for (int i = 0; i &amp;lt; 1000; i++)&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;        // do something ...&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    &amp;#125;,&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    &amp;quot;loop&amp;quot;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;)&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/div&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;…&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;log-formatter-h-amp-log-type-h&#34;&gt;&lt;a href=&#34;#log-formatter-h-amp-log-type-h&#34; class=&#34;headerlink&#34; title=&#34;log_formatter.h &amp;amp; log_type.h&#34;&gt;&lt;/a&gt;log_formatter.h &amp;amp; log_type.h&lt;/h3&gt;&lt;p&gt;&lt;a class=&#34;link&#34;   href=&#34;https://gitee.com/tju-rm-cv/tjurm-2022/blob/master/include/logger/log_formatter.h&#34; &gt;代码地址(log_formatter.h) &lt;i class=&#34;fa-regular fa-arrow-up-right-from-square fa-sm&#34;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a class=&#34;link&#34;   href=&#34;https://gitee.com/tju-rm-cv/tjurm-2022/blob/master/include/logger/log_type.h&#34; &gt;代码地址(log_type.h) &lt;i class=&#34;fa-regular fa-arrow-up-right-from-square fa-sm&#34;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;该头文件实现了一个LogFormatter类，提供一个format函数对程序信息进行格式化，很简单，不讲。&lt;/p&gt;
+&lt;h3 id=&#34;logger-h&#34;&gt;&lt;a href=&#34;#logger-h&#34; class=&#34;headerlink&#34; title=&#34;logger.h&#34;&gt;&lt;/a&gt;logger.h&lt;/h3&gt;&lt;p&gt;&lt;a class=&#34;link&#34;   href=&#34;https://gitee.com/tju-rm-cv/tjurm-2022/blob/master/include/logger/logger.h&#34; &gt;代码地址 &lt;i class=&#34;fa-regular fa-arrow-up-right-from-square fa-sm&#34;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;使用RMLogger类实现了logger。关键代码如下：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;get_logger()&lt;/code&gt;&lt;br&gt;  获取唯一的logger对象的指针，使用的是最简单的单例模式。&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;_sync_print()&lt;/code&gt;&lt;br&gt;  实际上就是加了互斥锁的fmt::print，防止多个线程同时使用logger打印时输出结果混乱。&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;_sync_flush()&lt;/code&gt;&lt;br&gt;  与_sync_print()类似，只不过是把信息输出到文件。&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;save_log()&lt;/code&gt;&lt;br&gt;  保存日志信息，会在log.h中被调用。使用了可变参数模板用于接收任意多个参数，自行百度学习。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;还有一些跟fmt库相关的代码，让fmt库能够格式化自定义的类型，e.g.&lt;/p&gt;
+&lt;div class=&#34;highlight-container&#34; data-rel=&#34;Plaintext&#34;&gt;&lt;figure class=&#34;iseeu highlight plaintext&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;cv::Point3f p = &amp;#123;1., 2., 3.&amp;#125;;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;fmt::print(&amp;quot;velocity = &amp;#123;&amp;#125;\n&amp;quot;, p);&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/div&gt;
+
+&lt;p&gt;如果不添加以下代码的话：&lt;/p&gt;
+&lt;div class=&#34;highlight-container&#34; data-rel=&#34;Plaintext&#34;&gt;&lt;figure class=&#34;iseeu highlight plaintext&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;// format 3rd types&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;template&amp;lt;&amp;gt; struct fmt::formatter&amp;lt;cv::Point3f&amp;gt; &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    char presentation = &amp;#x27;f&amp;#x27;;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    ...&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&amp;#125;;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/div&gt;
+
+&lt;p&gt;fmt::print是会报错的，因为它不知道该怎么格式化cv::Point3f。如何编写这个自定义格式化代码：&lt;a class=&#34;link&#34;   href=&#34;https://zhuanlan.zhihu.com/p/601744791&#34; &gt;https://zhuanlan.zhihu.com/p/601744791 &lt;i class=&#34;fa-regular fa-arrow-up-right-from-square fa-sm&#34;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/p&gt;
 </content>
         <updated>2023-02-28T14:32:45.000Z</updated>
     </entry>
