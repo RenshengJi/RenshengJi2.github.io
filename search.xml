@@ -1,20 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>HelloWorld</title>
-    <url>/2023/02/28/HelloWorld/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>为什么要建立我的博客</p>
-<ul>
-<li>好记性不如烂笔头，<code>记录一些学到的技术</code></li>
-<li><code>分享一些有趣的事</code></li>
-<li>……</li>
-</ul>
-]]></content>
-      <categories>
-        <category>杂谈</category>
-      </categories>
-  </entry>
-  <entry>
     <title>一道ctf小题</title>
     <url>/2023/03/05/ctf-1/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>直接上源码：</p>
@@ -76,6 +62,22 @@
       </tags>
   </entry>
   <entry>
+    <title>assets模块</title>
+    <url>/2023/02/28/module_assets/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="模块总览"><a href="#模块总览" class="headerlink" title="模块总览"></a>模块总览</h2><p>该模块用于保存一些与程序无关的文件。</p>
+<ul>
+<li>model_(bin|aug).onnx<br>  训练好的装甲板分类器</li>
+<li>noclass.onnx<br>  训练好的目标检测器</li>
+<li>test.onnx<br>  最早的目标检测器，已弃用</li>
+<li>params.json<br>  程序运行时的参数配置文件</li>
+<li>test-light.png<br>  一张没啥用的测试图片</li>
+</ul>
+]]></content>
+      <categories>
+        <category>RM2022</category>
+      </categories>
+  </entry>
+  <entry>
     <title>3rd模块</title>
     <url>/2023/02/28/module_3rd/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="模块总览"><a href="#模块总览" class="headerlink" title="模块总览"></a>模块总览</h2><p>该模块用于保存本项目用到的两个第三方库的源码：</p>
@@ -93,6 +95,20 @@
 ]]></content>
       <categories>
         <category>RM2022</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>HelloWorld</title>
+    <url>/2023/02/28/HelloWorld/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>为什么要建立我的博客</p>
+<ul>
+<li>好记性不如烂笔头，<code>记录一些学到的技术</code></li>
+<li><code>分享一些有趣的事</code></li>
+<li>……</li>
+</ul>
+]]></content>
+      <categories>
+        <category>杂谈</category>
       </categories>
   </entry>
   <entry>
@@ -322,22 +338,6 @@
       </categories>
   </entry>
   <entry>
-    <title>assets模块</title>
-    <url>/2023/02/28/module_assets/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="模块总览"><a href="#模块总览" class="headerlink" title="模块总览"></a>模块总览</h2><p>该模块用于保存一些与程序无关的文件。</p>
-<ul>
-<li>model_(bin|aug).onnx<br>  训练好的装甲板分类器</li>
-<li>noclass.onnx<br>  训练好的目标检测器</li>
-<li>test.onnx<br>  最早的目标检测器，已弃用</li>
-<li>params.json<br>  程序运行时的参数配置文件</li>
-<li>test-light.png<br>  一张没啥用的测试图片</li>
-</ul>
-]]></content>
-      <categories>
-        <category>RM2022</category>
-      </categories>
-  </entry>
-  <entry>
     <title>detector模块</title>
     <url>/2023/02/28/module_detector/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="模块总览"><a href="#模块总览" class="headerlink" title="模块总览"></a>模块总览</h2><p>该模块实现了目标检测分类器的加载以及前向传播过程，并且提供了两种实现方式：</p>
@@ -373,67 +373,6 @@
 <h4 id="load-from-cache-…"><a href="#load-from-cache-…" class="headerlink" title="load_from_cache(…)"></a>load_from_cache(…)</h4><p>直接加载.engine文件。</p>
 <h4 id="bind"><a href="#bind" class="headerlink" title="bind()"></a>bind()</h4><p>根据计算图的信息（输出tensor的个数，大小）来分配cpu内存与gpu内存。</p>
 <h4 id="detect"><a href="#detect" class="headerlink" title="detect()"></a>detect()</h4><p>看注释。</p>
-]]></content>
-      <categories>
-        <category>RM2022</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>logger模块</title>
-    <url>/2023/02/28/module_logger/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="模块总览"><a href="#模块总览" class="headerlink" title="模块总览"></a>模块总览</h2><p>该模块基于c++第三方库<code>fmt</code>实现了一个logger用于保存程序运行时的一些信息。支持以下功能：</p>
-<ul>
-<li>提供3种级别的log：<ul>
-<li><strong>MSG</strong>：输出一些基本的信息，例如当前目标的数量，解算出的世界坐标</li>
-<li><strong>WARINING</strong>：输出一些警告信息，例如串口收到的数据存在异常</li>
-<li><strong>ERROR</strong>：输出一些错误信息，例如相机读取失败</li>
-</ul>
-</li>
-<li>能够在log信息输出到文件 or 终端。</li>
-<li>能够保存图片到本地（未实际使用）</li>
-</ul>
-<h2 id="前置知识"><a href="#前置知识" class="headerlink" title="前置知识"></a>前置知识</h2><h3 id="关于logger"><a href="#关于logger" class="headerlink" title="关于logger"></a>关于logger</h3><p>正经的项目都会针对自己的需求设计一个logger用来保存程序运行时的信息，可以用于程序数据分析或者debug。</p>
-<p>简单来说logger可以看作是一个稍微复杂的printf。它会包含一个前端，用于将你要输出的信息进行格式化，比如：</p>
-<ul>
-<li>信息产生的位置（文件名、函数名、行号、线程id）</li>
-<li>信息的类型（error, msg, …）</li>
-</ul>
-<p>请查看知乎上的<a class="link"   href="https://www.zhihu.com/question/293863155?sort=created" >关于c++ logger的讨论 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a>，这个问题下有一些人回答了logger的作用，怎么合理的设计一个logger等问题。</p>
-<p><a href="assets/log.h">log.h</a>文件中给了一个logger的示例，使用c&#x2F;c++的宏定义 &amp; printf实现一个最简单的logger。先试着用一下这个log.h。</p>
-<h3 id="关于c-单例模式"><a href="#关于c-单例模式" class="headerlink" title="关于c++单例模式"></a>关于c++单例模式</h3><p>单例模式的意思就是让某一个类只能实例化唯一的一个对象，比如说这里的logger，一个程序只会有一个logger，所以我们会把logger这个类设计成单例，程序运行期间所有的信息都会交给这个唯一的logger进行保存。</p>
-<p><a class="link"   href="https://zhuanlan.zhihu.com/p/62014096" >单例模式的实现方式 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a>，只需要查看其中的实现四即可。</p>
-<h2 id="代码解析"><a href="#代码解析" class="headerlink" title="代码解析"></a>代码解析</h2><h3 id="log-h"><a href="#log-h" class="headerlink" title="log.h"></a>log.h</h3><p><a class="link"   href="https://gitee.com/tju-rm-cv/tjurm-2022/blob/master/include/logger/log.h" >代码地址 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
-<p>该头文件用宏定义提供了一些logger相关的api，我们在程序中可以使用这些api来调用logger。主要使用以下api：</p>
-<ul>
-<li><p>ERROR(format, …)：打印错误信息，会显示为红色，e.g.</p>
-  <div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">ERROR(&quot;parameter &#x27;a&#x27; should greater than zero, received &#123;&#125;&quot;, a)</span><br></pre></td></tr></table></figure></div>
-</li>
-<li><p>MSG(format, …)：打印普通信息，会显示为蓝色</p>
-</li>
-<li><p>TRACE(code, tag)：打印一段程序的运行时间，以ms为单位，tag用来标注这段程序的含义，e.g.</p>
-  <div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">// 逗号前面是代码段，逗号后面是tag</span><br><span class="line">TRACE(</span><br><span class="line">    for (int i = 0; i &lt; 1000; i++)</span><br><span class="line">    &#123;</span><br><span class="line">        // do something ...</span><br><span class="line">    &#125;,</span><br><span class="line">    &quot;loop&quot;</span><br><span class="line">)</span><br></pre></td></tr></table></figure></div>
-</li>
-<li><p>…</p>
-</li>
-</ul>
-<h3 id="log-formatter-h-amp-log-type-h"><a href="#log-formatter-h-amp-log-type-h" class="headerlink" title="log_formatter.h &amp; log_type.h"></a>log_formatter.h &amp; log_type.h</h3><p><a class="link"   href="https://gitee.com/tju-rm-cv/tjurm-2022/blob/master/include/logger/log_formatter.h" >代码地址(log_formatter.h) <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
-<p><a class="link"   href="https://gitee.com/tju-rm-cv/tjurm-2022/blob/master/include/logger/log_type.h" >代码地址(log_type.h) <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
-<p>该头文件实现了一个LogFormatter类，提供一个format函数对程序信息进行格式化，很简单，不讲。</p>
-<h3 id="logger-h"><a href="#logger-h" class="headerlink" title="logger.h"></a>logger.h</h3><p><a class="link"   href="https://gitee.com/tju-rm-cv/tjurm-2022/blob/master/include/logger/logger.h" >代码地址 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
-<p>使用RMLogger类实现了logger。关键代码如下：</p>
-<ul>
-<li><code>get_logger()</code><br>  获取唯一的logger对象的指针，使用的是最简单的单例模式。</li>
-<li><code>_sync_print()</code><br>  实际上就是加了互斥锁的fmt::print，防止多个线程同时使用logger打印时输出结果混乱。</li>
-<li><code>_sync_flush()</code><br>  与_sync_print()类似，只不过是把信息输出到文件。</li>
-<li><code>save_log()</code><br>  保存日志信息，会在log.h中被调用。使用了可变参数模板用于接收任意多个参数，自行百度学习。</li>
-</ul>
-<p>还有一些跟fmt库相关的代码，让fmt库能够格式化自定义的类型，e.g.</p>
-<div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">cv::Point3f p = &#123;1., 2., 3.&#125;;</span><br><span class="line">fmt::print(&quot;velocity = &#123;&#125;\n&quot;, p);</span><br></pre></td></tr></table></figure></div>
-
-<p>如果不添加以下代码的话：</p>
-<div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">// format 3rd types</span><br><span class="line">template&lt;&gt; struct fmt::formatter&lt;cv::Point3f&gt; &#123;</span><br><span class="line">    char presentation = &#x27;f&#x27;;</span><br><span class="line">    ...</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></div>
-
-<p>fmt::print是会报错的，因为它不知道该怎么格式化cv::Point3f。如何编写这个自定义格式化代码：<a class="link"   href="https://zhuanlan.zhihu.com/p/601744791" >https://zhuanlan.zhihu.com/p/601744791 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
 ]]></content>
       <categories>
         <category>RM2022</category>
@@ -549,6 +488,67 @@
 <p>也就是把子类指针转化为父类指针，后续代码就只需要使用video_interface的read接口即可，这样做的好处就是我们要改变视频流时，只需要改初始化，不需要修改后续的读取代码。</p>
 <p>同时，如果后续需要添加新的相机的话，也只需要继承这个类就行，不用更改别的代码。</p>
 <p>相机类的代码大部分都是参考的大恒SDK文档，而且已经能用了，等大家需要修改的时候再看文档也行。</p>
+]]></content>
+      <categories>
+        <category>RM2022</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>logger模块</title>
+    <url>/2023/02/28/module_logger/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="模块总览"><a href="#模块总览" class="headerlink" title="模块总览"></a>模块总览</h2><p>该模块基于c++第三方库<code>fmt</code>实现了一个logger用于保存程序运行时的一些信息。支持以下功能：</p>
+<ul>
+<li>提供3种级别的log：<ul>
+<li><strong>MSG</strong>：输出一些基本的信息，例如当前目标的数量，解算出的世界坐标</li>
+<li><strong>WARINING</strong>：输出一些警告信息，例如串口收到的数据存在异常</li>
+<li><strong>ERROR</strong>：输出一些错误信息，例如相机读取失败</li>
+</ul>
+</li>
+<li>能够在log信息输出到文件 or 终端。</li>
+<li>能够保存图片到本地（未实际使用）</li>
+</ul>
+<h2 id="前置知识"><a href="#前置知识" class="headerlink" title="前置知识"></a>前置知识</h2><h3 id="关于logger"><a href="#关于logger" class="headerlink" title="关于logger"></a>关于logger</h3><p>正经的项目都会针对自己的需求设计一个logger用来保存程序运行时的信息，可以用于程序数据分析或者debug。</p>
+<p>简单来说logger可以看作是一个稍微复杂的printf。它会包含一个前端，用于将你要输出的信息进行格式化，比如：</p>
+<ul>
+<li>信息产生的位置（文件名、函数名、行号、线程id）</li>
+<li>信息的类型（error, msg, …）</li>
+</ul>
+<p>请查看知乎上的<a class="link"   href="https://www.zhihu.com/question/293863155?sort=created" >关于c++ logger的讨论 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a>，这个问题下有一些人回答了logger的作用，怎么合理的设计一个logger等问题。</p>
+<p><a href="assets/log.h">log.h</a>文件中给了一个logger的示例，使用c&#x2F;c++的宏定义 &amp; printf实现一个最简单的logger。先试着用一下这个log.h。</p>
+<h3 id="关于c-单例模式"><a href="#关于c-单例模式" class="headerlink" title="关于c++单例模式"></a>关于c++单例模式</h3><p>单例模式的意思就是让某一个类只能实例化唯一的一个对象，比如说这里的logger，一个程序只会有一个logger，所以我们会把logger这个类设计成单例，程序运行期间所有的信息都会交给这个唯一的logger进行保存。</p>
+<p><a class="link"   href="https://zhuanlan.zhihu.com/p/62014096" >单例模式的实现方式 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a>，只需要查看其中的实现四即可。</p>
+<h2 id="代码解析"><a href="#代码解析" class="headerlink" title="代码解析"></a>代码解析</h2><h3 id="log-h"><a href="#log-h" class="headerlink" title="log.h"></a>log.h</h3><p><a class="link"   href="https://gitee.com/tju-rm-cv/tjurm-2022/blob/master/include/logger/log.h" >代码地址 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
+<p>该头文件用宏定义提供了一些logger相关的api，我们在程序中可以使用这些api来调用logger。主要使用以下api：</p>
+<ul>
+<li><p>ERROR(format, …)：打印错误信息，会显示为红色，e.g.</p>
+  <div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">ERROR(&quot;parameter &#x27;a&#x27; should greater than zero, received &#123;&#125;&quot;, a)</span><br></pre></td></tr></table></figure></div>
+</li>
+<li><p>MSG(format, …)：打印普通信息，会显示为蓝色</p>
+</li>
+<li><p>TRACE(code, tag)：打印一段程序的运行时间，以ms为单位，tag用来标注这段程序的含义，e.g.</p>
+  <div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">// 逗号前面是代码段，逗号后面是tag</span><br><span class="line">TRACE(</span><br><span class="line">    for (int i = 0; i &lt; 1000; i++)</span><br><span class="line">    &#123;</span><br><span class="line">        // do something ...</span><br><span class="line">    &#125;,</span><br><span class="line">    &quot;loop&quot;</span><br><span class="line">)</span><br></pre></td></tr></table></figure></div>
+</li>
+<li><p>…</p>
+</li>
+</ul>
+<h3 id="log-formatter-h-amp-log-type-h"><a href="#log-formatter-h-amp-log-type-h" class="headerlink" title="log_formatter.h &amp; log_type.h"></a>log_formatter.h &amp; log_type.h</h3><p><a class="link"   href="https://gitee.com/tju-rm-cv/tjurm-2022/blob/master/include/logger/log_formatter.h" >代码地址(log_formatter.h) <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
+<p><a class="link"   href="https://gitee.com/tju-rm-cv/tjurm-2022/blob/master/include/logger/log_type.h" >代码地址(log_type.h) <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
+<p>该头文件实现了一个LogFormatter类，提供一个format函数对程序信息进行格式化，很简单，不讲。</p>
+<h3 id="logger-h"><a href="#logger-h" class="headerlink" title="logger.h"></a>logger.h</h3><p><a class="link"   href="https://gitee.com/tju-rm-cv/tjurm-2022/blob/master/include/logger/logger.h" >代码地址 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
+<p>使用RMLogger类实现了logger。关键代码如下：</p>
+<ul>
+<li><code>get_logger()</code><br>  获取唯一的logger对象的指针，使用的是最简单的单例模式。</li>
+<li><code>_sync_print()</code><br>  实际上就是加了互斥锁的fmt::print，防止多个线程同时使用logger打印时输出结果混乱。</li>
+<li><code>_sync_flush()</code><br>  与_sync_print()类似，只不过是把信息输出到文件。</li>
+<li><code>save_log()</code><br>  保存日志信息，会在log.h中被调用。使用了可变参数模板用于接收任意多个参数，自行百度学习。</li>
+</ul>
+<p>还有一些跟fmt库相关的代码，让fmt库能够格式化自定义的类型，e.g.</p>
+<div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">cv::Point3f p = &#123;1., 2., 3.&#125;;</span><br><span class="line">fmt::print(&quot;velocity = &#123;&#125;\n&quot;, p);</span><br></pre></td></tr></table></figure></div>
+
+<p>如果不添加以下代码的话：</p>
+<div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">// format 3rd types</span><br><span class="line">template&lt;&gt; struct fmt::formatter&lt;cv::Point3f&gt; &#123;</span><br><span class="line">    char presentation = &#x27;f&#x27;;</span><br><span class="line">    ...</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></div>
+
+<p>fmt::print是会报错的，因为它不知道该怎么格式化cv::Point3f。如何编写这个自定义格式化代码：<a class="link"   href="https://zhuanlan.zhihu.com/p/601744791" >https://zhuanlan.zhihu.com/p/601744791 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
 ]]></content>
       <categories>
         <category>RM2022</category>
