@@ -37,8 +37,31 @@
   &lt;div class=&#34;highlight-container&#34; data-rel=&#34;Php&#34;&gt;&lt;figure class=&#34;iseeu highlight php&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;9&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;meta&#34;&gt;&amp;lt;?php&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;title function_ invoke__&#34;&gt;var_dump&lt;/span&gt;(&lt;span class=&#34;string&#34;&gt;&amp;quot;admin&amp;quot;&lt;/span&gt;==&lt;span class=&#34;number&#34;&gt;0&lt;/span&gt;);  &lt;span class=&#34;comment&#34;&gt;//true&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;title function_ invoke__&#34;&gt;var_dump&lt;/span&gt;(&lt;span class=&#34;string&#34;&gt;&amp;quot;1admin&amp;quot;&lt;/span&gt;==&lt;span class=&#34;number&#34;&gt;1&lt;/span&gt;); &lt;span class=&#34;comment&#34;&gt;//true&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;title function_ invoke__&#34;&gt;var_dump&lt;/span&gt;(&lt;span class=&#34;string&#34;&gt;&amp;quot;2admin&amp;quot;&lt;/span&gt;==&lt;span class=&#34;number&#34;&gt;2&lt;/span&gt;); &lt;span class=&#34;comment&#34;&gt;//true&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;title function_ invoke__&#34;&gt;var_dump&lt;/span&gt;(&lt;span class=&#34;string&#34;&gt;&amp;quot;ad1min&amp;quot;&lt;/span&gt;==&lt;span class=&#34;number&#34;&gt;1&lt;/span&gt;); &lt;span class=&#34;comment&#34;&gt;//false&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;title function_ invoke__&#34;&gt;var_dump&lt;/span&gt;(&lt;span class=&#34;string&#34;&gt;&amp;quot;admin1&amp;quot;&lt;/span&gt;==&lt;span class=&#34;number&#34;&gt;1&lt;/span&gt;); &lt;span class=&#34;comment&#34;&gt;//false&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;title function_ invoke__&#34;&gt;var_dump&lt;/span&gt;(&lt;span class=&#34;string&#34;&gt;&amp;quot;admin1&amp;quot;&lt;/span&gt;==&lt;span class=&#34;number&#34;&gt;0&lt;/span&gt;); &lt;span class=&#34;comment&#34;&gt;//true&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;title function_ invoke__&#34;&gt;var_dump&lt;/span&gt;(&lt;span class=&#34;number&#34;&gt;0e1234&lt;/span&gt; == &lt;span class=&#34;number&#34;&gt;0e56789&lt;/span&gt;); &lt;span class=&#34;comment&#34;&gt;//true &lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;meta&#34;&gt;?&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/div&gt;
 &lt;/li&gt;
 &lt;li&gt;&lt;p&gt;第三个条件：要求get到的num不是数字类型&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;这个很好说，只要不是纯数字就可以了&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;第一个条件：让&lt;code&gt;$&amp;#123;num&amp;#125;!=2&lt;/code&gt;返回1&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;背景知识：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;eval()的返回值一般是&lt;code&gt;NULL&lt;/code&gt;，除非执行的表达式是&lt;code&gt;return&lt;/code&gt;，这种情况下，eval()的返回值就是return的值&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;php中的运算符优先级（跟Cpp基本一样哈）中比较运算的优先级大于双目位运算&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;根据条件3，我们输入的一定不是一个纯数字，所以要满足第一个条件的话，我们就必须考虑如php里面运算符的优先级和结合性，以便于能够成功输出&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;方法一：&lt;code&gt;num=0|1&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;方法二：&lt;code&gt;num=0^0&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;…知道了思路，方案肯定是有非常多的，在此就不列举了&lt;/p&gt;
  ]]></description>
         </item>
         <item>
@@ -52,253 +75,6 @@
 &lt;li&gt;&lt;code&gt;分享一些有趣的事&lt;/code&gt;&lt;/li&gt;
 &lt;li&gt;……&lt;/li&gt;
 &lt;/ul&gt;
- ]]></description>
-        </item>
-        <item>
-            <guid isPermalink="true">https://renshengji.github.io/2023/02/28/module_3rd/</guid>
-            <title>3rd模块</title>
-            <link>https://renshengji.github.io/2023/02/28/module_3rd/</link>
-            <pubDate>Tue, 28 Feb 2023 22:32:45 +0800</pubDate>
-            <description><![CDATA[ &lt;link rel=&#34;stylesheet&#34; class=&#34;aplayer-secondary-style-marker&#34; href=&#34;/assets/css/APlayer.min.css&#34;&gt;&lt;script src=&#34;/assets/js/APlayer.min.js&#34; class=&#34;aplayer-secondary-script-marker&#34;&gt;&lt;/script&gt;&lt;h2 id=&#34;模块总览&#34;&gt;&lt;a href=&#34;#模块总览&#34; class=&#34;headerlink&#34; title=&#34;模块总览&#34;&gt;&lt;/a&gt;模块总览&lt;/h2&gt;&lt;p&gt;该模块用于保存本项目用到的两个第三方库的源码：&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;fmt&lt;/li&gt;
-&lt;li&gt;nlohmann json&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;在编译本项目时，除了编译与自瞄相关的代码，还会编译这两个第三方库，并将三者链接。&lt;/p&gt;
-&lt;h2 id=&#34;fmt库简介&#34;&gt;&lt;a href=&#34;#fmt库简介&#34; class=&#34;headerlink&#34; title=&#34;fmt库简介&#34;&gt;&lt;/a&gt;fmt库简介&lt;/h2&gt;&lt;p&gt;fmt库为c++提供了一种类似python的输出格式化方法，比cout与printf更加的方便与安全。&lt;/p&gt;
-&lt;p&gt;具体用法详见&lt;code&gt;3rd/fmt&lt;/code&gt;中的&lt;a class=&#34;link&#34;   href=&#34;https://gitee.com/tju-rm-cv/tjurm-2022/blob/master/3rd/fmt/README.rst&#34; &gt;readme文件 &lt;i class=&#34;fa-regular fa-arrow-up-right-from-square fa-sm&#34;&gt;&lt;/i&gt;&lt;/a&gt;。&lt;/p&gt;
-&lt;p&gt;本项目使用这个库来实现logger模块。&lt;/p&gt;
-&lt;h2 id=&#34;nlohmann-json库简介&#34;&gt;&lt;a href=&#34;#nlohmann-json库简介&#34; class=&#34;headerlink&#34; title=&#34;nlohmann json库简介&#34;&gt;&lt;/a&gt;nlohmann json库简介&lt;/h2&gt;&lt;p&gt;nlohmann json库为c++提供了读取json文件的功能，现有的c++ json库很多，nlohmann只是一种，不过它的速度跟易用性都是比较优秀的。&lt;/p&gt;
-&lt;p&gt;具体用法详见&lt;code&gt;3rd/json&lt;/code&gt;中的&lt;a class=&#34;link&#34;   href=&#34;https://gitee.com/tju-rm-cv/tjurm-2022/blob/master/3rd/json/README.md&#34; &gt;readme文件 &lt;i class=&#34;fa-regular fa-arrow-up-right-from-square fa-sm&#34;&gt;&lt;/i&gt;&lt;/a&gt;。&lt;/p&gt;
-&lt;p&gt;本项目将程序运行时的各种参数保存在&lt;a class=&#34;link&#34;   href=&#34;https://gitee.com/tju-rm-cv/tjurm-2022/blob/master/assets/params.json&#34; &gt;json文件 &lt;i class=&#34;fa-regular fa-arrow-up-right-from-square fa-sm&#34;&gt;&lt;/i&gt;&lt;/a&gt;中，并使用这个库来读取json文件。&lt;/p&gt;
- ]]></description>
-        </item>
-        <item>
-            <guid isPermalink="true">https://renshengji.github.io/2023/02/28/module_assets/</guid>
-            <title>assets模块</title>
-            <link>https://renshengji.github.io/2023/02/28/module_assets/</link>
-            <pubDate>Tue, 28 Feb 2023 22:32:45 +0800</pubDate>
-            <description><![CDATA[ &lt;link rel=&#34;stylesheet&#34; class=&#34;aplayer-secondary-style-marker&#34; href=&#34;/assets/css/APlayer.min.css&#34;&gt;&lt;script src=&#34;/assets/js/APlayer.min.js&#34; class=&#34;aplayer-secondary-script-marker&#34;&gt;&lt;/script&gt;&lt;h2 id=&#34;模块总览&#34;&gt;&lt;a href=&#34;#模块总览&#34; class=&#34;headerlink&#34; title=&#34;模块总览&#34;&gt;&lt;/a&gt;模块总览&lt;/h2&gt;&lt;p&gt;该模块用于保存一些与程序无关的文件。&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;model_(bin|aug).onnx&lt;br&gt;  训练好的装甲板分类器&lt;/li&gt;
-&lt;li&gt;noclass.onnx&lt;br&gt;  训练好的目标检测器&lt;/li&gt;
-&lt;li&gt;test.onnx&lt;br&gt;  最早的目标检测器，已弃用&lt;/li&gt;
-&lt;li&gt;params.json&lt;br&gt;  程序运行时的参数配置文件&lt;/li&gt;
-&lt;li&gt;test-light.png&lt;br&gt;  一张没啥用的测试图片&lt;/li&gt;
-&lt;/ul&gt;
- ]]></description>
-        </item>
-        <item>
-            <guid isPermalink="true">https://renshengji.github.io/2023/02/28/module_detector/</guid>
-            <title>detector模块</title>
-            <link>https://renshengji.github.io/2023/02/28/module_detector/</link>
-            <pubDate>Tue, 28 Feb 2023 22:32:45 +0800</pubDate>
-            <description><![CDATA[ &lt;link rel=&#34;stylesheet&#34; class=&#34;aplayer-secondary-style-marker&#34; href=&#34;/assets/css/APlayer.min.css&#34;&gt;&lt;script src=&#34;/assets/js/APlayer.min.js&#34; class=&#34;aplayer-secondary-script-marker&#34;&gt;&lt;/script&gt;&lt;h2 id=&#34;模块总览&#34;&gt;&lt;a href=&#34;#模块总览&#34; class=&#34;headerlink&#34; title=&#34;模块总览&#34;&gt;&lt;/a&gt;模块总览&lt;/h2&gt;&lt;p&gt;该模块实现了目标检测分类器的加载以及前向传播过程，并且提供了两种实现方式：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;cv::dnn模块&lt;/li&gt;
-&lt;li&gt;nvidia推理框架TensorRT&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;其中cv::dnn版本仅依赖OpenCV，但是前向传播的速度慢，因此用于在本机进行调试；TensorRT安装繁琐，但可以加速前向传播的计算速度，因此在minipc上使用。&lt;/p&gt;
-&lt;p&gt;两种版本可以通过宏定义切换。&lt;/p&gt;
-&lt;h2 id=&#34;前置知识&#34;&gt;&lt;a href=&#34;#前置知识&#34; class=&#34;headerlink&#34; title=&#34;前置知识&#34;&gt;&lt;/a&gt;前置知识&lt;/h2&gt;&lt;h3 id=&#34;cuda&#34;&gt;&lt;a href=&#34;#cuda&#34; class=&#34;headerlink&#34; title=&#34;cuda&#34;&gt;&lt;/a&gt;cuda&lt;/h3&gt;&lt;p&gt;cuda可以看作是第三方库，可以用于控制nvidia显卡。&lt;/p&gt;
-&lt;p&gt;在使用cuda时，我们会把内存分成两种，一种是cpu内存，一种是gpu内存（显存），cuda可以完成：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;申请、释放gpu内存：cudaMalloc，cudaFree&lt;/li&gt;
-&lt;li&gt;在cpu内存与gpu内存之间拷贝数据；cudaMemcpy&lt;/li&gt;
-&lt;li&gt;让gpu执行核函数进行计算：有兴趣自行学习。&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;一个典型的cuda程序的流程：&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;在cpu上把数据准备好&lt;/li&gt;
-&lt;li&gt;把数据从cpu拷贝到gpu&lt;/li&gt;
-&lt;li&gt;调用核函数进行计算&lt;/li&gt;
-&lt;li&gt;把计算结果拷贝回cpu&lt;/li&gt;
-&lt;/ol&gt;
-&lt;h3 id=&#34;TensorRT&#34;&gt;&lt;a href=&#34;#TensorRT&#34; class=&#34;headerlink&#34; title=&#34;TensorRT&#34;&gt;&lt;/a&gt;TensorRT&lt;/h3&gt;&lt;p&gt;nvidia专门为深度学习编写的神经网络推理框架，可以优化网络的前向传播速度。它首先会读取.onnx里的网络，然后对网络的计算图进行优化，优化后的计算图我们可以保存下来，变成.engine文件。&lt;/p&gt;
-&lt;p&gt;在使用时，我们只需要负责数据的拷贝，前向传播计算由TensorRT来完成。&lt;/p&gt;
-&lt;h2 id=&#34;代码解析&#34;&gt;&lt;a href=&#34;#代码解析&#34; class=&#34;headerlink&#34; title=&#34;代码解析&#34;&gt;&lt;/a&gt;代码解析&lt;/h2&gt;&lt;h3 id=&#34;common-h&#34;&gt;&lt;a href=&#34;#common-h&#34; class=&#34;headerlink&#34; title=&#34;common.h&#34;&gt;&lt;/a&gt;common.h&lt;/h3&gt;&lt;p&gt;没什么用，想删但是懒得删。&lt;/p&gt;
-&lt;h3 id=&#34;logging-h&#34;&gt;&lt;a href=&#34;#logging-h&#34; class=&#34;headerlink&#34; title=&#34;logging.h&#34;&gt;&lt;/a&gt;logging.h&lt;/h3&gt;&lt;p&gt;nvidia提供的，与TensorRT相关的头文件，不用看，但是必须要有。&lt;/p&gt;
-&lt;h3 id=&#34;utils-h&#34;&gt;&lt;a href=&#34;#utils-h&#34; class=&#34;headerlink&#34; title=&#34;utils.h&#34;&gt;&lt;/a&gt;utils.h&lt;/h3&gt;&lt;p&gt;提供了一些detector的辅助函数，比如说解析网络输出的结果，nms等。不讲。&lt;/p&gt;
-&lt;h3 id=&#34;dnn-h&#34;&gt;&lt;a href=&#34;#dnn-h&#34; class=&#34;headerlink&#34; title=&#34;dnn.h&#34;&gt;&lt;/a&gt;dnn.h&lt;/h3&gt;&lt;p&gt;让大家写过，不讲。&lt;/p&gt;
-&lt;h3 id=&#34;trt-h-amp-trt-cc&#34;&gt;&lt;a href=&#34;#trt-h-amp-trt-cc&#34; class=&#34;headerlink&#34; title=&#34;trt.h &amp;amp; trt.cc&#34;&gt;&lt;/a&gt;trt.h &amp;amp; trt.cc&lt;/h3&gt;&lt;p&gt;使用TensorRT完成前向传播。TRT类各个成员函数的功能如下：&lt;/p&gt;
-&lt;h4 id=&#34;load-from-onnx-…&#34;&gt;&lt;a href=&#34;#load-from-onnx-…&#34; class=&#34;headerlink&#34; title=&#34;load_from_onnx(…)&#34;&gt;&lt;/a&gt;load_from_onnx(…)&lt;/h4&gt;&lt;p&gt;加载onnx文件并进行计算图的优化，优化这一步很耗时，大概10~20min。&lt;/p&gt;
-&lt;h4 id=&#34;save-engine-…&#34;&gt;&lt;a href=&#34;#save-engine-…&#34; class=&#34;headerlink&#34; title=&#34;save_engine(…)&#34;&gt;&lt;/a&gt;save_engine(…)&lt;/h4&gt;&lt;p&gt;将优化后的计算图保存到磁盘中，变成.engine文件。&lt;/p&gt;
-&lt;h4 id=&#34;load-from-cache-…&#34;&gt;&lt;a href=&#34;#load-from-cache-…&#34; class=&#34;headerlink&#34; title=&#34;load_from_cache(…)&#34;&gt;&lt;/a&gt;load_from_cache(…)&lt;/h4&gt;&lt;p&gt;直接加载.engine文件。&lt;/p&gt;
-&lt;h4 id=&#34;bind&#34;&gt;&lt;a href=&#34;#bind&#34; class=&#34;headerlink&#34; title=&#34;bind()&#34;&gt;&lt;/a&gt;bind()&lt;/h4&gt;&lt;p&gt;根据计算图的信息（输出tensor的个数，大小）来分配cpu内存与gpu内存。&lt;/p&gt;
-&lt;h4 id=&#34;detect&#34;&gt;&lt;a href=&#34;#detect&#34; class=&#34;headerlink&#34; title=&#34;detect()&#34;&gt;&lt;/a&gt;detect()&lt;/h4&gt;&lt;p&gt;看注释。&lt;/p&gt;
- ]]></description>
-        </item>
-        <item>
-            <guid isPermalink="true">https://renshengji.github.io/2023/02/28/module_logger/</guid>
-            <title>logger模块</title>
-            <link>https://renshengji.github.io/2023/02/28/module_logger/</link>
-            <pubDate>Tue, 28 Feb 2023 22:32:45 +0800</pubDate>
-            <description><![CDATA[ &lt;link rel=&#34;stylesheet&#34; class=&#34;aplayer-secondary-style-marker&#34; href=&#34;/assets/css/APlayer.min.css&#34;&gt;&lt;script src=&#34;/assets/js/APlayer.min.js&#34; class=&#34;aplayer-secondary-script-marker&#34;&gt;&lt;/script&gt;&lt;h2 id=&#34;模块总览&#34;&gt;&lt;a href=&#34;#模块总览&#34; class=&#34;headerlink&#34; title=&#34;模块总览&#34;&gt;&lt;/a&gt;模块总览&lt;/h2&gt;&lt;p&gt;该模块基于c++第三方库&lt;code&gt;fmt&lt;/code&gt;实现了一个logger用于保存程序运行时的一些信息。支持以下功能：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;提供3种级别的log：&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;MSG&lt;/strong&gt;：输出一些基本的信息，例如当前目标的数量，解算出的世界坐标&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;WARINING&lt;/strong&gt;：输出一些警告信息，例如串口收到的数据存在异常&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;ERROR&lt;/strong&gt;：输出一些错误信息，例如相机读取失败&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;能够在log信息输出到文件 or 终端。&lt;/li&gt;
-&lt;li&gt;能够保存图片到本地（未实际使用）&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&#34;前置知识&#34;&gt;&lt;a href=&#34;#前置知识&#34; class=&#34;headerlink&#34; title=&#34;前置知识&#34;&gt;&lt;/a&gt;前置知识&lt;/h2&gt;&lt;h3 id=&#34;关于logger&#34;&gt;&lt;a href=&#34;#关于logger&#34; class=&#34;headerlink&#34; title=&#34;关于logger&#34;&gt;&lt;/a&gt;关于logger&lt;/h3&gt;&lt;p&gt;正经的项目都会针对自己的需求设计一个logger用来保存程序运行时的信息，可以用于程序数据分析或者debug。&lt;/p&gt;
-&lt;p&gt;简单来说logger可以看作是一个稍微复杂的printf。它会包含一个前端，用于将你要输出的信息进行格式化，比如：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;信息产生的位置（文件名、函数名、行号、线程id）&lt;/li&gt;
-&lt;li&gt;信息的类型（error, msg, …）&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;请查看知乎上的&lt;a class=&#34;link&#34;   href=&#34;https://www.zhihu.com/question/293863155?sort=created&#34; &gt;关于c++ logger的讨论 &lt;i class=&#34;fa-regular fa-arrow-up-right-from-square fa-sm&#34;&gt;&lt;/i&gt;&lt;/a&gt;，这个问题下有一些人回答了logger的作用，怎么合理的设计一个logger等问题。&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;assets/log.h&#34;&gt;log.h&lt;/a&gt;文件中给了一个logger的示例，使用c&amp;#x2F;c++的宏定义 &amp;amp; printf实现一个最简单的logger。先试着用一下这个log.h。&lt;/p&gt;
-&lt;h3 id=&#34;关于c-单例模式&#34;&gt;&lt;a href=&#34;#关于c-单例模式&#34; class=&#34;headerlink&#34; title=&#34;关于c++单例模式&#34;&gt;&lt;/a&gt;关于c++单例模式&lt;/h3&gt;&lt;p&gt;单例模式的意思就是让某一个类只能实例化唯一的一个对象，比如说这里的logger，一个程序只会有一个logger，所以我们会把logger这个类设计成单例，程序运行期间所有的信息都会交给这个唯一的logger进行保存。&lt;/p&gt;
-&lt;p&gt;&lt;a class=&#34;link&#34;   href=&#34;https://zhuanlan.zhihu.com/p/62014096&#34; &gt;单例模式的实现方式 &lt;i class=&#34;fa-regular fa-arrow-up-right-from-square fa-sm&#34;&gt;&lt;/i&gt;&lt;/a&gt;，只需要查看其中的实现四即可。&lt;/p&gt;
-&lt;h2 id=&#34;代码解析&#34;&gt;&lt;a href=&#34;#代码解析&#34; class=&#34;headerlink&#34; title=&#34;代码解析&#34;&gt;&lt;/a&gt;代码解析&lt;/h2&gt;&lt;h3 id=&#34;log-h&#34;&gt;&lt;a href=&#34;#log-h&#34; class=&#34;headerlink&#34; title=&#34;log.h&#34;&gt;&lt;/a&gt;log.h&lt;/h3&gt;&lt;p&gt;&lt;a class=&#34;link&#34;   href=&#34;https://gitee.com/tju-rm-cv/tjurm-2022/blob/master/include/logger/log.h&#34; &gt;代码地址 &lt;i class=&#34;fa-regular fa-arrow-up-right-from-square fa-sm&#34;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;该头文件用宏定义提供了一些logger相关的api，我们在程序中可以使用这些api来调用logger。主要使用以下api：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;ERROR(format, …)：打印错误信息，会显示为红色，e.g.&lt;/p&gt;
-  &lt;div class=&#34;highlight-container&#34; data-rel=&#34;Plaintext&#34;&gt;&lt;figure class=&#34;iseeu highlight plaintext&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;ERROR(&amp;quot;parameter &amp;#x27;a&amp;#x27; should greater than zero, received &amp;#123;&amp;#125;&amp;quot;, a)&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/div&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;MSG(format, …)：打印普通信息，会显示为蓝色&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;TRACE(code, tag)：打印一段程序的运行时间，以ms为单位，tag用来标注这段程序的含义，e.g.&lt;/p&gt;
-  &lt;div class=&#34;highlight-container&#34; data-rel=&#34;Plaintext&#34;&gt;&lt;figure class=&#34;iseeu highlight plaintext&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;8&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;// 逗号前面是代码段，逗号后面是tag&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;TRACE(&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    for (int i = 0; i &amp;lt; 1000; i++)&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;        // do something ...&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    &amp;#125;,&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    &amp;quot;loop&amp;quot;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;)&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/div&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;…&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3 id=&#34;log-formatter-h-amp-log-type-h&#34;&gt;&lt;a href=&#34;#log-formatter-h-amp-log-type-h&#34; class=&#34;headerlink&#34; title=&#34;log_formatter.h &amp;amp; log_type.h&#34;&gt;&lt;/a&gt;log_formatter.h &amp;amp; log_type.h&lt;/h3&gt;&lt;p&gt;&lt;a class=&#34;link&#34;   href=&#34;https://gitee.com/tju-rm-cv/tjurm-2022/blob/master/include/logger/log_formatter.h&#34; &gt;代码地址(log_formatter.h) &lt;i class=&#34;fa-regular fa-arrow-up-right-from-square fa-sm&#34;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;a class=&#34;link&#34;   href=&#34;https://gitee.com/tju-rm-cv/tjurm-2022/blob/master/include/logger/log_type.h&#34; &gt;代码地址(log_type.h) &lt;i class=&#34;fa-regular fa-arrow-up-right-from-square fa-sm&#34;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;该头文件实现了一个LogFormatter类，提供一个format函数对程序信息进行格式化，很简单，不讲。&lt;/p&gt;
-&lt;h3 id=&#34;logger-h&#34;&gt;&lt;a href=&#34;#logger-h&#34; class=&#34;headerlink&#34; title=&#34;logger.h&#34;&gt;&lt;/a&gt;logger.h&lt;/h3&gt;&lt;p&gt;&lt;a class=&#34;link&#34;   href=&#34;https://gitee.com/tju-rm-cv/tjurm-2022/blob/master/include/logger/logger.h&#34; &gt;代码地址 &lt;i class=&#34;fa-regular fa-arrow-up-right-from-square fa-sm&#34;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;使用RMLogger类实现了logger。关键代码如下：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;code&gt;get_logger()&lt;/code&gt;&lt;br&gt;  获取唯一的logger对象的指针，使用的是最简单的单例模式。&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;_sync_print()&lt;/code&gt;&lt;br&gt;  实际上就是加了互斥锁的fmt::print，防止多个线程同时使用logger打印时输出结果混乱。&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;_sync_flush()&lt;/code&gt;&lt;br&gt;  与_sync_print()类似，只不过是把信息输出到文件。&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;save_log()&lt;/code&gt;&lt;br&gt;  保存日志信息，会在log.h中被调用。使用了可变参数模板用于接收任意多个参数，自行百度学习。&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;还有一些跟fmt库相关的代码，让fmt库能够格式化自定义的类型，e.g.&lt;/p&gt;
-&lt;div class=&#34;highlight-container&#34; data-rel=&#34;Plaintext&#34;&gt;&lt;figure class=&#34;iseeu highlight plaintext&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;cv::Point3f p = &amp;#123;1., 2., 3.&amp;#125;;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;fmt::print(&amp;quot;velocity = &amp;#123;&amp;#125;\n&amp;quot;, p);&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/div&gt;
-
-&lt;p&gt;如果不添加以下代码的话：&lt;/p&gt;
-&lt;div class=&#34;highlight-container&#34; data-rel=&#34;Plaintext&#34;&gt;&lt;figure class=&#34;iseeu highlight plaintext&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;// format 3rd types&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;template&amp;lt;&amp;gt; struct fmt::formatter&amp;lt;cv::Point3f&amp;gt; &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    char presentation = &amp;#x27;f&amp;#x27;;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    ...&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&amp;#125;;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/div&gt;
-
-&lt;p&gt;fmt::print是会报错的，因为它不知道该怎么格式化cv::Point3f。如何编写这个自定义格式化代码：&lt;a class=&#34;link&#34;   href=&#34;https://zhuanlan.zhihu.com/p/601744791&#34; &gt;https://zhuanlan.zhihu.com/p/601744791 &lt;i class=&#34;fa-regular fa-arrow-up-right-from-square fa-sm&#34;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/p&gt;
- ]]></description>
-        </item>
-        <item>
-            <guid isPermalink="true">https://renshengji.github.io/2023/02/28/module_params/</guid>
-            <title>params模块</title>
-            <link>https://renshengji.github.io/2023/02/28/module_params/</link>
-            <pubDate>Tue, 28 Feb 2023 22:32:45 +0800</pubDate>
-            <description><![CDATA[ &lt;link rel=&#34;stylesheet&#34; class=&#34;aplayer-secondary-style-marker&#34; href=&#34;/assets/css/APlayer.min.css&#34;&gt;&lt;script src=&#34;/assets/js/APlayer.min.js&#34; class=&#34;aplayer-secondary-script-marker&#34;&gt;&lt;/script&gt;&lt;h2 id=&#34;模块总览&#34;&gt;&lt;a href=&#34;#模块总览&#34; class=&#34;headerlink&#34; title=&#34;模块总览&#34;&gt;&lt;/a&gt;模块总览&lt;/h2&gt;&lt;p&gt;该模块允许我们把自瞄算法的参数保存在配置文件（json）中，并在程序运行时把配置文件加载到内存中。&lt;/p&gt;
-&lt;p&gt;好处：每次修改算法参数后，不需要重新编译整个程序（耗时大概5min），所以能够减少程序编译耗时，提高代码调试速度。&lt;/p&gt;
-&lt;p&gt;一个例子：&lt;/p&gt;
-&lt;div class=&#34;highlight-container&#34; data-rel=&#34;Plaintext&#34;&gt;&lt;figure class=&#34;iseeu highlight plaintext&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;15&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;// json文件：&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;// &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;//     &amp;quot;key1&amp;quot;: 0.5,&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;//     &amp;quot;key2&amp;quot;: &amp;quot;string&amp;quot;,&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;//     &amp;quot;key3&amp;quot;: &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;//         &amp;quot;key1&amp;quot;: [1, 2, 3]&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;//     &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;// &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;// 代码：&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;ParamsManager&amp;amp; obj = *ParamsManager::GetInstance();&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;obj.load(&amp;quot;path/to/your/json/file&amp;quot;);&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;float x = obj[&amp;quot;key1];&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;std::string y = obj[&amp;quot;key2];&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;std::vector&amp;lt;int&amp;gt; z = obj[&amp;quot;key3][&amp;quot;key1];&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/div&gt;
-
-&lt;h2 id=&#34;代码解析&#34;&gt;&lt;a href=&#34;#代码解析&#34; class=&#34;headerlink&#34; title=&#34;代码解析&#34;&gt;&lt;/a&gt;代码解析&lt;/h2&gt;&lt;h3 id=&#34;params-manager-h&#34;&gt;&lt;a href=&#34;#params-manager-h&#34; class=&#34;headerlink&#34; title=&#34;params_manager.h&#34;&gt;&lt;/a&gt;params_manager.h&lt;/h3&gt;&lt;p&gt;&lt;a class=&#34;link&#34;   href=&#34;https://gitee.com/tju-rm-cv/tjurm-2022/blob/master/include/params/params_manager.h&#34; &gt;代码地址（头文件） &lt;i class=&#34;fa-regular fa-arrow-up-right-from-square fa-sm&#34;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;使用ParamsManager类来读取（写入）配置文件，这个类也使用了单例模式。关键代码如下：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;code&gt;nlohmann::json params_&lt;/code&gt;&lt;br&gt;  实际保存json文件的json对象。&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;load(const std::string&amp;amp;)&lt;/code&gt;&lt;br&gt;  加载json文件。&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;dump(const std::string&amp;amp;)&lt;/code&gt;&lt;br&gt;  将json对象保存成json文件。&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;nlohmann::json&amp;amp; operator[](const std::string&amp;amp;)&lt;/code&gt;&lt;br&gt;  提供[]操作符，输入一个字符串（key），返回一个json对象（value），由于json对象也支持[]操作符，所以用起来就跟python字典很像。&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;nlohmann json这个库实际上做的事情是：&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;&lt;p&gt;将json文件里的各个值读取成nlohmann::json对象&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;当我们将json对象赋值给某一个变量时，会触发一个函数：&lt;/p&gt;
- &lt;div class=&#34;highlight-container&#34; data-rel=&#34;Plaintext&#34;&gt;&lt;figure class=&#34;iseeu highlight plaintext&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;template&amp;lt;typename T&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;void from_json(nlohmann::json&amp;amp; j, T&amp;amp; p);&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/div&gt;
-
-&lt;p&gt; 与该函数类似的还有一个to_json，该函数的作用是将json对象转化为对应的变量类型，对于内置类型，例如float, string, vector等，库本身已经实现好了对应的from_json&amp;#x2F;to_json函数。&lt;/p&gt;
-&lt;p&gt; 而对于自定义类型，我们需要自行提供对应的转换函数。&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;以下这段代码就实现了cv::Mat与json的转换：&lt;/p&gt;
-&lt;div class=&#34;highlight-container&#34; data-rel=&#34;Plaintext&#34;&gt;&lt;figure class=&#34;iseeu highlight plaintext&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;// 我记得是一定要放在cv这个命名空间里的，否则找不到&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;namespace cv &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;void to_json(nlohmann::json&amp;amp; j, const cv::Mat&amp;amp; p);&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;void from_json(const nlohmann::json&amp;amp; j, cv::Mat&amp;amp; p);&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/div&gt;
-
-&lt;p&gt;代码实现很简单，就不讲了~&lt;/p&gt;
- ]]></description>
-        </item>
-        <item>
-            <guid isPermalink="true">https://renshengji.github.io/2023/02/28/module_robot_io/</guid>
-            <title>robot_io模块</title>
-            <link>https://renshengji.github.io/2023/02/28/module_robot_io/</link>
-            <pubDate>Tue, 28 Feb 2023 22:32:45 +0800</pubDate>
-            <description><![CDATA[ &lt;link rel=&#34;stylesheet&#34; class=&#34;aplayer-secondary-style-marker&#34; href=&#34;/assets/css/APlayer.min.css&#34;&gt;&lt;script src=&#34;/assets/js/APlayer.min.js&#34; class=&#34;aplayer-secondary-script-marker&#34;&gt;&lt;/script&gt;&lt;h2 id=&#34;模块总览&#34;&gt;&lt;a href=&#34;#模块总览&#34; class=&#34;headerlink&#34; title=&#34;模块总览&#34;&gt;&lt;/a&gt;模块总览&lt;/h2&gt;&lt;p&gt;自瞄程序需要在运行时读取相机的画面以及从串口读取机器人自身的信息，在目标定位完成后还要向串口写入机器人控制信息。&lt;/p&gt;
-&lt;p&gt;该模块对相机跟串口这两个硬件进行了封装，提供简单的api来实现以下功能：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;视频文件&amp;#x2F;相机设备的读取&lt;/li&gt;
-&lt;li&gt;串口信息的读取&amp;#x2F;写入&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&#34;前置知识&#34;&gt;&lt;a href=&#34;#前置知识&#34; class=&#34;headerlink&#34; title=&#34;前置知识&#34;&gt;&lt;/a&gt;前置知识&lt;/h2&gt;&lt;h3 id=&#34;串口&#34;&gt;&lt;a href=&#34;#串口&#34; class=&#34;headerlink&#34; title=&#34;串口&#34;&gt;&lt;/a&gt;串口&lt;/h3&gt;&lt;p&gt;串口类似于电话线，一端连着运行着自瞄程序的minipc，另一端连着电控组的更mini的pc，用于两端通信。&lt;/p&gt;
-&lt;p&gt;通信是以字节为单位进行的，两端要提前制定好通信协议，比如说：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;一次发送多少个字节&lt;/li&gt;
-&lt;li&gt;每一段的含义是什么&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;举个例子，一次发送4个字节，前4个字节表示整数坐标x，后4个字节表示整数坐标y，那么每次发送数据就相当于发送下面这个结构体：&lt;/p&gt;
-&lt;div class=&#34;highlight-container&#34; data-rel=&#34;Plaintext&#34;&gt;&lt;figure class=&#34;iseeu highlight plaintext&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;struct Data &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    int x;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    int y;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&amp;#125; __attribute__((packed));&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/div&gt;
-
-&lt;p&gt;其中&lt;code&gt;__attribute__((packed))&lt;/code&gt;是必须的，这是为了防止编译器在编译这个结构体时进行&lt;a class=&#34;link&#34;   href=&#34;https://blog.csdn.net/xxtzzxx/article/details/122439862&#34; &gt;内存对齐 &lt;i class=&#34;fa-regular fa-arrow-up-right-from-square fa-sm&#34;&gt;&lt;/i&gt;&lt;/a&gt;，造成该结构体包含额外的字节。&lt;/p&gt;
-&lt;p&gt;当串口连上电脑后，linux会检测到它，linux的一个设计理念就是”一切皆文件”，所以串口会被当作一个文件来对待，这个文件实际上是一块内存区域，称为串口缓冲区，并且会对应一个文件描述符。这样我们就可以使用fread()函数或者fwrite()函数来读写这个缓冲区（串口）了。&lt;/p&gt;
-&lt;p&gt;在自瞄程序这边，我们会写一个串口类来管理串口的读写。&lt;/p&gt;
-&lt;h3 id=&#34;相机&#34;&gt;&lt;a href=&#34;#相机&#34; class=&#34;headerlink&#34; title=&#34;相机&#34;&gt;&lt;/a&gt;相机&lt;/h3&gt;&lt;p&gt;相机是一个硬件，只要是硬件就必须通过对应的驱动程序来控制它或者访问它，我们的机器人现在使用的相机是&lt;a class=&#34;link&#34;   href=&#34;https://www.daheng-imaging.com/&#34; &gt;大恒工业相机 &lt;i class=&#34;fa-regular fa-arrow-up-right-from-square fa-sm&#34;&gt;&lt;/i&gt;&lt;/a&gt;，它的官网上就提供了&lt;a class=&#34;link&#34;   href=&#34;https://www.daheng-imaging.com/downloads/softwares/&#34; &gt;SDK &lt;i class=&#34;fa-regular fa-arrow-up-right-from-square fa-sm&#34;&gt;&lt;/i&gt;&lt;/a&gt;。之前用过迈德威视（mindvision）。&lt;/p&gt;
-&lt;p&gt;SDK中包括了相机驱动以及一些厂商提前写好的程序，比如说预览相机画面的程序。&lt;/p&gt;
-&lt;p&gt;我们主要使用的是它提供的驱动，驱动可以看作是专属于这个相机的第三方库，它包含一个头文件，里面一些函数可以用来在程序中控制相机，比如说&lt;code&gt;include/robot_io/video/da_heng/GxIAPI.h&lt;/code&gt;：&lt;/p&gt;
-&lt;div class=&#34;highlight-container&#34; data-rel=&#34;Plaintext&#34;&gt;&lt;figure class=&#34;iseeu highlight plaintext&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;...&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;\brief      Open the device by a specific unique identification, such as: SN, IP, MAC, Index etc.&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;\attention  It is recommended that you call the GxUpdateDeviceList() interface to make an enumeration before calling&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;            the function. To ensure that device list within the library is consistent with the current device.&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;...&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;GX_API GXOpenDevice (GX_OPEN_PARAM *pOpenParam, GX_DEV_HANDLE *phDevice);&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/div&gt;
-
-&lt;p&gt;我们想要使用这个相机，就得先大概对这些api有了解。&lt;/p&gt;
-&lt;p&gt;只有头文件是运行不了的，还得有对应的函数定义。这个第三方库与fmt&amp;#x2F;json不同，它&lt;strong&gt;不提供源码，只提供提前编译好的动态链接库&lt;/strong&gt;。所以我们看不到它的函数具体实现方式。&lt;/p&gt;
-&lt;p&gt;动态链接库可以保存在项目源代码里（迈德威视），比如说&lt;code&gt;include/robot_io/video/mindvision/libMVSDK-pc.so&lt;/code&gt;；也可以直接保存到系统库里（大恒），然后在编译的时候加上编译选项&lt;code&gt;-lgxiapi&lt;/code&gt;让编译器自动去链接。&lt;/p&gt;
-&lt;p&gt;总结一下，程序访问相机的步骤为：&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;买一个相机，下载厂商提供的SDK工具包。&lt;/li&gt;
-&lt;li&gt;安装工具包，将工具包中的头文件复制到自己的项目中。&lt;/li&gt;
-&lt;li&gt;看懂头文件中的api，然后调用这些函数。&lt;/li&gt;
-&lt;li&gt;编译程序时，额外去链接头文件对应的动态链接库。&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;为了方便的使用相机，我们会写一个相机类来专门负责相机的操作。&lt;/p&gt;
-&lt;h2 id=&#34;代码解析&#34;&gt;&lt;a href=&#34;#代码解析&#34; class=&#34;headerlink&#34; title=&#34;代码解析&#34;&gt;&lt;/a&gt;代码解析&lt;/h2&gt;&lt;h3 id=&#34;串口-1&#34;&gt;&lt;a href=&#34;#串口-1&#34; class=&#34;headerlink&#34; title=&#34;串口&#34;&gt;&lt;/a&gt;串口&lt;/h3&gt;&lt;p&gt;所有跟相机有关的代码都在&lt;code&gt;include/robot_io/serial&lt;/code&gt;中，对应的实现是&lt;code&gt;src/robot_io/serial&lt;/code&gt;。接下来逐一解析各个代码文件的作用。&lt;/p&gt;
-&lt;h4 id=&#34;crc-h&#34;&gt;&lt;a href=&#34;#crc-h&#34; class=&#34;headerlink&#34; title=&#34;crc.h&#34;&gt;&lt;/a&gt;crc.h&lt;/h4&gt;&lt;p&gt;&lt;a class=&#34;link&#34;   href=&#34;https://gitee.com/tju-rm-cv/tjurm-2022/blob/master/include/robot_io/serial/crc.h&#34; &gt;代码地址 &lt;i class=&#34;fa-regular fa-arrow-up-right-from-square fa-sm&#34;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;这个文件实现了数据的crc校验。crc校验就是确保一段二进制数据在传输过程中没有发生变化，它的原理就是根据二进制数据序列的值计算出一个crc校验值。&lt;/p&gt;
-&lt;p&gt;如果一段数据在传输前后计算出的校验值不变的话，就代表数据没有发生变化。&lt;/p&gt;
-&lt;p&gt;crc校验的具体细节不用管，我们只需要用&lt;code&gt;append_crc(8|16)_check_sum()&lt;/code&gt;这两个函数计算crc校验值就ok。&lt;/p&gt;
-&lt;h4 id=&#34;serial-h&#34;&gt;&lt;a href=&#34;#serial-h&#34; class=&#34;headerlink&#34; title=&#34;serial.h&#34;&gt;&lt;/a&gt;serial.h&lt;/h4&gt;&lt;p&gt;&lt;a class=&#34;link&#34;   href=&#34;https://gitee.com/tju-rm-cv/tjurm-2022/blob/master/include/robot_io/serial/serial.h&#34; &gt;代码地址 &lt;i class=&#34;fa-regular fa-arrow-up-right-from-square fa-sm&#34;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;首先有一些结构体：&lt;/p&gt;
-&lt;div class=&#34;highlight-container&#34; data-rel=&#34;Plaintext&#34;&gt;&lt;figure class=&#34;iseeu highlight plaintext&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;9&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;struct FrameHeader&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;	uint8_t  	sof;			// SOF&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;	uint8_t  	crc8;			// CRC8У����&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&amp;#125;  __attribute__((packed));&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;...&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;struct SendData &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    ...&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&amp;#125; __attribute__((packed));&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/div&gt;
-
-&lt;p&gt;这些结构体就描述了与电控端商定好的通讯协议，比如说我们发送给电控端的数据是&lt;code&gt;SendData&lt;/code&gt;，从电控端读取的数据是&lt;code&gt;ReceivedData&lt;/code&gt;。各字段的含义看代码注释。&lt;/p&gt;
-&lt;p&gt;然后是两个跟串口有关的类，以及两个值得提一下的函数。&lt;/p&gt;
-&lt;h5 id=&#34;Serial类&#34;&gt;&lt;a href=&#34;#Serial类&#34; class=&#34;headerlink&#34; title=&#34;Serial类&#34;&gt;&lt;/a&gt;&lt;code&gt;Serial&lt;/code&gt;类&lt;/h5&gt;&lt;p&gt;&lt;code&gt;Serial&lt;/code&gt;类用来管理串口的读取与写入，但没有规定数据的格式（网上抄的）。各个成员函数的作用如下：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;get_uart_dev_name()&lt;br&gt;串口被视为一个文件，该函数用于获取串口的文件名。&lt;/li&gt;
-&lt;li&gt;init_port(…)&lt;br&gt;初始化串口。&lt;/li&gt;
-&lt;li&gt;(read|write)_data(…)&lt;br&gt;读取或写入数据。&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;&lt;strong&gt;这个类不用完全看懂，会用就行。&lt;/strong&gt;&lt;/p&gt;
-&lt;h5 id=&#34;SerialManager类&#34;&gt;&lt;a href=&#34;#SerialManager类&#34; class=&#34;headerlink&#34; title=&#34;SerialManager类&#34;&gt;&lt;/a&gt;&lt;code&gt;SerialManager&lt;/code&gt;类&lt;/h5&gt;&lt;p&gt;&lt;code&gt;SerialManager&lt;/code&gt;类是基于&lt;code&gt;Serial&lt;/code&gt;类编写的，将数据固定成我们跟电控端约定好的数据格式。它包含两个public的成员变量&lt;code&gt;received_data_&lt;/code&gt;跟&lt;code&gt;send_data_&lt;/code&gt;，用于存储当前从串口中读取或将要写入的数据。&lt;/p&gt;
-&lt;h5 id=&#34;uart-receive&#34;&gt;&lt;a href=&#34;#uart-receive&#34; class=&#34;headerlink&#34; title=&#34;uart_receive(...)&#34;&gt;&lt;/a&gt;&lt;code&gt;uart_receive(...)&lt;/code&gt;&lt;/h5&gt;&lt;p&gt;这个函数用于从串口中读取数据（InputData）。在main函数中，我们会单独开启一个线程，这个线程会执行这个函数，从而实时的读取串口数据。&lt;/p&gt;
-&lt;h5 id=&#34;TryToInitializeSerialBuffer&#34;&gt;&lt;a href=&#34;#TryToInitializeSerialBuffer&#34; class=&#34;headerlink&#34; title=&#34;TryToInitializeSerialBuffer(...)&#34;&gt;&lt;/a&gt;&lt;code&gt;TryToInitializeSerialBuffer(...)&lt;/code&gt;&lt;/h5&gt;&lt;p&gt;程序运行过程中串口可能会由于usb口松动等原因发送错误的数据，此时我们会重新初始化串口。这个函数是为了在重新初始化串口时清除串口缓冲区中残留的无用数据，使得我们读取的第一个字节一定正好是输入数据的第一个字节。&lt;/p&gt;
-&lt;h3 id=&#34;相机-1&#34;&gt;&lt;a href=&#34;#相机-1&#34; class=&#34;headerlink&#34; title=&#34;相机&#34;&gt;&lt;/a&gt;相机&lt;/h3&gt;&lt;p&gt;所有跟相机有关的代码都在&lt;code&gt;include/robot_io/video&lt;/code&gt;中，对应的实现是&lt;code&gt;src/robot_io/video&lt;/code&gt;。接下来逐一解析各个代码文件的作用。&lt;/p&gt;
-&lt;h4 id=&#34;video-interface-h&#34;&gt;&lt;a href=&#34;#video-interface-h&#34; class=&#34;headerlink&#34; title=&#34;video_interface.h&#34;&gt;&lt;/a&gt;video_interface.h&lt;/h4&gt;&lt;p&gt;&lt;a class=&#34;link&#34;   href=&#34;https://gitee.com/tju-rm-cv/tjurm-2022/blob/master/include/robot_io/video/video_interface.h&#34; &gt;代码地址 &lt;i class=&#34;fa-regular fa-arrow-up-right-from-square fa-sm&#34;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;h5 id=&#34;Matstamp类&#34;&gt;&lt;a href=&#34;#Matstamp类&#34; class=&#34;headerlink&#34; title=&#34;Matstamp类&#34;&gt;&lt;/a&gt;&lt;code&gt;Matstamp&lt;/code&gt;类&lt;/h5&gt;&lt;p&gt;这个类用来存储某一帧自瞄算法的输入信息，包括时间(ms)，相机图像，串口关键数据（yaw, pitch）。&lt;/p&gt;
-&lt;h5 id=&#34;VideoInterface类&#34;&gt;&lt;a href=&#34;#VideoInterface类&#34; class=&#34;headerlink&#34; title=&#34;VideoInterface类&#34;&gt;&lt;/a&gt;&lt;code&gt;VideoInterface&lt;/code&gt;类&lt;/h5&gt;&lt;p&gt;我们的程序不仅可以读取相机，在测试时还可以读取视频。视频跟相机都可以看作是由一张张图像构成的视频流（video），都会提供一个&lt;code&gt;read()&lt;/code&gt;函数用来从中读取一帧图像，因此我们在设计代码时使用了多态。&lt;/p&gt;
-&lt;p&gt;具体的，在&lt;code&gt;video_iterface.h&lt;/code&gt;这个文件中我们定义了&lt;code&gt;VideoInterface&lt;/code&gt;类，它相机类与视频类的父类，为相机或者视频定义了两个接口：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Init：初始化视频流&lt;/li&gt;
-&lt;li&gt;Read：读取一帧图像&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;不管是相机还是视频，都会继承这个VideoInterface，并实现上述两个成员函数。&lt;/p&gt;
-&lt;p&gt;在实际使用时，代码如下：&lt;/p&gt;
-&lt;div class=&#34;highlight-container&#34; data-rel=&#34;Plaintext&#34;&gt;&lt;figure class=&#34;iseeu highlight plaintext&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;VideoInterface* video_interface = new CameraWrapper(...);&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;or&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;VideoInterface* videp_interface = new VideoWrapper(...);&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/div&gt;
-
-&lt;p&gt;也就是把子类指针转化为父类指针，后续代码就只需要使用video_interface的read接口即可，这样做的好处就是我们要改变视频流时，只需要改初始化，不需要修改后续的读取代码。&lt;/p&gt;
-&lt;p&gt;同时，如果后续需要添加新的相机的话，也只需要继承这个类就行，不用更改别的代码。&lt;/p&gt;
-&lt;p&gt;相机类的代码大部分都是参考的大恒SDK文档，而且已经能用了，等大家需要修改的时候再看文档也行。&lt;/p&gt;
  ]]></description>
         </item>
         <item>
@@ -524,6 +300,253 @@
 &lt;h3 id=&#34;knn-h-kmeans-h-dataset-h&#34;&gt;&lt;a href=&#34;#knn-h-kmeans-h-dataset-h&#34; class=&#34;headerlink&#34; title=&#34;knn.h, kmeans.h, dataset.h&#34;&gt;&lt;/a&gt;knn.h, kmeans.h, dataset.h&lt;/h3&gt;&lt;p&gt;这三个文件共同实现了一个 knn 分类器，理解了 knn 算法，就能看到这部分代码。&lt;/p&gt;
 &lt;p&gt;knn 分类方法最后并没有使用，直接用 MLP 的方法就行。&lt;/p&gt;
 &lt;h1 id=&#34;其他&#34;&gt;&lt;a href=&#34;#其他&#34; class=&#34;headerlink&#34; title=&#34;其他&#34;&gt;&lt;/a&gt;其他&lt;/h1&gt;&lt;p&gt;&lt;a class=&#34;link&#34;   href=&#34;https://gitee.com/cbxgss/learn-cmake&#34; &gt;cmake简单例子 &lt;i class=&#34;fa-regular fa-arrow-up-right-from-square fa-sm&#34;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/p&gt;
+ ]]></description>
+        </item>
+        <item>
+            <guid isPermalink="true">https://renshengji.github.io/2023/02/28/module_assets/</guid>
+            <title>assets模块</title>
+            <link>https://renshengji.github.io/2023/02/28/module_assets/</link>
+            <pubDate>Tue, 28 Feb 2023 22:32:45 +0800</pubDate>
+            <description><![CDATA[ &lt;link rel=&#34;stylesheet&#34; class=&#34;aplayer-secondary-style-marker&#34; href=&#34;/assets/css/APlayer.min.css&#34;&gt;&lt;script src=&#34;/assets/js/APlayer.min.js&#34; class=&#34;aplayer-secondary-script-marker&#34;&gt;&lt;/script&gt;&lt;h2 id=&#34;模块总览&#34;&gt;&lt;a href=&#34;#模块总览&#34; class=&#34;headerlink&#34; title=&#34;模块总览&#34;&gt;&lt;/a&gt;模块总览&lt;/h2&gt;&lt;p&gt;该模块用于保存一些与程序无关的文件。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;model_(bin|aug).onnx&lt;br&gt;  训练好的装甲板分类器&lt;/li&gt;
+&lt;li&gt;noclass.onnx&lt;br&gt;  训练好的目标检测器&lt;/li&gt;
+&lt;li&gt;test.onnx&lt;br&gt;  最早的目标检测器，已弃用&lt;/li&gt;
+&lt;li&gt;params.json&lt;br&gt;  程序运行时的参数配置文件&lt;/li&gt;
+&lt;li&gt;test-light.png&lt;br&gt;  一张没啥用的测试图片&lt;/li&gt;
+&lt;/ul&gt;
+ ]]></description>
+        </item>
+        <item>
+            <guid isPermalink="true">https://renshengji.github.io/2023/02/28/module_detector/</guid>
+            <title>detector模块</title>
+            <link>https://renshengji.github.io/2023/02/28/module_detector/</link>
+            <pubDate>Tue, 28 Feb 2023 22:32:45 +0800</pubDate>
+            <description><![CDATA[ &lt;link rel=&#34;stylesheet&#34; class=&#34;aplayer-secondary-style-marker&#34; href=&#34;/assets/css/APlayer.min.css&#34;&gt;&lt;script src=&#34;/assets/js/APlayer.min.js&#34; class=&#34;aplayer-secondary-script-marker&#34;&gt;&lt;/script&gt;&lt;h2 id=&#34;模块总览&#34;&gt;&lt;a href=&#34;#模块总览&#34; class=&#34;headerlink&#34; title=&#34;模块总览&#34;&gt;&lt;/a&gt;模块总览&lt;/h2&gt;&lt;p&gt;该模块实现了目标检测分类器的加载以及前向传播过程，并且提供了两种实现方式：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;cv::dnn模块&lt;/li&gt;
+&lt;li&gt;nvidia推理框架TensorRT&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;其中cv::dnn版本仅依赖OpenCV，但是前向传播的速度慢，因此用于在本机进行调试；TensorRT安装繁琐，但可以加速前向传播的计算速度，因此在minipc上使用。&lt;/p&gt;
+&lt;p&gt;两种版本可以通过宏定义切换。&lt;/p&gt;
+&lt;h2 id=&#34;前置知识&#34;&gt;&lt;a href=&#34;#前置知识&#34; class=&#34;headerlink&#34; title=&#34;前置知识&#34;&gt;&lt;/a&gt;前置知识&lt;/h2&gt;&lt;h3 id=&#34;cuda&#34;&gt;&lt;a href=&#34;#cuda&#34; class=&#34;headerlink&#34; title=&#34;cuda&#34;&gt;&lt;/a&gt;cuda&lt;/h3&gt;&lt;p&gt;cuda可以看作是第三方库，可以用于控制nvidia显卡。&lt;/p&gt;
+&lt;p&gt;在使用cuda时，我们会把内存分成两种，一种是cpu内存，一种是gpu内存（显存），cuda可以完成：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;申请、释放gpu内存：cudaMalloc，cudaFree&lt;/li&gt;
+&lt;li&gt;在cpu内存与gpu内存之间拷贝数据；cudaMemcpy&lt;/li&gt;
+&lt;li&gt;让gpu执行核函数进行计算：有兴趣自行学习。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;一个典型的cuda程序的流程：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;在cpu上把数据准备好&lt;/li&gt;
+&lt;li&gt;把数据从cpu拷贝到gpu&lt;/li&gt;
+&lt;li&gt;调用核函数进行计算&lt;/li&gt;
+&lt;li&gt;把计算结果拷贝回cpu&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;TensorRT&#34;&gt;&lt;a href=&#34;#TensorRT&#34; class=&#34;headerlink&#34; title=&#34;TensorRT&#34;&gt;&lt;/a&gt;TensorRT&lt;/h3&gt;&lt;p&gt;nvidia专门为深度学习编写的神经网络推理框架，可以优化网络的前向传播速度。它首先会读取.onnx里的网络，然后对网络的计算图进行优化，优化后的计算图我们可以保存下来，变成.engine文件。&lt;/p&gt;
+&lt;p&gt;在使用时，我们只需要负责数据的拷贝，前向传播计算由TensorRT来完成。&lt;/p&gt;
+&lt;h2 id=&#34;代码解析&#34;&gt;&lt;a href=&#34;#代码解析&#34; class=&#34;headerlink&#34; title=&#34;代码解析&#34;&gt;&lt;/a&gt;代码解析&lt;/h2&gt;&lt;h3 id=&#34;common-h&#34;&gt;&lt;a href=&#34;#common-h&#34; class=&#34;headerlink&#34; title=&#34;common.h&#34;&gt;&lt;/a&gt;common.h&lt;/h3&gt;&lt;p&gt;没什么用，想删但是懒得删。&lt;/p&gt;
+&lt;h3 id=&#34;logging-h&#34;&gt;&lt;a href=&#34;#logging-h&#34; class=&#34;headerlink&#34; title=&#34;logging.h&#34;&gt;&lt;/a&gt;logging.h&lt;/h3&gt;&lt;p&gt;nvidia提供的，与TensorRT相关的头文件，不用看，但是必须要有。&lt;/p&gt;
+&lt;h3 id=&#34;utils-h&#34;&gt;&lt;a href=&#34;#utils-h&#34; class=&#34;headerlink&#34; title=&#34;utils.h&#34;&gt;&lt;/a&gt;utils.h&lt;/h3&gt;&lt;p&gt;提供了一些detector的辅助函数，比如说解析网络输出的结果，nms等。不讲。&lt;/p&gt;
+&lt;h3 id=&#34;dnn-h&#34;&gt;&lt;a href=&#34;#dnn-h&#34; class=&#34;headerlink&#34; title=&#34;dnn.h&#34;&gt;&lt;/a&gt;dnn.h&lt;/h3&gt;&lt;p&gt;让大家写过，不讲。&lt;/p&gt;
+&lt;h3 id=&#34;trt-h-amp-trt-cc&#34;&gt;&lt;a href=&#34;#trt-h-amp-trt-cc&#34; class=&#34;headerlink&#34; title=&#34;trt.h &amp;amp; trt.cc&#34;&gt;&lt;/a&gt;trt.h &amp;amp; trt.cc&lt;/h3&gt;&lt;p&gt;使用TensorRT完成前向传播。TRT类各个成员函数的功能如下：&lt;/p&gt;
+&lt;h4 id=&#34;load-from-onnx-…&#34;&gt;&lt;a href=&#34;#load-from-onnx-…&#34; class=&#34;headerlink&#34; title=&#34;load_from_onnx(…)&#34;&gt;&lt;/a&gt;load_from_onnx(…)&lt;/h4&gt;&lt;p&gt;加载onnx文件并进行计算图的优化，优化这一步很耗时，大概10~20min。&lt;/p&gt;
+&lt;h4 id=&#34;save-engine-…&#34;&gt;&lt;a href=&#34;#save-engine-…&#34; class=&#34;headerlink&#34; title=&#34;save_engine(…)&#34;&gt;&lt;/a&gt;save_engine(…)&lt;/h4&gt;&lt;p&gt;将优化后的计算图保存到磁盘中，变成.engine文件。&lt;/p&gt;
+&lt;h4 id=&#34;load-from-cache-…&#34;&gt;&lt;a href=&#34;#load-from-cache-…&#34; class=&#34;headerlink&#34; title=&#34;load_from_cache(…)&#34;&gt;&lt;/a&gt;load_from_cache(…)&lt;/h4&gt;&lt;p&gt;直接加载.engine文件。&lt;/p&gt;
+&lt;h4 id=&#34;bind&#34;&gt;&lt;a href=&#34;#bind&#34; class=&#34;headerlink&#34; title=&#34;bind()&#34;&gt;&lt;/a&gt;bind()&lt;/h4&gt;&lt;p&gt;根据计算图的信息（输出tensor的个数，大小）来分配cpu内存与gpu内存。&lt;/p&gt;
+&lt;h4 id=&#34;detect&#34;&gt;&lt;a href=&#34;#detect&#34; class=&#34;headerlink&#34; title=&#34;detect()&#34;&gt;&lt;/a&gt;detect()&lt;/h4&gt;&lt;p&gt;看注释。&lt;/p&gt;
+ ]]></description>
+        </item>
+        <item>
+            <guid isPermalink="true">https://renshengji.github.io/2023/02/28/module_params/</guid>
+            <title>params模块</title>
+            <link>https://renshengji.github.io/2023/02/28/module_params/</link>
+            <pubDate>Tue, 28 Feb 2023 22:32:45 +0800</pubDate>
+            <description><![CDATA[ &lt;link rel=&#34;stylesheet&#34; class=&#34;aplayer-secondary-style-marker&#34; href=&#34;/assets/css/APlayer.min.css&#34;&gt;&lt;script src=&#34;/assets/js/APlayer.min.js&#34; class=&#34;aplayer-secondary-script-marker&#34;&gt;&lt;/script&gt;&lt;h2 id=&#34;模块总览&#34;&gt;&lt;a href=&#34;#模块总览&#34; class=&#34;headerlink&#34; title=&#34;模块总览&#34;&gt;&lt;/a&gt;模块总览&lt;/h2&gt;&lt;p&gt;该模块允许我们把自瞄算法的参数保存在配置文件（json）中，并在程序运行时把配置文件加载到内存中。&lt;/p&gt;
+&lt;p&gt;好处：每次修改算法参数后，不需要重新编译整个程序（耗时大概5min），所以能够减少程序编译耗时，提高代码调试速度。&lt;/p&gt;
+&lt;p&gt;一个例子：&lt;/p&gt;
+&lt;div class=&#34;highlight-container&#34; data-rel=&#34;Plaintext&#34;&gt;&lt;figure class=&#34;iseeu highlight plaintext&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;15&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;// json文件：&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;// &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;//     &amp;quot;key1&amp;quot;: 0.5,&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;//     &amp;quot;key2&amp;quot;: &amp;quot;string&amp;quot;,&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;//     &amp;quot;key3&amp;quot;: &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;//         &amp;quot;key1&amp;quot;: [1, 2, 3]&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;//     &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;// &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;// 代码：&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;ParamsManager&amp;amp; obj = *ParamsManager::GetInstance();&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;obj.load(&amp;quot;path/to/your/json/file&amp;quot;);&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;float x = obj[&amp;quot;key1];&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;std::string y = obj[&amp;quot;key2];&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;std::vector&amp;lt;int&amp;gt; z = obj[&amp;quot;key3][&amp;quot;key1];&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/div&gt;
+
+&lt;h2 id=&#34;代码解析&#34;&gt;&lt;a href=&#34;#代码解析&#34; class=&#34;headerlink&#34; title=&#34;代码解析&#34;&gt;&lt;/a&gt;代码解析&lt;/h2&gt;&lt;h3 id=&#34;params-manager-h&#34;&gt;&lt;a href=&#34;#params-manager-h&#34; class=&#34;headerlink&#34; title=&#34;params_manager.h&#34;&gt;&lt;/a&gt;params_manager.h&lt;/h3&gt;&lt;p&gt;&lt;a class=&#34;link&#34;   href=&#34;https://gitee.com/tju-rm-cv/tjurm-2022/blob/master/include/params/params_manager.h&#34; &gt;代码地址（头文件） &lt;i class=&#34;fa-regular fa-arrow-up-right-from-square fa-sm&#34;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;使用ParamsManager类来读取（写入）配置文件，这个类也使用了单例模式。关键代码如下：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;nlohmann::json params_&lt;/code&gt;&lt;br&gt;  实际保存json文件的json对象。&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;load(const std::string&amp;amp;)&lt;/code&gt;&lt;br&gt;  加载json文件。&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;dump(const std::string&amp;amp;)&lt;/code&gt;&lt;br&gt;  将json对象保存成json文件。&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;nlohmann::json&amp;amp; operator[](const std::string&amp;amp;)&lt;/code&gt;&lt;br&gt;  提供[]操作符，输入一个字符串（key），返回一个json对象（value），由于json对象也支持[]操作符，所以用起来就跟python字典很像。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;nlohmann json这个库实际上做的事情是：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;将json文件里的各个值读取成nlohmann::json对象&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;当我们将json对象赋值给某一个变量时，会触发一个函数：&lt;/p&gt;
+ &lt;div class=&#34;highlight-container&#34; data-rel=&#34;Plaintext&#34;&gt;&lt;figure class=&#34;iseeu highlight plaintext&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;template&amp;lt;typename T&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;void from_json(nlohmann::json&amp;amp; j, T&amp;amp; p);&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/div&gt;
+
+&lt;p&gt; 与该函数类似的还有一个to_json，该函数的作用是将json对象转化为对应的变量类型，对于内置类型，例如float, string, vector等，库本身已经实现好了对应的from_json&amp;#x2F;to_json函数。&lt;/p&gt;
+&lt;p&gt; 而对于自定义类型，我们需要自行提供对应的转换函数。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;以下这段代码就实现了cv::Mat与json的转换：&lt;/p&gt;
+&lt;div class=&#34;highlight-container&#34; data-rel=&#34;Plaintext&#34;&gt;&lt;figure class=&#34;iseeu highlight plaintext&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;// 我记得是一定要放在cv这个命名空间里的，否则找不到&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;namespace cv &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;void to_json(nlohmann::json&amp;amp; j, const cv::Mat&amp;amp; p);&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;void from_json(const nlohmann::json&amp;amp; j, cv::Mat&amp;amp; p);&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/div&gt;
+
+&lt;p&gt;代码实现很简单，就不讲了~&lt;/p&gt;
+ ]]></description>
+        </item>
+        <item>
+            <guid isPermalink="true">https://renshengji.github.io/2023/02/28/module_3rd/</guid>
+            <title>3rd模块</title>
+            <link>https://renshengji.github.io/2023/02/28/module_3rd/</link>
+            <pubDate>Tue, 28 Feb 2023 22:32:45 +0800</pubDate>
+            <description><![CDATA[ &lt;link rel=&#34;stylesheet&#34; class=&#34;aplayer-secondary-style-marker&#34; href=&#34;/assets/css/APlayer.min.css&#34;&gt;&lt;script src=&#34;/assets/js/APlayer.min.js&#34; class=&#34;aplayer-secondary-script-marker&#34;&gt;&lt;/script&gt;&lt;h2 id=&#34;模块总览&#34;&gt;&lt;a href=&#34;#模块总览&#34; class=&#34;headerlink&#34; title=&#34;模块总览&#34;&gt;&lt;/a&gt;模块总览&lt;/h2&gt;&lt;p&gt;该模块用于保存本项目用到的两个第三方库的源码：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;fmt&lt;/li&gt;
+&lt;li&gt;nlohmann json&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;在编译本项目时，除了编译与自瞄相关的代码，还会编译这两个第三方库，并将三者链接。&lt;/p&gt;
+&lt;h2 id=&#34;fmt库简介&#34;&gt;&lt;a href=&#34;#fmt库简介&#34; class=&#34;headerlink&#34; title=&#34;fmt库简介&#34;&gt;&lt;/a&gt;fmt库简介&lt;/h2&gt;&lt;p&gt;fmt库为c++提供了一种类似python的输出格式化方法，比cout与printf更加的方便与安全。&lt;/p&gt;
+&lt;p&gt;具体用法详见&lt;code&gt;3rd/fmt&lt;/code&gt;中的&lt;a class=&#34;link&#34;   href=&#34;https://gitee.com/tju-rm-cv/tjurm-2022/blob/master/3rd/fmt/README.rst&#34; &gt;readme文件 &lt;i class=&#34;fa-regular fa-arrow-up-right-from-square fa-sm&#34;&gt;&lt;/i&gt;&lt;/a&gt;。&lt;/p&gt;
+&lt;p&gt;本项目使用这个库来实现logger模块。&lt;/p&gt;
+&lt;h2 id=&#34;nlohmann-json库简介&#34;&gt;&lt;a href=&#34;#nlohmann-json库简介&#34; class=&#34;headerlink&#34; title=&#34;nlohmann json库简介&#34;&gt;&lt;/a&gt;nlohmann json库简介&lt;/h2&gt;&lt;p&gt;nlohmann json库为c++提供了读取json文件的功能，现有的c++ json库很多，nlohmann只是一种，不过它的速度跟易用性都是比较优秀的。&lt;/p&gt;
+&lt;p&gt;具体用法详见&lt;code&gt;3rd/json&lt;/code&gt;中的&lt;a class=&#34;link&#34;   href=&#34;https://gitee.com/tju-rm-cv/tjurm-2022/blob/master/3rd/json/README.md&#34; &gt;readme文件 &lt;i class=&#34;fa-regular fa-arrow-up-right-from-square fa-sm&#34;&gt;&lt;/i&gt;&lt;/a&gt;。&lt;/p&gt;
+&lt;p&gt;本项目将程序运行时的各种参数保存在&lt;a class=&#34;link&#34;   href=&#34;https://gitee.com/tju-rm-cv/tjurm-2022/blob/master/assets/params.json&#34; &gt;json文件 &lt;i class=&#34;fa-regular fa-arrow-up-right-from-square fa-sm&#34;&gt;&lt;/i&gt;&lt;/a&gt;中，并使用这个库来读取json文件。&lt;/p&gt;
+ ]]></description>
+        </item>
+        <item>
+            <guid isPermalink="true">https://renshengji.github.io/2023/02/28/module_logger/</guid>
+            <title>logger模块</title>
+            <link>https://renshengji.github.io/2023/02/28/module_logger/</link>
+            <pubDate>Tue, 28 Feb 2023 22:32:45 +0800</pubDate>
+            <description><![CDATA[ &lt;link rel=&#34;stylesheet&#34; class=&#34;aplayer-secondary-style-marker&#34; href=&#34;/assets/css/APlayer.min.css&#34;&gt;&lt;script src=&#34;/assets/js/APlayer.min.js&#34; class=&#34;aplayer-secondary-script-marker&#34;&gt;&lt;/script&gt;&lt;h2 id=&#34;模块总览&#34;&gt;&lt;a href=&#34;#模块总览&#34; class=&#34;headerlink&#34; title=&#34;模块总览&#34;&gt;&lt;/a&gt;模块总览&lt;/h2&gt;&lt;p&gt;该模块基于c++第三方库&lt;code&gt;fmt&lt;/code&gt;实现了一个logger用于保存程序运行时的一些信息。支持以下功能：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;提供3种级别的log：&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;MSG&lt;/strong&gt;：输出一些基本的信息，例如当前目标的数量，解算出的世界坐标&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;WARINING&lt;/strong&gt;：输出一些警告信息，例如串口收到的数据存在异常&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;ERROR&lt;/strong&gt;：输出一些错误信息，例如相机读取失败&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;能够在log信息输出到文件 or 终端。&lt;/li&gt;
+&lt;li&gt;能够保存图片到本地（未实际使用）&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;前置知识&#34;&gt;&lt;a href=&#34;#前置知识&#34; class=&#34;headerlink&#34; title=&#34;前置知识&#34;&gt;&lt;/a&gt;前置知识&lt;/h2&gt;&lt;h3 id=&#34;关于logger&#34;&gt;&lt;a href=&#34;#关于logger&#34; class=&#34;headerlink&#34; title=&#34;关于logger&#34;&gt;&lt;/a&gt;关于logger&lt;/h3&gt;&lt;p&gt;正经的项目都会针对自己的需求设计一个logger用来保存程序运行时的信息，可以用于程序数据分析或者debug。&lt;/p&gt;
+&lt;p&gt;简单来说logger可以看作是一个稍微复杂的printf。它会包含一个前端，用于将你要输出的信息进行格式化，比如：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;信息产生的位置（文件名、函数名、行号、线程id）&lt;/li&gt;
+&lt;li&gt;信息的类型（error, msg, …）&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;请查看知乎上的&lt;a class=&#34;link&#34;   href=&#34;https://www.zhihu.com/question/293863155?sort=created&#34; &gt;关于c++ logger的讨论 &lt;i class=&#34;fa-regular fa-arrow-up-right-from-square fa-sm&#34;&gt;&lt;/i&gt;&lt;/a&gt;，这个问题下有一些人回答了logger的作用，怎么合理的设计一个logger等问题。&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;assets/log.h&#34;&gt;log.h&lt;/a&gt;文件中给了一个logger的示例，使用c&amp;#x2F;c++的宏定义 &amp;amp; printf实现一个最简单的logger。先试着用一下这个log.h。&lt;/p&gt;
+&lt;h3 id=&#34;关于c-单例模式&#34;&gt;&lt;a href=&#34;#关于c-单例模式&#34; class=&#34;headerlink&#34; title=&#34;关于c++单例模式&#34;&gt;&lt;/a&gt;关于c++单例模式&lt;/h3&gt;&lt;p&gt;单例模式的意思就是让某一个类只能实例化唯一的一个对象，比如说这里的logger，一个程序只会有一个logger，所以我们会把logger这个类设计成单例，程序运行期间所有的信息都会交给这个唯一的logger进行保存。&lt;/p&gt;
+&lt;p&gt;&lt;a class=&#34;link&#34;   href=&#34;https://zhuanlan.zhihu.com/p/62014096&#34; &gt;单例模式的实现方式 &lt;i class=&#34;fa-regular fa-arrow-up-right-from-square fa-sm&#34;&gt;&lt;/i&gt;&lt;/a&gt;，只需要查看其中的实现四即可。&lt;/p&gt;
+&lt;h2 id=&#34;代码解析&#34;&gt;&lt;a href=&#34;#代码解析&#34; class=&#34;headerlink&#34; title=&#34;代码解析&#34;&gt;&lt;/a&gt;代码解析&lt;/h2&gt;&lt;h3 id=&#34;log-h&#34;&gt;&lt;a href=&#34;#log-h&#34; class=&#34;headerlink&#34; title=&#34;log.h&#34;&gt;&lt;/a&gt;log.h&lt;/h3&gt;&lt;p&gt;&lt;a class=&#34;link&#34;   href=&#34;https://gitee.com/tju-rm-cv/tjurm-2022/blob/master/include/logger/log.h&#34; &gt;代码地址 &lt;i class=&#34;fa-regular fa-arrow-up-right-from-square fa-sm&#34;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;该头文件用宏定义提供了一些logger相关的api，我们在程序中可以使用这些api来调用logger。主要使用以下api：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;ERROR(format, …)：打印错误信息，会显示为红色，e.g.&lt;/p&gt;
+  &lt;div class=&#34;highlight-container&#34; data-rel=&#34;Plaintext&#34;&gt;&lt;figure class=&#34;iseeu highlight plaintext&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;ERROR(&amp;quot;parameter &amp;#x27;a&amp;#x27; should greater than zero, received &amp;#123;&amp;#125;&amp;quot;, a)&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/div&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;MSG(format, …)：打印普通信息，会显示为蓝色&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;TRACE(code, tag)：打印一段程序的运行时间，以ms为单位，tag用来标注这段程序的含义，e.g.&lt;/p&gt;
+  &lt;div class=&#34;highlight-container&#34; data-rel=&#34;Plaintext&#34;&gt;&lt;figure class=&#34;iseeu highlight plaintext&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;8&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;// 逗号前面是代码段，逗号后面是tag&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;TRACE(&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    for (int i = 0; i &amp;lt; 1000; i++)&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;        // do something ...&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    &amp;#125;,&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    &amp;quot;loop&amp;quot;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;)&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/div&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;…&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;log-formatter-h-amp-log-type-h&#34;&gt;&lt;a href=&#34;#log-formatter-h-amp-log-type-h&#34; class=&#34;headerlink&#34; title=&#34;log_formatter.h &amp;amp; log_type.h&#34;&gt;&lt;/a&gt;log_formatter.h &amp;amp; log_type.h&lt;/h3&gt;&lt;p&gt;&lt;a class=&#34;link&#34;   href=&#34;https://gitee.com/tju-rm-cv/tjurm-2022/blob/master/include/logger/log_formatter.h&#34; &gt;代码地址(log_formatter.h) &lt;i class=&#34;fa-regular fa-arrow-up-right-from-square fa-sm&#34;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a class=&#34;link&#34;   href=&#34;https://gitee.com/tju-rm-cv/tjurm-2022/blob/master/include/logger/log_type.h&#34; &gt;代码地址(log_type.h) &lt;i class=&#34;fa-regular fa-arrow-up-right-from-square fa-sm&#34;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;该头文件实现了一个LogFormatter类，提供一个format函数对程序信息进行格式化，很简单，不讲。&lt;/p&gt;
+&lt;h3 id=&#34;logger-h&#34;&gt;&lt;a href=&#34;#logger-h&#34; class=&#34;headerlink&#34; title=&#34;logger.h&#34;&gt;&lt;/a&gt;logger.h&lt;/h3&gt;&lt;p&gt;&lt;a class=&#34;link&#34;   href=&#34;https://gitee.com/tju-rm-cv/tjurm-2022/blob/master/include/logger/logger.h&#34; &gt;代码地址 &lt;i class=&#34;fa-regular fa-arrow-up-right-from-square fa-sm&#34;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;使用RMLogger类实现了logger。关键代码如下：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;get_logger()&lt;/code&gt;&lt;br&gt;  获取唯一的logger对象的指针，使用的是最简单的单例模式。&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;_sync_print()&lt;/code&gt;&lt;br&gt;  实际上就是加了互斥锁的fmt::print，防止多个线程同时使用logger打印时输出结果混乱。&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;_sync_flush()&lt;/code&gt;&lt;br&gt;  与_sync_print()类似，只不过是把信息输出到文件。&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;save_log()&lt;/code&gt;&lt;br&gt;  保存日志信息，会在log.h中被调用。使用了可变参数模板用于接收任意多个参数，自行百度学习。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;还有一些跟fmt库相关的代码，让fmt库能够格式化自定义的类型，e.g.&lt;/p&gt;
+&lt;div class=&#34;highlight-container&#34; data-rel=&#34;Plaintext&#34;&gt;&lt;figure class=&#34;iseeu highlight plaintext&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;cv::Point3f p = &amp;#123;1., 2., 3.&amp;#125;;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;fmt::print(&amp;quot;velocity = &amp;#123;&amp;#125;\n&amp;quot;, p);&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/div&gt;
+
+&lt;p&gt;如果不添加以下代码的话：&lt;/p&gt;
+&lt;div class=&#34;highlight-container&#34; data-rel=&#34;Plaintext&#34;&gt;&lt;figure class=&#34;iseeu highlight plaintext&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;// format 3rd types&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;template&amp;lt;&amp;gt; struct fmt::formatter&amp;lt;cv::Point3f&amp;gt; &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    char presentation = &amp;#x27;f&amp;#x27;;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    ...&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&amp;#125;;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/div&gt;
+
+&lt;p&gt;fmt::print是会报错的，因为它不知道该怎么格式化cv::Point3f。如何编写这个自定义格式化代码：&lt;a class=&#34;link&#34;   href=&#34;https://zhuanlan.zhihu.com/p/601744791&#34; &gt;https://zhuanlan.zhihu.com/p/601744791 &lt;i class=&#34;fa-regular fa-arrow-up-right-from-square fa-sm&#34;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/p&gt;
+ ]]></description>
+        </item>
+        <item>
+            <guid isPermalink="true">https://renshengji.github.io/2023/02/28/module_robot_io/</guid>
+            <title>robot_io模块</title>
+            <link>https://renshengji.github.io/2023/02/28/module_robot_io/</link>
+            <pubDate>Tue, 28 Feb 2023 22:32:45 +0800</pubDate>
+            <description><![CDATA[ &lt;link rel=&#34;stylesheet&#34; class=&#34;aplayer-secondary-style-marker&#34; href=&#34;/assets/css/APlayer.min.css&#34;&gt;&lt;script src=&#34;/assets/js/APlayer.min.js&#34; class=&#34;aplayer-secondary-script-marker&#34;&gt;&lt;/script&gt;&lt;h2 id=&#34;模块总览&#34;&gt;&lt;a href=&#34;#模块总览&#34; class=&#34;headerlink&#34; title=&#34;模块总览&#34;&gt;&lt;/a&gt;模块总览&lt;/h2&gt;&lt;p&gt;自瞄程序需要在运行时读取相机的画面以及从串口读取机器人自身的信息，在目标定位完成后还要向串口写入机器人控制信息。&lt;/p&gt;
+&lt;p&gt;该模块对相机跟串口这两个硬件进行了封装，提供简单的api来实现以下功能：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;视频文件&amp;#x2F;相机设备的读取&lt;/li&gt;
+&lt;li&gt;串口信息的读取&amp;#x2F;写入&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;前置知识&#34;&gt;&lt;a href=&#34;#前置知识&#34; class=&#34;headerlink&#34; title=&#34;前置知识&#34;&gt;&lt;/a&gt;前置知识&lt;/h2&gt;&lt;h3 id=&#34;串口&#34;&gt;&lt;a href=&#34;#串口&#34; class=&#34;headerlink&#34; title=&#34;串口&#34;&gt;&lt;/a&gt;串口&lt;/h3&gt;&lt;p&gt;串口类似于电话线，一端连着运行着自瞄程序的minipc，另一端连着电控组的更mini的pc，用于两端通信。&lt;/p&gt;
+&lt;p&gt;通信是以字节为单位进行的，两端要提前制定好通信协议，比如说：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;一次发送多少个字节&lt;/li&gt;
+&lt;li&gt;每一段的含义是什么&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;举个例子，一次发送4个字节，前4个字节表示整数坐标x，后4个字节表示整数坐标y，那么每次发送数据就相当于发送下面这个结构体：&lt;/p&gt;
+&lt;div class=&#34;highlight-container&#34; data-rel=&#34;Plaintext&#34;&gt;&lt;figure class=&#34;iseeu highlight plaintext&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;struct Data &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    int x;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    int y;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&amp;#125; __attribute__((packed));&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/div&gt;
+
+&lt;p&gt;其中&lt;code&gt;__attribute__((packed))&lt;/code&gt;是必须的，这是为了防止编译器在编译这个结构体时进行&lt;a class=&#34;link&#34;   href=&#34;https://blog.csdn.net/xxtzzxx/article/details/122439862&#34; &gt;内存对齐 &lt;i class=&#34;fa-regular fa-arrow-up-right-from-square fa-sm&#34;&gt;&lt;/i&gt;&lt;/a&gt;，造成该结构体包含额外的字节。&lt;/p&gt;
+&lt;p&gt;当串口连上电脑后，linux会检测到它，linux的一个设计理念就是”一切皆文件”，所以串口会被当作一个文件来对待，这个文件实际上是一块内存区域，称为串口缓冲区，并且会对应一个文件描述符。这样我们就可以使用fread()函数或者fwrite()函数来读写这个缓冲区（串口）了。&lt;/p&gt;
+&lt;p&gt;在自瞄程序这边，我们会写一个串口类来管理串口的读写。&lt;/p&gt;
+&lt;h3 id=&#34;相机&#34;&gt;&lt;a href=&#34;#相机&#34; class=&#34;headerlink&#34; title=&#34;相机&#34;&gt;&lt;/a&gt;相机&lt;/h3&gt;&lt;p&gt;相机是一个硬件，只要是硬件就必须通过对应的驱动程序来控制它或者访问它，我们的机器人现在使用的相机是&lt;a class=&#34;link&#34;   href=&#34;https://www.daheng-imaging.com/&#34; &gt;大恒工业相机 &lt;i class=&#34;fa-regular fa-arrow-up-right-from-square fa-sm&#34;&gt;&lt;/i&gt;&lt;/a&gt;，它的官网上就提供了&lt;a class=&#34;link&#34;   href=&#34;https://www.daheng-imaging.com/downloads/softwares/&#34; &gt;SDK &lt;i class=&#34;fa-regular fa-arrow-up-right-from-square fa-sm&#34;&gt;&lt;/i&gt;&lt;/a&gt;。之前用过迈德威视（mindvision）。&lt;/p&gt;
+&lt;p&gt;SDK中包括了相机驱动以及一些厂商提前写好的程序，比如说预览相机画面的程序。&lt;/p&gt;
+&lt;p&gt;我们主要使用的是它提供的驱动，驱动可以看作是专属于这个相机的第三方库，它包含一个头文件，里面一些函数可以用来在程序中控制相机，比如说&lt;code&gt;include/robot_io/video/da_heng/GxIAPI.h&lt;/code&gt;：&lt;/p&gt;
+&lt;div class=&#34;highlight-container&#34; data-rel=&#34;Plaintext&#34;&gt;&lt;figure class=&#34;iseeu highlight plaintext&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;...&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;\brief      Open the device by a specific unique identification, such as: SN, IP, MAC, Index etc.&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;\attention  It is recommended that you call the GxUpdateDeviceList() interface to make an enumeration before calling&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;            the function. To ensure that device list within the library is consistent with the current device.&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;...&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;GX_API GXOpenDevice (GX_OPEN_PARAM *pOpenParam, GX_DEV_HANDLE *phDevice);&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/div&gt;
+
+&lt;p&gt;我们想要使用这个相机，就得先大概对这些api有了解。&lt;/p&gt;
+&lt;p&gt;只有头文件是运行不了的，还得有对应的函数定义。这个第三方库与fmt&amp;#x2F;json不同，它&lt;strong&gt;不提供源码，只提供提前编译好的动态链接库&lt;/strong&gt;。所以我们看不到它的函数具体实现方式。&lt;/p&gt;
+&lt;p&gt;动态链接库可以保存在项目源代码里（迈德威视），比如说&lt;code&gt;include/robot_io/video/mindvision/libMVSDK-pc.so&lt;/code&gt;；也可以直接保存到系统库里（大恒），然后在编译的时候加上编译选项&lt;code&gt;-lgxiapi&lt;/code&gt;让编译器自动去链接。&lt;/p&gt;
+&lt;p&gt;总结一下，程序访问相机的步骤为：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;买一个相机，下载厂商提供的SDK工具包。&lt;/li&gt;
+&lt;li&gt;安装工具包，将工具包中的头文件复制到自己的项目中。&lt;/li&gt;
+&lt;li&gt;看懂头文件中的api，然后调用这些函数。&lt;/li&gt;
+&lt;li&gt;编译程序时，额外去链接头文件对应的动态链接库。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;为了方便的使用相机，我们会写一个相机类来专门负责相机的操作。&lt;/p&gt;
+&lt;h2 id=&#34;代码解析&#34;&gt;&lt;a href=&#34;#代码解析&#34; class=&#34;headerlink&#34; title=&#34;代码解析&#34;&gt;&lt;/a&gt;代码解析&lt;/h2&gt;&lt;h3 id=&#34;串口-1&#34;&gt;&lt;a href=&#34;#串口-1&#34; class=&#34;headerlink&#34; title=&#34;串口&#34;&gt;&lt;/a&gt;串口&lt;/h3&gt;&lt;p&gt;所有跟相机有关的代码都在&lt;code&gt;include/robot_io/serial&lt;/code&gt;中，对应的实现是&lt;code&gt;src/robot_io/serial&lt;/code&gt;。接下来逐一解析各个代码文件的作用。&lt;/p&gt;
+&lt;h4 id=&#34;crc-h&#34;&gt;&lt;a href=&#34;#crc-h&#34; class=&#34;headerlink&#34; title=&#34;crc.h&#34;&gt;&lt;/a&gt;crc.h&lt;/h4&gt;&lt;p&gt;&lt;a class=&#34;link&#34;   href=&#34;https://gitee.com/tju-rm-cv/tjurm-2022/blob/master/include/robot_io/serial/crc.h&#34; &gt;代码地址 &lt;i class=&#34;fa-regular fa-arrow-up-right-from-square fa-sm&#34;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;这个文件实现了数据的crc校验。crc校验就是确保一段二进制数据在传输过程中没有发生变化，它的原理就是根据二进制数据序列的值计算出一个crc校验值。&lt;/p&gt;
+&lt;p&gt;如果一段数据在传输前后计算出的校验值不变的话，就代表数据没有发生变化。&lt;/p&gt;
+&lt;p&gt;crc校验的具体细节不用管，我们只需要用&lt;code&gt;append_crc(8|16)_check_sum()&lt;/code&gt;这两个函数计算crc校验值就ok。&lt;/p&gt;
+&lt;h4 id=&#34;serial-h&#34;&gt;&lt;a href=&#34;#serial-h&#34; class=&#34;headerlink&#34; title=&#34;serial.h&#34;&gt;&lt;/a&gt;serial.h&lt;/h4&gt;&lt;p&gt;&lt;a class=&#34;link&#34;   href=&#34;https://gitee.com/tju-rm-cv/tjurm-2022/blob/master/include/robot_io/serial/serial.h&#34; &gt;代码地址 &lt;i class=&#34;fa-regular fa-arrow-up-right-from-square fa-sm&#34;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;首先有一些结构体：&lt;/p&gt;
+&lt;div class=&#34;highlight-container&#34; data-rel=&#34;Plaintext&#34;&gt;&lt;figure class=&#34;iseeu highlight plaintext&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;9&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;struct FrameHeader&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;	uint8_t  	sof;			// SOF&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;	uint8_t  	crc8;			// CRC8У����&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&amp;#125;  __attribute__((packed));&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;...&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;struct SendData &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    ...&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&amp;#125; __attribute__((packed));&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/div&gt;
+
+&lt;p&gt;这些结构体就描述了与电控端商定好的通讯协议，比如说我们发送给电控端的数据是&lt;code&gt;SendData&lt;/code&gt;，从电控端读取的数据是&lt;code&gt;ReceivedData&lt;/code&gt;。各字段的含义看代码注释。&lt;/p&gt;
+&lt;p&gt;然后是两个跟串口有关的类，以及两个值得提一下的函数。&lt;/p&gt;
+&lt;h5 id=&#34;Serial类&#34;&gt;&lt;a href=&#34;#Serial类&#34; class=&#34;headerlink&#34; title=&#34;Serial类&#34;&gt;&lt;/a&gt;&lt;code&gt;Serial&lt;/code&gt;类&lt;/h5&gt;&lt;p&gt;&lt;code&gt;Serial&lt;/code&gt;类用来管理串口的读取与写入，但没有规定数据的格式（网上抄的）。各个成员函数的作用如下：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;get_uart_dev_name()&lt;br&gt;串口被视为一个文件，该函数用于获取串口的文件名。&lt;/li&gt;
+&lt;li&gt;init_port(…)&lt;br&gt;初始化串口。&lt;/li&gt;
+&lt;li&gt;(read|write)_data(…)&lt;br&gt;读取或写入数据。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;这个类不用完全看懂，会用就行。&lt;/strong&gt;&lt;/p&gt;
+&lt;h5 id=&#34;SerialManager类&#34;&gt;&lt;a href=&#34;#SerialManager类&#34; class=&#34;headerlink&#34; title=&#34;SerialManager类&#34;&gt;&lt;/a&gt;&lt;code&gt;SerialManager&lt;/code&gt;类&lt;/h5&gt;&lt;p&gt;&lt;code&gt;SerialManager&lt;/code&gt;类是基于&lt;code&gt;Serial&lt;/code&gt;类编写的，将数据固定成我们跟电控端约定好的数据格式。它包含两个public的成员变量&lt;code&gt;received_data_&lt;/code&gt;跟&lt;code&gt;send_data_&lt;/code&gt;，用于存储当前从串口中读取或将要写入的数据。&lt;/p&gt;
+&lt;h5 id=&#34;uart-receive&#34;&gt;&lt;a href=&#34;#uart-receive&#34; class=&#34;headerlink&#34; title=&#34;uart_receive(...)&#34;&gt;&lt;/a&gt;&lt;code&gt;uart_receive(...)&lt;/code&gt;&lt;/h5&gt;&lt;p&gt;这个函数用于从串口中读取数据（InputData）。在main函数中，我们会单独开启一个线程，这个线程会执行这个函数，从而实时的读取串口数据。&lt;/p&gt;
+&lt;h5 id=&#34;TryToInitializeSerialBuffer&#34;&gt;&lt;a href=&#34;#TryToInitializeSerialBuffer&#34; class=&#34;headerlink&#34; title=&#34;TryToInitializeSerialBuffer(...)&#34;&gt;&lt;/a&gt;&lt;code&gt;TryToInitializeSerialBuffer(...)&lt;/code&gt;&lt;/h5&gt;&lt;p&gt;程序运行过程中串口可能会由于usb口松动等原因发送错误的数据，此时我们会重新初始化串口。这个函数是为了在重新初始化串口时清除串口缓冲区中残留的无用数据，使得我们读取的第一个字节一定正好是输入数据的第一个字节。&lt;/p&gt;
+&lt;h3 id=&#34;相机-1&#34;&gt;&lt;a href=&#34;#相机-1&#34; class=&#34;headerlink&#34; title=&#34;相机&#34;&gt;&lt;/a&gt;相机&lt;/h3&gt;&lt;p&gt;所有跟相机有关的代码都在&lt;code&gt;include/robot_io/video&lt;/code&gt;中，对应的实现是&lt;code&gt;src/robot_io/video&lt;/code&gt;。接下来逐一解析各个代码文件的作用。&lt;/p&gt;
+&lt;h4 id=&#34;video-interface-h&#34;&gt;&lt;a href=&#34;#video-interface-h&#34; class=&#34;headerlink&#34; title=&#34;video_interface.h&#34;&gt;&lt;/a&gt;video_interface.h&lt;/h4&gt;&lt;p&gt;&lt;a class=&#34;link&#34;   href=&#34;https://gitee.com/tju-rm-cv/tjurm-2022/blob/master/include/robot_io/video/video_interface.h&#34; &gt;代码地址 &lt;i class=&#34;fa-regular fa-arrow-up-right-from-square fa-sm&#34;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h5 id=&#34;Matstamp类&#34;&gt;&lt;a href=&#34;#Matstamp类&#34; class=&#34;headerlink&#34; title=&#34;Matstamp类&#34;&gt;&lt;/a&gt;&lt;code&gt;Matstamp&lt;/code&gt;类&lt;/h5&gt;&lt;p&gt;这个类用来存储某一帧自瞄算法的输入信息，包括时间(ms)，相机图像，串口关键数据（yaw, pitch）。&lt;/p&gt;
+&lt;h5 id=&#34;VideoInterface类&#34;&gt;&lt;a href=&#34;#VideoInterface类&#34; class=&#34;headerlink&#34; title=&#34;VideoInterface类&#34;&gt;&lt;/a&gt;&lt;code&gt;VideoInterface&lt;/code&gt;类&lt;/h5&gt;&lt;p&gt;我们的程序不仅可以读取相机，在测试时还可以读取视频。视频跟相机都可以看作是由一张张图像构成的视频流（video），都会提供一个&lt;code&gt;read()&lt;/code&gt;函数用来从中读取一帧图像，因此我们在设计代码时使用了多态。&lt;/p&gt;
+&lt;p&gt;具体的，在&lt;code&gt;video_iterface.h&lt;/code&gt;这个文件中我们定义了&lt;code&gt;VideoInterface&lt;/code&gt;类，它相机类与视频类的父类，为相机或者视频定义了两个接口：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Init：初始化视频流&lt;/li&gt;
+&lt;li&gt;Read：读取一帧图像&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;不管是相机还是视频，都会继承这个VideoInterface，并实现上述两个成员函数。&lt;/p&gt;
+&lt;p&gt;在实际使用时，代码如下：&lt;/p&gt;
+&lt;div class=&#34;highlight-container&#34; data-rel=&#34;Plaintext&#34;&gt;&lt;figure class=&#34;iseeu highlight plaintext&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;VideoInterface* video_interface = new CameraWrapper(...);&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;or&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;VideoInterface* videp_interface = new VideoWrapper(...);&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/div&gt;
+
+&lt;p&gt;也就是把子类指针转化为父类指针，后续代码就只需要使用video_interface的read接口即可，这样做的好处就是我们要改变视频流时，只需要改初始化，不需要修改后续的读取代码。&lt;/p&gt;
+&lt;p&gt;同时，如果后续需要添加新的相机的话，也只需要继承这个类就行，不用更改别的代码。&lt;/p&gt;
+&lt;p&gt;相机类的代码大部分都是参考的大恒SDK文档，而且已经能用了，等大家需要修改的时候再看文档也行。&lt;/p&gt;
  ]]></description>
         </item>
     </channel>

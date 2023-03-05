@@ -383,8 +383,8 @@
     
         <span class="article-date article-meta-item">
             <i class="fa-regular fa-wrench"></i>&nbsp;
-            <span class="pc">2023-03-05 13:18:39</span>
-            <span class="mobile">2023-03-05 13:18</span>
+            <span class="pc">2023-03-05 13:45:09</span>
+            <span class="mobile">2023-03-05 13:45</span>
             <span class="hover-info">更新时间</span>
         </span>
     
@@ -442,8 +442,31 @@
   <div class="highlight-container" data-rel="Php"><figure class="iseeu highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"><span class="title function_ invoke__">var_dump</span>(<span class="string">&quot;admin&quot;</span>==<span class="number">0</span>);  <span class="comment">//true</span></span><br><span class="line"><span class="title function_ invoke__">var_dump</span>(<span class="string">&quot;1admin&quot;</span>==<span class="number">1</span>); <span class="comment">//true</span></span><br><span class="line"><span class="title function_ invoke__">var_dump</span>(<span class="string">&quot;2admin&quot;</span>==<span class="number">2</span>); <span class="comment">//true</span></span><br><span class="line"><span class="title function_ invoke__">var_dump</span>(<span class="string">&quot;ad1min&quot;</span>==<span class="number">1</span>); <span class="comment">//false</span></span><br><span class="line"><span class="title function_ invoke__">var_dump</span>(<span class="string">&quot;admin1&quot;</span>==<span class="number">1</span>); <span class="comment">//false</span></span><br><span class="line"><span class="title function_ invoke__">var_dump</span>(<span class="string">&quot;admin1&quot;</span>==<span class="number">0</span>); <span class="comment">//true</span></span><br><span class="line"><span class="title function_ invoke__">var_dump</span>(<span class="number">0e1234</span> == <span class="number">0e56789</span>); <span class="comment">//true </span></span><br><span class="line"><span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure></div>
 </li>
 <li><p>第三个条件：要求get到的num不是数字类型</p>
+<ul>
+<li>这个很好说，只要不是纯数字就可以了</li>
+</ul>
+</li>
+<li><p>第一个条件：让<code>$&#123;num&#125;!=2</code>返回1</p>
+<ul>
+<li><p>背景知识：</p>
+<ul>
+<li><p>eval()的返回值一般是<code>NULL</code>，除非执行的表达式是<code>return</code>，这种情况下，eval()的返回值就是return的值</p>
+</li>
+<li><p>php中的运算符优先级（跟Cpp基本一样哈）中比较运算的优先级大于双目位运算</p>
 </li>
 </ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>根据条件3，我们输入的一定不是一个纯数字，所以要满足第一个条件的话，我们就必须考虑如php里面运算符的优先级和结合性，以便于能够成功输出</p>
+<ul>
+<li><p>方法一：<code>num=0|1</code></p>
+</li>
+<li><p>方法二：<code>num=0^0</code></p>
+</li>
+</ul>
+<p>…知道了思路，方案肯定是有非常多的，在此就不列举了</p>
 
             </div>
 
@@ -480,15 +503,15 @@
   <div class="recommended-article-header">
     <i class="fa-solid fa-bookmark fa-fw" aria-hidden="true"></i><span>推荐阅读</span>
   </div>
-  <div class="recommended-article-group"><a class="recommended-article-item" href="/2023/02/28/module_params/" title="params模块" rel="bookmark">
-  <img src="https://evan.beee.top/img/wallhaven-wqery6-light.webp" alt="params模块">
-  <span class="title">params模块</span>
-</a><a class="recommended-article-item" href="/2023/02/28/module_logger/" title="logger模块" rel="bookmark">
-  <img src="https://evan.beee.top/img/wallhaven-wqery6-light.webp" alt="logger模块">
-  <span class="title">logger模块</span>
-</a><a class="recommended-article-item" href="/2023/02/28/module_armor/" title="armor模块" rel="bookmark">
+  <div class="recommended-article-group"><a class="recommended-article-item" href="/2023/02/28/module_armor/" title="armor模块" rel="bookmark">
   <img src="https://evan.beee.top/img/wallhaven-wqery6-light.webp" alt="armor模块">
   <span class="title">armor模块</span>
+</a><a class="recommended-article-item" href="/2023/02/28/module_params/" title="params模块" rel="bookmark">
+  <img src="https://evan.beee.top/img/wallhaven-wqery6-light.webp" alt="params模块">
+  <span class="title">params模块</span>
+</a><a class="recommended-article-item" href="/2023/02/28/module_robot_io/" title="robot_io模块" rel="bookmark">
+  <img src="https://evan.beee.top/img/wallhaven-wqery6-light.webp" alt="robot_io模块">
+  <span class="title">robot_io模块</span>
 </a></div>
 </div>
 

@@ -498,20 +498,23 @@
                 
 
                 <h3 class="home-article-title">
-                    <a href="/2023/02/28/module_3rd/">
-                        3rd模块
+                    <a href="/2023/02/28/module_armor/">
+                        armor模块
                     </a>
                 </h3>
 
                 <div class="home-article-content markdown-body">
                     
-                        模块总览该模块用于保存本项目用到的两个第三方库的源码：
+                        
+对应代码: 为 include/armor 和 src/armor 文件夹
+功能：识别装甲板
+输入当前帧的图片
+输出识别到的图片中装甲板的位置
 
-fmt
-nlohmann json
 
-在编译本项目时，除了编译与自瞄相关的代码，还会编译这两个第三方库，并将三者链接。
-fmt库简介fmt库为c++提供了一种类似python的输出格式化方法，...
+
+大致思路
+使用 yolofastedv2 检测装甲板(但是深度学习方法检测到的装甲板边缘位置不稳定...
                     
                 </div>
 
@@ -540,7 +543,7 @@ fmt库简介fmt库为c++提供了一种类似python的输出格式化方法，..
         
     </div>
 
-    <a href="/2023/02/28/module_3rd/">阅读全文<span class="seo-reader-text">3rd模块</span>&nbsp;<i class="fa-solid fa-angle-right"></i></a>
+    <a href="/2023/02/28/module_armor/">阅读全文<span class="seo-reader-text">armor模块</span>&nbsp;<i class="fa-solid fa-angle-right"></i></a>
 </div>
 
             </li>
@@ -658,6 +661,111 @@ nvidia推理框架TensorRT
                 
 
                 <h3 class="home-article-title">
+                    <a href="/2023/02/28/module_params/">
+                        params模块
+                    </a>
+                </h3>
+
+                <div class="home-article-content markdown-body">
+                    
+                        模块总览该模块允许我们把自瞄算法的参数保存在配置文件（json）中，并在程序运行时把配置文件加载到内存中。
+好处：每次修改算法参数后，不需要重新编译整个程序（耗时大概5min），所以能够减少程序编译耗时，提高代码调试速度。
+一个例子：
+1234567...
+                    
+                </div>
+
+                <div class="home-article-meta-info-container">
+    <div class="home-article-meta-info">
+        <span><i class="fa-solid fa-calendars"></i>&nbsp;
+            <span class="home-article-date" data-date="Tue Feb 28 2023 22:32:45 GMT+0800">
+                
+                    2023-02-28
+                
+            </span>
+        </span>
+        
+            <span class="home-article-category"><i class="fa-solid fa-folders"></i></i>&nbsp;
+                <ul>
+                    
+                        <li>
+                            
+                            <a href="/categories/RM2022/">RM2022</a>&nbsp;
+                        </li>
+                    
+                    
+                </ul>
+            </span>
+        
+        
+    </div>
+
+    <a href="/2023/02/28/module_params/">阅读全文<span class="seo-reader-text">params模块</span>&nbsp;<i class="fa-solid fa-angle-right"></i></a>
+</div>
+
+            </li>
+        
+            <li class="home-article-item">
+
+                
+
+                
+
+                <h3 class="home-article-title">
+                    <a href="/2023/02/28/module_3rd/">
+                        3rd模块
+                    </a>
+                </h3>
+
+                <div class="home-article-content markdown-body">
+                    
+                        模块总览该模块用于保存本项目用到的两个第三方库的源码：
+
+fmt
+nlohmann json
+
+在编译本项目时，除了编译与自瞄相关的代码，还会编译这两个第三方库，并将三者链接。
+fmt库简介fmt库为c++提供了一种类似python的输出格式化方法，...
+                    
+                </div>
+
+                <div class="home-article-meta-info-container">
+    <div class="home-article-meta-info">
+        <span><i class="fa-solid fa-calendars"></i>&nbsp;
+            <span class="home-article-date" data-date="Tue Feb 28 2023 22:32:45 GMT+0800">
+                
+                    2023-02-28
+                
+            </span>
+        </span>
+        
+            <span class="home-article-category"><i class="fa-solid fa-folders"></i></i>&nbsp;
+                <ul>
+                    
+                        <li>
+                            
+                            <a href="/categories/RM2022/">RM2022</a>&nbsp;
+                        </li>
+                    
+                    
+                </ul>
+            </span>
+        
+        
+    </div>
+
+    <a href="/2023/02/28/module_3rd/">阅读全文<span class="seo-reader-text">3rd模块</span>&nbsp;<i class="fa-solid fa-angle-right"></i></a>
+</div>
+
+            </li>
+        
+            <li class="home-article-item">
+
+                
+
+                
+
+                <h3 class="home-article-title">
                     <a href="/2023/02/28/module_logger/">
                         logger模块
                     </a>
@@ -710,57 +818,6 @@ WARINING：输出一些警告信息，例如串口收到的数...
                 
 
                 <h3 class="home-article-title">
-                    <a href="/2023/02/28/module_params/">
-                        params模块
-                    </a>
-                </h3>
-
-                <div class="home-article-content markdown-body">
-                    
-                        模块总览该模块允许我们把自瞄算法的参数保存在配置文件（json）中，并在程序运行时把配置文件加载到内存中。
-好处：每次修改算法参数后，不需要重新编译整个程序（耗时大概5min），所以能够减少程序编译耗时，提高代码调试速度。
-一个例子：
-1234567...
-                    
-                </div>
-
-                <div class="home-article-meta-info-container">
-    <div class="home-article-meta-info">
-        <span><i class="fa-solid fa-calendars"></i>&nbsp;
-            <span class="home-article-date" data-date="Tue Feb 28 2023 22:32:45 GMT+0800">
-                
-                    2023-02-28
-                
-            </span>
-        </span>
-        
-            <span class="home-article-category"><i class="fa-solid fa-folders"></i></i>&nbsp;
-                <ul>
-                    
-                        <li>
-                            
-                            <a href="/categories/RM2022/">RM2022</a>&nbsp;
-                        </li>
-                    
-                    
-                </ul>
-            </span>
-        
-        
-    </div>
-
-    <a href="/2023/02/28/module_params/">阅读全文<span class="seo-reader-text">params模块</span>&nbsp;<i class="fa-solid fa-angle-right"></i></a>
-</div>
-
-            </li>
-        
-            <li class="home-article-item">
-
-                
-
-                
-
-                <h3 class="home-article-title">
                     <a href="/2023/02/28/module_robot_io/">
                         robot_io模块
                     </a>
@@ -802,63 +859,6 @@ WARINING：输出一些警告信息，例如串口收到的数...
     </div>
 
     <a href="/2023/02/28/module_robot_io/">阅读全文<span class="seo-reader-text">robot_io模块</span>&nbsp;<i class="fa-solid fa-angle-right"></i></a>
-</div>
-
-            </li>
-        
-            <li class="home-article-item">
-
-                
-
-                
-
-                <h3 class="home-article-title">
-                    <a href="/2023/02/28/module_armor/">
-                        armor模块
-                    </a>
-                </h3>
-
-                <div class="home-article-content markdown-body">
-                    
-                        
-对应代码: 为 include/armor 和 src/armor 文件夹
-功能：识别装甲板
-输入当前帧的图片
-输出识别到的图片中装甲板的位置
-
-
-
-大致思路
-使用 yolofastedv2 检测装甲板(但是深度学习方法检测到的装甲板边缘位置不稳定...
-                    
-                </div>
-
-                <div class="home-article-meta-info-container">
-    <div class="home-article-meta-info">
-        <span><i class="fa-solid fa-calendars"></i>&nbsp;
-            <span class="home-article-date" data-date="Tue Feb 28 2023 22:32:45 GMT+0800">
-                
-                    2023-02-28
-                
-            </span>
-        </span>
-        
-            <span class="home-article-category"><i class="fa-solid fa-folders"></i></i>&nbsp;
-                <ul>
-                    
-                        <li>
-                            
-                            <a href="/categories/RM2022/">RM2022</a>&nbsp;
-                        </li>
-                    
-                    
-                </ul>
-            </span>
-        
-        
-    </div>
-
-    <a href="/2023/02/28/module_armor/">阅读全文<span class="seo-reader-text">armor模块</span>&nbsp;<i class="fa-solid fa-angle-right"></i></a>
 </div>
 
             </li>
