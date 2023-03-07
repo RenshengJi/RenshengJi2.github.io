@@ -1,6 +1,40 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>HelloWorld</title>
+    <url>/2023/02/28/HelloWorld/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>为什么要建立我的博客</p>
+<ul>
+<li>好记性不如烂笔头，<code>记录一些学到的技术</code></li>
+<li><code>分享一些有趣的事</code></li>
+<li>……</li>
+</ul>
+]]></content>
+      <categories>
+        <category>杂谈</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>3rd模块</title>
+    <url>/2023/02/28/module_3rd/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="模块总览"><a href="#模块总览" class="headerlink" title="模块总览"></a>模块总览</h2><p>该模块用于保存本项目用到的两个第三方库的源码：</p>
+<ol>
+<li>fmt</li>
+<li>nlohmann json</li>
+</ol>
+<p>在编译本项目时，除了编译与自瞄相关的代码，还会编译这两个第三方库，并将三者链接。</p>
+<h2 id="fmt库简介"><a href="#fmt库简介" class="headerlink" title="fmt库简介"></a>fmt库简介</h2><p>fmt库为c++提供了一种类似python的输出格式化方法，比cout与printf更加的方便与安全。</p>
+<p>具体用法详见<code>3rd/fmt</code>中的<a class="link"   href="https://gitee.com/tju-rm-cv/tjurm-2022/blob/master/3rd/fmt/README.rst" >readme文件 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a>。</p>
+<p>本项目使用这个库来实现logger模块。</p>
+<h2 id="nlohmann-json库简介"><a href="#nlohmann-json库简介" class="headerlink" title="nlohmann json库简介"></a>nlohmann json库简介</h2><p>nlohmann json库为c++提供了读取json文件的功能，现有的c++ json库很多，nlohmann只是一种，不过它的速度跟易用性都是比较优秀的。</p>
+<p>具体用法详见<code>3rd/json</code>中的<a class="link"   href="https://gitee.com/tju-rm-cv/tjurm-2022/blob/master/3rd/json/README.md" >readme文件 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a>。</p>
+<p>本项目将程序运行时的各种参数保存在<a class="link"   href="https://gitee.com/tju-rm-cv/tjurm-2022/blob/master/assets/params.json" >json文件 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a>中，并使用这个库来读取json文件。</p>
+]]></content>
+      <categories>
+        <category>RM2022</category>
+      </categories>
+  </entry>
+  <entry>
     <title>armor模块</title>
     <url>/2023/02/28/module_armor/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><ul>
@@ -227,26 +261,6 @@
       </categories>
   </entry>
   <entry>
-    <title>3rd模块</title>
-    <url>/2023/02/28/module_3rd/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="模块总览"><a href="#模块总览" class="headerlink" title="模块总览"></a>模块总览</h2><p>该模块用于保存本项目用到的两个第三方库的源码：</p>
-<ol>
-<li>fmt</li>
-<li>nlohmann json</li>
-</ol>
-<p>在编译本项目时，除了编译与自瞄相关的代码，还会编译这两个第三方库，并将三者链接。</p>
-<h2 id="fmt库简介"><a href="#fmt库简介" class="headerlink" title="fmt库简介"></a>fmt库简介</h2><p>fmt库为c++提供了一种类似python的输出格式化方法，比cout与printf更加的方便与安全。</p>
-<p>具体用法详见<code>3rd/fmt</code>中的<a class="link"   href="https://gitee.com/tju-rm-cv/tjurm-2022/blob/master/3rd/fmt/README.rst" >readme文件 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a>。</p>
-<p>本项目使用这个库来实现logger模块。</p>
-<h2 id="nlohmann-json库简介"><a href="#nlohmann-json库简介" class="headerlink" title="nlohmann json库简介"></a>nlohmann json库简介</h2><p>nlohmann json库为c++提供了读取json文件的功能，现有的c++ json库很多，nlohmann只是一种，不过它的速度跟易用性都是比较优秀的。</p>
-<p>具体用法详见<code>3rd/json</code>中的<a class="link"   href="https://gitee.com/tju-rm-cv/tjurm-2022/blob/master/3rd/json/README.md" >readme文件 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a>。</p>
-<p>本项目将程序运行时的各种参数保存在<a class="link"   href="https://gitee.com/tju-rm-cv/tjurm-2022/blob/master/assets/params.json" >json文件 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a>中，并使用这个库来读取json文件。</p>
-]]></content>
-      <categories>
-        <category>RM2022</category>
-      </categories>
-  </entry>
-  <entry>
     <title>assets模块</title>
     <url>/2023/02/28/module_assets/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="模块总览"><a href="#模块总览" class="headerlink" title="模块总览"></a>模块总览</h2><p>该模块用于保存一些与程序无关的文件。</p>
@@ -304,67 +318,6 @@
       </categories>
   </entry>
   <entry>
-    <title>一道ctf小题</title>
-    <url>/2023/03/05/ctf-1/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>直接上源码：</p>
-<div class="highlight-container" data-rel="Php"><figure class="iseeu highlight php"><table><tr><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"><span class="title function_ invoke__">highlight_file</span>(<span class="keyword">__FILE__</span>);</span><br><span class="line"><span class="title function_ invoke__">error_reporting</span>(<span class="number">0</span>);</span><br><span class="line"></span><br><span class="line"><span class="variable">$num</span> = <span class="variable">$_GET</span>[<span class="string">&#x27;num&#x27;</span>];</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> (<span class="title function_ invoke__">preg_match</span>(<span class="string">&quot;/\&#x27;|\&quot;|\`| |&lt;|&gt;|?|\^|%|\$/&quot;</span>, <span class="variable">$num</span>)) &#123;</span><br><span class="line">           <span class="keyword">die</span>(<span class="string">&quot;nononno&quot;</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> (<span class="keyword">eval</span>(<span class="string">&quot;return $&#123;num&#125; != 2;&quot;</span>) &amp;&amp; <span class="variable">$num</span> == <span class="number">0</span> &amp;&amp; <span class="title function_ invoke__">is_numeric</span>(<span class="variable">$num</span>) != <span class="literal">true</span>) &#123;</span><br><span class="line"> <span class="title function_ invoke__">system</span>(<span class="string">&#x27;cat flag.php&#x27;</span>);</span><br><span class="line">&#125; <span class="keyword">else</span> &#123;</span><br><span class="line"> <span class="keyword">echo</span> <span class="string">&#x27;2&#x27;</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
-
-<p>分析：我们需要同时满足if表达式中的三个条件</p>
-<div class="highlight-container" data-rel="Php"><figure class="iseeu highlight php"><table><tr><td class="code"><pre><span class="line"><span class="keyword">eval</span>(<span class="string">&quot;return $&#123;num&#125; != 2;&quot;</span>) &amp;&amp; <span class="variable">$num</span> == <span class="number">0</span> &amp;&amp; <span class="title function_ invoke__">is_numeric</span>(<span class="variable">$num</span>) != <span class="literal">true</span></span><br></pre></td></tr></table></figure></div>
-
-<ul>
-<li><p>第二个条件：要求get到的num弱等于0</p>
-<ul>
-<li><p>弱等于比较时，会先将字符串转换为数字，其转换方式就是截取开头的数字，不过还有两种特殊情况如下：</p>
-<ul>
-<li><p>如果没有数字，即就是一个纯字符串的话，转化为0</p>
-</li>
-<li><p>如果这个字符串恰好是一个科学技术法的表达式，会将此字符串按科学技术法转换为数字</p>
-</li>
-</ul>
-</li>
-<li><p>示例代码如下：</p>
-</li>
-</ul>
-  <div class="highlight-container" data-rel="Php"><figure class="iseeu highlight php"><table><tr><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"><span class="title function_ invoke__">var_dump</span>(<span class="string">&quot;admin&quot;</span>==<span class="number">0</span>);  <span class="comment">//true</span></span><br><span class="line"><span class="title function_ invoke__">var_dump</span>(<span class="string">&quot;1admin&quot;</span>==<span class="number">1</span>); <span class="comment">//true</span></span><br><span class="line"><span class="title function_ invoke__">var_dump</span>(<span class="string">&quot;2admin&quot;</span>==<span class="number">2</span>); <span class="comment">//true</span></span><br><span class="line"><span class="title function_ invoke__">var_dump</span>(<span class="string">&quot;ad1min&quot;</span>==<span class="number">1</span>); <span class="comment">//false</span></span><br><span class="line"><span class="title function_ invoke__">var_dump</span>(<span class="string">&quot;admin1&quot;</span>==<span class="number">1</span>); <span class="comment">//false</span></span><br><span class="line"><span class="title function_ invoke__">var_dump</span>(<span class="string">&quot;admin1&quot;</span>==<span class="number">0</span>); <span class="comment">//true</span></span><br><span class="line"><span class="title function_ invoke__">var_dump</span>(<span class="number">0e1234</span> == <span class="number">0e56789</span>); <span class="comment">//true </span></span><br><span class="line"><span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure></div>
-</li>
-<li><p>第三个条件：要求get到的num不是数字类型</p>
-<ul>
-<li>这个很好说，只要不是纯数字就可以了</li>
-</ul>
-</li>
-<li><p>第一个条件：让<code>$&#123;num&#125;!=2</code>返回1</p>
-<ul>
-<li><p>背景知识：</p>
-<ul>
-<li><p>eval()的返回值一般是<code>NULL</code>，除非执行的表达式是<code>return</code>，这种情况下，eval()的返回值就是return的值</p>
-</li>
-<li><p>php中的运算符优先级（跟Cpp基本一样哈）中比较运算的优先级大于双目位运算</p>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<p>根据条件3，我们输入的一定不是一个纯数字，所以要满足第一个条件的话，我们就必须考虑如php里面运算符的优先级和结合性，以便于能够成功输出</p>
-<ul>
-<li><p>方法一：<code>num=0|1</code></p>
-</li>
-<li><p>方法二：<code>num=0^0</code></p>
-</li>
-</ul>
-<p>…知道了思路，方案肯定是有非常多的，在此就不列举了</p>
-]]></content>
-      <categories>
-        <category>ctf</category>
-        <category>web</category>
-        <category>php</category>
-      </categories>
-      <tags>
-        <tag>php</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>logger模块</title>
     <url>/2023/02/28/module_logger/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="模块总览"><a href="#模块总览" class="headerlink" title="模块总览"></a>模块总览</h2><p>该模块基于c++第三方库<code>fmt</code>实现了一个logger用于保存程序运行时的一些信息。支持以下功能：</p>
@@ -420,6 +373,42 @@
 <div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">// format 3rd types</span><br><span class="line">template&lt;&gt; struct fmt::formatter&lt;cv::Point3f&gt; &#123;</span><br><span class="line">    char presentation = &#x27;f&#x27;;</span><br><span class="line">    ...</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></div>
 
 <p>fmt::print是会报错的，因为它不知道该怎么格式化cv::Point3f。如何编写这个自定义格式化代码：<a class="link"   href="https://zhuanlan.zhihu.com/p/601744791" >https://zhuanlan.zhihu.com/p/601744791 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
+]]></content>
+      <categories>
+        <category>RM2022</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>params模块</title>
+    <url>/2023/02/28/module_params/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="模块总览"><a href="#模块总览" class="headerlink" title="模块总览"></a>模块总览</h2><p>该模块允许我们把自瞄算法的参数保存在配置文件（json）中，并在程序运行时把配置文件加载到内存中。</p>
+<p>好处：每次修改算法参数后，不需要重新编译整个程序（耗时大概5min），所以能够减少程序编译耗时，提高代码调试速度。</p>
+<p>一个例子：</p>
+<div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">// json文件：</span><br><span class="line">// &#123;</span><br><span class="line">//     &quot;key1&quot;: 0.5,</span><br><span class="line">//     &quot;key2&quot;: &quot;string&quot;,</span><br><span class="line">//     &quot;key3&quot;: &#123;</span><br><span class="line">//         &quot;key1&quot;: [1, 2, 3]</span><br><span class="line">//     &#125;</span><br><span class="line">// &#125;</span><br><span class="line">// 代码：</span><br><span class="line">ParamsManager&amp; obj = *ParamsManager::GetInstance();</span><br><span class="line">obj.load(&quot;path/to/your/json/file&quot;);</span><br><span class="line"></span><br><span class="line">float x = obj[&quot;key1];</span><br><span class="line">std::string y = obj[&quot;key2];</span><br><span class="line">std::vector&lt;int&gt; z = obj[&quot;key3][&quot;key1];</span><br></pre></td></tr></table></figure></div>
+
+<h2 id="代码解析"><a href="#代码解析" class="headerlink" title="代码解析"></a>代码解析</h2><h3 id="params-manager-h"><a href="#params-manager-h" class="headerlink" title="params_manager.h"></a>params_manager.h</h3><p><a class="link"   href="https://gitee.com/tju-rm-cv/tjurm-2022/blob/master/include/params/params_manager.h" >代码地址（头文件） <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
+<p>使用ParamsManager类来读取（写入）配置文件，这个类也使用了单例模式。关键代码如下：</p>
+<ul>
+<li><code>nlohmann::json params_</code><br>  实际保存json文件的json对象。</li>
+<li><code>load(const std::string&amp;)</code><br>  加载json文件。</li>
+<li><code>dump(const std::string&amp;)</code><br>  将json对象保存成json文件。</li>
+<li><code>nlohmann::json&amp; operator[](const std::string&amp;)</code><br>  提供[]操作符，输入一个字符串（key），返回一个json对象（value），由于json对象也支持[]操作符，所以用起来就跟python字典很像。</li>
+</ul>
+<p>nlohmann json这个库实际上做的事情是：</p>
+<ol>
+<li><p>将json文件里的各个值读取成nlohmann::json对象</p>
+</li>
+<li><p>当我们将json对象赋值给某一个变量时，会触发一个函数：</p>
+ <div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">template&lt;typename T&gt;</span><br><span class="line">void from_json(nlohmann::json&amp; j, T&amp; p);</span><br></pre></td></tr></table></figure></div>
+
+<p> 与该函数类似的还有一个to_json，该函数的作用是将json对象转化为对应的变量类型，对于内置类型，例如float, string, vector等，库本身已经实现好了对应的from_json&#x2F;to_json函数。</p>
+<p> 而对于自定义类型，我们需要自行提供对应的转换函数。</p>
+</li>
+</ol>
+<p>以下这段代码就实现了cv::Mat与json的转换：</p>
+<div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">// 我记得是一定要放在cv这个命名空间里的，否则找不到</span><br><span class="line">namespace cv &#123;</span><br><span class="line">void to_json(nlohmann::json&amp; j, const cv::Mat&amp; p);</span><br><span class="line">void from_json(const nlohmann::json&amp; j, cv::Mat&amp; p);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+
+<p>代码实现很简单，就不讲了~</p>
 ]]></content>
       <categories>
         <category>RM2022</category>
@@ -505,53 +494,64 @@
       </categories>
   </entry>
   <entry>
-    <title>params模块</title>
-    <url>/2023/02/28/module_params/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="模块总览"><a href="#模块总览" class="headerlink" title="模块总览"></a>模块总览</h2><p>该模块允许我们把自瞄算法的参数保存在配置文件（json）中，并在程序运行时把配置文件加载到内存中。</p>
-<p>好处：每次修改算法参数后，不需要重新编译整个程序（耗时大概5min），所以能够减少程序编译耗时，提高代码调试速度。</p>
-<p>一个例子：</p>
-<div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">// json文件：</span><br><span class="line">// &#123;</span><br><span class="line">//     &quot;key1&quot;: 0.5,</span><br><span class="line">//     &quot;key2&quot;: &quot;string&quot;,</span><br><span class="line">//     &quot;key3&quot;: &#123;</span><br><span class="line">//         &quot;key1&quot;: [1, 2, 3]</span><br><span class="line">//     &#125;</span><br><span class="line">// &#125;</span><br><span class="line">// 代码：</span><br><span class="line">ParamsManager&amp; obj = *ParamsManager::GetInstance();</span><br><span class="line">obj.load(&quot;path/to/your/json/file&quot;);</span><br><span class="line"></span><br><span class="line">float x = obj[&quot;key1];</span><br><span class="line">std::string y = obj[&quot;key2];</span><br><span class="line">std::vector&lt;int&gt; z = obj[&quot;key3][&quot;key1];</span><br></pre></td></tr></table></figure></div>
+    <title>一道ctf小题</title>
+    <url>/2023/03/05/ctf-1/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>直接上源码：</p>
+<div class="highlight-container" data-rel="Php"><figure class="iseeu highlight php"><table><tr><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"><span class="title function_ invoke__">highlight_file</span>(<span class="keyword">__FILE__</span>);</span><br><span class="line"><span class="title function_ invoke__">error_reporting</span>(<span class="number">0</span>);</span><br><span class="line"></span><br><span class="line"><span class="variable">$num</span> = <span class="variable">$_GET</span>[<span class="string">&#x27;num&#x27;</span>];</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> (<span class="title function_ invoke__">preg_match</span>(<span class="string">&quot;/\&#x27;|\&quot;|\`| |&lt;|&gt;|?|\^|%|\$/&quot;</span>, <span class="variable">$num</span>)) &#123;</span><br><span class="line">           <span class="keyword">die</span>(<span class="string">&quot;nononno&quot;</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> (<span class="keyword">eval</span>(<span class="string">&quot;return $&#123;num&#125; != 2;&quot;</span>) &amp;&amp; <span class="variable">$num</span> == <span class="number">0</span> &amp;&amp; <span class="title function_ invoke__">is_numeric</span>(<span class="variable">$num</span>) != <span class="literal">true</span>) &#123;</span><br><span class="line"> <span class="title function_ invoke__">system</span>(<span class="string">&#x27;cat flag.php&#x27;</span>);</span><br><span class="line">&#125; <span class="keyword">else</span> &#123;</span><br><span class="line"> <span class="keyword">echo</span> <span class="string">&#x27;2&#x27;</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
 
-<h2 id="代码解析"><a href="#代码解析" class="headerlink" title="代码解析"></a>代码解析</h2><h3 id="params-manager-h"><a href="#params-manager-h" class="headerlink" title="params_manager.h"></a>params_manager.h</h3><p><a class="link"   href="https://gitee.com/tju-rm-cv/tjurm-2022/blob/master/include/params/params_manager.h" >代码地址（头文件） <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
-<p>使用ParamsManager类来读取（写入）配置文件，这个类也使用了单例模式。关键代码如下：</p>
+<p>分析：我们需要同时满足if表达式中的三个条件</p>
+<div class="highlight-container" data-rel="Php"><figure class="iseeu highlight php"><table><tr><td class="code"><pre><span class="line"><span class="keyword">eval</span>(<span class="string">&quot;return $&#123;num&#125; != 2;&quot;</span>) &amp;&amp; <span class="variable">$num</span> == <span class="number">0</span> &amp;&amp; <span class="title function_ invoke__">is_numeric</span>(<span class="variable">$num</span>) != <span class="literal">true</span></span><br></pre></td></tr></table></figure></div>
+
 <ul>
-<li><code>nlohmann::json params_</code><br>  实际保存json文件的json对象。</li>
-<li><code>load(const std::string&amp;)</code><br>  加载json文件。</li>
-<li><code>dump(const std::string&amp;)</code><br>  将json对象保存成json文件。</li>
-<li><code>nlohmann::json&amp; operator[](const std::string&amp;)</code><br>  提供[]操作符，输入一个字符串（key），返回一个json对象（value），由于json对象也支持[]操作符，所以用起来就跟python字典很像。</li>
+<li><p>第二个条件：要求get到的num弱等于0</p>
+<ul>
+<li><p>弱等于比较时，会先将字符串转换为数字，其转换方式就是截取开头的数字，不过还有两种特殊情况如下：</p>
+<ul>
+<li><p>如果没有数字，即就是一个纯字符串的话，转化为0</p>
+</li>
+<li><p>如果这个字符串恰好是一个科学技术法的表达式，会将此字符串按科学技术法转换为数字</p>
+</li>
 </ul>
-<p>nlohmann json这个库实际上做的事情是：</p>
-<ol>
-<li><p>将json文件里的各个值读取成nlohmann::json对象</p>
 </li>
-<li><p>当我们将json对象赋值给某一个变量时，会触发一个函数：</p>
- <div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">template&lt;typename T&gt;</span><br><span class="line">void from_json(nlohmann::json&amp; j, T&amp; p);</span><br></pre></td></tr></table></figure></div>
-
-<p> 与该函数类似的还有一个to_json，该函数的作用是将json对象转化为对应的变量类型，对于内置类型，例如float, string, vector等，库本身已经实现好了对应的from_json&#x2F;to_json函数。</p>
-<p> 而对于自定义类型，我们需要自行提供对应的转换函数。</p>
+<li><p>示例代码如下：</p>
 </li>
-</ol>
-<p>以下这段代码就实现了cv::Mat与json的转换：</p>
-<div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">// 我记得是一定要放在cv这个命名空间里的，否则找不到</span><br><span class="line">namespace cv &#123;</span><br><span class="line">void to_json(nlohmann::json&amp; j, const cv::Mat&amp; p);</span><br><span class="line">void from_json(const nlohmann::json&amp; j, cv::Mat&amp; p);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
-
-<p>代码实现很简单，就不讲了~</p>
+</ul>
+  <div class="highlight-container" data-rel="Php"><figure class="iseeu highlight php"><table><tr><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"><span class="title function_ invoke__">var_dump</span>(<span class="string">&quot;admin&quot;</span>==<span class="number">0</span>);  <span class="comment">//true</span></span><br><span class="line"><span class="title function_ invoke__">var_dump</span>(<span class="string">&quot;1admin&quot;</span>==<span class="number">1</span>); <span class="comment">//true</span></span><br><span class="line"><span class="title function_ invoke__">var_dump</span>(<span class="string">&quot;2admin&quot;</span>==<span class="number">2</span>); <span class="comment">//true</span></span><br><span class="line"><span class="title function_ invoke__">var_dump</span>(<span class="string">&quot;ad1min&quot;</span>==<span class="number">1</span>); <span class="comment">//false</span></span><br><span class="line"><span class="title function_ invoke__">var_dump</span>(<span class="string">&quot;admin1&quot;</span>==<span class="number">1</span>); <span class="comment">//false</span></span><br><span class="line"><span class="title function_ invoke__">var_dump</span>(<span class="string">&quot;admin1&quot;</span>==<span class="number">0</span>); <span class="comment">//true</span></span><br><span class="line"><span class="title function_ invoke__">var_dump</span>(<span class="number">0e1234</span> == <span class="number">0e56789</span>); <span class="comment">//true </span></span><br><span class="line"><span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure></div>
+</li>
+<li><p>第三个条件：要求get到的num不是数字类型</p>
+<ul>
+<li>这个很好说，只要不是纯数字就可以了</li>
+</ul>
+</li>
+<li><p>第一个条件：让<code>$&#123;num&#125;!=2</code>返回1</p>
+<ul>
+<li><p>背景知识：</p>
+<ul>
+<li><p>eval()的返回值一般是<code>NULL</code>，除非执行的表达式是<code>return</code>，这种情况下，eval()的返回值就是return的值</p>
+</li>
+<li><p>php中的运算符优先级（跟Cpp基本一样哈）中比较运算的优先级大于双目位运算</p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>根据条件3，我们输入的一定不是一个纯数字，所以要满足第一个条件的话，我们就必须考虑如php里面运算符的优先级和结合性，以便于能够成功输出</p>
+<ul>
+<li><p>方法一：<code>num=0|1</code></p>
+</li>
+<li><p>方法二：<code>num=0^0</code></p>
+</li>
+</ul>
+<p>…知道了思路，方案肯定是有非常多的，在此就不列举了</p>
 ]]></content>
       <categories>
-        <category>RM2022</category>
+        <category>ctf</category>
+        <category>web</category>
+        <category>php</category>
       </categories>
-  </entry>
-  <entry>
-    <title>HelloWorld</title>
-    <url>/2023/02/28/HelloWorld/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>为什么要建立我的博客</p>
-<ul>
-<li>好记性不如烂笔头，<code>记录一些学到的技术</code></li>
-<li><code>分享一些有趣的事</code></li>
-<li>……</li>
-</ul>
-]]></content>
-      <categories>
-        <category>杂谈</category>
-      </categories>
+      <tags>
+        <tag>php</tag>
+      </tags>
   </entry>
 </search>
