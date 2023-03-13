@@ -1,23 +1,78 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>3rd模块</title>
-    <url>/2023/02/28/module_3rd/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="模块总览"><a href="#模块总览" class="headerlink" title="模块总览"></a>模块总览</h2><p>该模块用于保存本项目用到的两个第三方库的源码：</p>
-<ol>
-<li>fmt</li>
-<li>nlohmann json</li>
-</ol>
-<p>在编译本项目时，除了编译与自瞄相关的代码，还会编译这两个第三方库，并将三者链接。</p>
-<h2 id="fmt库简介"><a href="#fmt库简介" class="headerlink" title="fmt库简介"></a>fmt库简介</h2><p>fmt库为c++提供了一种类似python的输出格式化方法，比cout与printf更加的方便与安全。</p>
-<p>具体用法详见<code>3rd/fmt</code>中的<a class="link"   href="https://gitee.com/tju-rm-cv/tjurm-2022/blob/master/3rd/fmt/README.rst" >readme文件 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a>。</p>
-<p>本项目使用这个库来实现logger模块。</p>
-<h2 id="nlohmann-json库简介"><a href="#nlohmann-json库简介" class="headerlink" title="nlohmann json库简介"></a>nlohmann json库简介</h2><p>nlohmann json库为c++提供了读取json文件的功能，现有的c++ json库很多，nlohmann只是一种，不过它的速度跟易用性都是比较优秀的。</p>
-<p>具体用法详见<code>3rd/json</code>中的<a class="link"   href="https://gitee.com/tju-rm-cv/tjurm-2022/blob/master/3rd/json/README.md" >readme文件 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a>。</p>
-<p>本项目将程序运行时的各种参数保存在<a class="link"   href="https://gitee.com/tju-rm-cv/tjurm-2022/blob/master/assets/params.json" >json文件 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a>中，并使用这个库来读取json文件。</p>
+    <title>一道ctf小题</title>
+    <url>/2023/03/05/ctf-1/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>直接上源码：</p>
+<div class="highlight-container" data-rel="Php"><figure class="iseeu highlight php"><table><tr><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"><span class="title function_ invoke__">highlight_file</span>(<span class="keyword">__FILE__</span>);</span><br><span class="line"><span class="title function_ invoke__">error_reporting</span>(<span class="number">0</span>);</span><br><span class="line"></span><br><span class="line"><span class="variable">$num</span> = <span class="variable">$_GET</span>[<span class="string">&#x27;num&#x27;</span>];</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> (<span class="title function_ invoke__">preg_match</span>(<span class="string">&quot;/\&#x27;|\&quot;|\`| |&lt;|&gt;|?|\^|%|\$/&quot;</span>, <span class="variable">$num</span>)) &#123;</span><br><span class="line">           <span class="keyword">die</span>(<span class="string">&quot;nononno&quot;</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> (<span class="keyword">eval</span>(<span class="string">&quot;return $&#123;num&#125; != 2;&quot;</span>) &amp;&amp; <span class="variable">$num</span> == <span class="number">0</span> &amp;&amp; <span class="title function_ invoke__">is_numeric</span>(<span class="variable">$num</span>) != <span class="literal">true</span>) &#123;</span><br><span class="line"> <span class="title function_ invoke__">system</span>(<span class="string">&#x27;cat flag.php&#x27;</span>);</span><br><span class="line">&#125; <span class="keyword">else</span> &#123;</span><br><span class="line"> <span class="keyword">echo</span> <span class="string">&#x27;2&#x27;</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+
+<p>分析：我们需要同时满足if表达式中的三个条件</p>
+<div class="highlight-container" data-rel="Php"><figure class="iseeu highlight php"><table><tr><td class="code"><pre><span class="line"><span class="keyword">eval</span>(<span class="string">&quot;return $&#123;num&#125; != 2;&quot;</span>) &amp;&amp; <span class="variable">$num</span> == <span class="number">0</span> &amp;&amp; <span class="title function_ invoke__">is_numeric</span>(<span class="variable">$num</span>) != <span class="literal">true</span></span><br></pre></td></tr></table></figure></div>
+
+<ul>
+<li><p>第二个条件：要求get到的num弱等于0</p>
+<ul>
+<li><p>弱等于比较时，会先将字符串转换为数字，其转换方式就是截取开头的数字，不过还有两种特殊情况如下：</p>
+<ul>
+<li><p>如果没有数字，即就是一个纯字符串的话，转化为0</p>
+</li>
+<li><p>如果这个字符串恰好是一个科学技术法的表达式，会将此字符串按科学技术法转换为数字</p>
+</li>
+</ul>
+</li>
+<li><p>示例代码如下：</p>
+</li>
+</ul>
+  <div class="highlight-container" data-rel="Php"><figure class="iseeu highlight php"><table><tr><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"><span class="title function_ invoke__">var_dump</span>(<span class="string">&quot;admin&quot;</span>==<span class="number">0</span>);  <span class="comment">//true</span></span><br><span class="line"><span class="title function_ invoke__">var_dump</span>(<span class="string">&quot;1admin&quot;</span>==<span class="number">1</span>); <span class="comment">//true</span></span><br><span class="line"><span class="title function_ invoke__">var_dump</span>(<span class="string">&quot;2admin&quot;</span>==<span class="number">2</span>); <span class="comment">//true</span></span><br><span class="line"><span class="title function_ invoke__">var_dump</span>(<span class="string">&quot;ad1min&quot;</span>==<span class="number">1</span>); <span class="comment">//false</span></span><br><span class="line"><span class="title function_ invoke__">var_dump</span>(<span class="string">&quot;admin1&quot;</span>==<span class="number">1</span>); <span class="comment">//false</span></span><br><span class="line"><span class="title function_ invoke__">var_dump</span>(<span class="string">&quot;admin1&quot;</span>==<span class="number">0</span>); <span class="comment">//true</span></span><br><span class="line"><span class="title function_ invoke__">var_dump</span>(<span class="number">0e1234</span> == <span class="number">0e56789</span>); <span class="comment">//true </span></span><br><span class="line"><span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure></div>
+</li>
+<li><p>第三个条件：要求get到的num不是数字类型</p>
+<ul>
+<li>这个很好说，只要不是纯数字就可以了</li>
+</ul>
+</li>
+<li><p>第一个条件：让<code>$&#123;num&#125;!=2</code>返回1</p>
+<ul>
+<li><p>背景知识：</p>
+<ul>
+<li><p>eval()的返回值一般是<code>NULL</code>，除非执行的表达式是<code>return</code>，这种情况下，eval()的返回值就是return的值</p>
+</li>
+<li><p>php中的运算符优先级（跟Cpp基本一样哈）中比较运算的优先级大于双目位运算</p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>根据条件3，我们输入的一定不是一个纯数字，所以要满足第一个条件的话，我们就必须考虑如php里面运算符的优先级和结合性，以便于能够成功输出</p>
+<ul>
+<li><p>方法一：<code>num=0|1</code></p>
+</li>
+<li><p>方法二：<code>num=0^0</code></p>
+</li>
+</ul>
+<p>…知道了思路，方案肯定是有非常多的，在此就不列举了</p>
 ]]></content>
       <categories>
-        <category>RM2022</category>
+        <category>ctf</category>
+        <category>web</category>
+        <category>php</category>
+      </categories>
+      <tags>
+        <tag>php</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>HelloWorld</title>
+    <url>/2023/02/28/HelloWorld/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>为什么要建立我的博客</p>
+<ul>
+<li>好记性不如烂笔头，<code>记录一些学到的技术</code></li>
+<li><code>分享一些有趣的事</code></li>
+<li>……</li>
+</ul>
+]]></content>
+      <categories>
+        <category>杂谈</category>
       </categories>
   </entry>
   <entry>
@@ -247,67 +302,6 @@
       </categories>
   </entry>
   <entry>
-    <title>一道ctf小题</title>
-    <url>/2023/03/05/ctf-1/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>直接上源码：</p>
-<div class="highlight-container" data-rel="Php"><figure class="iseeu highlight php"><table><tr><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"><span class="title function_ invoke__">highlight_file</span>(<span class="keyword">__FILE__</span>);</span><br><span class="line"><span class="title function_ invoke__">error_reporting</span>(<span class="number">0</span>);</span><br><span class="line"></span><br><span class="line"><span class="variable">$num</span> = <span class="variable">$_GET</span>[<span class="string">&#x27;num&#x27;</span>];</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> (<span class="title function_ invoke__">preg_match</span>(<span class="string">&quot;/\&#x27;|\&quot;|\`| |&lt;|&gt;|?|\^|%|\$/&quot;</span>, <span class="variable">$num</span>)) &#123;</span><br><span class="line">           <span class="keyword">die</span>(<span class="string">&quot;nononno&quot;</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> (<span class="keyword">eval</span>(<span class="string">&quot;return $&#123;num&#125; != 2;&quot;</span>) &amp;&amp; <span class="variable">$num</span> == <span class="number">0</span> &amp;&amp; <span class="title function_ invoke__">is_numeric</span>(<span class="variable">$num</span>) != <span class="literal">true</span>) &#123;</span><br><span class="line"> <span class="title function_ invoke__">system</span>(<span class="string">&#x27;cat flag.php&#x27;</span>);</span><br><span class="line">&#125; <span class="keyword">else</span> &#123;</span><br><span class="line"> <span class="keyword">echo</span> <span class="string">&#x27;2&#x27;</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
-
-<p>分析：我们需要同时满足if表达式中的三个条件</p>
-<div class="highlight-container" data-rel="Php"><figure class="iseeu highlight php"><table><tr><td class="code"><pre><span class="line"><span class="keyword">eval</span>(<span class="string">&quot;return $&#123;num&#125; != 2;&quot;</span>) &amp;&amp; <span class="variable">$num</span> == <span class="number">0</span> &amp;&amp; <span class="title function_ invoke__">is_numeric</span>(<span class="variable">$num</span>) != <span class="literal">true</span></span><br></pre></td></tr></table></figure></div>
-
-<ul>
-<li><p>第二个条件：要求get到的num弱等于0</p>
-<ul>
-<li><p>弱等于比较时，会先将字符串转换为数字，其转换方式就是截取开头的数字，不过还有两种特殊情况如下：</p>
-<ul>
-<li><p>如果没有数字，即就是一个纯字符串的话，转化为0</p>
-</li>
-<li><p>如果这个字符串恰好是一个科学技术法的表达式，会将此字符串按科学技术法转换为数字</p>
-</li>
-</ul>
-</li>
-<li><p>示例代码如下：</p>
-</li>
-</ul>
-  <div class="highlight-container" data-rel="Php"><figure class="iseeu highlight php"><table><tr><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"><span class="title function_ invoke__">var_dump</span>(<span class="string">&quot;admin&quot;</span>==<span class="number">0</span>);  <span class="comment">//true</span></span><br><span class="line"><span class="title function_ invoke__">var_dump</span>(<span class="string">&quot;1admin&quot;</span>==<span class="number">1</span>); <span class="comment">//true</span></span><br><span class="line"><span class="title function_ invoke__">var_dump</span>(<span class="string">&quot;2admin&quot;</span>==<span class="number">2</span>); <span class="comment">//true</span></span><br><span class="line"><span class="title function_ invoke__">var_dump</span>(<span class="string">&quot;ad1min&quot;</span>==<span class="number">1</span>); <span class="comment">//false</span></span><br><span class="line"><span class="title function_ invoke__">var_dump</span>(<span class="string">&quot;admin1&quot;</span>==<span class="number">1</span>); <span class="comment">//false</span></span><br><span class="line"><span class="title function_ invoke__">var_dump</span>(<span class="string">&quot;admin1&quot;</span>==<span class="number">0</span>); <span class="comment">//true</span></span><br><span class="line"><span class="title function_ invoke__">var_dump</span>(<span class="number">0e1234</span> == <span class="number">0e56789</span>); <span class="comment">//true </span></span><br><span class="line"><span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure></div>
-</li>
-<li><p>第三个条件：要求get到的num不是数字类型</p>
-<ul>
-<li>这个很好说，只要不是纯数字就可以了</li>
-</ul>
-</li>
-<li><p>第一个条件：让<code>$&#123;num&#125;!=2</code>返回1</p>
-<ul>
-<li><p>背景知识：</p>
-<ul>
-<li><p>eval()的返回值一般是<code>NULL</code>，除非执行的表达式是<code>return</code>，这种情况下，eval()的返回值就是return的值</p>
-</li>
-<li><p>php中的运算符优先级（跟Cpp基本一样哈）中比较运算的优先级大于双目位运算</p>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<p>根据条件3，我们输入的一定不是一个纯数字，所以要满足第一个条件的话，我们就必须考虑如php里面运算符的优先级和结合性，以便于能够成功输出</p>
-<ul>
-<li><p>方法一：<code>num=0|1</code></p>
-</li>
-<li><p>方法二：<code>num=0^0</code></p>
-</li>
-</ul>
-<p>…知道了思路，方案肯定是有非常多的，在此就不列举了</p>
-]]></content>
-      <categories>
-        <category>ctf</category>
-        <category>web</category>
-        <category>php</category>
-      </categories>
-      <tags>
-        <tag>php</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>assets模块</title>
     <url>/2023/02/28/module_assets/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="模块总览"><a href="#模块总览" class="headerlink" title="模块总览"></a>模块总览</h2><p>该模块用于保存一些与程序无关的文件。</p>
@@ -318,6 +312,26 @@
 <li>params.json<br>  程序运行时的参数配置文件</li>
 <li>test-light.png<br>  一张没啥用的测试图片</li>
 </ul>
+]]></content>
+      <categories>
+        <category>RM2022</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>3rd模块</title>
+    <url>/2023/02/28/module_3rd/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="模块总览"><a href="#模块总览" class="headerlink" title="模块总览"></a>模块总览</h2><p>该模块用于保存本项目用到的两个第三方库的源码：</p>
+<ol>
+<li>fmt</li>
+<li>nlohmann json</li>
+</ol>
+<p>在编译本项目时，除了编译与自瞄相关的代码，还会编译这两个第三方库，并将三者链接。</p>
+<h2 id="fmt库简介"><a href="#fmt库简介" class="headerlink" title="fmt库简介"></a>fmt库简介</h2><p>fmt库为c++提供了一种类似python的输出格式化方法，比cout与printf更加的方便与安全。</p>
+<p>具体用法详见<code>3rd/fmt</code>中的<a class="link"   href="https://gitee.com/tju-rm-cv/tjurm-2022/blob/master/3rd/fmt/README.rst" >readme文件 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a>。</p>
+<p>本项目使用这个库来实现logger模块。</p>
+<h2 id="nlohmann-json库简介"><a href="#nlohmann-json库简介" class="headerlink" title="nlohmann json库简介"></a>nlohmann json库简介</h2><p>nlohmann json库为c++提供了读取json文件的功能，现有的c++ json库很多，nlohmann只是一种，不过它的速度跟易用性都是比较优秀的。</p>
+<p>具体用法详见<code>3rd/json</code>中的<a class="link"   href="https://gitee.com/tju-rm-cv/tjurm-2022/blob/master/3rd/json/README.md" >readme文件 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a>。</p>
+<p>本项目将程序运行时的各种参数保存在<a class="link"   href="https://gitee.com/tju-rm-cv/tjurm-2022/blob/master/assets/params.json" >json文件 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a>中，并使用这个库来读取json文件。</p>
 ]]></content>
       <categories>
         <category>RM2022</category>
@@ -538,20 +552,6 @@
 ]]></content>
       <categories>
         <category>RM2022</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>HelloWorld</title>
-    <url>/2023/02/28/HelloWorld/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>为什么要建立我的博客</p>
-<ul>
-<li>好记性不如烂笔头，<code>记录一些学到的技术</code></li>
-<li><code>分享一些有趣的事</code></li>
-<li>……</li>
-</ul>
-]]></content>
-      <categories>
-        <category>杂谈</category>
       </categories>
   </entry>
 </search>
