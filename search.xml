@@ -76,6 +76,26 @@
       </categories>
   </entry>
   <entry>
+    <title>3rd模块</title>
+    <url>/2023/02/28/module_3rd/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="模块总览"><a href="#模块总览" class="headerlink" title="模块总览"></a>模块总览</h2><p>该模块用于保存本项目用到的两个第三方库的源码：</p>
+<ol>
+<li>fmt</li>
+<li>nlohmann json</li>
+</ol>
+<p>在编译本项目时，除了编译与自瞄相关的代码，还会编译这两个第三方库，并将三者链接。</p>
+<h2 id="fmt库简介"><a href="#fmt库简介" class="headerlink" title="fmt库简介"></a>fmt库简介</h2><p>fmt库为c++提供了一种类似python的输出格式化方法，比cout与printf更加的方便与安全。</p>
+<p>具体用法详见<code>3rd/fmt</code>中的<a class="link"   href="https://gitee.com/tju-rm-cv/tjurm-2022/blob/master/3rd/fmt/README.rst" >readme文件 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a>。</p>
+<p>本项目使用这个库来实现logger模块。</p>
+<h2 id="nlohmann-json库简介"><a href="#nlohmann-json库简介" class="headerlink" title="nlohmann json库简介"></a>nlohmann json库简介</h2><p>nlohmann json库为c++提供了读取json文件的功能，现有的c++ json库很多，nlohmann只是一种，不过它的速度跟易用性都是比较优秀的。</p>
+<p>具体用法详见<code>3rd/json</code>中的<a class="link"   href="https://gitee.com/tju-rm-cv/tjurm-2022/blob/master/3rd/json/README.md" >readme文件 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a>。</p>
+<p>本项目将程序运行时的各种参数保存在<a class="link"   href="https://gitee.com/tju-rm-cv/tjurm-2022/blob/master/assets/params.json" >json文件 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a>中，并使用这个库来读取json文件。</p>
+]]></content>
+      <categories>
+        <category>RM2022</category>
+      </categories>
+  </entry>
+  <entry>
     <title>armor模块</title>
     <url>/2023/02/28/module_armor/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><ul>
@@ -302,42 +322,6 @@
       </categories>
   </entry>
   <entry>
-    <title>assets模块</title>
-    <url>/2023/02/28/module_assets/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="模块总览"><a href="#模块总览" class="headerlink" title="模块总览"></a>模块总览</h2><p>该模块用于保存一些与程序无关的文件。</p>
-<ul>
-<li>model_(bin|aug).onnx<br>  训练好的装甲板分类器</li>
-<li>noclass.onnx<br>  训练好的目标检测器</li>
-<li>test.onnx<br>  最早的目标检测器，已弃用</li>
-<li>params.json<br>  程序运行时的参数配置文件</li>
-<li>test-light.png<br>  一张没啥用的测试图片</li>
-</ul>
-]]></content>
-      <categories>
-        <category>RM2022</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>3rd模块</title>
-    <url>/2023/02/28/module_3rd/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="模块总览"><a href="#模块总览" class="headerlink" title="模块总览"></a>模块总览</h2><p>该模块用于保存本项目用到的两个第三方库的源码：</p>
-<ol>
-<li>fmt</li>
-<li>nlohmann json</li>
-</ol>
-<p>在编译本项目时，除了编译与自瞄相关的代码，还会编译这两个第三方库，并将三者链接。</p>
-<h2 id="fmt库简介"><a href="#fmt库简介" class="headerlink" title="fmt库简介"></a>fmt库简介</h2><p>fmt库为c++提供了一种类似python的输出格式化方法，比cout与printf更加的方便与安全。</p>
-<p>具体用法详见<code>3rd/fmt</code>中的<a class="link"   href="https://gitee.com/tju-rm-cv/tjurm-2022/blob/master/3rd/fmt/README.rst" >readme文件 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a>。</p>
-<p>本项目使用这个库来实现logger模块。</p>
-<h2 id="nlohmann-json库简介"><a href="#nlohmann-json库简介" class="headerlink" title="nlohmann json库简介"></a>nlohmann json库简介</h2><p>nlohmann json库为c++提供了读取json文件的功能，现有的c++ json库很多，nlohmann只是一种，不过它的速度跟易用性都是比较优秀的。</p>
-<p>具体用法详见<code>3rd/json</code>中的<a class="link"   href="https://gitee.com/tju-rm-cv/tjurm-2022/blob/master/3rd/json/README.md" >readme文件 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a>。</p>
-<p>本项目将程序运行时的各种参数保存在<a class="link"   href="https://gitee.com/tju-rm-cv/tjurm-2022/blob/master/assets/params.json" >json文件 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a>中，并使用这个库来读取json文件。</p>
-]]></content>
-      <categories>
-        <category>RM2022</category>
-      </categories>
-  </entry>
-  <entry>
     <title>detector模块</title>
     <url>/2023/02/28/module_detector/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="模块总览"><a href="#模块总览" class="headerlink" title="模块总览"></a>模块总览</h2><p>该模块实现了目标检测分类器的加载以及前向传播过程，并且提供了两种实现方式：</p>
@@ -373,6 +357,22 @@
 <h4 id="load-from-cache-…"><a href="#load-from-cache-…" class="headerlink" title="load_from_cache(…)"></a>load_from_cache(…)</h4><p>直接加载.engine文件。</p>
 <h4 id="bind"><a href="#bind" class="headerlink" title="bind()"></a>bind()</h4><p>根据计算图的信息（输出tensor的个数，大小）来分配cpu内存与gpu内存。</p>
 <h4 id="detect"><a href="#detect" class="headerlink" title="detect()"></a>detect()</h4><p>看注释。</p>
+]]></content>
+      <categories>
+        <category>RM2022</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>assets模块</title>
+    <url>/2023/02/28/module_assets/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="模块总览"><a href="#模块总览" class="headerlink" title="模块总览"></a>模块总览</h2><p>该模块用于保存一些与程序无关的文件。</p>
+<ul>
+<li>model_(bin|aug).onnx<br>  训练好的装甲板分类器</li>
+<li>noclass.onnx<br>  训练好的目标检测器</li>
+<li>test.onnx<br>  最早的目标检测器，已弃用</li>
+<li>params.json<br>  程序运行时的参数配置文件</li>
+<li>test-light.png<br>  一张没啥用的测试图片</li>
+</ul>
 ]]></content>
       <categories>
         <category>RM2022</category>

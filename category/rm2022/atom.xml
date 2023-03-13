@@ -6,6 +6,25 @@
     <updated>2023-02-28T14:32:45.000Z</updated>
     <category term="php" />
     <entry>
+        <id>https://renshengji.github.io/2023/02/28/module_3rd/</id>
+        <title>3rd模块</title>
+        <link rel="alternate" href="https://renshengji.github.io/2023/02/28/module_3rd/"/>
+        <content type="html">&lt;link rel=&#34;stylesheet&#34; class=&#34;aplayer-secondary-style-marker&#34; href=&#34;/assets/css/APlayer.min.css&#34;&gt;&lt;script src=&#34;/assets/js/APlayer.min.js&#34; class=&#34;aplayer-secondary-script-marker&#34;&gt;&lt;/script&gt;&lt;h2 id=&#34;模块总览&#34;&gt;&lt;a href=&#34;#模块总览&#34; class=&#34;headerlink&#34; title=&#34;模块总览&#34;&gt;&lt;/a&gt;模块总览&lt;/h2&gt;&lt;p&gt;该模块用于保存本项目用到的两个第三方库的源码：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;fmt&lt;/li&gt;
+&lt;li&gt;nlohmann json&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;在编译本项目时，除了编译与自瞄相关的代码，还会编译这两个第三方库，并将三者链接。&lt;/p&gt;
+&lt;h2 id=&#34;fmt库简介&#34;&gt;&lt;a href=&#34;#fmt库简介&#34; class=&#34;headerlink&#34; title=&#34;fmt库简介&#34;&gt;&lt;/a&gt;fmt库简介&lt;/h2&gt;&lt;p&gt;fmt库为c++提供了一种类似python的输出格式化方法，比cout与printf更加的方便与安全。&lt;/p&gt;
+&lt;p&gt;具体用法详见&lt;code&gt;3rd/fmt&lt;/code&gt;中的&lt;a class=&#34;link&#34;   href=&#34;https://gitee.com/tju-rm-cv/tjurm-2022/blob/master/3rd/fmt/README.rst&#34; &gt;readme文件 &lt;i class=&#34;fa-regular fa-arrow-up-right-from-square fa-sm&#34;&gt;&lt;/i&gt;&lt;/a&gt;。&lt;/p&gt;
+&lt;p&gt;本项目使用这个库来实现logger模块。&lt;/p&gt;
+&lt;h2 id=&#34;nlohmann-json库简介&#34;&gt;&lt;a href=&#34;#nlohmann-json库简介&#34; class=&#34;headerlink&#34; title=&#34;nlohmann json库简介&#34;&gt;&lt;/a&gt;nlohmann json库简介&lt;/h2&gt;&lt;p&gt;nlohmann json库为c++提供了读取json文件的功能，现有的c++ json库很多，nlohmann只是一种，不过它的速度跟易用性都是比较优秀的。&lt;/p&gt;
+&lt;p&gt;具体用法详见&lt;code&gt;3rd/json&lt;/code&gt;中的&lt;a class=&#34;link&#34;   href=&#34;https://gitee.com/tju-rm-cv/tjurm-2022/blob/master/3rd/json/README.md&#34; &gt;readme文件 &lt;i class=&#34;fa-regular fa-arrow-up-right-from-square fa-sm&#34;&gt;&lt;/i&gt;&lt;/a&gt;。&lt;/p&gt;
+&lt;p&gt;本项目将程序运行时的各种参数保存在&lt;a class=&#34;link&#34;   href=&#34;https://gitee.com/tju-rm-cv/tjurm-2022/blob/master/assets/params.json&#34; &gt;json文件 &lt;i class=&#34;fa-regular fa-arrow-up-right-from-square fa-sm&#34;&gt;&lt;/i&gt;&lt;/a&gt;中，并使用这个库来读取json文件。&lt;/p&gt;
+</content>
+        <updated>2023-02-28T14:32:45.000Z</updated>
+    </entry>
+    <entry>
         <id>https://renshengji.github.io/2023/02/28/module_armor/</id>
         <title>armor模块</title>
         <link rel="alternate" href="https://renshengji.github.io/2023/02/28/module_armor/"/>
@@ -231,40 +250,6 @@
         <updated>2023-02-28T14:32:45.000Z</updated>
     </entry>
     <entry>
-        <id>https://renshengji.github.io/2023/02/28/module_assets/</id>
-        <title>assets模块</title>
-        <link rel="alternate" href="https://renshengji.github.io/2023/02/28/module_assets/"/>
-        <content type="html">&lt;link rel=&#34;stylesheet&#34; class=&#34;aplayer-secondary-style-marker&#34; href=&#34;/assets/css/APlayer.min.css&#34;&gt;&lt;script src=&#34;/assets/js/APlayer.min.js&#34; class=&#34;aplayer-secondary-script-marker&#34;&gt;&lt;/script&gt;&lt;h2 id=&#34;模块总览&#34;&gt;&lt;a href=&#34;#模块总览&#34; class=&#34;headerlink&#34; title=&#34;模块总览&#34;&gt;&lt;/a&gt;模块总览&lt;/h2&gt;&lt;p&gt;该模块用于保存一些与程序无关的文件。&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;model_(bin|aug).onnx&lt;br&gt;  训练好的装甲板分类器&lt;/li&gt;
-&lt;li&gt;noclass.onnx&lt;br&gt;  训练好的目标检测器&lt;/li&gt;
-&lt;li&gt;test.onnx&lt;br&gt;  最早的目标检测器，已弃用&lt;/li&gt;
-&lt;li&gt;params.json&lt;br&gt;  程序运行时的参数配置文件&lt;/li&gt;
-&lt;li&gt;test-light.png&lt;br&gt;  一张没啥用的测试图片&lt;/li&gt;
-&lt;/ul&gt;
-</content>
-        <updated>2023-02-28T14:32:45.000Z</updated>
-    </entry>
-    <entry>
-        <id>https://renshengji.github.io/2023/02/28/module_3rd/</id>
-        <title>3rd模块</title>
-        <link rel="alternate" href="https://renshengji.github.io/2023/02/28/module_3rd/"/>
-        <content type="html">&lt;link rel=&#34;stylesheet&#34; class=&#34;aplayer-secondary-style-marker&#34; href=&#34;/assets/css/APlayer.min.css&#34;&gt;&lt;script src=&#34;/assets/js/APlayer.min.js&#34; class=&#34;aplayer-secondary-script-marker&#34;&gt;&lt;/script&gt;&lt;h2 id=&#34;模块总览&#34;&gt;&lt;a href=&#34;#模块总览&#34; class=&#34;headerlink&#34; title=&#34;模块总览&#34;&gt;&lt;/a&gt;模块总览&lt;/h2&gt;&lt;p&gt;该模块用于保存本项目用到的两个第三方库的源码：&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;fmt&lt;/li&gt;
-&lt;li&gt;nlohmann json&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;在编译本项目时，除了编译与自瞄相关的代码，还会编译这两个第三方库，并将三者链接。&lt;/p&gt;
-&lt;h2 id=&#34;fmt库简介&#34;&gt;&lt;a href=&#34;#fmt库简介&#34; class=&#34;headerlink&#34; title=&#34;fmt库简介&#34;&gt;&lt;/a&gt;fmt库简介&lt;/h2&gt;&lt;p&gt;fmt库为c++提供了一种类似python的输出格式化方法，比cout与printf更加的方便与安全。&lt;/p&gt;
-&lt;p&gt;具体用法详见&lt;code&gt;3rd/fmt&lt;/code&gt;中的&lt;a class=&#34;link&#34;   href=&#34;https://gitee.com/tju-rm-cv/tjurm-2022/blob/master/3rd/fmt/README.rst&#34; &gt;readme文件 &lt;i class=&#34;fa-regular fa-arrow-up-right-from-square fa-sm&#34;&gt;&lt;/i&gt;&lt;/a&gt;。&lt;/p&gt;
-&lt;p&gt;本项目使用这个库来实现logger模块。&lt;/p&gt;
-&lt;h2 id=&#34;nlohmann-json库简介&#34;&gt;&lt;a href=&#34;#nlohmann-json库简介&#34; class=&#34;headerlink&#34; title=&#34;nlohmann json库简介&#34;&gt;&lt;/a&gt;nlohmann json库简介&lt;/h2&gt;&lt;p&gt;nlohmann json库为c++提供了读取json文件的功能，现有的c++ json库很多，nlohmann只是一种，不过它的速度跟易用性都是比较优秀的。&lt;/p&gt;
-&lt;p&gt;具体用法详见&lt;code&gt;3rd/json&lt;/code&gt;中的&lt;a class=&#34;link&#34;   href=&#34;https://gitee.com/tju-rm-cv/tjurm-2022/blob/master/3rd/json/README.md&#34; &gt;readme文件 &lt;i class=&#34;fa-regular fa-arrow-up-right-from-square fa-sm&#34;&gt;&lt;/i&gt;&lt;/a&gt;。&lt;/p&gt;
-&lt;p&gt;本项目将程序运行时的各种参数保存在&lt;a class=&#34;link&#34;   href=&#34;https://gitee.com/tju-rm-cv/tjurm-2022/blob/master/assets/params.json&#34; &gt;json文件 &lt;i class=&#34;fa-regular fa-arrow-up-right-from-square fa-sm&#34;&gt;&lt;/i&gt;&lt;/a&gt;中，并使用这个库来读取json文件。&lt;/p&gt;
-</content>
-        <updated>2023-02-28T14:32:45.000Z</updated>
-    </entry>
-    <entry>
         <id>https://renshengji.github.io/2023/02/28/module_detector/</id>
         <title>detector模块</title>
         <link rel="alternate" href="https://renshengji.github.io/2023/02/28/module_detector/"/>
@@ -301,6 +286,21 @@
 &lt;h4 id=&#34;load-from-cache-…&#34;&gt;&lt;a href=&#34;#load-from-cache-…&#34; class=&#34;headerlink&#34; title=&#34;load_from_cache(…)&#34;&gt;&lt;/a&gt;load_from_cache(…)&lt;/h4&gt;&lt;p&gt;直接加载.engine文件。&lt;/p&gt;
 &lt;h4 id=&#34;bind&#34;&gt;&lt;a href=&#34;#bind&#34; class=&#34;headerlink&#34; title=&#34;bind()&#34;&gt;&lt;/a&gt;bind()&lt;/h4&gt;&lt;p&gt;根据计算图的信息（输出tensor的个数，大小）来分配cpu内存与gpu内存。&lt;/p&gt;
 &lt;h4 id=&#34;detect&#34;&gt;&lt;a href=&#34;#detect&#34; class=&#34;headerlink&#34; title=&#34;detect()&#34;&gt;&lt;/a&gt;detect()&lt;/h4&gt;&lt;p&gt;看注释。&lt;/p&gt;
+</content>
+        <updated>2023-02-28T14:32:45.000Z</updated>
+    </entry>
+    <entry>
+        <id>https://renshengji.github.io/2023/02/28/module_assets/</id>
+        <title>assets模块</title>
+        <link rel="alternate" href="https://renshengji.github.io/2023/02/28/module_assets/"/>
+        <content type="html">&lt;link rel=&#34;stylesheet&#34; class=&#34;aplayer-secondary-style-marker&#34; href=&#34;/assets/css/APlayer.min.css&#34;&gt;&lt;script src=&#34;/assets/js/APlayer.min.js&#34; class=&#34;aplayer-secondary-script-marker&#34;&gt;&lt;/script&gt;&lt;h2 id=&#34;模块总览&#34;&gt;&lt;a href=&#34;#模块总览&#34; class=&#34;headerlink&#34; title=&#34;模块总览&#34;&gt;&lt;/a&gt;模块总览&lt;/h2&gt;&lt;p&gt;该模块用于保存一些与程序无关的文件。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;model_(bin|aug).onnx&lt;br&gt;  训练好的装甲板分类器&lt;/li&gt;
+&lt;li&gt;noclass.onnx&lt;br&gt;  训练好的目标检测器&lt;/li&gt;
+&lt;li&gt;test.onnx&lt;br&gt;  最早的目标检测器，已弃用&lt;/li&gt;
+&lt;li&gt;params.json&lt;br&gt;  程序运行时的参数配置文件&lt;/li&gt;
+&lt;li&gt;test-light.png&lt;br&gt;  一张没啥用的测试图片&lt;/li&gt;
+&lt;/ul&gt;
 </content>
         <updated>2023-02-28T14:32:45.000Z</updated>
     </entry>
