@@ -322,6 +322,21 @@
  ]]></description>
         </item>
         <item>
+            <guid isPermalink="true">https://renshengji.github.io/2023/02/28/module_assets/</guid>
+            <title>assets模块</title>
+            <link>https://renshengji.github.io/2023/02/28/module_assets/</link>
+            <pubDate>Tue, 28 Feb 2023 22:32:45 +0800</pubDate>
+            <description><![CDATA[ &lt;link rel=&#34;stylesheet&#34; class=&#34;aplayer-secondary-style-marker&#34; href=&#34;/assets/css/APlayer.min.css&#34;&gt;&lt;script src=&#34;/assets/js/APlayer.min.js&#34; class=&#34;aplayer-secondary-script-marker&#34;&gt;&lt;/script&gt;&lt;h2 id=&#34;模块总览&#34;&gt;&lt;a href=&#34;#模块总览&#34; class=&#34;headerlink&#34; title=&#34;模块总览&#34;&gt;&lt;/a&gt;模块总览&lt;/h2&gt;&lt;p&gt;该模块用于保存一些与程序无关的文件。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;model_(bin|aug).onnx&lt;br&gt;  训练好的装甲板分类器&lt;/li&gt;
+&lt;li&gt;noclass.onnx&lt;br&gt;  训练好的目标检测器&lt;/li&gt;
+&lt;li&gt;test.onnx&lt;br&gt;  最早的目标检测器，已弃用&lt;/li&gt;
+&lt;li&gt;params.json&lt;br&gt;  程序运行时的参数配置文件&lt;/li&gt;
+&lt;li&gt;test-light.png&lt;br&gt;  一张没啥用的测试图片&lt;/li&gt;
+&lt;/ul&gt;
+ ]]></description>
+        </item>
+        <item>
             <guid isPermalink="true">https://renshengji.github.io/2023/02/28/module_detector/</guid>
             <title>detector模块</title>
             <link>https://renshengji.github.io/2023/02/28/module_detector/</link>
@@ -359,21 +374,6 @@
 &lt;h4 id=&#34;load-from-cache-…&#34;&gt;&lt;a href=&#34;#load-from-cache-…&#34; class=&#34;headerlink&#34; title=&#34;load_from_cache(…)&#34;&gt;&lt;/a&gt;load_from_cache(…)&lt;/h4&gt;&lt;p&gt;直接加载.engine文件。&lt;/p&gt;
 &lt;h4 id=&#34;bind&#34;&gt;&lt;a href=&#34;#bind&#34; class=&#34;headerlink&#34; title=&#34;bind()&#34;&gt;&lt;/a&gt;bind()&lt;/h4&gt;&lt;p&gt;根据计算图的信息（输出tensor的个数，大小）来分配cpu内存与gpu内存。&lt;/p&gt;
 &lt;h4 id=&#34;detect&#34;&gt;&lt;a href=&#34;#detect&#34; class=&#34;headerlink&#34; title=&#34;detect()&#34;&gt;&lt;/a&gt;detect()&lt;/h4&gt;&lt;p&gt;看注释。&lt;/p&gt;
- ]]></description>
-        </item>
-        <item>
-            <guid isPermalink="true">https://renshengji.github.io/2023/02/28/module_assets/</guid>
-            <title>assets模块</title>
-            <link>https://renshengji.github.io/2023/02/28/module_assets/</link>
-            <pubDate>Tue, 28 Feb 2023 22:32:45 +0800</pubDate>
-            <description><![CDATA[ &lt;link rel=&#34;stylesheet&#34; class=&#34;aplayer-secondary-style-marker&#34; href=&#34;/assets/css/APlayer.min.css&#34;&gt;&lt;script src=&#34;/assets/js/APlayer.min.js&#34; class=&#34;aplayer-secondary-script-marker&#34;&gt;&lt;/script&gt;&lt;h2 id=&#34;模块总览&#34;&gt;&lt;a href=&#34;#模块总览&#34; class=&#34;headerlink&#34; title=&#34;模块总览&#34;&gt;&lt;/a&gt;模块总览&lt;/h2&gt;&lt;p&gt;该模块用于保存一些与程序无关的文件。&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;model_(bin|aug).onnx&lt;br&gt;  训练好的装甲板分类器&lt;/li&gt;
-&lt;li&gt;noclass.onnx&lt;br&gt;  训练好的目标检测器&lt;/li&gt;
-&lt;li&gt;test.onnx&lt;br&gt;  最早的目标检测器，已弃用&lt;/li&gt;
-&lt;li&gt;params.json&lt;br&gt;  程序运行时的参数配置文件&lt;/li&gt;
-&lt;li&gt;test-light.png&lt;br&gt;  一张没啥用的测试图片&lt;/li&gt;
-&lt;/ul&gt;
  ]]></description>
         </item>
         <item>
@@ -434,41 +434,6 @@
 &lt;div class=&#34;highlight-container&#34; data-rel=&#34;Plaintext&#34;&gt;&lt;figure class=&#34;iseeu highlight plaintext&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;// format 3rd types&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;template&amp;lt;&amp;gt; struct fmt::formatter&amp;lt;cv::Point3f&amp;gt; &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    char presentation = &amp;#x27;f&amp;#x27;;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    ...&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&amp;#125;;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/div&gt;
 
 &lt;p&gt;fmt::print是会报错的，因为它不知道该怎么格式化cv::Point3f。如何编写这个自定义格式化代码：&lt;a class=&#34;link&#34;   href=&#34;https://zhuanlan.zhihu.com/p/601744791&#34; &gt;https://zhuanlan.zhihu.com/p/601744791 &lt;i class=&#34;fa-regular fa-arrow-up-right-from-square fa-sm&#34;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/p&gt;
- ]]></description>
-        </item>
-        <item>
-            <guid isPermalink="true">https://renshengji.github.io/2023/02/28/module_params/</guid>
-            <title>params模块</title>
-            <link>https://renshengji.github.io/2023/02/28/module_params/</link>
-            <pubDate>Tue, 28 Feb 2023 22:32:45 +0800</pubDate>
-            <description><![CDATA[ &lt;link rel=&#34;stylesheet&#34; class=&#34;aplayer-secondary-style-marker&#34; href=&#34;/assets/css/APlayer.min.css&#34;&gt;&lt;script src=&#34;/assets/js/APlayer.min.js&#34; class=&#34;aplayer-secondary-script-marker&#34;&gt;&lt;/script&gt;&lt;h2 id=&#34;模块总览&#34;&gt;&lt;a href=&#34;#模块总览&#34; class=&#34;headerlink&#34; title=&#34;模块总览&#34;&gt;&lt;/a&gt;模块总览&lt;/h2&gt;&lt;p&gt;该模块允许我们把自瞄算法的参数保存在配置文件（json）中，并在程序运行时把配置文件加载到内存中。&lt;/p&gt;
-&lt;p&gt;好处：每次修改算法参数后，不需要重新编译整个程序（耗时大概5min），所以能够减少程序编译耗时，提高代码调试速度。&lt;/p&gt;
-&lt;p&gt;一个例子：&lt;/p&gt;
-&lt;div class=&#34;highlight-container&#34; data-rel=&#34;Plaintext&#34;&gt;&lt;figure class=&#34;iseeu highlight plaintext&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;15&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;// json文件：&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;// &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;//     &amp;quot;key1&amp;quot;: 0.5,&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;//     &amp;quot;key2&amp;quot;: &amp;quot;string&amp;quot;,&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;//     &amp;quot;key3&amp;quot;: &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;//         &amp;quot;key1&amp;quot;: [1, 2, 3]&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;//     &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;// &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;// 代码：&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;ParamsManager&amp;amp; obj = *ParamsManager::GetInstance();&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;obj.load(&amp;quot;path/to/your/json/file&amp;quot;);&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;float x = obj[&amp;quot;key1];&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;std::string y = obj[&amp;quot;key2];&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;std::vector&amp;lt;int&amp;gt; z = obj[&amp;quot;key3][&amp;quot;key1];&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/div&gt;
-
-&lt;h2 id=&#34;代码解析&#34;&gt;&lt;a href=&#34;#代码解析&#34; class=&#34;headerlink&#34; title=&#34;代码解析&#34;&gt;&lt;/a&gt;代码解析&lt;/h2&gt;&lt;h3 id=&#34;params-manager-h&#34;&gt;&lt;a href=&#34;#params-manager-h&#34; class=&#34;headerlink&#34; title=&#34;params_manager.h&#34;&gt;&lt;/a&gt;params_manager.h&lt;/h3&gt;&lt;p&gt;&lt;a class=&#34;link&#34;   href=&#34;https://gitee.com/tju-rm-cv/tjurm-2022/blob/master/include/params/params_manager.h&#34; &gt;代码地址（头文件） &lt;i class=&#34;fa-regular fa-arrow-up-right-from-square fa-sm&#34;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;使用ParamsManager类来读取（写入）配置文件，这个类也使用了单例模式。关键代码如下：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;code&gt;nlohmann::json params_&lt;/code&gt;&lt;br&gt;  实际保存json文件的json对象。&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;load(const std::string&amp;amp;)&lt;/code&gt;&lt;br&gt;  加载json文件。&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;dump(const std::string&amp;amp;)&lt;/code&gt;&lt;br&gt;  将json对象保存成json文件。&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;nlohmann::json&amp;amp; operator[](const std::string&amp;amp;)&lt;/code&gt;&lt;br&gt;  提供[]操作符，输入一个字符串（key），返回一个json对象（value），由于json对象也支持[]操作符，所以用起来就跟python字典很像。&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;nlohmann json这个库实际上做的事情是：&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;&lt;p&gt;将json文件里的各个值读取成nlohmann::json对象&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;当我们将json对象赋值给某一个变量时，会触发一个函数：&lt;/p&gt;
- &lt;div class=&#34;highlight-container&#34; data-rel=&#34;Plaintext&#34;&gt;&lt;figure class=&#34;iseeu highlight plaintext&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;template&amp;lt;typename T&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;void from_json(nlohmann::json&amp;amp; j, T&amp;amp; p);&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/div&gt;
-
-&lt;p&gt; 与该函数类似的还有一个to_json，该函数的作用是将json对象转化为对应的变量类型，对于内置类型，例如float, string, vector等，库本身已经实现好了对应的from_json&amp;#x2F;to_json函数。&lt;/p&gt;
-&lt;p&gt; 而对于自定义类型，我们需要自行提供对应的转换函数。&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;以下这段代码就实现了cv::Mat与json的转换：&lt;/p&gt;
-&lt;div class=&#34;highlight-container&#34; data-rel=&#34;Plaintext&#34;&gt;&lt;figure class=&#34;iseeu highlight plaintext&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;// 我记得是一定要放在cv这个命名空间里的，否则找不到&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;namespace cv &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;void to_json(nlohmann::json&amp;amp; j, const cv::Mat&amp;amp; p);&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;void from_json(const nlohmann::json&amp;amp; j, cv::Mat&amp;amp; p);&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/div&gt;
-
-&lt;p&gt;代码实现很简单，就不讲了~&lt;/p&gt;
  ]]></description>
         </item>
         <item>
@@ -547,6 +512,41 @@
 &lt;p&gt;也就是把子类指针转化为父类指针，后续代码就只需要使用video_interface的read接口即可，这样做的好处就是我们要改变视频流时，只需要改初始化，不需要修改后续的读取代码。&lt;/p&gt;
 &lt;p&gt;同时，如果后续需要添加新的相机的话，也只需要继承这个类就行，不用更改别的代码。&lt;/p&gt;
 &lt;p&gt;相机类的代码大部分都是参考的大恒SDK文档，而且已经能用了，等大家需要修改的时候再看文档也行。&lt;/p&gt;
+ ]]></description>
+        </item>
+        <item>
+            <guid isPermalink="true">https://renshengji.github.io/2023/02/28/module_params/</guid>
+            <title>params模块</title>
+            <link>https://renshengji.github.io/2023/02/28/module_params/</link>
+            <pubDate>Tue, 28 Feb 2023 22:32:45 +0800</pubDate>
+            <description><![CDATA[ &lt;link rel=&#34;stylesheet&#34; class=&#34;aplayer-secondary-style-marker&#34; href=&#34;/assets/css/APlayer.min.css&#34;&gt;&lt;script src=&#34;/assets/js/APlayer.min.js&#34; class=&#34;aplayer-secondary-script-marker&#34;&gt;&lt;/script&gt;&lt;h2 id=&#34;模块总览&#34;&gt;&lt;a href=&#34;#模块总览&#34; class=&#34;headerlink&#34; title=&#34;模块总览&#34;&gt;&lt;/a&gt;模块总览&lt;/h2&gt;&lt;p&gt;该模块允许我们把自瞄算法的参数保存在配置文件（json）中，并在程序运行时把配置文件加载到内存中。&lt;/p&gt;
+&lt;p&gt;好处：每次修改算法参数后，不需要重新编译整个程序（耗时大概5min），所以能够减少程序编译耗时，提高代码调试速度。&lt;/p&gt;
+&lt;p&gt;一个例子：&lt;/p&gt;
+&lt;div class=&#34;highlight-container&#34; data-rel=&#34;Plaintext&#34;&gt;&lt;figure class=&#34;iseeu highlight plaintext&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;15&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;// json文件：&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;// &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;//     &amp;quot;key1&amp;quot;: 0.5,&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;//     &amp;quot;key2&amp;quot;: &amp;quot;string&amp;quot;,&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;//     &amp;quot;key3&amp;quot;: &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;//         &amp;quot;key1&amp;quot;: [1, 2, 3]&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;//     &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;// &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;// 代码：&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;ParamsManager&amp;amp; obj = *ParamsManager::GetInstance();&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;obj.load(&amp;quot;path/to/your/json/file&amp;quot;);&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;float x = obj[&amp;quot;key1];&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;std::string y = obj[&amp;quot;key2];&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;std::vector&amp;lt;int&amp;gt; z = obj[&amp;quot;key3][&amp;quot;key1];&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/div&gt;
+
+&lt;h2 id=&#34;代码解析&#34;&gt;&lt;a href=&#34;#代码解析&#34; class=&#34;headerlink&#34; title=&#34;代码解析&#34;&gt;&lt;/a&gt;代码解析&lt;/h2&gt;&lt;h3 id=&#34;params-manager-h&#34;&gt;&lt;a href=&#34;#params-manager-h&#34; class=&#34;headerlink&#34; title=&#34;params_manager.h&#34;&gt;&lt;/a&gt;params_manager.h&lt;/h3&gt;&lt;p&gt;&lt;a class=&#34;link&#34;   href=&#34;https://gitee.com/tju-rm-cv/tjurm-2022/blob/master/include/params/params_manager.h&#34; &gt;代码地址（头文件） &lt;i class=&#34;fa-regular fa-arrow-up-right-from-square fa-sm&#34;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;使用ParamsManager类来读取（写入）配置文件，这个类也使用了单例模式。关键代码如下：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;nlohmann::json params_&lt;/code&gt;&lt;br&gt;  实际保存json文件的json对象。&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;load(const std::string&amp;amp;)&lt;/code&gt;&lt;br&gt;  加载json文件。&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;dump(const std::string&amp;amp;)&lt;/code&gt;&lt;br&gt;  将json对象保存成json文件。&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;nlohmann::json&amp;amp; operator[](const std::string&amp;amp;)&lt;/code&gt;&lt;br&gt;  提供[]操作符，输入一个字符串（key），返回一个json对象（value），由于json对象也支持[]操作符，所以用起来就跟python字典很像。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;nlohmann json这个库实际上做的事情是：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;将json文件里的各个值读取成nlohmann::json对象&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;当我们将json对象赋值给某一个变量时，会触发一个函数：&lt;/p&gt;
+ &lt;div class=&#34;highlight-container&#34; data-rel=&#34;Plaintext&#34;&gt;&lt;figure class=&#34;iseeu highlight plaintext&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;template&amp;lt;typename T&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;void from_json(nlohmann::json&amp;amp; j, T&amp;amp; p);&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/div&gt;
+
+&lt;p&gt; 与该函数类似的还有一个to_json，该函数的作用是将json对象转化为对应的变量类型，对于内置类型，例如float, string, vector等，库本身已经实现好了对应的from_json&amp;#x2F;to_json函数。&lt;/p&gt;
+&lt;p&gt; 而对于自定义类型，我们需要自行提供对应的转换函数。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;以下这段代码就实现了cv::Mat与json的转换：&lt;/p&gt;
+&lt;div class=&#34;highlight-container&#34; data-rel=&#34;Plaintext&#34;&gt;&lt;figure class=&#34;iseeu highlight plaintext&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;// 我记得是一定要放在cv这个命名空间里的，否则找不到&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;namespace cv &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;void to_json(nlohmann::json&amp;amp; j, const cv::Mat&amp;amp; p);&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;void from_json(const nlohmann::json&amp;amp; j, cv::Mat&amp;amp; p);&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/div&gt;
+
+&lt;p&gt;代码实现很简单，就不讲了~&lt;/p&gt;
  ]]></description>
         </item>
     </channel>
