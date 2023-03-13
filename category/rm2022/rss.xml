@@ -9,6 +9,40 @@
         <lastBuildDate>Tue, 28 Feb 2023 22:32:45 +0800</lastBuildDate>
         <category>php</category>
         <item>
+            <guid isPermalink="true">https://renshengji.github.io/2023/02/28/module_3rd/</guid>
+            <title>3rd模块</title>
+            <link>https://renshengji.github.io/2023/02/28/module_3rd/</link>
+            <pubDate>Tue, 28 Feb 2023 22:32:45 +0800</pubDate>
+            <description><![CDATA[ &lt;link rel=&#34;stylesheet&#34; class=&#34;aplayer-secondary-style-marker&#34; href=&#34;/assets/css/APlayer.min.css&#34;&gt;&lt;script src=&#34;/assets/js/APlayer.min.js&#34; class=&#34;aplayer-secondary-script-marker&#34;&gt;&lt;/script&gt;&lt;h2 id=&#34;模块总览&#34;&gt;&lt;a href=&#34;#模块总览&#34; class=&#34;headerlink&#34; title=&#34;模块总览&#34;&gt;&lt;/a&gt;模块总览&lt;/h2&gt;&lt;p&gt;该模块用于保存本项目用到的两个第三方库的源码：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;fmt&lt;/li&gt;
+&lt;li&gt;nlohmann json&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;在编译本项目时，除了编译与自瞄相关的代码，还会编译这两个第三方库，并将三者链接。&lt;/p&gt;
+&lt;h2 id=&#34;fmt库简介&#34;&gt;&lt;a href=&#34;#fmt库简介&#34; class=&#34;headerlink&#34; title=&#34;fmt库简介&#34;&gt;&lt;/a&gt;fmt库简介&lt;/h2&gt;&lt;p&gt;fmt库为c++提供了一种类似python的输出格式化方法，比cout与printf更加的方便与安全。&lt;/p&gt;
+&lt;p&gt;具体用法详见&lt;code&gt;3rd/fmt&lt;/code&gt;中的&lt;a class=&#34;link&#34;   href=&#34;https://gitee.com/tju-rm-cv/tjurm-2022/blob/master/3rd/fmt/README.rst&#34; &gt;readme文件 &lt;i class=&#34;fa-regular fa-arrow-up-right-from-square fa-sm&#34;&gt;&lt;/i&gt;&lt;/a&gt;。&lt;/p&gt;
+&lt;p&gt;本项目使用这个库来实现logger模块。&lt;/p&gt;
+&lt;h2 id=&#34;nlohmann-json库简介&#34;&gt;&lt;a href=&#34;#nlohmann-json库简介&#34; class=&#34;headerlink&#34; title=&#34;nlohmann json库简介&#34;&gt;&lt;/a&gt;nlohmann json库简介&lt;/h2&gt;&lt;p&gt;nlohmann json库为c++提供了读取json文件的功能，现有的c++ json库很多，nlohmann只是一种，不过它的速度跟易用性都是比较优秀的。&lt;/p&gt;
+&lt;p&gt;具体用法详见&lt;code&gt;3rd/json&lt;/code&gt;中的&lt;a class=&#34;link&#34;   href=&#34;https://gitee.com/tju-rm-cv/tjurm-2022/blob/master/3rd/json/README.md&#34; &gt;readme文件 &lt;i class=&#34;fa-regular fa-arrow-up-right-from-square fa-sm&#34;&gt;&lt;/i&gt;&lt;/a&gt;。&lt;/p&gt;
+&lt;p&gt;本项目将程序运行时的各种参数保存在&lt;a class=&#34;link&#34;   href=&#34;https://gitee.com/tju-rm-cv/tjurm-2022/blob/master/assets/params.json&#34; &gt;json文件 &lt;i class=&#34;fa-regular fa-arrow-up-right-from-square fa-sm&#34;&gt;&lt;/i&gt;&lt;/a&gt;中，并使用这个库来读取json文件。&lt;/p&gt;
+ ]]></description>
+        </item>
+        <item>
+            <guid isPermalink="true">https://renshengji.github.io/2023/02/28/module_assets/</guid>
+            <title>assets模块</title>
+            <link>https://renshengji.github.io/2023/02/28/module_assets/</link>
+            <pubDate>Tue, 28 Feb 2023 22:32:45 +0800</pubDate>
+            <description><![CDATA[ &lt;link rel=&#34;stylesheet&#34; class=&#34;aplayer-secondary-style-marker&#34; href=&#34;/assets/css/APlayer.min.css&#34;&gt;&lt;script src=&#34;/assets/js/APlayer.min.js&#34; class=&#34;aplayer-secondary-script-marker&#34;&gt;&lt;/script&gt;&lt;h2 id=&#34;模块总览&#34;&gt;&lt;a href=&#34;#模块总览&#34; class=&#34;headerlink&#34; title=&#34;模块总览&#34;&gt;&lt;/a&gt;模块总览&lt;/h2&gt;&lt;p&gt;该模块用于保存一些与程序无关的文件。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;model_(bin|aug).onnx&lt;br&gt;  训练好的装甲板分类器&lt;/li&gt;
+&lt;li&gt;noclass.onnx&lt;br&gt;  训练好的目标检测器&lt;/li&gt;
+&lt;li&gt;test.onnx&lt;br&gt;  最早的目标检测器，已弃用&lt;/li&gt;
+&lt;li&gt;params.json&lt;br&gt;  程序运行时的参数配置文件&lt;/li&gt;
+&lt;li&gt;test-light.png&lt;br&gt;  一张没啥用的测试图片&lt;/li&gt;
+&lt;/ul&gt;
+ ]]></description>
+        </item>
+        <item>
             <guid isPermalink="true">https://renshengji.github.io/2023/02/28/module_armor/</guid>
             <title>armor模块</title>
             <link>https://renshengji.github.io/2023/02/28/module_armor/</link>
@@ -234,37 +268,43 @@
  ]]></description>
         </item>
         <item>
-            <guid isPermalink="true">https://renshengji.github.io/2023/02/28/module_assets/</guid>
-            <title>assets模块</title>
-            <link>https://renshengji.github.io/2023/02/28/module_assets/</link>
+            <guid isPermalink="true">https://renshengji.github.io/2023/02/28/module_detector/</guid>
+            <title>detector模块</title>
+            <link>https://renshengji.github.io/2023/02/28/module_detector/</link>
             <pubDate>Tue, 28 Feb 2023 22:32:45 +0800</pubDate>
-            <description><![CDATA[ &lt;link rel=&#34;stylesheet&#34; class=&#34;aplayer-secondary-style-marker&#34; href=&#34;/assets/css/APlayer.min.css&#34;&gt;&lt;script src=&#34;/assets/js/APlayer.min.js&#34; class=&#34;aplayer-secondary-script-marker&#34;&gt;&lt;/script&gt;&lt;h2 id=&#34;模块总览&#34;&gt;&lt;a href=&#34;#模块总览&#34; class=&#34;headerlink&#34; title=&#34;模块总览&#34;&gt;&lt;/a&gt;模块总览&lt;/h2&gt;&lt;p&gt;该模块用于保存一些与程序无关的文件。&lt;/p&gt;
+            <description><![CDATA[ &lt;link rel=&#34;stylesheet&#34; class=&#34;aplayer-secondary-style-marker&#34; href=&#34;/assets/css/APlayer.min.css&#34;&gt;&lt;script src=&#34;/assets/js/APlayer.min.js&#34; class=&#34;aplayer-secondary-script-marker&#34;&gt;&lt;/script&gt;&lt;h2 id=&#34;模块总览&#34;&gt;&lt;a href=&#34;#模块总览&#34; class=&#34;headerlink&#34; title=&#34;模块总览&#34;&gt;&lt;/a&gt;模块总览&lt;/h2&gt;&lt;p&gt;该模块实现了目标检测分类器的加载以及前向传播过程，并且提供了两种实现方式：&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;model_(bin|aug).onnx&lt;br&gt;  训练好的装甲板分类器&lt;/li&gt;
-&lt;li&gt;noclass.onnx&lt;br&gt;  训练好的目标检测器&lt;/li&gt;
-&lt;li&gt;test.onnx&lt;br&gt;  最早的目标检测器，已弃用&lt;/li&gt;
-&lt;li&gt;params.json&lt;br&gt;  程序运行时的参数配置文件&lt;/li&gt;
-&lt;li&gt;test-light.png&lt;br&gt;  一张没啥用的测试图片&lt;/li&gt;
+&lt;li&gt;cv::dnn模块&lt;/li&gt;
+&lt;li&gt;nvidia推理框架TensorRT&lt;/li&gt;
 &lt;/ul&gt;
- ]]></description>
-        </item>
-        <item>
-            <guid isPermalink="true">https://renshengji.github.io/2023/02/28/module_3rd/</guid>
-            <title>3rd模块</title>
-            <link>https://renshengji.github.io/2023/02/28/module_3rd/</link>
-            <pubDate>Tue, 28 Feb 2023 22:32:45 +0800</pubDate>
-            <description><![CDATA[ &lt;link rel=&#34;stylesheet&#34; class=&#34;aplayer-secondary-style-marker&#34; href=&#34;/assets/css/APlayer.min.css&#34;&gt;&lt;script src=&#34;/assets/js/APlayer.min.js&#34; class=&#34;aplayer-secondary-script-marker&#34;&gt;&lt;/script&gt;&lt;h2 id=&#34;模块总览&#34;&gt;&lt;a href=&#34;#模块总览&#34; class=&#34;headerlink&#34; title=&#34;模块总览&#34;&gt;&lt;/a&gt;模块总览&lt;/h2&gt;&lt;p&gt;该模块用于保存本项目用到的两个第三方库的源码：&lt;/p&gt;
+&lt;p&gt;其中cv::dnn版本仅依赖OpenCV，但是前向传播的速度慢，因此用于在本机进行调试；TensorRT安装繁琐，但可以加速前向传播的计算速度，因此在minipc上使用。&lt;/p&gt;
+&lt;p&gt;两种版本可以通过宏定义切换。&lt;/p&gt;
+&lt;h2 id=&#34;前置知识&#34;&gt;&lt;a href=&#34;#前置知识&#34; class=&#34;headerlink&#34; title=&#34;前置知识&#34;&gt;&lt;/a&gt;前置知识&lt;/h2&gt;&lt;h3 id=&#34;cuda&#34;&gt;&lt;a href=&#34;#cuda&#34; class=&#34;headerlink&#34; title=&#34;cuda&#34;&gt;&lt;/a&gt;cuda&lt;/h3&gt;&lt;p&gt;cuda可以看作是第三方库，可以用于控制nvidia显卡。&lt;/p&gt;
+&lt;p&gt;在使用cuda时，我们会把内存分成两种，一种是cpu内存，一种是gpu内存（显存），cuda可以完成：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;申请、释放gpu内存：cudaMalloc，cudaFree&lt;/li&gt;
+&lt;li&gt;在cpu内存与gpu内存之间拷贝数据；cudaMemcpy&lt;/li&gt;
+&lt;li&gt;让gpu执行核函数进行计算：有兴趣自行学习。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;一个典型的cuda程序的流程：&lt;/p&gt;
 &lt;ol&gt;
-&lt;li&gt;fmt&lt;/li&gt;
-&lt;li&gt;nlohmann json&lt;/li&gt;
+&lt;li&gt;在cpu上把数据准备好&lt;/li&gt;
+&lt;li&gt;把数据从cpu拷贝到gpu&lt;/li&gt;
+&lt;li&gt;调用核函数进行计算&lt;/li&gt;
+&lt;li&gt;把计算结果拷贝回cpu&lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;在编译本项目时，除了编译与自瞄相关的代码，还会编译这两个第三方库，并将三者链接。&lt;/p&gt;
-&lt;h2 id=&#34;fmt库简介&#34;&gt;&lt;a href=&#34;#fmt库简介&#34; class=&#34;headerlink&#34; title=&#34;fmt库简介&#34;&gt;&lt;/a&gt;fmt库简介&lt;/h2&gt;&lt;p&gt;fmt库为c++提供了一种类似python的输出格式化方法，比cout与printf更加的方便与安全。&lt;/p&gt;
-&lt;p&gt;具体用法详见&lt;code&gt;3rd/fmt&lt;/code&gt;中的&lt;a class=&#34;link&#34;   href=&#34;https://gitee.com/tju-rm-cv/tjurm-2022/blob/master/3rd/fmt/README.rst&#34; &gt;readme文件 &lt;i class=&#34;fa-regular fa-arrow-up-right-from-square fa-sm&#34;&gt;&lt;/i&gt;&lt;/a&gt;。&lt;/p&gt;
-&lt;p&gt;本项目使用这个库来实现logger模块。&lt;/p&gt;
-&lt;h2 id=&#34;nlohmann-json库简介&#34;&gt;&lt;a href=&#34;#nlohmann-json库简介&#34; class=&#34;headerlink&#34; title=&#34;nlohmann json库简介&#34;&gt;&lt;/a&gt;nlohmann json库简介&lt;/h2&gt;&lt;p&gt;nlohmann json库为c++提供了读取json文件的功能，现有的c++ json库很多，nlohmann只是一种，不过它的速度跟易用性都是比较优秀的。&lt;/p&gt;
-&lt;p&gt;具体用法详见&lt;code&gt;3rd/json&lt;/code&gt;中的&lt;a class=&#34;link&#34;   href=&#34;https://gitee.com/tju-rm-cv/tjurm-2022/blob/master/3rd/json/README.md&#34; &gt;readme文件 &lt;i class=&#34;fa-regular fa-arrow-up-right-from-square fa-sm&#34;&gt;&lt;/i&gt;&lt;/a&gt;。&lt;/p&gt;
-&lt;p&gt;本项目将程序运行时的各种参数保存在&lt;a class=&#34;link&#34;   href=&#34;https://gitee.com/tju-rm-cv/tjurm-2022/blob/master/assets/params.json&#34; &gt;json文件 &lt;i class=&#34;fa-regular fa-arrow-up-right-from-square fa-sm&#34;&gt;&lt;/i&gt;&lt;/a&gt;中，并使用这个库来读取json文件。&lt;/p&gt;
+&lt;h3 id=&#34;TensorRT&#34;&gt;&lt;a href=&#34;#TensorRT&#34; class=&#34;headerlink&#34; title=&#34;TensorRT&#34;&gt;&lt;/a&gt;TensorRT&lt;/h3&gt;&lt;p&gt;nvidia专门为深度学习编写的神经网络推理框架，可以优化网络的前向传播速度。它首先会读取.onnx里的网络，然后对网络的计算图进行优化，优化后的计算图我们可以保存下来，变成.engine文件。&lt;/p&gt;
+&lt;p&gt;在使用时，我们只需要负责数据的拷贝，前向传播计算由TensorRT来完成。&lt;/p&gt;
+&lt;h2 id=&#34;代码解析&#34;&gt;&lt;a href=&#34;#代码解析&#34; class=&#34;headerlink&#34; title=&#34;代码解析&#34;&gt;&lt;/a&gt;代码解析&lt;/h2&gt;&lt;h3 id=&#34;common-h&#34;&gt;&lt;a href=&#34;#common-h&#34; class=&#34;headerlink&#34; title=&#34;common.h&#34;&gt;&lt;/a&gt;common.h&lt;/h3&gt;&lt;p&gt;没什么用，想删但是懒得删。&lt;/p&gt;
+&lt;h3 id=&#34;logging-h&#34;&gt;&lt;a href=&#34;#logging-h&#34; class=&#34;headerlink&#34; title=&#34;logging.h&#34;&gt;&lt;/a&gt;logging.h&lt;/h3&gt;&lt;p&gt;nvidia提供的，与TensorRT相关的头文件，不用看，但是必须要有。&lt;/p&gt;
+&lt;h3 id=&#34;utils-h&#34;&gt;&lt;a href=&#34;#utils-h&#34; class=&#34;headerlink&#34; title=&#34;utils.h&#34;&gt;&lt;/a&gt;utils.h&lt;/h3&gt;&lt;p&gt;提供了一些detector的辅助函数，比如说解析网络输出的结果，nms等。不讲。&lt;/p&gt;
+&lt;h3 id=&#34;dnn-h&#34;&gt;&lt;a href=&#34;#dnn-h&#34; class=&#34;headerlink&#34; title=&#34;dnn.h&#34;&gt;&lt;/a&gt;dnn.h&lt;/h3&gt;&lt;p&gt;让大家写过，不讲。&lt;/p&gt;
+&lt;h3 id=&#34;trt-h-amp-trt-cc&#34;&gt;&lt;a href=&#34;#trt-h-amp-trt-cc&#34; class=&#34;headerlink&#34; title=&#34;trt.h &amp;amp; trt.cc&#34;&gt;&lt;/a&gt;trt.h &amp;amp; trt.cc&lt;/h3&gt;&lt;p&gt;使用TensorRT完成前向传播。TRT类各个成员函数的功能如下：&lt;/p&gt;
+&lt;h4 id=&#34;load-from-onnx-…&#34;&gt;&lt;a href=&#34;#load-from-onnx-…&#34; class=&#34;headerlink&#34; title=&#34;load_from_onnx(…)&#34;&gt;&lt;/a&gt;load_from_onnx(…)&lt;/h4&gt;&lt;p&gt;加载onnx文件并进行计算图的优化，优化这一步很耗时，大概10~20min。&lt;/p&gt;
+&lt;h4 id=&#34;save-engine-…&#34;&gt;&lt;a href=&#34;#save-engine-…&#34; class=&#34;headerlink&#34; title=&#34;save_engine(…)&#34;&gt;&lt;/a&gt;save_engine(…)&lt;/h4&gt;&lt;p&gt;将优化后的计算图保存到磁盘中，变成.engine文件。&lt;/p&gt;
+&lt;h4 id=&#34;load-from-cache-…&#34;&gt;&lt;a href=&#34;#load-from-cache-…&#34; class=&#34;headerlink&#34; title=&#34;load_from_cache(…)&#34;&gt;&lt;/a&gt;load_from_cache(…)&lt;/h4&gt;&lt;p&gt;直接加载.engine文件。&lt;/p&gt;
+&lt;h4 id=&#34;bind&#34;&gt;&lt;a href=&#34;#bind&#34; class=&#34;headerlink&#34; title=&#34;bind()&#34;&gt;&lt;/a&gt;bind()&lt;/h4&gt;&lt;p&gt;根据计算图的信息（输出tensor的个数，大小）来分配cpu内存与gpu内存。&lt;/p&gt;
+&lt;h4 id=&#34;detect&#34;&gt;&lt;a href=&#34;#detect&#34; class=&#34;headerlink&#34; title=&#34;detect()&#34;&gt;&lt;/a&gt;detect()&lt;/h4&gt;&lt;p&gt;看注释。&lt;/p&gt;
  ]]></description>
         </item>
         <item>
@@ -328,43 +368,38 @@
  ]]></description>
         </item>
         <item>
-            <guid isPermalink="true">https://renshengji.github.io/2023/02/28/module_detector/</guid>
-            <title>detector模块</title>
-            <link>https://renshengji.github.io/2023/02/28/module_detector/</link>
+            <guid isPermalink="true">https://renshengji.github.io/2023/02/28/module_params/</guid>
+            <title>params模块</title>
+            <link>https://renshengji.github.io/2023/02/28/module_params/</link>
             <pubDate>Tue, 28 Feb 2023 22:32:45 +0800</pubDate>
-            <description><![CDATA[ &lt;link rel=&#34;stylesheet&#34; class=&#34;aplayer-secondary-style-marker&#34; href=&#34;/assets/css/APlayer.min.css&#34;&gt;&lt;script src=&#34;/assets/js/APlayer.min.js&#34; class=&#34;aplayer-secondary-script-marker&#34;&gt;&lt;/script&gt;&lt;h2 id=&#34;模块总览&#34;&gt;&lt;a href=&#34;#模块总览&#34; class=&#34;headerlink&#34; title=&#34;模块总览&#34;&gt;&lt;/a&gt;模块总览&lt;/h2&gt;&lt;p&gt;该模块实现了目标检测分类器的加载以及前向传播过程，并且提供了两种实现方式：&lt;/p&gt;
+            <description><![CDATA[ &lt;link rel=&#34;stylesheet&#34; class=&#34;aplayer-secondary-style-marker&#34; href=&#34;/assets/css/APlayer.min.css&#34;&gt;&lt;script src=&#34;/assets/js/APlayer.min.js&#34; class=&#34;aplayer-secondary-script-marker&#34;&gt;&lt;/script&gt;&lt;h2 id=&#34;模块总览&#34;&gt;&lt;a href=&#34;#模块总览&#34; class=&#34;headerlink&#34; title=&#34;模块总览&#34;&gt;&lt;/a&gt;模块总览&lt;/h2&gt;&lt;p&gt;该模块允许我们把自瞄算法的参数保存在配置文件（json）中，并在程序运行时把配置文件加载到内存中。&lt;/p&gt;
+&lt;p&gt;好处：每次修改算法参数后，不需要重新编译整个程序（耗时大概5min），所以能够减少程序编译耗时，提高代码调试速度。&lt;/p&gt;
+&lt;p&gt;一个例子：&lt;/p&gt;
+&lt;div class=&#34;highlight-container&#34; data-rel=&#34;Plaintext&#34;&gt;&lt;figure class=&#34;iseeu highlight plaintext&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;15&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;// json文件：&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;// &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;//     &amp;quot;key1&amp;quot;: 0.5,&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;//     &amp;quot;key2&amp;quot;: &amp;quot;string&amp;quot;,&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;//     &amp;quot;key3&amp;quot;: &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;//         &amp;quot;key1&amp;quot;: [1, 2, 3]&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;//     &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;// &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;// 代码：&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;ParamsManager&amp;amp; obj = *ParamsManager::GetInstance();&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;obj.load(&amp;quot;path/to/your/json/file&amp;quot;);&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;float x = obj[&amp;quot;key1];&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;std::string y = obj[&amp;quot;key2];&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;std::vector&amp;lt;int&amp;gt; z = obj[&amp;quot;key3][&amp;quot;key1];&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/div&gt;
+
+&lt;h2 id=&#34;代码解析&#34;&gt;&lt;a href=&#34;#代码解析&#34; class=&#34;headerlink&#34; title=&#34;代码解析&#34;&gt;&lt;/a&gt;代码解析&lt;/h2&gt;&lt;h3 id=&#34;params-manager-h&#34;&gt;&lt;a href=&#34;#params-manager-h&#34; class=&#34;headerlink&#34; title=&#34;params_manager.h&#34;&gt;&lt;/a&gt;params_manager.h&lt;/h3&gt;&lt;p&gt;&lt;a class=&#34;link&#34;   href=&#34;https://gitee.com/tju-rm-cv/tjurm-2022/blob/master/include/params/params_manager.h&#34; &gt;代码地址（头文件） &lt;i class=&#34;fa-regular fa-arrow-up-right-from-square fa-sm&#34;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;使用ParamsManager类来读取（写入）配置文件，这个类也使用了单例模式。关键代码如下：&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;cv::dnn模块&lt;/li&gt;
-&lt;li&gt;nvidia推理框架TensorRT&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;nlohmann::json params_&lt;/code&gt;&lt;br&gt;  实际保存json文件的json对象。&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;load(const std::string&amp;amp;)&lt;/code&gt;&lt;br&gt;  加载json文件。&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;dump(const std::string&amp;amp;)&lt;/code&gt;&lt;br&gt;  将json对象保存成json文件。&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;nlohmann::json&amp;amp; operator[](const std::string&amp;amp;)&lt;/code&gt;&lt;br&gt;  提供[]操作符，输入一个字符串（key），返回一个json对象（value），由于json对象也支持[]操作符，所以用起来就跟python字典很像。&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;其中cv::dnn版本仅依赖OpenCV，但是前向传播的速度慢，因此用于在本机进行调试；TensorRT安装繁琐，但可以加速前向传播的计算速度，因此在minipc上使用。&lt;/p&gt;
-&lt;p&gt;两种版本可以通过宏定义切换。&lt;/p&gt;
-&lt;h2 id=&#34;前置知识&#34;&gt;&lt;a href=&#34;#前置知识&#34; class=&#34;headerlink&#34; title=&#34;前置知识&#34;&gt;&lt;/a&gt;前置知识&lt;/h2&gt;&lt;h3 id=&#34;cuda&#34;&gt;&lt;a href=&#34;#cuda&#34; class=&#34;headerlink&#34; title=&#34;cuda&#34;&gt;&lt;/a&gt;cuda&lt;/h3&gt;&lt;p&gt;cuda可以看作是第三方库，可以用于控制nvidia显卡。&lt;/p&gt;
-&lt;p&gt;在使用cuda时，我们会把内存分成两种，一种是cpu内存，一种是gpu内存（显存），cuda可以完成：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;申请、释放gpu内存：cudaMalloc，cudaFree&lt;/li&gt;
-&lt;li&gt;在cpu内存与gpu内存之间拷贝数据；cudaMemcpy&lt;/li&gt;
-&lt;li&gt;让gpu执行核函数进行计算：有兴趣自行学习。&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;一个典型的cuda程序的流程：&lt;/p&gt;
+&lt;p&gt;nlohmann json这个库实际上做的事情是：&lt;/p&gt;
 &lt;ol&gt;
-&lt;li&gt;在cpu上把数据准备好&lt;/li&gt;
-&lt;li&gt;把数据从cpu拷贝到gpu&lt;/li&gt;
-&lt;li&gt;调用核函数进行计算&lt;/li&gt;
-&lt;li&gt;把计算结果拷贝回cpu&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;将json文件里的各个值读取成nlohmann::json对象&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;当我们将json对象赋值给某一个变量时，会触发一个函数：&lt;/p&gt;
+ &lt;div class=&#34;highlight-container&#34; data-rel=&#34;Plaintext&#34;&gt;&lt;figure class=&#34;iseeu highlight plaintext&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;template&amp;lt;typename T&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;void from_json(nlohmann::json&amp;amp; j, T&amp;amp; p);&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/div&gt;
+
+&lt;p&gt; 与该函数类似的还有一个to_json，该函数的作用是将json对象转化为对应的变量类型，对于内置类型，例如float, string, vector等，库本身已经实现好了对应的from_json&amp;#x2F;to_json函数。&lt;/p&gt;
+&lt;p&gt; 而对于自定义类型，我们需要自行提供对应的转换函数。&lt;/p&gt;
+&lt;/li&gt;
 &lt;/ol&gt;
-&lt;h3 id=&#34;TensorRT&#34;&gt;&lt;a href=&#34;#TensorRT&#34; class=&#34;headerlink&#34; title=&#34;TensorRT&#34;&gt;&lt;/a&gt;TensorRT&lt;/h3&gt;&lt;p&gt;nvidia专门为深度学习编写的神经网络推理框架，可以优化网络的前向传播速度。它首先会读取.onnx里的网络，然后对网络的计算图进行优化，优化后的计算图我们可以保存下来，变成.engine文件。&lt;/p&gt;
-&lt;p&gt;在使用时，我们只需要负责数据的拷贝，前向传播计算由TensorRT来完成。&lt;/p&gt;
-&lt;h2 id=&#34;代码解析&#34;&gt;&lt;a href=&#34;#代码解析&#34; class=&#34;headerlink&#34; title=&#34;代码解析&#34;&gt;&lt;/a&gt;代码解析&lt;/h2&gt;&lt;h3 id=&#34;common-h&#34;&gt;&lt;a href=&#34;#common-h&#34; class=&#34;headerlink&#34; title=&#34;common.h&#34;&gt;&lt;/a&gt;common.h&lt;/h3&gt;&lt;p&gt;没什么用，想删但是懒得删。&lt;/p&gt;
-&lt;h3 id=&#34;logging-h&#34;&gt;&lt;a href=&#34;#logging-h&#34; class=&#34;headerlink&#34; title=&#34;logging.h&#34;&gt;&lt;/a&gt;logging.h&lt;/h3&gt;&lt;p&gt;nvidia提供的，与TensorRT相关的头文件，不用看，但是必须要有。&lt;/p&gt;
-&lt;h3 id=&#34;utils-h&#34;&gt;&lt;a href=&#34;#utils-h&#34; class=&#34;headerlink&#34; title=&#34;utils.h&#34;&gt;&lt;/a&gt;utils.h&lt;/h3&gt;&lt;p&gt;提供了一些detector的辅助函数，比如说解析网络输出的结果，nms等。不讲。&lt;/p&gt;
-&lt;h3 id=&#34;dnn-h&#34;&gt;&lt;a href=&#34;#dnn-h&#34; class=&#34;headerlink&#34; title=&#34;dnn.h&#34;&gt;&lt;/a&gt;dnn.h&lt;/h3&gt;&lt;p&gt;让大家写过，不讲。&lt;/p&gt;
-&lt;h3 id=&#34;trt-h-amp-trt-cc&#34;&gt;&lt;a href=&#34;#trt-h-amp-trt-cc&#34; class=&#34;headerlink&#34; title=&#34;trt.h &amp;amp; trt.cc&#34;&gt;&lt;/a&gt;trt.h &amp;amp; trt.cc&lt;/h3&gt;&lt;p&gt;使用TensorRT完成前向传播。TRT类各个成员函数的功能如下：&lt;/p&gt;
-&lt;h4 id=&#34;load-from-onnx-…&#34;&gt;&lt;a href=&#34;#load-from-onnx-…&#34; class=&#34;headerlink&#34; title=&#34;load_from_onnx(…)&#34;&gt;&lt;/a&gt;load_from_onnx(…)&lt;/h4&gt;&lt;p&gt;加载onnx文件并进行计算图的优化，优化这一步很耗时，大概10~20min。&lt;/p&gt;
-&lt;h4 id=&#34;save-engine-…&#34;&gt;&lt;a href=&#34;#save-engine-…&#34; class=&#34;headerlink&#34; title=&#34;save_engine(…)&#34;&gt;&lt;/a&gt;save_engine(…)&lt;/h4&gt;&lt;p&gt;将优化后的计算图保存到磁盘中，变成.engine文件。&lt;/p&gt;
-&lt;h4 id=&#34;load-from-cache-…&#34;&gt;&lt;a href=&#34;#load-from-cache-…&#34; class=&#34;headerlink&#34; title=&#34;load_from_cache(…)&#34;&gt;&lt;/a&gt;load_from_cache(…)&lt;/h4&gt;&lt;p&gt;直接加载.engine文件。&lt;/p&gt;
-&lt;h4 id=&#34;bind&#34;&gt;&lt;a href=&#34;#bind&#34; class=&#34;headerlink&#34; title=&#34;bind()&#34;&gt;&lt;/a&gt;bind()&lt;/h4&gt;&lt;p&gt;根据计算图的信息（输出tensor的个数，大小）来分配cpu内存与gpu内存。&lt;/p&gt;
-&lt;h4 id=&#34;detect&#34;&gt;&lt;a href=&#34;#detect&#34; class=&#34;headerlink&#34; title=&#34;detect()&#34;&gt;&lt;/a&gt;detect()&lt;/h4&gt;&lt;p&gt;看注释。&lt;/p&gt;
+&lt;p&gt;以下这段代码就实现了cv::Mat与json的转换：&lt;/p&gt;
+&lt;div class=&#34;highlight-container&#34; data-rel=&#34;Plaintext&#34;&gt;&lt;figure class=&#34;iseeu highlight plaintext&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;// 我记得是一定要放在cv这个命名空间里的，否则找不到&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;namespace cv &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;void to_json(nlohmann::json&amp;amp; j, const cv::Mat&amp;amp; p);&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;void from_json(const nlohmann::json&amp;amp; j, cv::Mat&amp;amp; p);&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/div&gt;
+
+&lt;p&gt;代码实现很简单，就不讲了~&lt;/p&gt;
  ]]></description>
         </item>
         <item>
@@ -443,41 +478,6 @@
 &lt;p&gt;也就是把子类指针转化为父类指针，后续代码就只需要使用video_interface的read接口即可，这样做的好处就是我们要改变视频流时，只需要改初始化，不需要修改后续的读取代码。&lt;/p&gt;
 &lt;p&gt;同时，如果后续需要添加新的相机的话，也只需要继承这个类就行，不用更改别的代码。&lt;/p&gt;
 &lt;p&gt;相机类的代码大部分都是参考的大恒SDK文档，而且已经能用了，等大家需要修改的时候再看文档也行。&lt;/p&gt;
- ]]></description>
-        </item>
-        <item>
-            <guid isPermalink="true">https://renshengji.github.io/2023/02/28/module_params/</guid>
-            <title>params模块</title>
-            <link>https://renshengji.github.io/2023/02/28/module_params/</link>
-            <pubDate>Tue, 28 Feb 2023 22:32:45 +0800</pubDate>
-            <description><![CDATA[ &lt;link rel=&#34;stylesheet&#34; class=&#34;aplayer-secondary-style-marker&#34; href=&#34;/assets/css/APlayer.min.css&#34;&gt;&lt;script src=&#34;/assets/js/APlayer.min.js&#34; class=&#34;aplayer-secondary-script-marker&#34;&gt;&lt;/script&gt;&lt;h2 id=&#34;模块总览&#34;&gt;&lt;a href=&#34;#模块总览&#34; class=&#34;headerlink&#34; title=&#34;模块总览&#34;&gt;&lt;/a&gt;模块总览&lt;/h2&gt;&lt;p&gt;该模块允许我们把自瞄算法的参数保存在配置文件（json）中，并在程序运行时把配置文件加载到内存中。&lt;/p&gt;
-&lt;p&gt;好处：每次修改算法参数后，不需要重新编译整个程序（耗时大概5min），所以能够减少程序编译耗时，提高代码调试速度。&lt;/p&gt;
-&lt;p&gt;一个例子：&lt;/p&gt;
-&lt;div class=&#34;highlight-container&#34; data-rel=&#34;Plaintext&#34;&gt;&lt;figure class=&#34;iseeu highlight plaintext&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;15&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;// json文件：&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;// &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;//     &amp;quot;key1&amp;quot;: 0.5,&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;//     &amp;quot;key2&amp;quot;: &amp;quot;string&amp;quot;,&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;//     &amp;quot;key3&amp;quot;: &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;//         &amp;quot;key1&amp;quot;: [1, 2, 3]&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;//     &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;// &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;// 代码：&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;ParamsManager&amp;amp; obj = *ParamsManager::GetInstance();&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;obj.load(&amp;quot;path/to/your/json/file&amp;quot;);&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;float x = obj[&amp;quot;key1];&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;std::string y = obj[&amp;quot;key2];&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;std::vector&amp;lt;int&amp;gt; z = obj[&amp;quot;key3][&amp;quot;key1];&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/div&gt;
-
-&lt;h2 id=&#34;代码解析&#34;&gt;&lt;a href=&#34;#代码解析&#34; class=&#34;headerlink&#34; title=&#34;代码解析&#34;&gt;&lt;/a&gt;代码解析&lt;/h2&gt;&lt;h3 id=&#34;params-manager-h&#34;&gt;&lt;a href=&#34;#params-manager-h&#34; class=&#34;headerlink&#34; title=&#34;params_manager.h&#34;&gt;&lt;/a&gt;params_manager.h&lt;/h3&gt;&lt;p&gt;&lt;a class=&#34;link&#34;   href=&#34;https://gitee.com/tju-rm-cv/tjurm-2022/blob/master/include/params/params_manager.h&#34; &gt;代码地址（头文件） &lt;i class=&#34;fa-regular fa-arrow-up-right-from-square fa-sm&#34;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;使用ParamsManager类来读取（写入）配置文件，这个类也使用了单例模式。关键代码如下：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;code&gt;nlohmann::json params_&lt;/code&gt;&lt;br&gt;  实际保存json文件的json对象。&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;load(const std::string&amp;amp;)&lt;/code&gt;&lt;br&gt;  加载json文件。&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;dump(const std::string&amp;amp;)&lt;/code&gt;&lt;br&gt;  将json对象保存成json文件。&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;nlohmann::json&amp;amp; operator[](const std::string&amp;amp;)&lt;/code&gt;&lt;br&gt;  提供[]操作符，输入一个字符串（key），返回一个json对象（value），由于json对象也支持[]操作符，所以用起来就跟python字典很像。&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;nlohmann json这个库实际上做的事情是：&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;&lt;p&gt;将json文件里的各个值读取成nlohmann::json对象&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;当我们将json对象赋值给某一个变量时，会触发一个函数：&lt;/p&gt;
- &lt;div class=&#34;highlight-container&#34; data-rel=&#34;Plaintext&#34;&gt;&lt;figure class=&#34;iseeu highlight plaintext&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;template&amp;lt;typename T&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;void from_json(nlohmann::json&amp;amp; j, T&amp;amp; p);&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/div&gt;
-
-&lt;p&gt; 与该函数类似的还有一个to_json，该函数的作用是将json对象转化为对应的变量类型，对于内置类型，例如float, string, vector等，库本身已经实现好了对应的from_json&amp;#x2F;to_json函数。&lt;/p&gt;
-&lt;p&gt; 而对于自定义类型，我们需要自行提供对应的转换函数。&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;以下这段代码就实现了cv::Mat与json的转换：&lt;/p&gt;
-&lt;div class=&#34;highlight-container&#34; data-rel=&#34;Plaintext&#34;&gt;&lt;figure class=&#34;iseeu highlight plaintext&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;// 我记得是一定要放在cv这个命名空间里的，否则找不到&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;namespace cv &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;void to_json(nlohmann::json&amp;amp; j, const cv::Mat&amp;amp; p);&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;void from_json(const nlohmann::json&amp;amp; j, cv::Mat&amp;amp; p);&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/div&gt;
-
-&lt;p&gt;代码实现很简单，就不讲了~&lt;/p&gt;
  ]]></description>
         </item>
     </channel>
