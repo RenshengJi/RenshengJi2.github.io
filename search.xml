@@ -112,47 +112,6 @@
       </categories>
   </entry>
   <entry>
-    <title>detector模块</title>
-    <url>/2023/02/28/module_detector/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="模块总览"><a href="#模块总览" class="headerlink" title="模块总览"></a>模块总览</h2><p>该模块实现了目标检测分类器的加载以及前向传播过程，并且提供了两种实现方式：</p>
-<ul>
-<li>cv::dnn模块</li>
-<li>nvidia推理框架TensorRT</li>
-</ul>
-<p>其中cv::dnn版本仅依赖OpenCV，但是前向传播的速度慢，因此用于在本机进行调试；TensorRT安装繁琐，但可以加速前向传播的计算速度，因此在minipc上使用。</p>
-<p>两种版本可以通过宏定义切换。</p>
-<h2 id="前置知识"><a href="#前置知识" class="headerlink" title="前置知识"></a>前置知识</h2><h3 id="cuda"><a href="#cuda" class="headerlink" title="cuda"></a>cuda</h3><p>cuda可以看作是第三方库，可以用于控制nvidia显卡。</p>
-<p>在使用cuda时，我们会把内存分成两种，一种是cpu内存，一种是gpu内存（显存），cuda可以完成：</p>
-<ul>
-<li>申请、释放gpu内存：cudaMalloc，cudaFree</li>
-<li>在cpu内存与gpu内存之间拷贝数据；cudaMemcpy</li>
-<li>让gpu执行核函数进行计算：有兴趣自行学习。</li>
-</ul>
-<p>一个典型的cuda程序的流程：</p>
-<ol>
-<li>在cpu上把数据准备好</li>
-<li>把数据从cpu拷贝到gpu</li>
-<li>调用核函数进行计算</li>
-<li>把计算结果拷贝回cpu</li>
-</ol>
-<h3 id="TensorRT"><a href="#TensorRT" class="headerlink" title="TensorRT"></a>TensorRT</h3><p>nvidia专门为深度学习编写的神经网络推理框架，可以优化网络的前向传播速度。它首先会读取.onnx里的网络，然后对网络的计算图进行优化，优化后的计算图我们可以保存下来，变成.engine文件。</p>
-<p>在使用时，我们只需要负责数据的拷贝，前向传播计算由TensorRT来完成。</p>
-<h2 id="代码解析"><a href="#代码解析" class="headerlink" title="代码解析"></a>代码解析</h2><h3 id="common-h"><a href="#common-h" class="headerlink" title="common.h"></a>common.h</h3><p>没什么用，想删但是懒得删。</p>
-<h3 id="logging-h"><a href="#logging-h" class="headerlink" title="logging.h"></a>logging.h</h3><p>nvidia提供的，与TensorRT相关的头文件，不用看，但是必须要有。</p>
-<h3 id="utils-h"><a href="#utils-h" class="headerlink" title="utils.h"></a>utils.h</h3><p>提供了一些detector的辅助函数，比如说解析网络输出的结果，nms等。不讲。</p>
-<h3 id="dnn-h"><a href="#dnn-h" class="headerlink" title="dnn.h"></a>dnn.h</h3><p>让大家写过，不讲。</p>
-<h3 id="trt-h-amp-trt-cc"><a href="#trt-h-amp-trt-cc" class="headerlink" title="trt.h &amp; trt.cc"></a>trt.h &amp; trt.cc</h3><p>使用TensorRT完成前向传播。TRT类各个成员函数的功能如下：</p>
-<h4 id="load-from-onnx-…"><a href="#load-from-onnx-…" class="headerlink" title="load_from_onnx(…)"></a>load_from_onnx(…)</h4><p>加载onnx文件并进行计算图的优化，优化这一步很耗时，大概10~20min。</p>
-<h4 id="save-engine-…"><a href="#save-engine-…" class="headerlink" title="save_engine(…)"></a>save_engine(…)</h4><p>将优化后的计算图保存到磁盘中，变成.engine文件。</p>
-<h4 id="load-from-cache-…"><a href="#load-from-cache-…" class="headerlink" title="load_from_cache(…)"></a>load_from_cache(…)</h4><p>直接加载.engine文件。</p>
-<h4 id="bind"><a href="#bind" class="headerlink" title="bind()"></a>bind()</h4><p>根据计算图的信息（输出tensor的个数，大小）来分配cpu内存与gpu内存。</p>
-<h4 id="detect"><a href="#detect" class="headerlink" title="detect()"></a>detect()</h4><p>看注释。</p>
-]]></content>
-      <categories>
-        <category>RM2022</category>
-      </categories>
-  </entry>
-  <entry>
     <title>armor模块</title>
     <url>/2023/02/28/module_armor/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><ul>
@@ -434,6 +393,47 @@
 <div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">// format 3rd types</span><br><span class="line">template&lt;&gt; struct fmt::formatter&lt;cv::Point3f&gt; &#123;</span><br><span class="line">    char presentation = &#x27;f&#x27;;</span><br><span class="line">    ...</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></div>
 
 <p>fmt::print是会报错的，因为它不知道该怎么格式化cv::Point3f。如何编写这个自定义格式化代码：<a class="link"   href="https://zhuanlan.zhihu.com/p/601744791" >https://zhuanlan.zhihu.com/p/601744791 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
+]]></content>
+      <categories>
+        <category>RM2022</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>detector模块</title>
+    <url>/2023/02/28/module_detector/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="模块总览"><a href="#模块总览" class="headerlink" title="模块总览"></a>模块总览</h2><p>该模块实现了目标检测分类器的加载以及前向传播过程，并且提供了两种实现方式：</p>
+<ul>
+<li>cv::dnn模块</li>
+<li>nvidia推理框架TensorRT</li>
+</ul>
+<p>其中cv::dnn版本仅依赖OpenCV，但是前向传播的速度慢，因此用于在本机进行调试；TensorRT安装繁琐，但可以加速前向传播的计算速度，因此在minipc上使用。</p>
+<p>两种版本可以通过宏定义切换。</p>
+<h2 id="前置知识"><a href="#前置知识" class="headerlink" title="前置知识"></a>前置知识</h2><h3 id="cuda"><a href="#cuda" class="headerlink" title="cuda"></a>cuda</h3><p>cuda可以看作是第三方库，可以用于控制nvidia显卡。</p>
+<p>在使用cuda时，我们会把内存分成两种，一种是cpu内存，一种是gpu内存（显存），cuda可以完成：</p>
+<ul>
+<li>申请、释放gpu内存：cudaMalloc，cudaFree</li>
+<li>在cpu内存与gpu内存之间拷贝数据；cudaMemcpy</li>
+<li>让gpu执行核函数进行计算：有兴趣自行学习。</li>
+</ul>
+<p>一个典型的cuda程序的流程：</p>
+<ol>
+<li>在cpu上把数据准备好</li>
+<li>把数据从cpu拷贝到gpu</li>
+<li>调用核函数进行计算</li>
+<li>把计算结果拷贝回cpu</li>
+</ol>
+<h3 id="TensorRT"><a href="#TensorRT" class="headerlink" title="TensorRT"></a>TensorRT</h3><p>nvidia专门为深度学习编写的神经网络推理框架，可以优化网络的前向传播速度。它首先会读取.onnx里的网络，然后对网络的计算图进行优化，优化后的计算图我们可以保存下来，变成.engine文件。</p>
+<p>在使用时，我们只需要负责数据的拷贝，前向传播计算由TensorRT来完成。</p>
+<h2 id="代码解析"><a href="#代码解析" class="headerlink" title="代码解析"></a>代码解析</h2><h3 id="common-h"><a href="#common-h" class="headerlink" title="common.h"></a>common.h</h3><p>没什么用，想删但是懒得删。</p>
+<h3 id="logging-h"><a href="#logging-h" class="headerlink" title="logging.h"></a>logging.h</h3><p>nvidia提供的，与TensorRT相关的头文件，不用看，但是必须要有。</p>
+<h3 id="utils-h"><a href="#utils-h" class="headerlink" title="utils.h"></a>utils.h</h3><p>提供了一些detector的辅助函数，比如说解析网络输出的结果，nms等。不讲。</p>
+<h3 id="dnn-h"><a href="#dnn-h" class="headerlink" title="dnn.h"></a>dnn.h</h3><p>让大家写过，不讲。</p>
+<h3 id="trt-h-amp-trt-cc"><a href="#trt-h-amp-trt-cc" class="headerlink" title="trt.h &amp; trt.cc"></a>trt.h &amp; trt.cc</h3><p>使用TensorRT完成前向传播。TRT类各个成员函数的功能如下：</p>
+<h4 id="load-from-onnx-…"><a href="#load-from-onnx-…" class="headerlink" title="load_from_onnx(…)"></a>load_from_onnx(…)</h4><p>加载onnx文件并进行计算图的优化，优化这一步很耗时，大概10~20min。</p>
+<h4 id="save-engine-…"><a href="#save-engine-…" class="headerlink" title="save_engine(…)"></a>save_engine(…)</h4><p>将优化后的计算图保存到磁盘中，变成.engine文件。</p>
+<h4 id="load-from-cache-…"><a href="#load-from-cache-…" class="headerlink" title="load_from_cache(…)"></a>load_from_cache(…)</h4><p>直接加载.engine文件。</p>
+<h4 id="bind"><a href="#bind" class="headerlink" title="bind()"></a>bind()</h4><p>根据计算图的信息（输出tensor的个数，大小）来分配cpu内存与gpu内存。</p>
+<h4 id="detect"><a href="#detect" class="headerlink" title="detect()"></a>detect()</h4><p>看注释。</p>
 ]]></content>
       <categories>
         <category>RM2022</category>
