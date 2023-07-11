@@ -9,6 +9,7 @@
         <lastBuildDate>Mon, 24 Apr 2023 14:28:13 +0800</lastBuildDate>
         <category>rm</category>
         <category>php</category>
+        <category>科研</category>
         <item>
             <guid isPermalink="true">https://renshengji.github.io/2023/04/24/rm-1/</guid>
             <title>中心投影！</title>
@@ -27,7 +28,7 @@
 &lt;img  
                      lazyload
                      src=&#34;/images/loading.svg&#34;
-                     data-src=&#34;/images/IMG_3941.jpg&#34;
+                     data-src=&#34;../images/IMG_3941.jpg&#34;
                       alt=&#34;IMG_3941&#34; style=&#34;zoom:50%;&#34; 
                 &gt;
 

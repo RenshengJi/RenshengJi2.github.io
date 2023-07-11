@@ -6,6 +6,7 @@
     <updated>2023-04-24T06:28:13.000Z</updated>
     <category term="rm" />
     <category term="php" />
+    <category term="科研" />
     <entry>
         <id>https://renshengji.github.io/2023/04/24/rm-1/</id>
         <title>中心投影！</title>
@@ -22,7 +23,7 @@
 &lt;img  
                      lazyload
                      src=&#34;/images/loading.svg&#34;
-                     data-src=&#34;/images/IMG_3941.jpg&#34;
+                     data-src=&#34;../images/IMG_3941.jpg&#34;
                       alt=&#34;IMG_3941&#34; style=&#34;zoom:50%;&#34; 
                 &gt;
 

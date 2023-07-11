@@ -3,9 +3,93 @@
     <id>https://RenshengJi.github.io</id>
     <title>人生几何 • Posts by &#34;nvidia&#34; category</title>
     <link href="https://RenshengJi.github.io" />
-    <updated>2023-04-04T15:48:03.000Z</updated>
+    <updated>2023-06-27T15:48:03.000Z</updated>
     <category term="rm" />
     <category term="php" />
+    <category term="科研" />
+    <entry>
+        <id>https://renshengji.github.io/2023/06/27/NX%E9%83%A8%E7%BD%B2%E8%BF%87%E7%A8%8B/</id>
+        <title>北洋机甲视觉组—Jetson Xavier NX部署过程</title>
+        <link rel="alternate" href="https://renshengji.github.io/2023/06/27/NX%E9%83%A8%E7%BD%B2%E8%BF%87%E7%A8%8B/"/>
+        <content type="html">&lt;link rel=&#34;stylesheet&#34; class=&#34;aplayer-secondary-style-marker&#34; href=&#34;/assets/css/APlayer.min.css&#34;&gt;&lt;script src=&#34;/assets/js/APlayer.min.js&#34; class=&#34;aplayer-secondary-script-marker&#34;&gt;&lt;/script&gt;&lt;h3 id=&#34;开始之前—注意事项&#34;&gt;&lt;a href=&#34;#开始之前—注意事项&#34; class=&#34;headerlink&#34; title=&#34;[开始之前—注意事项]&#34;&gt;&lt;/a&gt;[开始之前—注意事项]&lt;/h3&gt;&lt;p&gt;本教程只适合于正版NX，如果你使用的是盗版NX，请立即将其扔掉&lt;/p&gt;
+&lt;h3 id=&#34;开始之前—需要的设备&#34;&gt;&lt;a href=&#34;#开始之前—需要的设备&#34; class=&#34;headerlink&#34; title=&#34;[开始之前—需要的设备]&#34;&gt;&lt;/a&gt;[开始之前—需要的设备]&lt;/h3&gt;&lt;p&gt;1.一台可以科学上网的个人电脑&lt;/p&gt;
+&lt;p&gt;2.一个NX，以及其充电器&lt;/p&gt;
+&lt;p&gt;3.一张sd卡（根据自己的电脑查看是否需要读卡器）&lt;/p&gt;
+&lt;p&gt;4.显示屏，显示屏充电线，充电头&lt;/p&gt;
+&lt;p&gt;5.连接显示屏与NX的线（NX支持DP&amp;#x2F;Hdmi输出，还需结合你的显示屏支持什么输入）&lt;/p&gt;
+&lt;p&gt;6.键盘，鼠标&lt;/p&gt;
+&lt;p&gt;7.沉着，冷静，小心&lt;/p&gt;
+&lt;h3 id=&#34;安装操作系统&#34;&gt;&lt;a href=&#34;#安装操作系统&#34; class=&#34;headerlink&#34; title=&#34;[安装操作系统]&#34;&gt;&lt;/a&gt;[安装操作系统]&lt;/h3&gt;&lt;p&gt;注意，NX没有内置外存，而是选择让我们使用外接sd卡当作外存。&lt;/p&gt;
+&lt;h4 id=&#34;1-在官网下载镜像&#34;&gt;&lt;a href=&#34;#1-在官网下载镜像&#34; class=&#34;headerlink&#34; title=&#34;1. 在官网下载镜像&#34;&gt;&lt;/a&gt;1. 在官网下载镜像&lt;/h4&gt;&lt;p&gt;&lt;a class=&#34;link&#34;   href=&#34;https://developer.nvidia.com/embedded/downloads&#34; &gt;https://developer.nvidia.com/embedded/downloads &lt;i class=&#34;fa-regular fa-arrow-up-right-from-square fa-sm&#34;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;如果要安装18.04的ubuntu，可以选择下载Jetson Xavier NX Developer Kit SD Card Image 4.6&lt;/p&gt;
+&lt;h4 id=&#34;2-将镜像烧录到sd卡中&#34;&gt;&lt;a href=&#34;#2-将镜像烧录到sd卡中&#34; class=&#34;headerlink&#34; title=&#34;2. 将镜像烧录到sd卡中&#34;&gt;&lt;/a&gt;2. 将镜像烧录到sd卡中&lt;/h4&gt;&lt;p&gt;请参考&lt;a class=&#34;link&#34;   href=&#34;https://developer.nvidia.com/embedded/learn/get-started-jetson-xavier-nx-devkit#write&#34; &gt;https://developer.nvidia.com/embedded/learn/get-started-jetson-xavier-nx-devkit#write &lt;i class=&#34;fa-regular fa-arrow-up-right-from-square fa-sm&#34;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;根据你的操作系统类型选择不同的方法&lt;/p&gt;
+&lt;h4 id=&#34;3-将sd卡插入NX中，接上电源，开机，设置ubuntu操作系统&#34;&gt;&lt;a href=&#34;#3-将sd卡插入NX中，接上电源，开机，设置ubuntu操作系统&#34; class=&#34;headerlink&#34; title=&#34;3. 将sd卡插入NX中，接上电源，开机，设置ubuntu操作系统&#34;&gt;&lt;/a&gt;3. 将sd卡插入NX中，接上电源，开机，设置ubuntu操作系统&lt;/h4&gt;&lt;p&gt;注意，为了方便队伍内协同工作，账号密码统一设置为tjurm&lt;/p&gt;
+&lt;h3 id=&#34;安装环境&#34;&gt;&lt;a href=&#34;#安装环境&#34; class=&#34;headerlink&#34; title=&#34;[安装环境]&#34;&gt;&lt;/a&gt;[安装环境]&lt;/h3&gt;&lt;h4 id=&#34;1-联网&#34;&gt;&lt;a href=&#34;#1-联网&#34; class=&#34;headerlink&#34; title=&#34;1.联网&#34;&gt;&lt;/a&gt;1.联网&lt;/h4&gt;&lt;h4 id=&#34;2-换源&#34;&gt;&lt;a href=&#34;#2-换源&#34; class=&#34;headerlink&#34; title=&#34;2.换源&#34;&gt;&lt;/a&gt;2.换源&lt;/h4&gt;&lt;p&gt;首先，换源需要根据咱们电脑的ubuntu系统版本以及指令集体系结构去进行选择。&lt;/p&gt;
+&lt;p&gt;查看ubuntu系统版本的方式：&lt;/p&gt;
+&lt;div class=&#34;highlight-container&#34; data-rel=&#34;Bash&#34;&gt;&lt;figure class=&#34;iseeu highlight bash&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;lsb_release -a&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/div&gt;
+
+&lt;p&gt;查看体系架构的方式：&lt;/p&gt;
+&lt;div class=&#34;highlight-container&#34; data-rel=&#34;Bash&#34;&gt;&lt;figure class=&#34;iseeu highlight bash&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;built_in&#34;&gt;uname&lt;/span&gt; -m&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/div&gt;
+
+&lt;p&gt;然后根据查找到的这两种信息去CSDN查询&lt;/p&gt;
+&lt;p&gt;eg： 我们拿到的官方Jetson Xavier NX，应该查询：ubuntu 18.04 arm换源&lt;/p&gt;
+&lt;p&gt;这里提供快速对ubuntu_18.04_arm进行换源(华为源)的方法：&lt;/p&gt;
+&lt;div class=&#34;highlight-container&#34; data-rel=&#34;Bash&#34;&gt;&lt;figure class=&#34;iseeu highlight bash&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;sudo wget -O /etc/apt/sources.list https://repo.huaweicloud.com/repository/conf/Ubuntu-Ports-bionic.list&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;sudo apt-get update&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/div&gt;
+
+&lt;h4 id=&#34;3-安装jtop&#34;&gt;&lt;a href=&#34;#3-安装jtop&#34; class=&#34;headerlink&#34; title=&#34;3.安装jtop&#34;&gt;&lt;/a&gt;3.安装jtop&lt;/h4&gt;&lt;p&gt;因为我们需要使用pip3来安装jtop，所以需要在系统中先安装pip3&lt;/p&gt;
+&lt;div class=&#34;highlight-container&#34; data-rel=&#34;Bash&#34;&gt;&lt;figure class=&#34;iseeu highlight bash&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;sudo apt install python3-pip&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/div&gt;
+
+&lt;p&gt;接着安装jtop&lt;/p&gt;
+&lt;div class=&#34;highlight-container&#34; data-rel=&#34;Bash&#34;&gt;&lt;figure class=&#34;iseeu highlight bash&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;sudo -H pip3 install -U jetson-stats&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/div&gt;
+
+&lt;p&gt;重启系统&lt;/p&gt;
+&lt;div class=&#34;highlight-container&#34; data-rel=&#34;Plaintext&#34;&gt;&lt;figure class=&#34;iseeu highlight plaintext&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;reboot&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/div&gt;
+
+&lt;p&gt;使用jtop&lt;/p&gt;
+&lt;div class=&#34;highlight-container&#34; data-rel=&#34;Bash&#34;&gt;&lt;figure class=&#34;iseeu highlight bash&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;jtop&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/div&gt;
+
+&lt;p&gt;查看当前cpu，gpu使用状态（点击最下面一行的2GPU&amp;#x2F;3CPU即可）&lt;/p&gt;
+&lt;p&gt;设置风扇状态（点击最下面一行的6CTRL，选择manual人工控制，在speed后点击’+‘直到100%）&lt;/p&gt;
+&lt;h4 id=&#34;4-安装大恒相机驱动&#34;&gt;&lt;a href=&#34;#4-安装大恒相机驱动&#34; class=&#34;headerlink&#34; title=&#34;4.安装大恒相机驱动&#34;&gt;&lt;/a&gt;4.安装大恒相机驱动&lt;/h4&gt;&lt;p&gt;&lt;a class=&#34;link&#34;   href=&#34;https://www.daheng-imaging.com/downloads/&#34; &gt;https://www.daheng-imaging.com/downloads/ &lt;i class=&#34;fa-regular fa-arrow-up-right-from-square fa-sm&#34;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;下载Galaxy Linux-armhf-Gige-U3 SDK_CN-EN 以及  Galaxy Linux-Python SDK_CN-EN&lt;/p&gt;
+&lt;p&gt;解压后按照readme中提示安装！&lt;/p&gt;
+&lt;p&gt;注意，Galaxy Linux-armhf-Gige-U3 SDK_CN-EN的安装可能需要输入如下指令：&lt;/p&gt;
+&lt;div class=&#34;highlight-container&#34; data-rel=&#34;Bash&#34;&gt;&lt;figure class=&#34;iseeu highlight bash&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;bash ./Galaxy_camera.run&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/div&gt;
+
+&lt;p&gt;注意，Galaxy Linux-Python SDK_CN-EN要装适配python3的，在readme文档下面，别装2.7的&lt;/p&gt;
+&lt;h4 id=&#34;5-eigen的安装与软链接&#34;&gt;&lt;a href=&#34;#5-eigen的安装与软链接&#34; class=&#34;headerlink&#34; title=&#34;5.eigen的安装与软链接&#34;&gt;&lt;/a&gt;5.eigen的安装与软链接&lt;/h4&gt;&lt;p&gt;安装:&lt;/p&gt;
+&lt;div class=&#34;highlight-container&#34; data-rel=&#34;Bash&#34;&gt;&lt;figure class=&#34;iseeu highlight bash&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;apt install libeigen3-dev&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/div&gt;
+
+&lt;p&gt;链接：&lt;/p&gt;
+&lt;div class=&#34;highlight-container&#34; data-rel=&#34;Bash&#34;&gt;&lt;figure class=&#34;iseeu highlight bash&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;built_in&#34;&gt;cd&lt;/span&gt; /usr/include&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;sudo &lt;span class=&#34;built_in&#34;&gt;ln&lt;/span&gt; -sf eigen3/Eigen Eigen&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;sudo &lt;span class=&#34;built_in&#34;&gt;ln&lt;/span&gt; -sf eigen3/unsupported unsupported&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/div&gt;
+
+&lt;h4 id=&#34;6-从gitee上下载咱们代码&#34;&gt;&lt;a href=&#34;#6-从gitee上下载咱们代码&#34; class=&#34;headerlink&#34; title=&#34;6.从gitee上下载咱们代码&#34;&gt;&lt;/a&gt;6.从gitee上下载咱们代码&lt;/h4&gt;&lt;p&gt;地址：&lt;a class=&#34;link&#34;   href=&#34;https://gitee.com/tju-rm-cv&#34; &gt;https://gitee.com/tju-rm-cv &lt;i class=&#34;fa-regular fa-arrow-up-right-from-square fa-sm&#34;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h4 id=&#34;7-vscode安装&#34;&gt;&lt;a href=&#34;#7-vscode安装&#34; class=&#34;headerlink&#34; title=&#34;7.vscode安装&#34;&gt;&lt;/a&gt;7.vscode安装&lt;/h4&gt;&lt;p&gt;下载debian包，网页打开&lt;/p&gt;
+&lt;div class=&#34;highlight-container&#34; data-rel=&#34;Plaintext&#34;&gt;&lt;figure class=&#34;iseeu highlight plaintext&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;https://update.code.visualstudio.com/1.50.1/linux-deb-arm64/stable&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/div&gt;
+
+&lt;p&gt;进入到下载目录，输入：&lt;/p&gt;
+&lt;div class=&#34;highlight-container&#34; data-rel=&#34;Bash&#34;&gt;&lt;figure class=&#34;iseeu highlight bash&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;sudo apt install ./code...&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/div&gt;
+
+&lt;h4 id=&#34;8-ssh配置&#34;&gt;&lt;a href=&#34;#8-ssh配置&#34; class=&#34;headerlink&#34; title=&#34;8.ssh配置&#34;&gt;&lt;/a&gt;8.ssh配置&lt;/h4&gt;&lt;p&gt;请参照[Ubuntu: 配置ssh，保姆级教程][&lt;a class=&#34;link&#34;   href=&#34;https://blog.csdn.net/weixin_44197719/article/details/119888235]%EF%BC%8C%E6%B3%A8%E6%84%8F%E8%BF%99%E9%87%8C%E9%9D%A2%E8%A6%81%E7%94%A8%E5%88%B0vim%EF%BC%8C%E8%AF%B7%E8%87%AA%E8%A1%8C%E5%AD%A6%E4%B9%A0%EF%BC%81&#34; &gt;https://blog.csdn.net/weixin_44197719/article/details/119888235]，注意这里面要用到vim，请自行学习！ &lt;i class=&#34;fa-regular fa-arrow-up-right-from-square fa-sm&#34;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;SSH免密登录可以通过在客户端和服务器之间设置公钥认证来实现。具体步骤如下：&lt;/p&gt;
+&lt;p&gt;在客户端生成公钥和私钥。可以使用以下命令生成：&lt;/p&gt;
+&lt;div class=&#34;highlight-container&#34; data-rel=&#34;Plaintext&#34;&gt;&lt;figure class=&#34;iseeu highlight plaintext&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;ssh-keygen -t rsa&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/div&gt;
+
+&lt;p&gt;该命令将生成一个RSA密钥对，包括公钥和私钥。按照提示输入文件名和密码（可选），如果不需要密码则直接回车即可。&lt;/p&gt;
+&lt;p&gt;将客户端公钥复制到服务器上的authorized_keys文件中。可以使用以下命令将公钥复制到服务器上：&lt;/p&gt;
+&lt;div class=&#34;highlight-container&#34; data-rel=&#34;Plaintext&#34;&gt;&lt;figure class=&#34;iseeu highlight plaintext&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;ssh-copy-id username@servername&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/div&gt;
+
+&lt;p&gt;其中，username是服务器上的用户名，servername是服务器的主机名或IP地址。该命令会将公钥自动添加到服务器上的~&amp;#x2F;.ssh&amp;#x2F;authorized_keys文件中。&lt;/p&gt;
+&lt;p&gt;这样，就设置完成啦，以后ssh连接就不用输入密码了！&lt;/p&gt;
+&lt;h4 id=&#34;9-ros环境配置&#34;&gt;&lt;a href=&#34;#9-ros环境配置&#34; class=&#34;headerlink&#34; title=&#34;9.ros环境配置&#34;&gt;&lt;/a&gt;9.ros环境配置&lt;/h4&gt;&lt;p&gt;请参照[ROS安装教程(ubuntu18.04+melodic版本)][&lt;a class=&#34;link&#34;   href=&#34;https://blog.csdn.net/m0_37715028/article/details/106070815]%EF%BC%8C%E5%BB%BA%E8%AE%AE%E5%AE%89%E8%A3%85%E6%A1%8C%E9%9D%A2%E5%AE%8C%E6%95%B4%E7%89%88%EF%BC%81&#34; &gt;https://blog.csdn.net/m0_37715028/article/details/106070815]，建议安装桌面完整版！ &lt;i class=&#34;fa-regular fa-arrow-up-right-from-square fa-sm&#34;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h4 id=&#34;10-ros-cv-bridge环境配置&#34;&gt;&lt;a href=&#34;#10-ros-cv-bridge环境配置&#34; class=&#34;headerlink&#34; title=&#34;10.ros cv_bridge环境配置&#34;&gt;&lt;/a&gt;10.ros cv_bridge环境配置&lt;/h4&gt;&lt;p&gt;请参照&lt;a class=&#34;link&#34;   href=&#34;https://zhuanlan.zhihu.com/p/392939687%E4%B8%8Ehttps://blog.csdn.net/qq_33980935/article/details/123132452&#34; &gt;https://zhuanlan.zhihu.com/p/392939687与https://blog.csdn.net/qq_33980935/article/details/123132452 &lt;i class=&#34;fa-regular fa-arrow-up-right-from-square fa-sm&#34;&gt;&lt;/i&gt;&lt;/a&gt; &lt;/p&gt;
+&lt;p&gt;ps1:按第一个走的话，在编译的时候会出错，所以在编译前需要按照第二个博客改几个地方！&lt;/p&gt;
+&lt;p&gt;Ps2:使用cv_bridge的时候一定要按照第一个博客指定cv_bridge的cmake位置！！&lt;/p&gt;
+</content>
+        <category term="rm" />
+        <updated>2023-06-27T15:48:03.000Z</updated>
+    </entry>
     <entry>
         <id>https://renshengji.github.io/2023/04/04/NX/</id>
         <title>NX刷机教程</title>

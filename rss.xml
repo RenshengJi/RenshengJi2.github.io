@@ -5,10 +5,277 @@
         <link>https://RenshengJi.github.io</link>
         <description></description>
         <language>zh-CN</language>
-        <pubDate>Mon, 24 Apr 2023 14:28:13 +0800</pubDate>
-        <lastBuildDate>Mon, 24 Apr 2023 14:28:13 +0800</lastBuildDate>
+        <pubDate>Sun, 09 Jul 2023 23:48:03 +0800</pubDate>
+        <lastBuildDate>Sun, 09 Jul 2023 23:48:03 +0800</lastBuildDate>
         <category>rm</category>
         <category>php</category>
+        <category>科研</category>
+        <item>
+            <guid isPermalink="true">https://renshengji.github.io/2023/07/09/%E7%AC%AC%E4%BA%8C%E5%91%A8%E5%91%A8%E6%8A%A5%E7%9A%84%E5%89%AF%E6%9C%AC/</guid>
+            <title>人生几何的科研之旅——第二周周报</title>
+            <link>https://renshengji.github.io/2023/07/09/%E7%AC%AC%E4%BA%8C%E5%91%A8%E5%91%A8%E6%8A%A5%E7%9A%84%E5%89%AF%E6%9C%AC/</link>
+            <category>科研</category>
+            <pubDate>Sun, 09 Jul 2023 23:48:03 +0800</pubDate>
+            <description><![CDATA[ &lt;link rel=&#34;stylesheet&#34; class=&#34;aplayer-secondary-style-marker&#34; href=&#34;/assets/css/APlayer.min.css&#34;&gt;&lt;script src=&#34;/assets/js/APlayer.min.js&#34; class=&#34;aplayer-secondary-script-marker&#34;&gt;&lt;/script&gt;&lt;p&gt;[TOC]&lt;/p&gt;
+&lt;h3 id=&#34;多模态小样本图像识别&#34;&gt;&lt;a href=&#34;#多模态小样本图像识别&#34; class=&#34;headerlink&#34; title=&#34;多模态小样本图像识别&#34;&gt;&lt;/a&gt;多模态小样本图像识别&lt;/h3&gt;&lt;h4 id=&#34;Adaptive-Cross-Modal-Few-shot-Learning&#34;&gt;&lt;a href=&#34;#Adaptive-Cross-Modal-Few-shot-Learning&#34; class=&#34;headerlink&#34; title=&#34;Adaptive Cross-Modal Few-shot Learning&#34;&gt;&lt;/a&gt;Adaptive Cross-Modal Few-shot Learning&lt;/h4&gt;&lt;h5 id=&#34;算法动机：&#34;&gt;&lt;a href=&#34;#算法动机：&#34; class=&#34;headerlink&#34; title=&#34;算法动机：&#34;&gt;&lt;/a&gt;算法动机：&lt;/h5&gt;&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;在图像分类任务上，几乎任何单一模态都有其失效的情况，下面这个图非常直观的说明了这点。这是使用多模态进行图像分类的根本原因。&lt;/p&gt;
+&lt;img  
+                     lazyload
+                     src=&#34;/images/loading.svg&#34;
+                     data-src=&#34;../images/4.png&#34;
+                      alt=&#34;IMG_3941&#34; style=&#34;zoom:50%;&#34; 
+                &gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;在小样本的情况下，来源于视觉模态的信息是有限的，而semantic语义模态的信息（来自于无监督大规模语料库）可以提供丰富的先验知识和上下文！这是在小样本图像识别任务中引入多模态，特别是语义模态的原因。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h5 id=&#34;算法原理：&#34;&gt;&lt;a href=&#34;#算法原理：&#34; class=&#34;headerlink&#34; title=&#34;算法原理：&#34;&gt;&lt;/a&gt;算法原理：&lt;/h5&gt;&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;总的来说，本文提出的算法其实就是在基于度量的prototypical原型学习基础之上，将原来只包含视觉模态信息的类原型，加权引入了语义模态的信息。如下图所示：&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;其中，$g$将来自语义模态的信息转换到和$p_c$相同的维度&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;其中，h用来计算加权参数，不同的类别，得到的加权参数是不一样的，这可以让模型根据不同类别的特征，选择更好描述该类的模态&lt;/p&gt;
+&lt;img  
+                     lazyload
+                     src=&#34;/images/loading.svg&#34;
+                     data-src=&#34;../images/5.png&#34;
+                      alt=&#34;截屏2023-07-09 15.23.23&#34; style=&#34;zoom:50%;&#34; 
+                &gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;Learning-Compositional-Representations-for-Few-Shot-Recognition&#34;&gt;&lt;a href=&#34;#Learning-Compositional-Representations-for-Few-Shot-Recognition&#34; class=&#34;headerlink&#34; title=&#34;Learning Compositional Representations for Few-Shot Recognition&#34;&gt;&lt;/a&gt;Learning Compositional Representations for Few-Shot Recognition&lt;/h4&gt;&lt;h5 id=&#34;算法动机：-1&#34;&gt;&lt;a href=&#34;#算法动机：-1&#34; class=&#34;headerlink&#34; title=&#34;算法动机：&#34;&gt;&lt;/a&gt;算法动机：&lt;/h5&gt;&lt;ul&gt;
+&lt;li&gt;人能够在只有很少目标类别视觉信息的情况下，在很短的时间内掌握该类别的特征，这一能力很可能来源于人脑中含有概念表征的组合结构（the compositional structure of concept representations），即人虽然没有见过该类别，但其能够迅速掌握该类别的一些高级特征（属性）。故此文尝试将图片的一些属性表征同时送入网络，增加信息量。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;img  
+                     lazyload
+                     src=&#34;/images/loading.svg&#34;
+                     data-src=&#34;../images/6.png&#34;
+                      alt=&#34;截屏2023-07-09 15.23.23&#34; style=&#34;zoom:50%;&#34; 
+                &gt;
+
+&lt;h5 id=&#34;算法特点：&#34;&gt;&lt;a href=&#34;#算法特点：&#34; class=&#34;headerlink&#34; title=&#34;算法特点：&#34;&gt;&lt;/a&gt;算法特点：&lt;/h5&gt;&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;为了提高图像特征提取网络和属性特征提取网络的性能，在损失函数增加了一个软约束使得二者之间尽量相似&lt;/p&gt;
+&lt;img  
+                     lazyload
+                     src=&#34;/images/loading.svg&#34;
+                     data-src=&#34;../images/7.png&#34;
+                      alt=&#34;截屏2023-07-09 18.58.31&#34; style=&#34;zoom:50%;&#34; 
+                &gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;为了降低各个属性表征之间的相关性，避免出现冗余属性，在损失函数中增加了正交约束&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;小样本开放集识别&#34;&gt;&lt;a href=&#34;#小样本开放集识别&#34; class=&#34;headerlink&#34; title=&#34;小样本开放集识别&#34;&gt;&lt;/a&gt;小样本开放集识别&lt;/h3&gt;&lt;h4 id=&#34;Task-Adaptive-Negative-Envision-for-Few-Shot-Open-Set-Recognition&#34;&gt;&lt;a href=&#34;#Task-Adaptive-Negative-Envision-for-Few-Shot-Open-Set-Recognition&#34; class=&#34;headerlink&#34; title=&#34;Task-Adaptive Negative Envision for Few-Shot Open-Set Recognition&#34;&gt;&lt;/a&gt;Task-Adaptive Negative Envision for Few-Shot Open-Set Recognition&lt;/h4&gt;&lt;h5 id=&#34;算法动机&#34;&gt;&lt;a href=&#34;#算法动机&#34; class=&#34;headerlink&#34; title=&#34;算法动机&#34;&gt;&lt;/a&gt;算法动机&lt;/h5&gt;&lt;p&gt;早先针对小样本开放集识别的方法，都是通过设定阈值区分正样本与负样本，该方法存在一些问题：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;首先，该阈值需要人工调整。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;其次，不同的任务需要不同的阈值。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;同一个任务，我们需要对每一个正样本都设定一个阈值，以便与负样本进行区分，设置起来非常麻烦&lt;/p&gt;
+&lt;p&gt;所以，文章将阈值调整嵌入模型中，让模型自己学习一个调整函数，根据不同的任务自适应的进行调整。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;img  
+                     lazyload
+                     src=&#34;/images/loading.svg&#34;
+                     data-src=&#34;../images/8.png&#34;
+                      alt=&#34;截屏2023-07-09 17.50.47&#34; style=&#34;zoom: 50%;&#34; 
+                &gt;
+
+&lt;h5 id=&#34;算法原理&#34;&gt;&lt;a href=&#34;#算法原理&#34; class=&#34;headerlink&#34; title=&#34;算法原理&#34;&gt;&lt;/a&gt;算法原理&lt;/h5&gt;&lt;ul&gt;
+&lt;li&gt;该算法设计了一个负样本原型以及阈值生成器，嵌入模型中，在模型的训练过程中进行学习，达到根据不同的任务，自适应阈值的效果。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;img  
+                     lazyload
+                     src=&#34;/images/loading.svg&#34;
+                     data-src=&#34;../images/9.png&#34;
+                      alt=&#34;截屏2023-07-09 17.56.44&#34; style=&#34;zoom: 33%;&#34; 
+                &gt;
+
+&lt;h3 id=&#34;DN4算法复现&#34;&gt;&lt;a href=&#34;#DN4算法复现&#34; class=&#34;headerlink&#34; title=&#34;DN4算法复现&#34;&gt;&lt;/a&gt;DN4算法复现&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;&lt;h4 id=&#34;算法结构&#34;&gt;&lt;a href=&#34;#算法结构&#34; class=&#34;headerlink&#34; title=&#34;算法结构!&#34;&gt;&lt;/a&gt;算法结构!&lt;/h4&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;img  
+                     lazyload
+                     src=&#34;/images/loading.svg&#34;
+                     data-src=&#34;../images/3.png&#34;
+                      alt=&#34;截屏2023-07-09 17.56.44&#34; style=&#34;zoom: 33%;&#34; 
+                &gt;
+
+&lt;p&gt;DN4是一种基于度量的小样本识别算法&lt;/p&gt;
+&lt;p&gt;1.首先是一个没有检测头，只有骨干网络的CNN，其作用就是提取图片中的特征，并以特征向量的形式表示&lt;/p&gt;
+&lt;p&gt;（hw，d），其中hw为特征图的大小，d为特征图的数量（通道数，深度）&lt;/p&gt;
+&lt;p&gt;2.接着是image-to-Class模块，该模块的作用就是将query image与support set中的images进行相似度度量，并确定其属于哪个类。具体来说，对于support set中的每一个类，我们对query image的每一个局部特征向量，都在support set中该类所有images的所有局部特征向量组成的集合中，使用k近邻算法找出余弦距离最近的k个特征向量，然后求和得到image-to-class（query image to support set中的一个类）的余弦距离总和，那么显然，该图片应该属于该距离最近的类，公式如下：&lt;/p&gt;
+&lt;img  
+                     lazyload
+                     src=&#34;/images/loading.svg&#34;
+                     data-src=&#34;../images/10.png&#34;
+                      alt=&#34;截屏2023-07-08 22.18.17&#34; style=&#34;zoom:50%;&#34; 
+                &gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;h4 id=&#34;代码实现（基于LibFewShot）&#34;&gt;&lt;a href=&#34;#代码实现（基于LibFewShot）&#34; class=&#34;headerlink&#34; title=&#34;代码实现（基于LibFewShot）&#34;&gt;&lt;/a&gt;代码实现（基于LibFewShot）&lt;/h4&gt;&lt;div class=&#34;highlight-container&#34; data-rel=&#34;Python&#34;&gt;&lt;figure class=&#34;iseeu highlight python&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;15&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;16&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;17&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;18&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;19&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;20&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;21&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;22&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;23&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;24&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;25&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;26&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;27&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;28&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;29&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;30&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;31&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;32&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;33&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;34&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;35&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;36&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;37&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;comment&#34;&gt;# image-to-Class模块&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;keyword&#34;&gt;def&lt;/span&gt; &lt;span class=&#34;title function_&#34;&gt;forward&lt;/span&gt;(&lt;span class=&#34;params&#34;&gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;params&#34;&gt;        self,&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;params&#34;&gt;        query_feat,&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;params&#34;&gt;        support_feat,&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;params&#34;&gt;        way_num,&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;params&#34;&gt;        shot_num,&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;params&#34;&gt;        query_num,&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;params&#34;&gt;    &lt;/span&gt;):&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;        t, wq, c, h, w = query_feat.size()&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;        _, ws, _, _, _ = support_feat.size()&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;        &lt;span class=&#34;comment&#34;&gt;# t, wq, c, hw -&amp;gt; t, wq, hw, c -&amp;gt; t, wq, 1, hw, c&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;        query_feat = query_feat.view(t, way_num * query_num, c, h * w).permute(&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;            &lt;span class=&#34;number&#34;&gt;0&lt;/span&gt;, &lt;span class=&#34;number&#34;&gt;1&lt;/span&gt;, &lt;span class=&#34;number&#34;&gt;3&lt;/span&gt;, &lt;span class=&#34;number&#34;&gt;2&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;        )&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;        query_feat = F.normalize(query_feat, p=&lt;span class=&#34;number&#34;&gt;2&lt;/span&gt;, dim=-&lt;span class=&#34;number&#34;&gt;1&lt;/span&gt;).unsqueeze(&lt;span class=&#34;number&#34;&gt;2&lt;/span&gt;)&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;        &lt;span class=&#34;comment&#34;&gt;# t, ws, c, h, w -&amp;gt; t, w, s, c, hw -&amp;gt; t, 1, w, c, shw&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;        support_feat = (&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;            support_feat.view(t, way_num, shot_num, c, h * w)&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;            .permute(&lt;span class=&#34;number&#34;&gt;0&lt;/span&gt;, &lt;span class=&#34;number&#34;&gt;1&lt;/span&gt;, &lt;span class=&#34;number&#34;&gt;3&lt;/span&gt;, &lt;span class=&#34;number&#34;&gt;2&lt;/span&gt;, &lt;span class=&#34;number&#34;&gt;4&lt;/span&gt;)&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;            .contiguous()&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;            .view(t, way_num, c, shot_num * h * w)&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;        )&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;        support_feat = F.normalize(support_feat, p=&lt;span class=&#34;number&#34;&gt;2&lt;/span&gt;, dim=&lt;span class=&#34;number&#34;&gt;2&lt;/span&gt;).unsqueeze(&lt;span class=&#34;number&#34;&gt;1&lt;/span&gt;)&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;        &lt;span class=&#34;comment&#34;&gt;# t, wq, w, hw, shw -&amp;gt; t, wq, w, hw, n_k -&amp;gt; t, wq, w&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;        &lt;span class=&#34;comment&#34;&gt;# 张量点乘，从算法上可以理解为只有4，5两个维度在做点乘，从功能上，结合上面的归一化操作&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;        &lt;span class=&#34;comment&#34;&gt;# 这里实际上就是在计算query image和support image中局部特征向量之间的余弦相似度&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;        relation = torch.matmul(query_feat, support_feat)&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;        &lt;span class=&#34;comment&#34;&gt;# k近邻算法，只留下距离相近的k个值&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;        topk_value, _ = torch.topk(relation, self.n_k, dim=-&lt;span class=&#34;number&#34;&gt;1&lt;/span&gt;)&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;        &lt;span class=&#34;comment&#34;&gt;# 求余弦距离总和，代表image-to-class，即query image和supprot&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;        score = torch.&lt;span class=&#34;built_in&#34;&gt;sum&lt;/span&gt;(topk_value, dim=[&lt;span class=&#34;number&#34;&gt;3&lt;/span&gt;, &lt;span class=&#34;number&#34;&gt;4&lt;/span&gt;])&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;        &lt;span class=&#34;keyword&#34;&gt;return&lt;/span&gt; score&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/div&gt;
+
+&lt;div class=&#34;highlight-container&#34; data-rel=&#34;Python&#34;&gt;&lt;figure class=&#34;iseeu highlight python&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;12&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;support_feat = (&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;            support_feat.view(t, way_num, shot_num, c, h * w)&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;            .permute(&lt;span class=&#34;number&#34;&gt;0&lt;/span&gt;, &lt;span class=&#34;number&#34;&gt;1&lt;/span&gt;, &lt;span class=&#34;number&#34;&gt;3&lt;/span&gt;, &lt;span class=&#34;number&#34;&gt;2&lt;/span&gt;, &lt;span class=&#34;number&#34;&gt;4&lt;/span&gt;)&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;            .contiguous()&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;            .view(t, way_num, shot_num * h * w, c)&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;        )&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;        support_feat = F.normalize(support_feat, p=&lt;span class=&#34;number&#34;&gt;2&lt;/span&gt;, dim=&lt;span class=&#34;number&#34;&gt;2&lt;/span&gt;).unsqueeze(&lt;span class=&#34;number&#34;&gt;1&lt;/span&gt;)&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;        &lt;span class=&#34;comment&#34;&gt;# t, wq, w, hw, shw -&amp;gt; t, wq, w, hw, n_k -&amp;gt; t, wq, w&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;        &lt;span class=&#34;comment&#34;&gt;# relation = torch.matmul(query_feat, support_feat)&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;        &lt;span class=&#34;comment&#34;&gt;# 改为欧式距离度量相似度，相应的support_feat张量的形状需改变一下&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;        relation = torch.cdist(query_feat, support_feat, p=&lt;span class=&#34;number&#34;&gt;2&lt;/span&gt;)&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/div&gt;
+
+
+&lt;/li&gt;
+&lt;li&gt;&lt;h4 id=&#34;实验结果&#34;&gt;&lt;a href=&#34;#实验结果&#34; class=&#34;headerlink&#34; title=&#34;实验结果&#34;&gt;&lt;/a&gt;实验结果&lt;/h4&gt;&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Shot&lt;/th&gt;
+&lt;th&gt;dn4-n&lt;/th&gt;
+&lt;th&gt;相似度衡量&lt;/th&gt;
+&lt;th&gt;特征图尺寸&lt;/th&gt;
+&lt;th&gt;测试集准确率&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;&lt;tr&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;3&lt;/td&gt;
+&lt;td&gt;余弦&lt;/td&gt;
+&lt;td&gt;$64&lt;em&gt;5&lt;/em&gt;5$&lt;/td&gt;
+&lt;td&gt;30.345%&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;5&lt;/td&gt;
+&lt;td&gt;3&lt;/td&gt;
+&lt;td&gt;余弦&lt;/td&gt;
+&lt;td&gt;$64&lt;em&gt;5&lt;/em&gt;5$&lt;/td&gt;
+&lt;td&gt;56.606%&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;5&lt;/td&gt;
+&lt;td&gt;5&lt;/td&gt;
+&lt;td&gt;余弦&lt;/td&gt;
+&lt;td&gt;$64&lt;em&gt;5&lt;/em&gt;5$&lt;/td&gt;
+&lt;td&gt;55.148%&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;5&lt;/td&gt;
+&lt;td&gt;5&lt;/td&gt;
+&lt;td&gt;余弦&lt;/td&gt;
+&lt;td&gt;$32&lt;em&gt;5&lt;/em&gt;5$&lt;/td&gt;
+&lt;td&gt;51.400%&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;5&lt;/td&gt;
+&lt;td&gt;5&lt;/td&gt;
+&lt;td&gt;欧式&lt;/td&gt;
+&lt;td&gt;$32&lt;em&gt;5&lt;/em&gt;5$&lt;/td&gt;
+&lt;td&gt;22.380%&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;&lt;/table&gt;
+&lt;p&gt;时间与算力有限，没有做大规模的测试，只做了以上5组&lt;/p&gt;
+&lt;p&gt;可以发现，shot增加可以使准确率大幅上升，将相似度衡量方法换为欧式距离后准确率大幅下降&lt;/p&gt;
+&lt;p&gt;而dn4-n和特征图尺寸(主要是通道数&amp;#x2F;深度d)的变化对测试集影响不大&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+ ]]></description>
+        </item>
+        <item>
+            <guid isPermalink="true">https://renshengji.github.io/2023/07/02/%E7%AC%AC%E4%B8%80%E5%91%A8%E5%91%A8%E6%8A%A5%E7%9A%84%E5%89%AF%E6%9C%AC/</guid>
+            <title>人生几何的科研之旅——第一周周报</title>
+            <link>https://renshengji.github.io/2023/07/02/%E7%AC%AC%E4%B8%80%E5%91%A8%E5%91%A8%E6%8A%A5%E7%9A%84%E5%89%AF%E6%9C%AC/</link>
+            <category>科研</category>
+            <pubDate>Sun, 02 Jul 2023 23:48:03 +0800</pubDate>
+            <description><![CDATA[ &lt;link rel=&#34;stylesheet&#34; class=&#34;aplayer-secondary-style-marker&#34; href=&#34;/assets/css/APlayer.min.css&#34;&gt;&lt;script src=&#34;/assets/js/APlayer.min.js&#34; class=&#34;aplayer-secondary-script-marker&#34;&gt;&lt;/script&gt;&lt;p&gt;[TOC]&lt;/p&gt;
+&lt;h2 id=&#34;总结&#34;&gt;&lt;a href=&#34;#总结&#34; class=&#34;headerlink&#34; title=&#34;总结&#34;&gt;&lt;/a&gt;总结&lt;/h2&gt;&lt;p&gt;本周主要通过阅读老师推荐的文献，以及一些视频和博客，对小样本图像识别领域经典方法，开放世界小样本学习有了一定的理解。（由于本周有一些课程的大作业，所以时间比较紧张，没来得及看代码）&lt;/p&gt;
+&lt;h2 id=&#34;小样本图像识别领域经典方法&#34;&gt;&lt;a href=&#34;#小样本图像识别领域经典方法&#34; class=&#34;headerlink&#34; title=&#34;小样本图像识别领域经典方法&#34;&gt;&lt;/a&gt;小样本图像识别领域经典方法&lt;/h2&gt;&lt;p&gt;小样本图像识别是指在数据集较小的情况下，通过一些方法来提高模型的泛化能力，进行图像识别任务&lt;/p&gt;
+&lt;h3 id=&#34;1-数据增强&#34;&gt;&lt;a href=&#34;#1-数据增强&#34; class=&#34;headerlink&#34; title=&#34;1.数据增强&#34;&gt;&lt;/a&gt;1.数据增强&lt;/h3&gt;&lt;p&gt;数据增强是指通过对训练数据进行一定的变换，生成新的数据来扩充训练集，从而增加数据的多样性和数量。这种方法可以帮助模型更好地学习图像的不变性和鲁棒性，提高模型的泛化能力。常见的数据增强方法包括旋转、平移、缩放、翻转、添加噪声等。&lt;/p&gt;
+&lt;h3 id=&#34;2-元学习&#34;&gt;&lt;a href=&#34;#2-元学习&#34; class=&#34;headerlink&#34; title=&#34;2.元学习&#34;&gt;&lt;/a&gt;2.元学习&lt;/h3&gt;&lt;p&gt;元学习是学习如何学习的一种方法，它可以在多个任务之间学习，并具有快速适应新任务的能力。在小样本图像识别中，元学习可以帮助模型在仅有几个样本的情况下快速适应新的分类任务。&lt;/p&gt;
+&lt;h4 id=&#34;基于优化的MAML方法&#34;&gt;&lt;a href=&#34;#基于优化的MAML方法&#34; class=&#34;headerlink&#34; title=&#34;基于优化的MAML方法&#34;&gt;&lt;/a&gt;基于优化的MAML方法&lt;/h4&gt;&lt;p&gt;MAML算法的核心思想是在多个任务之间学习共享知识，通过不断地更新模型参数来适应新的任务。&lt;/p&gt;
+&lt;h4 id=&#34;基于度量的Prototypical-Network方法&#34;&gt;&lt;a href=&#34;#基于度量的Prototypical-Network方法&#34; class=&#34;headerlink&#34; title=&#34;基于度量的Prototypical Network方法&#34;&gt;&lt;/a&gt;基于度量的Prototypical Network方法&lt;/h4&gt;&lt;p&gt;ProtoNet方法通过计算每个类别的原型向量来进行分类。原型向量是一个类别的所有样本向量的平均值，表示该类别的特征中心。在训练阶段，ProtoNet方法通过计算每个类别的原型向量来学习分类器。在测试阶段，ProtoNet方法通过计算测试样本与每个类别的原型向量的距离来进行分类。&lt;/p&gt;
+&lt;h4 id=&#34;基于度量的DN4方法&#34;&gt;&lt;a href=&#34;#基于度量的DN4方法&#34; class=&#34;headerlink&#34; title=&#34;基于度量的DN4方法&#34;&gt;&lt;/a&gt;基于度量的DN4方法&lt;/h4&gt;&lt;p&gt;DN4方法的核心思想是提取图像的局部特征，并使用朴素贝叶斯最近邻算法进行相似性度量。&lt;/p&gt;
+&lt;h3 id=&#34;3-预训练-微调&#34;&gt;&lt;a href=&#34;#3-预训练-微调&#34; class=&#34;headerlink&#34; title=&#34;3.预训练+微调&#34;&gt;&lt;/a&gt;3.预训练+微调&lt;/h3&gt;&lt;p&gt;预训练+微调是指使用大规模图像数据集预训练一个深度学习模型，然后在小样本图像识别任务中微调模型。预训练可以帮助模型学习更好的图像特征，提高模型的泛化能力。在微调过程中，模型会根据小样本图像数据集进行微调，以适应新的分类任务。&lt;/p&gt;
+&lt;h2 id=&#34;开放世界小样本学习&#34;&gt;&lt;a href=&#34;#开放世界小样本学习&#34; class=&#34;headerlink&#34; title=&#34;开放世界小样本学习&#34;&gt;&lt;/a&gt;开放世界小样本学习&lt;/h2&gt;&lt;p&gt;开放世界小样本学习指的是在小样本学习任务中，考虑到可能存在未知类别的情况，即在测试阶段可能会出现训练集中没有出现过的类别。传统的小样本学习方法只能处理已知类别，无法应对未知类别的情况。&lt;/p&gt;
+&lt;h3 id=&#34;1-跨域小样本学习&#34;&gt;&lt;a href=&#34;#1-跨域小样本学习&#34; class=&#34;headerlink&#34; title=&#34;1.跨域小样本学习&#34;&gt;&lt;/a&gt;1.跨域小样本学习&lt;/h3&gt;&lt;p&gt;跨域小样本学习（Cross-domain Few-shot Learning）是指在小样本学习任务中，模型需要在训练和测试时处理不同来源的数据集，即跨越不同的数据域。在实际应用中，跨域小样本学习具有广泛的应用场景，如在医学图像识别中利用来自不同医院的数据集进行模型训练和测试。&lt;/p&gt;
+&lt;h3 id=&#34;2-小样本开放集识别&#34;&gt;&lt;a href=&#34;#2-小样本开放集识别&#34; class=&#34;headerlink&#34; title=&#34;2.小样本开放集识别&#34;&gt;&lt;/a&gt;2.小样本开放集识别&lt;/h3&gt;&lt;p&gt;小样本开放集识别（Few-Shot Open-Set Recognition）是指在小样本学习任务中，模型需要处理未知类别的情况，并且测试集中可能包含已知类别和未知类别两种情况。相比于传统的小样本识别任务，开放集识别任务需要模型具备更强的泛化能力和鲁棒性，因此具有更高的难度和挑战性。&lt;/p&gt;
+&lt;h3 id=&#34;3-通用小样本学习&#34;&gt;&lt;a href=&#34;#3-通用小样本学习&#34; class=&#34;headerlink&#34; title=&#34;3.通用小样本学习&#34;&gt;&lt;/a&gt;3.通用小样本学习&lt;/h3&gt;&lt;p&gt;通用小样本学习（Generalized Few-shot Learning）是指在小样本学习任务中，模型需要具备在不同任务之间进行迁移学习的能力。相比于传统的小样本学习任务，通用小样本学习任务考虑到了不同任务之间的相似性和差异性。&lt;/p&gt;
+ ]]></description>
+        </item>
+        <item>
+            <guid isPermalink="true">https://renshengji.github.io/2023/06/27/NX%E9%83%A8%E7%BD%B2%E8%BF%87%E7%A8%8B/</guid>
+            <title>北洋机甲视觉组—Jetson Xavier NX部署过程</title>
+            <link>https://renshengji.github.io/2023/06/27/NX%E9%83%A8%E7%BD%B2%E8%BF%87%E7%A8%8B/</link>
+            <category>rm</category>
+            <pubDate>Tue, 27 Jun 2023 23:48:03 +0800</pubDate>
+            <description><![CDATA[ &lt;link rel=&#34;stylesheet&#34; class=&#34;aplayer-secondary-style-marker&#34; href=&#34;/assets/css/APlayer.min.css&#34;&gt;&lt;script src=&#34;/assets/js/APlayer.min.js&#34; class=&#34;aplayer-secondary-script-marker&#34;&gt;&lt;/script&gt;&lt;h3 id=&#34;开始之前—注意事项&#34;&gt;&lt;a href=&#34;#开始之前—注意事项&#34; class=&#34;headerlink&#34; title=&#34;[开始之前—注意事项]&#34;&gt;&lt;/a&gt;[开始之前—注意事项]&lt;/h3&gt;&lt;p&gt;本教程只适合于正版NX，如果你使用的是盗版NX，请立即将其扔掉&lt;/p&gt;
+&lt;h3 id=&#34;开始之前—需要的设备&#34;&gt;&lt;a href=&#34;#开始之前—需要的设备&#34; class=&#34;headerlink&#34; title=&#34;[开始之前—需要的设备]&#34;&gt;&lt;/a&gt;[开始之前—需要的设备]&lt;/h3&gt;&lt;p&gt;1.一台可以科学上网的个人电脑&lt;/p&gt;
+&lt;p&gt;2.一个NX，以及其充电器&lt;/p&gt;
+&lt;p&gt;3.一张sd卡（根据自己的电脑查看是否需要读卡器）&lt;/p&gt;
+&lt;p&gt;4.显示屏，显示屏充电线，充电头&lt;/p&gt;
+&lt;p&gt;5.连接显示屏与NX的线（NX支持DP&amp;#x2F;Hdmi输出，还需结合你的显示屏支持什么输入）&lt;/p&gt;
+&lt;p&gt;6.键盘，鼠标&lt;/p&gt;
+&lt;p&gt;7.沉着，冷静，小心&lt;/p&gt;
+&lt;h3 id=&#34;安装操作系统&#34;&gt;&lt;a href=&#34;#安装操作系统&#34; class=&#34;headerlink&#34; title=&#34;[安装操作系统]&#34;&gt;&lt;/a&gt;[安装操作系统]&lt;/h3&gt;&lt;p&gt;注意，NX没有内置外存，而是选择让我们使用外接sd卡当作外存。&lt;/p&gt;
+&lt;h4 id=&#34;1-在官网下载镜像&#34;&gt;&lt;a href=&#34;#1-在官网下载镜像&#34; class=&#34;headerlink&#34; title=&#34;1. 在官网下载镜像&#34;&gt;&lt;/a&gt;1. 在官网下载镜像&lt;/h4&gt;&lt;p&gt;&lt;a class=&#34;link&#34;   href=&#34;https://developer.nvidia.com/embedded/downloads&#34; &gt;https://developer.nvidia.com/embedded/downloads &lt;i class=&#34;fa-regular fa-arrow-up-right-from-square fa-sm&#34;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;如果要安装18.04的ubuntu，可以选择下载Jetson Xavier NX Developer Kit SD Card Image 4.6&lt;/p&gt;
+&lt;h4 id=&#34;2-将镜像烧录到sd卡中&#34;&gt;&lt;a href=&#34;#2-将镜像烧录到sd卡中&#34; class=&#34;headerlink&#34; title=&#34;2. 将镜像烧录到sd卡中&#34;&gt;&lt;/a&gt;2. 将镜像烧录到sd卡中&lt;/h4&gt;&lt;p&gt;请参考&lt;a class=&#34;link&#34;   href=&#34;https://developer.nvidia.com/embedded/learn/get-started-jetson-xavier-nx-devkit#write&#34; &gt;https://developer.nvidia.com/embedded/learn/get-started-jetson-xavier-nx-devkit#write &lt;i class=&#34;fa-regular fa-arrow-up-right-from-square fa-sm&#34;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;根据你的操作系统类型选择不同的方法&lt;/p&gt;
+&lt;h4 id=&#34;3-将sd卡插入NX中，接上电源，开机，设置ubuntu操作系统&#34;&gt;&lt;a href=&#34;#3-将sd卡插入NX中，接上电源，开机，设置ubuntu操作系统&#34; class=&#34;headerlink&#34; title=&#34;3. 将sd卡插入NX中，接上电源，开机，设置ubuntu操作系统&#34;&gt;&lt;/a&gt;3. 将sd卡插入NX中，接上电源，开机，设置ubuntu操作系统&lt;/h4&gt;&lt;p&gt;注意，为了方便队伍内协同工作，账号密码统一设置为tjurm&lt;/p&gt;
+&lt;h3 id=&#34;安装环境&#34;&gt;&lt;a href=&#34;#安装环境&#34; class=&#34;headerlink&#34; title=&#34;[安装环境]&#34;&gt;&lt;/a&gt;[安装环境]&lt;/h3&gt;&lt;h4 id=&#34;1-联网&#34;&gt;&lt;a href=&#34;#1-联网&#34; class=&#34;headerlink&#34; title=&#34;1.联网&#34;&gt;&lt;/a&gt;1.联网&lt;/h4&gt;&lt;h4 id=&#34;2-换源&#34;&gt;&lt;a href=&#34;#2-换源&#34; class=&#34;headerlink&#34; title=&#34;2.换源&#34;&gt;&lt;/a&gt;2.换源&lt;/h4&gt;&lt;p&gt;首先，换源需要根据咱们电脑的ubuntu系统版本以及指令集体系结构去进行选择。&lt;/p&gt;
+&lt;p&gt;查看ubuntu系统版本的方式：&lt;/p&gt;
+&lt;div class=&#34;highlight-container&#34; data-rel=&#34;Bash&#34;&gt;&lt;figure class=&#34;iseeu highlight bash&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;lsb_release -a&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/div&gt;
+
+&lt;p&gt;查看体系架构的方式：&lt;/p&gt;
+&lt;div class=&#34;highlight-container&#34; data-rel=&#34;Bash&#34;&gt;&lt;figure class=&#34;iseeu highlight bash&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;built_in&#34;&gt;uname&lt;/span&gt; -m&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/div&gt;
+
+&lt;p&gt;然后根据查找到的这两种信息去CSDN查询&lt;/p&gt;
+&lt;p&gt;eg： 我们拿到的官方Jetson Xavier NX，应该查询：ubuntu 18.04 arm换源&lt;/p&gt;
+&lt;p&gt;这里提供快速对ubuntu_18.04_arm进行换源(华为源)的方法：&lt;/p&gt;
+&lt;div class=&#34;highlight-container&#34; data-rel=&#34;Bash&#34;&gt;&lt;figure class=&#34;iseeu highlight bash&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;sudo wget -O /etc/apt/sources.list https://repo.huaweicloud.com/repository/conf/Ubuntu-Ports-bionic.list&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;sudo apt-get update&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/div&gt;
+
+&lt;h4 id=&#34;3-安装jtop&#34;&gt;&lt;a href=&#34;#3-安装jtop&#34; class=&#34;headerlink&#34; title=&#34;3.安装jtop&#34;&gt;&lt;/a&gt;3.安装jtop&lt;/h4&gt;&lt;p&gt;因为我们需要使用pip3来安装jtop，所以需要在系统中先安装pip3&lt;/p&gt;
+&lt;div class=&#34;highlight-container&#34; data-rel=&#34;Bash&#34;&gt;&lt;figure class=&#34;iseeu highlight bash&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;sudo apt install python3-pip&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/div&gt;
+
+&lt;p&gt;接着安装jtop&lt;/p&gt;
+&lt;div class=&#34;highlight-container&#34; data-rel=&#34;Bash&#34;&gt;&lt;figure class=&#34;iseeu highlight bash&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;sudo -H pip3 install -U jetson-stats&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/div&gt;
+
+&lt;p&gt;重启系统&lt;/p&gt;
+&lt;div class=&#34;highlight-container&#34; data-rel=&#34;Plaintext&#34;&gt;&lt;figure class=&#34;iseeu highlight plaintext&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;reboot&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/div&gt;
+
+&lt;p&gt;使用jtop&lt;/p&gt;
+&lt;div class=&#34;highlight-container&#34; data-rel=&#34;Bash&#34;&gt;&lt;figure class=&#34;iseeu highlight bash&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;jtop&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/div&gt;
+
+&lt;p&gt;查看当前cpu，gpu使用状态（点击最下面一行的2GPU&amp;#x2F;3CPU即可）&lt;/p&gt;
+&lt;p&gt;设置风扇状态（点击最下面一行的6CTRL，选择manual人工控制，在speed后点击’+‘直到100%）&lt;/p&gt;
+&lt;h4 id=&#34;4-安装大恒相机驱动&#34;&gt;&lt;a href=&#34;#4-安装大恒相机驱动&#34; class=&#34;headerlink&#34; title=&#34;4.安装大恒相机驱动&#34;&gt;&lt;/a&gt;4.安装大恒相机驱动&lt;/h4&gt;&lt;p&gt;&lt;a class=&#34;link&#34;   href=&#34;https://www.daheng-imaging.com/downloads/&#34; &gt;https://www.daheng-imaging.com/downloads/ &lt;i class=&#34;fa-regular fa-arrow-up-right-from-square fa-sm&#34;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;下载Galaxy Linux-armhf-Gige-U3 SDK_CN-EN 以及  Galaxy Linux-Python SDK_CN-EN&lt;/p&gt;
+&lt;p&gt;解压后按照readme中提示安装！&lt;/p&gt;
+&lt;p&gt;注意，Galaxy Linux-armhf-Gige-U3 SDK_CN-EN的安装可能需要输入如下指令：&lt;/p&gt;
+&lt;div class=&#34;highlight-container&#34; data-rel=&#34;Bash&#34;&gt;&lt;figure class=&#34;iseeu highlight bash&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;bash ./Galaxy_camera.run&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/div&gt;
+
+&lt;p&gt;注意，Galaxy Linux-Python SDK_CN-EN要装适配python3的，在readme文档下面，别装2.7的&lt;/p&gt;
+&lt;h4 id=&#34;5-eigen的安装与软链接&#34;&gt;&lt;a href=&#34;#5-eigen的安装与软链接&#34; class=&#34;headerlink&#34; title=&#34;5.eigen的安装与软链接&#34;&gt;&lt;/a&gt;5.eigen的安装与软链接&lt;/h4&gt;&lt;p&gt;安装:&lt;/p&gt;
+&lt;div class=&#34;highlight-container&#34; data-rel=&#34;Bash&#34;&gt;&lt;figure class=&#34;iseeu highlight bash&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;apt install libeigen3-dev&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/div&gt;
+
+&lt;p&gt;链接：&lt;/p&gt;
+&lt;div class=&#34;highlight-container&#34; data-rel=&#34;Bash&#34;&gt;&lt;figure class=&#34;iseeu highlight bash&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;built_in&#34;&gt;cd&lt;/span&gt; /usr/include&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;sudo &lt;span class=&#34;built_in&#34;&gt;ln&lt;/span&gt; -sf eigen3/Eigen Eigen&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;sudo &lt;span class=&#34;built_in&#34;&gt;ln&lt;/span&gt; -sf eigen3/unsupported unsupported&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/div&gt;
+
+&lt;h4 id=&#34;6-从gitee上下载咱们代码&#34;&gt;&lt;a href=&#34;#6-从gitee上下载咱们代码&#34; class=&#34;headerlink&#34; title=&#34;6.从gitee上下载咱们代码&#34;&gt;&lt;/a&gt;6.从gitee上下载咱们代码&lt;/h4&gt;&lt;p&gt;地址：&lt;a class=&#34;link&#34;   href=&#34;https://gitee.com/tju-rm-cv&#34; &gt;https://gitee.com/tju-rm-cv &lt;i class=&#34;fa-regular fa-arrow-up-right-from-square fa-sm&#34;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h4 id=&#34;7-vscode安装&#34;&gt;&lt;a href=&#34;#7-vscode安装&#34; class=&#34;headerlink&#34; title=&#34;7.vscode安装&#34;&gt;&lt;/a&gt;7.vscode安装&lt;/h4&gt;&lt;p&gt;下载debian包，网页打开&lt;/p&gt;
+&lt;div class=&#34;highlight-container&#34; data-rel=&#34;Plaintext&#34;&gt;&lt;figure class=&#34;iseeu highlight plaintext&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;https://update.code.visualstudio.com/1.50.1/linux-deb-arm64/stable&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/div&gt;
+
+&lt;p&gt;进入到下载目录，输入：&lt;/p&gt;
+&lt;div class=&#34;highlight-container&#34; data-rel=&#34;Bash&#34;&gt;&lt;figure class=&#34;iseeu highlight bash&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;sudo apt install ./code...&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/div&gt;
+
+&lt;h4 id=&#34;8-ssh配置&#34;&gt;&lt;a href=&#34;#8-ssh配置&#34; class=&#34;headerlink&#34; title=&#34;8.ssh配置&#34;&gt;&lt;/a&gt;8.ssh配置&lt;/h4&gt;&lt;p&gt;请参照[Ubuntu: 配置ssh，保姆级教程][&lt;a class=&#34;link&#34;   href=&#34;https://blog.csdn.net/weixin_44197719/article/details/119888235]%EF%BC%8C%E6%B3%A8%E6%84%8F%E8%BF%99%E9%87%8C%E9%9D%A2%E8%A6%81%E7%94%A8%E5%88%B0vim%EF%BC%8C%E8%AF%B7%E8%87%AA%E8%A1%8C%E5%AD%A6%E4%B9%A0%EF%BC%81&#34; &gt;https://blog.csdn.net/weixin_44197719/article/details/119888235]，注意这里面要用到vim，请自行学习！ &lt;i class=&#34;fa-regular fa-arrow-up-right-from-square fa-sm&#34;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;SSH免密登录可以通过在客户端和服务器之间设置公钥认证来实现。具体步骤如下：&lt;/p&gt;
+&lt;p&gt;在客户端生成公钥和私钥。可以使用以下命令生成：&lt;/p&gt;
+&lt;div class=&#34;highlight-container&#34; data-rel=&#34;Plaintext&#34;&gt;&lt;figure class=&#34;iseeu highlight plaintext&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;ssh-keygen -t rsa&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/div&gt;
+
+&lt;p&gt;该命令将生成一个RSA密钥对，包括公钥和私钥。按照提示输入文件名和密码（可选），如果不需要密码则直接回车即可。&lt;/p&gt;
+&lt;p&gt;将客户端公钥复制到服务器上的authorized_keys文件中。可以使用以下命令将公钥复制到服务器上：&lt;/p&gt;
+&lt;div class=&#34;highlight-container&#34; data-rel=&#34;Plaintext&#34;&gt;&lt;figure class=&#34;iseeu highlight plaintext&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;ssh-copy-id username@servername&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/div&gt;
+
+&lt;p&gt;其中，username是服务器上的用户名，servername是服务器的主机名或IP地址。该命令会将公钥自动添加到服务器上的~&amp;#x2F;.ssh&amp;#x2F;authorized_keys文件中。&lt;/p&gt;
+&lt;p&gt;这样，就设置完成啦，以后ssh连接就不用输入密码了！&lt;/p&gt;
+&lt;h4 id=&#34;9-ros环境配置&#34;&gt;&lt;a href=&#34;#9-ros环境配置&#34; class=&#34;headerlink&#34; title=&#34;9.ros环境配置&#34;&gt;&lt;/a&gt;9.ros环境配置&lt;/h4&gt;&lt;p&gt;请参照[ROS安装教程(ubuntu18.04+melodic版本)][&lt;a class=&#34;link&#34;   href=&#34;https://blog.csdn.net/m0_37715028/article/details/106070815]%EF%BC%8C%E5%BB%BA%E8%AE%AE%E5%AE%89%E8%A3%85%E6%A1%8C%E9%9D%A2%E5%AE%8C%E6%95%B4%E7%89%88%EF%BC%81&#34; &gt;https://blog.csdn.net/m0_37715028/article/details/106070815]，建议安装桌面完整版！ &lt;i class=&#34;fa-regular fa-arrow-up-right-from-square fa-sm&#34;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h4 id=&#34;10-ros-cv-bridge环境配置&#34;&gt;&lt;a href=&#34;#10-ros-cv-bridge环境配置&#34; class=&#34;headerlink&#34; title=&#34;10.ros cv_bridge环境配置&#34;&gt;&lt;/a&gt;10.ros cv_bridge环境配置&lt;/h4&gt;&lt;p&gt;请参照&lt;a class=&#34;link&#34;   href=&#34;https://zhuanlan.zhihu.com/p/392939687%E4%B8%8Ehttps://blog.csdn.net/qq_33980935/article/details/123132452&#34; &gt;https://zhuanlan.zhihu.com/p/392939687与https://blog.csdn.net/qq_33980935/article/details/123132452 &lt;i class=&#34;fa-regular fa-arrow-up-right-from-square fa-sm&#34;&gt;&lt;/i&gt;&lt;/a&gt; &lt;/p&gt;
+&lt;p&gt;ps1:按第一个走的话，在编译的时候会出错，所以在编译前需要按照第二个博客改几个地方！&lt;/p&gt;
+&lt;p&gt;Ps2:使用cv_bridge的时候一定要按照第一个博客指定cv_bridge的cmake位置！！&lt;/p&gt;
+ ]]></description>
+        </item>
         <item>
             <guid isPermalink="true">https://renshengji.github.io/2023/04/24/rm-1/</guid>
             <title>中心投影！</title>
@@ -27,7 +294,7 @@
 &lt;img  
                      lazyload
                      src=&#34;/images/loading.svg&#34;
-                     data-src=&#34;/images/IMG_3941.jpg&#34;
+                     data-src=&#34;../images/IMG_3941.jpg&#34;
                       alt=&#34;IMG_3941&#34; style=&#34;zoom:50%;&#34; 
                 &gt;
 
