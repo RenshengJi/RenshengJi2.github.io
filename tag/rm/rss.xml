@@ -108,13 +108,7 @@
 
 &lt;p&gt;&lt;strong&gt;失效原因&lt;/strong&gt;：虽然说在实际的三维立体世界中，上述条件是肯定有效的，但是，我们是在二维成像平面中去判断的，即使从三维空间-&amp;gt;二维成像平面的过程是平行投影，这个条件也不成立，更何况是中心投影了！&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;失效后果&lt;/strong&gt;：本来这个先验条件的设置应该是为了过滤掉如下图所示的情况，实际情况可能也还好，但是这样的话，由于这个先验条件本来就是错误的，它并不能正确有效的反映出二维平面投影下装甲板的真实特征，所以有一些正确的灯条匹配会因为这个&lt;strong&gt;错误的先验条件&lt;/strong&gt;而被过滤！！&lt;/p&gt;
-&lt;img  
-                     lazyload
-                     src=&#34;/images/loading.svg&#34;
-                     data-src=&#34;../images/IMG_3941.jpg&#34;
-                      alt=&#34;IMG_3941&#34; style=&#34;zoom:50%;&#34; 
-                &gt;
-
+&lt;p&gt;&lt;img src=&#34;/images/IMG_3941.jpg&#34; alt=&#34;Test&#34;&gt;&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;解决方案&lt;/strong&gt;：&lt;/p&gt;
 &lt;p&gt;a) 直接使用类似上交的四点模型，进行纯深度学习识别，完全抛弃传统视觉，直接避开这个问题？&lt;/p&gt;
 &lt;p&gt;b) 读君神的代码（因为现在已知君神的代码是使用的纯传统视觉），或者说直接询问，看看他是这么解决的！&lt;/p&gt;

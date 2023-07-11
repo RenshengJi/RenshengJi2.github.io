@@ -16,15 +16,9 @@
             <link>https://renshengji.github.io/2023/07/09/%E7%AC%AC%E4%BA%8C%E5%91%A8%E5%91%A8%E6%8A%A5%E7%9A%84%E5%89%AF%E6%9C%AC/</link>
             <category>科研</category>
             <pubDate>Sun, 09 Jul 2023 23:48:03 +0800</pubDate>
-            <description><![CDATA[ &lt;link rel=&#34;stylesheet&#34; class=&#34;aplayer-secondary-style-marker&#34; href=&#34;/assets/css/APlayer.min.css&#34;&gt;&lt;script src=&#34;/assets/js/APlayer.min.js&#34; class=&#34;aplayer-secondary-script-marker&#34;&gt;&lt;/script&gt;&lt;p&gt;[TOC]&lt;/p&gt;
-&lt;h3 id=&#34;多模态小样本图像识别&#34;&gt;&lt;a href=&#34;#多模态小样本图像识别&#34; class=&#34;headerlink&#34; title=&#34;多模态小样本图像识别&#34;&gt;&lt;/a&gt;多模态小样本图像识别&lt;/h3&gt;&lt;h4 id=&#34;Adaptive-Cross-Modal-Few-shot-Learning&#34;&gt;&lt;a href=&#34;#Adaptive-Cross-Modal-Few-shot-Learning&#34; class=&#34;headerlink&#34; title=&#34;Adaptive Cross-Modal Few-shot Learning&#34;&gt;&lt;/a&gt;Adaptive Cross-Modal Few-shot Learning&lt;/h4&gt;&lt;h5 id=&#34;算法动机：&#34;&gt;&lt;a href=&#34;#算法动机：&#34; class=&#34;headerlink&#34; title=&#34;算法动机：&#34;&gt;&lt;/a&gt;算法动机：&lt;/h5&gt;&lt;ul&gt;
+            <description><![CDATA[ &lt;link rel=&#34;stylesheet&#34; class=&#34;aplayer-secondary-style-marker&#34; href=&#34;/assets/css/APlayer.min.css&#34;&gt;&lt;script src=&#34;/assets/js/APlayer.min.js&#34; class=&#34;aplayer-secondary-script-marker&#34;&gt;&lt;/script&gt;&lt;h3 id=&#34;多模态小样本图像识别&#34;&gt;&lt;a href=&#34;#多模态小样本图像识别&#34; class=&#34;headerlink&#34; title=&#34;多模态小样本图像识别&#34;&gt;&lt;/a&gt;多模态小样本图像识别&lt;/h3&gt;&lt;h4 id=&#34;Adaptive-Cross-Modal-Few-shot-Learning&#34;&gt;&lt;a href=&#34;#Adaptive-Cross-Modal-Few-shot-Learning&#34; class=&#34;headerlink&#34; title=&#34;Adaptive Cross-Modal Few-shot Learning&#34;&gt;&lt;/a&gt;Adaptive Cross-Modal Few-shot Learning&lt;/h4&gt;&lt;h5 id=&#34;算法动机：&#34;&gt;&lt;a href=&#34;#算法动机：&#34; class=&#34;headerlink&#34; title=&#34;算法动机：&#34;&gt;&lt;/a&gt;算法动机：&lt;/h5&gt;&lt;ul&gt;
 &lt;li&gt;&lt;p&gt;在图像分类任务上，几乎任何单一模态都有其失效的情况，下面这个图非常直观的说明了这点。这是使用多模态进行图像分类的根本原因。&lt;/p&gt;
-&lt;img  
-                     lazyload
-                     src=&#34;/images/loading.svg&#34;
-                     data-src=&#34;../images/4.png&#34;
-                      alt=&#34;IMG_3941&#34; style=&#34;zoom:50%;&#34; 
-                &gt;
+&lt;p&gt;&lt;img src=&#34;/images/4.png&#34; alt=&#34;Test&#34;&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;&lt;p&gt;在小样本的情况下，来源于视觉模态的信息是有限的，而semantic语义模态的信息（来自于无监督大规模语料库）可以提供丰富的先验知识和上下文！这是在小样本图像识别任务中引入多模态，特别是语义模态的原因。&lt;/p&gt;
 &lt;/li&gt;
@@ -32,34 +26,20 @@
 &lt;h5 id=&#34;算法原理：&#34;&gt;&lt;a href=&#34;#算法原理：&#34; class=&#34;headerlink&#34; title=&#34;算法原理：&#34;&gt;&lt;/a&gt;算法原理：&lt;/h5&gt;&lt;ul&gt;
 &lt;li&gt;&lt;p&gt;总的来说，本文提出的算法其实就是在基于度量的prototypical原型学习基础之上，将原来只包含视觉模态信息的类原型，加权引入了语义模态的信息。如下图所示：&lt;/p&gt;
 &lt;/li&gt;
-&lt;li&gt;&lt;p&gt;其中，$g$将来自语义模态的信息转换到和$p_c$相同的维度&lt;/p&gt;
+&lt;li&gt;&lt;p&gt;其中，&lt;mjx-container class=&#34;MathJax&#34; jax=&#34;SVG&#34;&gt;&lt;svg style=&#34;vertical-align: -0.464ex;&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34; width=&#34;1.079ex&#34; height=&#34;1.464ex&#34; role=&#34;img&#34; focusable=&#34;false&#34; viewBox=&#34;0 -442 477 647&#34;&gt;&lt;g stroke=&#34;currentColor&#34; fill=&#34;currentColor&#34; stroke-width=&#34;0&#34; transform=&#34;scale(1,-1)&#34;&gt;&lt;g data-mml-node=&#34;math&#34;&gt;&lt;g data-mml-node=&#34;mi&#34;&gt;&lt;path data-c=&#34;1D454&#34; d=&#34;M311 43Q296 30 267 15T206 0Q143 0 105 45T66 160Q66 265 143 353T314 442Q361 442 401 394L404 398Q406 401 409 404T418 412T431 419T447 422Q461 422 470 413T480 394Q480 379 423 152T363 -80Q345 -134 286 -169T151 -205Q10 -205 10 -137Q10 -111 28 -91T74 -71Q89 -71 102 -80T116 -111Q116 -121 114 -130T107 -144T99 -154T92 -162L90 -164H91Q101 -167 151 -167Q189 -167 211 -155Q234 -144 254 -122T282 -75Q288 -56 298 -13Q311 35 311 43ZM384 328L380 339Q377 350 375 354T369 368T359 382T346 393T328 402T306 405Q262 405 221 352Q191 313 171 233T151 117Q151 38 213 38Q269 38 323 108L331 118L384 328Z&#34;&gt;&lt;/path&gt;&lt;/g&gt;&lt;/g&gt;&lt;/g&gt;&lt;/svg&gt;&lt;/mjx-container&gt;将来自语义模态的信息转换到和&lt;mjx-container class=&#34;MathJax&#34; jax=&#34;SVG&#34;&gt;&lt;svg style=&#34;vertical-align: -0.439ex;&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34; width=&#34;2.019ex&#34; height=&#34;1.439ex&#34; role=&#34;img&#34; focusable=&#34;false&#34; viewBox=&#34;0 -442 892.2 636&#34;&gt;&lt;g stroke=&#34;currentColor&#34; fill=&#34;currentColor&#34; stroke-width=&#34;0&#34; transform=&#34;scale(1,-1)&#34;&gt;&lt;g data-mml-node=&#34;math&#34;&gt;&lt;g data-mml-node=&#34;msub&#34;&gt;&lt;g data-mml-node=&#34;mi&#34;&gt;&lt;path data-c=&#34;1D45D&#34; d=&#34;M23 287Q24 290 25 295T30 317T40 348T55 381T75 411T101 433T134 442Q209 442 230 378L240 387Q302 442 358 442Q423 442 460 395T497 281Q497 173 421 82T249 -10Q227 -10 210 -4Q199 1 187 11T168 28L161 36Q160 35 139 -51T118 -138Q118 -144 126 -145T163 -148H188Q194 -155 194 -157T191 -175Q188 -187 185 -190T172 -194Q170 -194 161 -194T127 -193T65 -192Q-5 -192 -24 -194H-32Q-39 -187 -39 -183Q-37 -156 -26 -148H-6Q28 -147 33 -136Q36 -130 94 103T155 350Q156 355 156 364Q156 405 131 405Q109 405 94 377T71 316T59 280Q57 278 43 278H29Q23 284 23 287ZM178 102Q200 26 252 26Q282 26 310 49T356 107Q374 141 392 215T411 325V331Q411 405 350 405Q339 405 328 402T306 393T286 380T269 365T254 350T243 336T235 326L232 322Q232 321 229 308T218 264T204 212Q178 106 178 102Z&#34;&gt;&lt;/path&gt;&lt;/g&gt;&lt;g data-mml-node=&#34;mi&#34; transform=&#34;translate(536,-150) scale(0.707)&#34;&gt;&lt;path data-c=&#34;1D450&#34; d=&#34;M34 159Q34 268 120 355T306 442Q362 442 394 418T427 355Q427 326 408 306T360 285Q341 285 330 295T319 325T330 359T352 380T366 386H367Q367 388 361 392T340 400T306 404Q276 404 249 390Q228 381 206 359Q162 315 142 235T121 119Q121 73 147 50Q169 26 205 26H209Q321 26 394 111Q403 121 406 121Q410 121 419 112T429 98T420 83T391 55T346 25T282 0T202 -11Q127 -11 81 37T34 159Z&#34;&gt;&lt;/path&gt;&lt;/g&gt;&lt;/g&gt;&lt;/g&gt;&lt;/g&gt;&lt;/svg&gt;&lt;/mjx-container&gt;相同的维度&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;&lt;p&gt;其中，h用来计算加权参数，不同的类别，得到的加权参数是不一样的，这可以让模型根据不同类别的特征，选择更好描述该类的模态&lt;/p&gt;
-&lt;img  
-                     lazyload
-                     src=&#34;/images/loading.svg&#34;
-                     data-src=&#34;../images/5.png&#34;
-                      alt=&#34;截屏2023-07-09 15.23.23&#34; style=&#34;zoom:50%;&#34; 
-                &gt;&lt;/li&gt;
+&lt;p&gt;&lt;img src=&#34;/images/5.png&#34; alt=&#34;Test&#34;&gt;&lt;/p&gt;
+&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h4 id=&#34;Learning-Compositional-Representations-for-Few-Shot-Recognition&#34;&gt;&lt;a href=&#34;#Learning-Compositional-Representations-for-Few-Shot-Recognition&#34; class=&#34;headerlink&#34; title=&#34;Learning Compositional Representations for Few-Shot Recognition&#34;&gt;&lt;/a&gt;Learning Compositional Representations for Few-Shot Recognition&lt;/h4&gt;&lt;h5 id=&#34;算法动机：-1&#34;&gt;&lt;a href=&#34;#算法动机：-1&#34; class=&#34;headerlink&#34; title=&#34;算法动机：&#34;&gt;&lt;/a&gt;算法动机：&lt;/h5&gt;&lt;ul&gt;
-&lt;li&gt;人能够在只有很少目标类别视觉信息的情况下，在很短的时间内掌握该类别的特征，这一能力很可能来源于人脑中含有概念表征的组合结构（the compositional structure of concept representations），即人虽然没有见过该类别，但其能够迅速掌握该类别的一些高级特征（属性）。故此文尝试将图片的一些属性表征同时送入网络，增加信息量。&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;人能够在只有很少目标类别视觉信息的情况下，在很短的时间内掌握该类别的特征，这一能力很可能来源于人脑中含有概念表征的组合结构（the compositional structure of concept representations），即人虽然没有见过该类别，但其能够迅速掌握该类别的一些高级特征（属性）。故此文尝试将图片的一些属性表征同时送入网络，增加信息量。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/images/6.png&#34; alt=&#34;Test&#34;&gt;&lt;/p&gt;
+&lt;/li&gt;
 &lt;/ul&gt;
-&lt;img  
-                     lazyload
-                     src=&#34;/images/loading.svg&#34;
-                     data-src=&#34;../images/6.png&#34;
-                      alt=&#34;截屏2023-07-09 15.23.23&#34; style=&#34;zoom:50%;&#34; 
-                &gt;
-
 &lt;h5 id=&#34;算法特点：&#34;&gt;&lt;a href=&#34;#算法特点：&#34; class=&#34;headerlink&#34; title=&#34;算法特点：&#34;&gt;&lt;/a&gt;算法特点：&lt;/h5&gt;&lt;ul&gt;
 &lt;li&gt;&lt;p&gt;为了提高图像特征提取网络和属性特征提取网络的性能，在损失函数增加了一个软约束使得二者之间尽量相似&lt;/p&gt;
-&lt;img  
-                     lazyload
-                     src=&#34;/images/loading.svg&#34;
-                     data-src=&#34;../images/7.png&#34;
-                      alt=&#34;截屏2023-07-09 18.58.31&#34; style=&#34;zoom:50%;&#34; 
-                &gt;
+&lt;p&gt;&lt;img src=&#34;/images/7.png&#34; alt=&#34;Test&#34;&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;&lt;p&gt;为了降低各个属性表征之间的相关性，避免出现冗余属性，在损失函数中增加了正交约束&lt;/p&gt;
 &lt;/li&gt;
@@ -72,46 +52,22 @@
 &lt;/li&gt;
 &lt;li&gt;&lt;p&gt;同一个任务，我们需要对每一个正样本都设定一个阈值，以便与负样本进行区分，设置起来非常麻烦&lt;/p&gt;
 &lt;p&gt;所以，文章将阈值调整嵌入模型中，让模型自己学习一个调整函数，根据不同的任务自适应的进行调整。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/images/8.png&#34; alt=&#34;Test&#34;&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
-&lt;img  
-                     lazyload
-                     src=&#34;/images/loading.svg&#34;
-                     data-src=&#34;../images/8.png&#34;
-                      alt=&#34;截屏2023-07-09 17.50.47&#34; style=&#34;zoom: 50%;&#34; 
-                &gt;
-
 &lt;h5 id=&#34;算法原理&#34;&gt;&lt;a href=&#34;#算法原理&#34; class=&#34;headerlink&#34; title=&#34;算法原理&#34;&gt;&lt;/a&gt;算法原理&lt;/h5&gt;&lt;ul&gt;
-&lt;li&gt;该算法设计了一个负样本原型以及阈值生成器，嵌入模型中，在模型的训练过程中进行学习，达到根据不同的任务，自适应阈值的效果。&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;该算法设计了一个负样本原型以及阈值生成器，嵌入模型中，在模型的训练过程中进行学习，达到根据不同的任务，自适应阈值的效果。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/images/9.png&#34; alt=&#34;Test&#34;&gt;&lt;/p&gt;
+&lt;/li&gt;
 &lt;/ul&gt;
-&lt;img  
-                     lazyload
-                     src=&#34;/images/loading.svg&#34;
-                     data-src=&#34;../images/9.png&#34;
-                      alt=&#34;截屏2023-07-09 17.56.44&#34; style=&#34;zoom: 33%;&#34; 
-                &gt;
-
 &lt;h3 id=&#34;DN4算法复现&#34;&gt;&lt;a href=&#34;#DN4算法复现&#34; class=&#34;headerlink&#34; title=&#34;DN4算法复现&#34;&gt;&lt;/a&gt;DN4算法复现&lt;/h3&gt;&lt;ul&gt;
-&lt;li&gt;&lt;h4 id=&#34;算法结构&#34;&gt;&lt;a href=&#34;#算法结构&#34; class=&#34;headerlink&#34; title=&#34;算法结构!&#34;&gt;&lt;/a&gt;算法结构!&lt;/h4&gt;&lt;/li&gt;
+&lt;li&gt;&lt;h4 id=&#34;算法结构&#34;&gt;&lt;a href=&#34;#算法结构&#34; class=&#34;headerlink&#34; title=&#34;算法结构!&#34;&gt;&lt;/a&gt;算法结构!&lt;/h4&gt;&lt;img src=&#34;/images/3.png&#34; alt=&#34;Test&#34;&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;img  
-                     lazyload
-                     src=&#34;/images/loading.svg&#34;
-                     data-src=&#34;../images/3.png&#34;
-                      alt=&#34;截屏2023-07-09 17.56.44&#34; style=&#34;zoom: 33%;&#34; 
-                &gt;
-
 &lt;p&gt;DN4是一种基于度量的小样本识别算法&lt;/p&gt;
 &lt;p&gt;1.首先是一个没有检测头，只有骨干网络的CNN，其作用就是提取图片中的特征，并以特征向量的形式表示&lt;/p&gt;
 &lt;p&gt;（hw，d），其中hw为特征图的大小，d为特征图的数量（通道数，深度）&lt;/p&gt;
 &lt;p&gt;2.接着是image-to-Class模块，该模块的作用就是将query image与support set中的images进行相似度度量，并确定其属于哪个类。具体来说，对于support set中的每一个类，我们对query image的每一个局部特征向量，都在support set中该类所有images的所有局部特征向量组成的集合中，使用k近邻算法找出余弦距离最近的k个特征向量，然后求和得到image-to-class（query image to support set中的一个类）的余弦距离总和，那么显然，该图片应该属于该距离最近的类，公式如下：&lt;/p&gt;
-&lt;img  
-                     lazyload
-                     src=&#34;/images/loading.svg&#34;
-                     data-src=&#34;../images/10.png&#34;
-                      alt=&#34;截屏2023-07-08 22.18.17&#34; style=&#34;zoom:50%;&#34; 
-                &gt;
-
+&lt;p&gt;  &lt;img src=&#34;/images/10.png&#34; alt=&#34;Test&#34;&gt;&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;h4 id=&#34;代码实现（基于LibFewShot）&#34;&gt;&lt;a href=&#34;#代码实现（基于LibFewShot）&#34; class=&#34;headerlink&#34; title=&#34;代码实现（基于LibFewShot）&#34;&gt;&lt;/a&gt;代码实现（基于LibFewShot）&lt;/h4&gt;&lt;div class=&#34;highlight-container&#34; data-rel=&#34;Python&#34;&gt;&lt;figure class=&#34;iseeu highlight python&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;15&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;16&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;17&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;18&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;19&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;20&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;21&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;22&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;23&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;24&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;25&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;26&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;27&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;28&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;29&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;30&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;31&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;32&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;33&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;34&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;35&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;36&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;37&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;comment&#34;&gt;# image-to-Class模块&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;keyword&#34;&gt;def&lt;/span&gt; &lt;span class=&#34;title function_&#34;&gt;forward&lt;/span&gt;(&lt;span class=&#34;params&#34;&gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;params&#34;&gt;        self,&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;params&#34;&gt;        query_feat,&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;params&#34;&gt;        support_feat,&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;params&#34;&gt;        way_num,&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;params&#34;&gt;        shot_num,&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;params&#34;&gt;        query_num,&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;params&#34;&gt;    &lt;/span&gt;):&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;        t, wq, c, h, w = query_feat.size()&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;        _, ws, _, _, _ = support_feat.size()&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;        &lt;span class=&#34;comment&#34;&gt;# t, wq, c, hw -&amp;gt; t, wq, hw, c -&amp;gt; t, wq, 1, hw, c&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;        query_feat = query_feat.view(t, way_num * query_num, c, h * w).permute(&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;            &lt;span class=&#34;number&#34;&gt;0&lt;/span&gt;, &lt;span class=&#34;number&#34;&gt;1&lt;/span&gt;, &lt;span class=&#34;number&#34;&gt;3&lt;/span&gt;, &lt;span class=&#34;number&#34;&gt;2&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;        )&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;        query_feat = F.normalize(query_feat, p=&lt;span class=&#34;number&#34;&gt;2&lt;/span&gt;, dim=-&lt;span class=&#34;number&#34;&gt;1&lt;/span&gt;).unsqueeze(&lt;span class=&#34;number&#34;&gt;2&lt;/span&gt;)&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;        &lt;span class=&#34;comment&#34;&gt;# t, ws, c, h, w -&amp;gt; t, w, s, c, hw -&amp;gt; t, 1, w, c, shw&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;        support_feat = (&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;            support_feat.view(t, way_num, shot_num, c, h * w)&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;            .permute(&lt;span class=&#34;number&#34;&gt;0&lt;/span&gt;, &lt;span class=&#34;number&#34;&gt;1&lt;/span&gt;, &lt;span class=&#34;number&#34;&gt;3&lt;/span&gt;, &lt;span class=&#34;number&#34;&gt;2&lt;/span&gt;, &lt;span class=&#34;number&#34;&gt;4&lt;/span&gt;)&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;            .contiguous()&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;            .view(t, way_num, c, shot_num * h * w)&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;        )&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;        support_feat = F.normalize(support_feat, p=&lt;span class=&#34;number&#34;&gt;2&lt;/span&gt;, dim=&lt;span class=&#34;number&#34;&gt;2&lt;/span&gt;).unsqueeze(&lt;span class=&#34;number&#34;&gt;1&lt;/span&gt;)&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;        &lt;span class=&#34;comment&#34;&gt;# t, wq, w, hw, shw -&amp;gt; t, wq, w, hw, n_k -&amp;gt; t, wq, w&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;        &lt;span class=&#34;comment&#34;&gt;# 张量点乘，从算法上可以理解为只有4，5两个维度在做点乘，从功能上，结合上面的归一化操作&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;        &lt;span class=&#34;comment&#34;&gt;# 这里实际上就是在计算query image和support image中局部特征向量之间的余弦相似度&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;        relation = torch.matmul(query_feat, support_feat)&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;        &lt;span class=&#34;comment&#34;&gt;# k近邻算法，只留下距离相近的k个值&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;        topk_value, _ = torch.topk(relation, self.n_k, dim=-&lt;span class=&#34;number&#34;&gt;1&lt;/span&gt;)&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;        &lt;span class=&#34;comment&#34;&gt;# 求余弦距离总和，代表image-to-class，即query image和supprot&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;        score = torch.&lt;span class=&#34;built_in&#34;&gt;sum&lt;/span&gt;(topk_value, dim=[&lt;span class=&#34;number&#34;&gt;3&lt;/span&gt;, &lt;span class=&#34;number&#34;&gt;4&lt;/span&gt;])&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;        &lt;span class=&#34;keyword&#34;&gt;return&lt;/span&gt; score&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/div&gt;
 
@@ -167,7 +123,7 @@
 &lt;/tbody&gt;&lt;/table&gt;
 &lt;p&gt;时间与算力有限，没有做大规模的测试，只做了以上5组&lt;/p&gt;
 &lt;p&gt;可以发现，shot增加可以使准确率大幅上升，将相似度衡量方法换为欧式距离后准确率大幅下降&lt;/p&gt;
-&lt;p&gt;而dn4-n和特征图尺寸(主要是通道数&amp;#x2F;深度d)的变化对测试集影响不大&lt;/p&gt;
+&lt;p&gt;而dn4-n和特征图尺寸(主要是通道数/深度d)的变化对测试集影响不大&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
  ]]></description>
@@ -178,8 +134,7 @@
             <link>https://renshengji.github.io/2023/07/02/%E7%AC%AC%E4%B8%80%E5%91%A8%E5%91%A8%E6%8A%A5%E7%9A%84%E5%89%AF%E6%9C%AC/</link>
             <category>科研</category>
             <pubDate>Sun, 02 Jul 2023 23:48:03 +0800</pubDate>
-            <description><![CDATA[ &lt;link rel=&#34;stylesheet&#34; class=&#34;aplayer-secondary-style-marker&#34; href=&#34;/assets/css/APlayer.min.css&#34;&gt;&lt;script src=&#34;/assets/js/APlayer.min.js&#34; class=&#34;aplayer-secondary-script-marker&#34;&gt;&lt;/script&gt;&lt;p&gt;[TOC]&lt;/p&gt;
-&lt;h2 id=&#34;总结&#34;&gt;&lt;a href=&#34;#总结&#34; class=&#34;headerlink&#34; title=&#34;总结&#34;&gt;&lt;/a&gt;总结&lt;/h2&gt;&lt;p&gt;本周主要通过阅读老师推荐的文献，以及一些视频和博客，对小样本图像识别领域经典方法，开放世界小样本学习有了一定的理解。（由于本周有一些课程的大作业，所以时间比较紧张，没来得及看代码）&lt;/p&gt;
+            <description><![CDATA[ &lt;link rel=&#34;stylesheet&#34; class=&#34;aplayer-secondary-style-marker&#34; href=&#34;/assets/css/APlayer.min.css&#34;&gt;&lt;script src=&#34;/assets/js/APlayer.min.js&#34; class=&#34;aplayer-secondary-script-marker&#34;&gt;&lt;/script&gt;&lt;h2 id=&#34;总结&#34;&gt;&lt;a href=&#34;#总结&#34; class=&#34;headerlink&#34; title=&#34;总结&#34;&gt;&lt;/a&gt;总结&lt;/h2&gt;&lt;p&gt;本周主要通过阅读老师推荐的文献，以及一些视频和博客，对小样本图像识别领域经典方法，开放世界小样本学习有了一定的理解。（由于本周有一些课程的大作业，所以时间比较紧张，没来得及看代码）&lt;/p&gt;
 &lt;h2 id=&#34;小样本图像识别领域经典方法&#34;&gt;&lt;a href=&#34;#小样本图像识别领域经典方法&#34; class=&#34;headerlink&#34; title=&#34;小样本图像识别领域经典方法&#34;&gt;&lt;/a&gt;小样本图像识别领域经典方法&lt;/h2&gt;&lt;p&gt;小样本图像识别是指在数据集较小的情况下，通过一些方法来提高模型的泛化能力，进行图像识别任务&lt;/p&gt;
 &lt;h3 id=&#34;1-数据增强&#34;&gt;&lt;a href=&#34;#1-数据增强&#34; class=&#34;headerlink&#34; title=&#34;1.数据增强&#34;&gt;&lt;/a&gt;1.数据增强&lt;/h3&gt;&lt;p&gt;数据增强是指通过对训练数据进行一定的变换，生成新的数据来扩充训练集，从而增加数据的多样性和数量。这种方法可以帮助模型更好地学习图像的不变性和鲁棒性，提高模型的泛化能力。常见的数据增强方法包括旋转、平移、缩放、翻转、添加噪声等。&lt;/p&gt;
 &lt;h3 id=&#34;2-元学习&#34;&gt;&lt;a href=&#34;#2-元学习&#34; class=&#34;headerlink&#34; title=&#34;2.元学习&#34;&gt;&lt;/a&gt;2.元学习&lt;/h3&gt;&lt;p&gt;元学习是学习如何学习的一种方法，它可以在多个任务之间学习，并具有快速适应新任务的能力。在小样本图像识别中，元学习可以帮助模型在仅有几个样本的情况下快速适应新的分类任务。&lt;/p&gt;
@@ -291,13 +246,7 @@
 
 &lt;p&gt;&lt;strong&gt;失效原因&lt;/strong&gt;：虽然说在实际的三维立体世界中，上述条件是肯定有效的，但是，我们是在二维成像平面中去判断的，即使从三维空间-&amp;gt;二维成像平面的过程是平行投影，这个条件也不成立，更何况是中心投影了！&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;失效后果&lt;/strong&gt;：本来这个先验条件的设置应该是为了过滤掉如下图所示的情况，实际情况可能也还好，但是这样的话，由于这个先验条件本来就是错误的，它并不能正确有效的反映出二维平面投影下装甲板的真实特征，所以有一些正确的灯条匹配会因为这个&lt;strong&gt;错误的先验条件&lt;/strong&gt;而被过滤！！&lt;/p&gt;
-&lt;img  
-                     lazyload
-                     src=&#34;/images/loading.svg&#34;
-                     data-src=&#34;../images/IMG_3941.jpg&#34;
-                      alt=&#34;IMG_3941&#34; style=&#34;zoom:50%;&#34; 
-                &gt;
-
+&lt;p&gt;&lt;img src=&#34;/images/IMG_3941.jpg&#34; alt=&#34;Test&#34;&gt;&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;解决方案&lt;/strong&gt;：&lt;/p&gt;
 &lt;p&gt;a) 直接使用类似上交的四点模型，进行纯深度学习识别，完全抛弃传统视觉，直接避开这个问题？&lt;/p&gt;
 &lt;p&gt;b) 读君神的代码（因为现在已知君神的代码是使用的纯传统视觉），或者说直接询问，看看他是这么解决的！&lt;/p&gt;
