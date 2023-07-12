@@ -11,9 +11,9 @@
         <category>php</category>
         <category>科研</category>
         <item>
-            <guid isPermalink="true">https://renshengji.github.io/2023/06/27/NX%E9%83%A8%E7%BD%B2%E8%BF%87%E7%A8%8B/</guid>
+            <guid isPermalink="true">https://renshengji.github.io/2023/06/27/nx_deploy/</guid>
             <title>北洋机甲视觉组—Jetson Xavier NX部署过程</title>
-            <link>https://renshengji.github.io/2023/06/27/NX%E9%83%A8%E7%BD%B2%E8%BF%87%E7%A8%8B/</link>
+            <link>https://renshengji.github.io/2023/06/27/nx_deploy/</link>
             <category>rm</category>
             <pubDate>Tue, 27 Jun 2023 23:48:03 +0800</pubDate>
             <description><![CDATA[ &lt;link rel=&#34;stylesheet&#34; class=&#34;aplayer-secondary-style-marker&#34; href=&#34;/assets/css/APlayer.min.css&#34;&gt;&lt;script src=&#34;/assets/js/APlayer.min.js&#34; class=&#34;aplayer-secondary-script-marker&#34;&gt;&lt;/script&gt;&lt;h3 id=&#34;开始之前—注意事项&#34;&gt;&lt;a href=&#34;#开始之前—注意事项&#34; class=&#34;headerlink&#34; title=&#34;[开始之前—注意事项]&#34;&gt;&lt;/a&gt;[开始之前—注意事项]&lt;/h3&gt;&lt;p&gt;本教程只适合于正版NX，如果你使用的是盗版NX，请立即将其扔掉&lt;/p&gt;
@@ -94,9 +94,9 @@
  ]]></description>
         </item>
         <item>
-            <guid isPermalink="true">https://renshengji.github.io/2023/04/04/NX/</guid>
+            <guid isPermalink="true">https://renshengji.github.io/2023/04/04/nx_flash/</guid>
             <title>NX刷机教程</title>
-            <link>https://renshengji.github.io/2023/04/04/NX/</link>
+            <link>https://renshengji.github.io/2023/04/04/nx_flash/</link>
             <category>rm</category>
             <pubDate>Tue, 04 Apr 2023 23:48:03 +0800</pubDate>
             <description><![CDATA[ &lt;link rel=&#34;stylesheet&#34; class=&#34;aplayer-secondary-style-marker&#34; href=&#34;/assets/css/APlayer.min.css&#34;&gt;&lt;script src=&#34;/assets/js/APlayer.min.js&#34; class=&#34;aplayer-secondary-script-marker&#34;&gt;&lt;/script&gt;&lt;p&gt;直接上结论：使用售后客服的方案awa&lt;br&gt;AI301-KIT&lt;br&gt;链接：&lt;a class=&#34;link&#34;   href=&#34;https://pan.baidu.com/s/1C8kQRwuMBvJTQuTrBYgwxQ&#34; &gt;https://pan.baidu.com/s/1C8kQRwuMBvJTQuTrBYgwxQ &lt;i class=&#34;fa-regular fa-arrow-up-right-from-square fa-sm&#34;&gt;&lt;/i&gt;&lt;/a&gt;&lt;br&gt;提取码：xmu1&lt;/p&gt;
