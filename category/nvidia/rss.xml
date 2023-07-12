@@ -11,9 +11,9 @@
         <category>php</category>
         <category>科研</category>
         <item>
-            <guid isPermalink="true">https://renshengji.github.io/2023/06/27/nx_deploy/</guid>
+            <guid isPermalink="true">https://renshengji.github.io/2023/06/27/nx-deploy/</guid>
             <title>北洋机甲视觉组—Jetson Xavier NX部署过程</title>
-            <link>https://renshengji.github.io/2023/06/27/nx_deploy/</link>
+            <link>https://renshengji.github.io/2023/06/27/nx-deploy/</link>
             <category>rm</category>
             <pubDate>Tue, 27 Jun 2023 23:48:03 +0800</pubDate>
             <description><![CDATA[ &lt;link rel=&#34;stylesheet&#34; class=&#34;aplayer-secondary-style-marker&#34; href=&#34;/assets/css/APlayer.min.css&#34;&gt;&lt;script src=&#34;/assets/js/APlayer.min.js&#34; class=&#34;aplayer-secondary-script-marker&#34;&gt;&lt;/script&gt;&lt;h3 id=&#34;开始之前—注意事项&#34;&gt;&lt;a href=&#34;#开始之前—注意事项&#34; class=&#34;headerlink&#34; title=&#34;[开始之前—注意事项]&#34;&gt;&lt;/a&gt;[开始之前—注意事项]&lt;/h3&gt;&lt;p&gt;本教程只适合于正版NX，如果你使用的是盗版NX，请立即将其扔掉&lt;/p&gt;
@@ -91,12 +91,19 @@
 &lt;h4 id=&#34;10-ros-cv-bridge环境配置&#34;&gt;&lt;a href=&#34;#10-ros-cv-bridge环境配置&#34; class=&#34;headerlink&#34; title=&#34;10.ros cv_bridge环境配置&#34;&gt;&lt;/a&gt;10.ros cv_bridge环境配置&lt;/h4&gt;&lt;p&gt;请参照&lt;a class=&#34;link&#34;   href=&#34;https://zhuanlan.zhihu.com/p/392939687&#34; &gt;解决cv_bridge和opencv之间版本匹配问题 &lt;i class=&#34;fa-regular fa-arrow-up-right-from-square fa-sm&#34;&gt;&lt;/i&gt;&lt;/a&gt;与&lt;a class=&#34;link&#34;   href=&#34;https://blog.csdn.net/qq_33980935/article/details/123132452&#34; &gt;Jetson xavier NX &amp;#x2F; ubuntu18.04 &amp;#x2F;ros melodic&amp;#x2F;python3安裝使用cv_bridge &lt;i class=&#34;fa-regular fa-arrow-up-right-from-square fa-sm&#34;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;ps1:按第一个走的话，在编译的时候会出错，所以在编译前需要按照第二个博客改几个地方！&lt;/p&gt;
 &lt;p&gt;Ps2:使用cv_bridge的时候一定要按照第一个博客指定cv_bridge的cmake位置！！&lt;/p&gt;
+&lt;h4 id=&#34;11-NX升频&#34;&gt;&lt;a href=&#34;#11-NX升频&#34; class=&#34;headerlink&#34; title=&#34;11.NX升频&#34;&gt;&lt;/a&gt;11.NX升频&lt;/h4&gt;&lt;p&gt;首先，cpu主频越高，处理能力越好。然而，Nvidia Jetson系列所有的设备cpu主频均不高，远低于pc机，更可恶的是，Jetson系列设备默认没有给到满频运行，需要我们手动设置，以便让其运行的稍微再快一点！&lt;/p&gt;
+&lt;div class=&#34;highlight-container&#34; data-rel=&#34;Bash&#34;&gt;&lt;figure class=&#34;iseeu highlight bash&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;sudo vi /etc/nvpmodel.conf&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/div&gt;
+
+&lt;p&gt;将里面的MAX_FREQ全部改成1907200，这就可以实现手动升频啦awa&lt;/p&gt;
+&lt;p&gt;[注意这里的数值每种设备都不一样啊，这里以Jetson Xavier Nx为例，其他设备请自查]&lt;/p&gt;
+&lt;h4 id=&#34;12-安装带cuda的opencv&#34;&gt;&lt;a href=&#34;#12-安装带cuda的opencv&#34; class=&#34;headerlink&#34; title=&#34;12.安装带cuda的opencv&#34;&gt;&lt;/a&gt;12.安装带cuda的opencv&lt;/h4&gt;&lt;p&gt;在安装之前，请先确认你是否有安装带cuda opencv的必要，请参考&lt;a class=&#34;link&#34;   href=&#34;https://blog.csdn.net/libaineu2004/article/details/129801112&#34; &gt;一文彻底搞懂为什么OpenCV用GPU&amp;#x2F;cuda跑得比用CPU慢？ &lt;i class=&#34;fa-regular fa-arrow-up-right-from-square fa-sm&#34;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;完整安装方法请看&lt;a class=&#34;link&#34;   href=&#34;https://zhuanlan.zhihu.com/p/411901208&#34; &gt;Jetson Xavier NX OpenCV 安装 &lt;i class=&#34;fa-regular fa-arrow-up-right-from-square fa-sm&#34;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/p&gt;
  ]]></description>
         </item>
         <item>
-            <guid isPermalink="true">https://renshengji.github.io/2023/04/04/nx_flash/</guid>
+            <guid isPermalink="true">https://renshengji.github.io/2023/04/04/nx-flash/</guid>
             <title>NX刷机教程</title>
-            <link>https://renshengji.github.io/2023/04/04/nx_flash/</link>
+            <link>https://renshengji.github.io/2023/04/04/nx-flash/</link>
             <category>rm</category>
             <pubDate>Tue, 04 Apr 2023 23:48:03 +0800</pubDate>
             <description><![CDATA[ &lt;link rel=&#34;stylesheet&#34; class=&#34;aplayer-secondary-style-marker&#34; href=&#34;/assets/css/APlayer.min.css&#34;&gt;&lt;script src=&#34;/assets/js/APlayer.min.js&#34; class=&#34;aplayer-secondary-script-marker&#34;&gt;&lt;/script&gt;&lt;p&gt;直接上结论：使用售后客服的方案awa&lt;br&gt;AI301-KIT&lt;br&gt;链接：&lt;a class=&#34;link&#34;   href=&#34;https://pan.baidu.com/s/1C8kQRwuMBvJTQuTrBYgwxQ&#34; &gt;https://pan.baidu.com/s/1C8kQRwuMBvJTQuTrBYgwxQ &lt;i class=&#34;fa-regular fa-arrow-up-right-from-square fa-sm&#34;&gt;&lt;/i&gt;&lt;/a&gt;&lt;br&gt;提取码：xmu1&lt;/p&gt;

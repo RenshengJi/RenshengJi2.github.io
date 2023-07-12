@@ -770,7 +770,7 @@
   </entry>
   <entry>
     <title>北洋机甲视觉组—Jetson Xavier NX部署过程</title>
-    <url>/2023/06/27/nx_deploy/</url>
+    <url>/2023/06/27/nx-deploy/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h3 id="开始之前—注意事项"><a href="#开始之前—注意事项" class="headerlink" title="[开始之前—注意事项]"></a>[开始之前—注意事项]</h3><p>本教程只适合于正版NX，如果你使用的是盗版NX，请立即将其扔掉</p>
 <h3 id="开始之前—需要的设备"><a href="#开始之前—需要的设备" class="headerlink" title="[开始之前—需要的设备]"></a>[开始之前—需要的设备]</h3><p>1.一台可以科学上网的个人电脑</p>
 <p>2.一个NX，以及其充电器</p>
@@ -846,6 +846,13 @@
 <h4 id="10-ros-cv-bridge环境配置"><a href="#10-ros-cv-bridge环境配置" class="headerlink" title="10.ros cv_bridge环境配置"></a>10.ros cv_bridge环境配置</h4><p>请参照<a class="link"   href="https://zhuanlan.zhihu.com/p/392939687" >解决cv_bridge和opencv之间版本匹配问题 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a>与<a class="link"   href="https://blog.csdn.net/qq_33980935/article/details/123132452" >Jetson xavier NX &#x2F; ubuntu18.04 &#x2F;ros melodic&#x2F;python3安裝使用cv_bridge <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
 <p>ps1:按第一个走的话，在编译的时候会出错，所以在编译前需要按照第二个博客改几个地方！</p>
 <p>Ps2:使用cv_bridge的时候一定要按照第一个博客指定cv_bridge的cmake位置！！</p>
+<h4 id="11-NX升频"><a href="#11-NX升频" class="headerlink" title="11.NX升频"></a>11.NX升频</h4><p>首先，cpu主频越高，处理能力越好。然而，Nvidia Jetson系列所有的设备cpu主频均不高，远低于pc机，更可恶的是，Jetson系列设备默认没有给到满频运行，需要我们手动设置，以便让其运行的稍微再快一点！</p>
+<div class="highlight-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="code"><pre><span class="line">sudo vi /etc/nvpmodel.conf</span><br></pre></td></tr></table></figure></div>
+
+<p>将里面的MAX_FREQ全部改成1907200，这就可以实现手动升频啦awa</p>
+<p>[注意这里的数值每种设备都不一样啊，这里以Jetson Xavier Nx为例，其他设备请自查]</p>
+<h4 id="12-安装带cuda的opencv"><a href="#12-安装带cuda的opencv" class="headerlink" title="12.安装带cuda的opencv"></a>12.安装带cuda的opencv</h4><p>在安装之前，请先确认你是否有安装带cuda opencv的必要，请参考<a class="link"   href="https://blog.csdn.net/libaineu2004/article/details/129801112" >一文彻底搞懂为什么OpenCV用GPU&#x2F;cuda跑得比用CPU慢？ <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
+<p>完整安装方法请看<a class="link"   href="https://zhuanlan.zhihu.com/p/411901208" >Jetson Xavier NX OpenCV 安装 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
 ]]></content>
       <categories>
         <category>rm</category>
@@ -857,7 +864,7 @@
   </entry>
   <entry>
     <title>NX刷机教程</title>
-    <url>/2023/04/04/nx_flash/</url>
+    <url>/2023/04/04/nx-flash/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>直接上结论：使用售后客服的方案awa<br>AI301-KIT<br>链接：<a class="link"   href="https://pan.baidu.com/s/1C8kQRwuMBvJTQuTrBYgwxQ" >https://pan.baidu.com/s/1C8kQRwuMBvJTQuTrBYgwxQ <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a><br>提取码：xmu1</p>
 ]]></content>
       <categories>
