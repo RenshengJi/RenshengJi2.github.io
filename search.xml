@@ -826,7 +826,7 @@
 
 <h4 id="6-从gitee上下载咱们代码"><a href="#6-从gitee上下载咱们代码" class="headerlink" title="6.从gitee上下载咱们代码"></a>6.从gitee上下载咱们代码</h4><p>地址：<a class="link"   href="https://gitee.com/tju-rm-cv" >https://gitee.com/tju-rm-cv <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
 <h4 id="7-vscode安装"><a href="#7-vscode安装" class="headerlink" title="7.vscode安装"></a>7.vscode安装</h4><p>下载debian包，网页打开</p>
-<div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">https://update.code.visualstudio.com/1.50.1/linux-deb-arm64/stable</span><br></pre></td></tr></table></figure></div>
+<div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">https://update.code.visualstudio.com/1.66.1/linux-deb-arm64/stable</span><br></pre></td></tr></table></figure></div>
 
 <p>进入到下载目录，输入：</p>
 <div class="highlight-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="code"><pre><span class="line">sudo apt install ./code...</span><br></pre></td></tr></table></figure></div>
