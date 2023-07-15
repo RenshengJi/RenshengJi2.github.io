@@ -747,7 +747,7 @@
 ]]></content>
       <categories>
         <category>科研</category>
-        <category>nlp</category>
+        <category>FSOR</category>
       </categories>
       <tags>
         <tag>科研</tag>
@@ -869,7 +869,7 @@
 ]]></content>
       <categories>
         <category>科研</category>
-        <category>nlp</category>
+        <category>FSOR</category>
       </categories>
       <tags>
         <tag>科研</tag>
@@ -877,7 +877,7 @@
   </entry>
   <entry>
     <title>人生几何的科研之旅——第三周周报</title>
-    <url>/2023/07/09/week3/</url>
+    <url>/2023/07/15/week3/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="分析上周DN4算法复现中存在的问题"><a href="#分析上周DN4算法复现中存在的问题" class="headerlink" title="分析上周DN4算法复现中存在的问题"></a>分析上周DN4算法复现中存在的问题</h2><p>没有查看原论文中对实验的设置，且没有与论文中的实验结果进行比较</p>
 <ul>
 <li>原论文明确指出了1-shot和5-shot情况下查询集的图像数量</li>
@@ -953,7 +953,7 @@
 ]]></content>
       <categories>
         <category>科研</category>
-        <category>nlp</category>
+        <category>FSOR</category>
       </categories>
       <tags>
         <tag>科研</tag>
