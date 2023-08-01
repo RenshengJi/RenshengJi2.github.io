@@ -620,6 +620,7 @@
 <h4 id="3-安装jtop"><a href="#3-安装jtop" class="headerlink" title="3.安装jtop"></a>3.安装jtop</h4><p>因为我们需要使用pip3来安装jtop，所以需要在系统中先安装pip3</p>
 <div class="highlight-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="code"><pre><span class="line">sudo apt install python3-pip</span><br></pre></td></tr></table></figure></div>
 
+<p>[<strong>注意</strong>：linux系统下的普通用户在执行apt install指令时，前面必须加上sudo！但是普通用户要使用sudo的话，是需要输入密码的，所以推荐进行sudo免密的设置！下面有教程的]</p>
 <p>接着安装jtop</p>
 <div class="highlight-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="code"><pre><span class="line">sudo -H pip3 install -U jetson-stats</span><br></pre></td></tr></table></figure></div>
 
@@ -631,7 +632,7 @@
 
 <p>查看当前cpu，gpu使用状态（点击最下面一行的2GPU&#x2F;3CPU即可）</p>
 <p>设置风扇状态（点击最下面一行的6CTRL，选择manual人工控制，在speed后点击’+‘直到100%）</p>
-<h4 id="4-安装大恒相机驱动"><a href="#4-安装大恒相机驱动" class="headerlink" title="4.安装大恒相机驱动"></a>4.安装大恒相机驱动</h4><p><a class="link"   href="https://www.daheng-imaging.com/downloads/" >大恒图像软件下载 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
+<h4 id="4-安装大恒相机驱动"><a href="#4-安装大恒相机驱动" class="headerlink" title="4.安装大恒相机驱动"></a>4.安装大恒相机驱动</h4><p><a class="link"   href="https://www.daheng-imaging.com/downloads/" >https://www.daheng-imaging.com/downloads/ <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
 <p>下载Galaxy Linux-armhf-Gige-U3 SDK_CN-EN 以及  Galaxy Linux-Python SDK_CN-EN</p>
 <p>解压后按照readme中提示安装！</p>
 <p>注意，Galaxy Linux-armhf-Gige-U3 SDK_CN-EN的安装可能需要输入如下指令：</p>
@@ -639,7 +640,7 @@
 
 <p>注意，Galaxy Linux-Python SDK_CN-EN要装适配python3的，在readme文档下面，别装2.7的</p>
 <h4 id="5-eigen的安装与软链接"><a href="#5-eigen的安装与软链接" class="headerlink" title="5.eigen的安装与软链接"></a>5.eigen的安装与软链接</h4><p>安装:</p>
-<div class="highlight-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="code"><pre><span class="line">apt install libeigen3-dev</span><br></pre></td></tr></table></figure></div>
+<div class="highlight-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="code"><pre><span class="line">sudo apt install libeigen3-dev</span><br></pre></td></tr></table></figure></div>
 
 <p>链接：</p>
 <div class="highlight-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">cd</span> /usr/include</span><br><span class="line">sudo <span class="built_in">ln</span> -sf eigen3/Eigen Eigen</span><br><span class="line">sudo <span class="built_in">ln</span> -sf eigen3/unsupported unsupported</span><br></pre></td></tr></table></figure></div>
@@ -662,8 +663,8 @@
 
 <p>其中，username是服务器上的用户名，servername是服务器的主机名或IP地址。该命令会将公钥自动添加到服务器上的~&#x2F;.ssh&#x2F;authorized_keys文件中。</p>
 <p>这样，就设置完成啦，以后ssh连接就不用输入密码了！</p>
-<h4 id="9-ros环境配置"><a href="#9-ros环境配置" class="headerlink" title="9.ros环境配置"></a>9.ros环境配置</h4><p>请参照<a class="link"   href="https://blog.csdn.net/m0_37715028/article/details/106070815" >ROS安装教程(ubuntu18.04+melodic版本) <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a>，建议安装桌面完整版！</p>
-<h4 id="10-ros-cv-bridge环境配置"><a href="#10-ros-cv-bridge环境配置" class="headerlink" title="10.ros cv_bridge环境配置"></a>10.ros cv_bridge环境配置</h4><p>请参照<a class="link"   href="https://zhuanlan.zhihu.com/p/392939687" >解决cv_bridge和opencv之间版本匹配问题 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a>与<a class="link"   href="https://blog.csdn.net/qq_33980935/article/details/123132452" >Jetson xavier NX &#x2F; ubuntu18.04 &#x2F;ros melodic&#x2F;python3安裝使用cv_bridge <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
+<h4 id="9-ros环境配置"><a href="#9-ros环境配置" class="headerlink" title="9.ros环境配置"></a>9.ros环境配置</h4><p>请参照[ROS安装教程(ubuntu18.04+melodic版本)][<a class="link"   href="https://blog.csdn.net/KIK9973/article/details/118755045]%EF%BC%8C%E5%BB%BA%E8%AE%AE%E5%AE%89%E8%A3%85%E6%A1%8C%E9%9D%A2%E5%AE%8C%E6%95%B4%E7%89%88%EF%BC%81" >https://blog.csdn.net/KIK9973/article/details/118755045]，建议安装桌面完整版！ <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
+<h4 id="10-ros-cv-bridge环境配置"><a href="#10-ros-cv-bridge环境配置" class="headerlink" title="10.ros cv_bridge环境配置"></a>10.ros cv_bridge环境配置</h4><p>请参照<a class="link"   href="https://zhuanlan.zhihu.com/p/392939687%E4%B8%8Ehttps://blog.csdn.net/qq_33980935/article/details/123132452" >https://zhuanlan.zhihu.com/p/392939687与https://blog.csdn.net/qq_33980935/article/details/123132452 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a> </p>
 <p>ps1:按第一个走的话，在编译的时候会出错，所以在编译前需要按照第二个博客改几个地方！</p>
 <p>Ps2:使用cv_bridge的时候一定要按照第一个博客指定cv_bridge的cmake位置！！</p>
 <h4 id="11-NX升频"><a href="#11-NX升频" class="headerlink" title="11.NX升频"></a>11.NX升频</h4><p>首先，cpu主频越高，处理能力越好。然而，Nvidia Jetson系列所有的设备cpu主频均不高，远低于pc机，更可恶的是，Jetson系列设备默认没有给到满频运行，需要我们手动设置，以便让其运行的稍微再快一点！</p>
@@ -673,6 +674,45 @@
 <p>[注意这里的数值每种设备都不一样啊，这里以Jetson Xavier Nx为例，其他设备请自查]</p>
 <h4 id="12-安装带cuda的opencv"><a href="#12-安装带cuda的opencv" class="headerlink" title="12.安装带cuda的opencv"></a>12.安装带cuda的opencv</h4><p>在安装之前，请先确认你是否有安装带cuda opencv的必要，请参考<a class="link"   href="https://blog.csdn.net/libaineu2004/article/details/129801112" >一文彻底搞懂为什么OpenCV用GPU&#x2F;cuda跑得比用CPU慢？ <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
 <p>完整安装方法请看<a class="link"   href="https://zhuanlan.zhihu.com/p/411901208" >Jetson Xavier NX OpenCV 安装 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
+<p>[注意在使用上述方法安装时，不仅make的时间会很长，<strong>sudo make install</strong>的时间也会很长，原因未知]</p>
+<h4 id="13-安装realsense-sdk"><a href="#13-安装realsense-sdk" class="headerlink" title="13.安装realsense sdk"></a>13.安装realsense sdk</h4><p><a class="link"   href="https://github.com/IntelRealSense/librealsense/blob/master/doc/distribution_linux.md" >官方教程 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
+<div class="highlight-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="code"><pre><span class="line">sudo <span class="built_in">mkdir</span> -p /etc/apt/keyrings</span><br><span class="line"></span><br><span class="line">sudo apt install curl</span><br><span class="line"></span><br><span class="line">curl -sSf https://librealsense.intel.com/Debian/librealsense.pgp | sudo <span class="built_in">tee</span> /etc/apt/keyrings/librealsense.pgp &gt; /dev/null</span><br><span class="line"></span><br><span class="line">sudo apt-get install apt-transport-https</span><br><span class="line"></span><br><span class="line"><span class="built_in">echo</span> <span class="string">&quot;deb [signed-by=/etc/apt/keyrings/librealsense.pgp] https://librealsense.intel.com/Debian/apt-repo `lsb_release -cs` main&quot;</span> | \</span><br><span class="line">sudo <span class="built_in">tee</span> /etc/apt/sources.list.d/librealsense.list</span><br><span class="line"></span><br><span class="line">sudo apt-get update</span><br><span class="line"></span><br><span class="line">sudo apt-get install librealsense2-utils</span><br><span class="line"></span><br><span class="line">realsense-viewer</span><br></pre></td></tr></table></figure></div>
+
+<h4 id="14-安装realsense-ros"><a href="#14-安装realsense-ros" class="headerlink" title="14.安装realsense ros"></a>14.安装realsense ros</h4><p>首先进入ros工作空间的src下</p>
+<div class="highlight-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="code"><pre><span class="line">git <span class="built_in">clone</span> https://github.com/intel-ros/realsense.git</span><br><span class="line">git <span class="built_in">clone</span> https://github.com/pal-robotics/ddynamic_reconfigure.git</span><br><span class="line"><span class="built_in">cd</span> ..</span><br><span class="line">catkin_make</span><br><span class="line">rospack profile</span><br></pre></td></tr></table></figure></div>
+
+<h4 id="15-vins-fusion-gpu部署"><a href="#15-vins-fusion-gpu部署" class="headerlink" title="15.vins-fusion-gpu部署"></a>15.vins-fusion-gpu部署</h4><p>首先进入ros工作空间的src下</p>
+<div class="highlight-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="code"><pre><span class="line">git <span class="built_in">clone</span> https://github.com/pjrambo/VINS-Fusion-gpu.git</span><br></pre></td></tr></table></figure></div>
+
+<h4 id="16-相机标定工具包环境配置"><a href="#16-相机标定工具包环境配置" class="headerlink" title="16.相机标定工具包环境配置"></a>16.相机标定工具包环境配置</h4><p>拍摄大恒相机的图片需要安装python的PIL库，但在安装前需要先安装一些依赖，否则PIL无法成功安装，而且不要想当然的认为库的名字是PIL，就应该使用<code>pip3 install PIL</code>指令去进行安装！（这点有点类似ros里面的软件包，包的名字不一定是src下的文件夹名！！）</p>
+<div class="highlight-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="code"><pre><span class="line">安装依赖</span><br><span class="line">sudo apt-get install python3-dev python3-setuptools</span><br><span class="line">sudo apt-get install libtiff5-dev libjpeg8-dev libopenjp2-7-dev zlib1g-dev libfreetype6-dev liblcms2-dev libwebp-dev tcl8.6-dev tk8.6-dev python3-tk libharfbuzz-dev libfribidi-dev libxcb1-dev</span><br><span class="line">装pillow</span><br><span class="line">pip3 install pillow</span><br></pre></td></tr></table></figure></div>
+
+<h4 id="17-在一个系统上安装多个版本的opencv（可扩展到任何库，比如cv-bridge等等）"><a href="#17-在一个系统上安装多个版本的opencv（可扩展到任何库，比如cv-bridge等等）" class="headerlink" title="17.在一个系统上安装多个版本的opencv（可扩展到任何库，比如cv_bridge等等）"></a>17.在一个系统上安装多个版本的opencv（可扩展到任何库，比如cv_bridge等等）</h4><p>[提问：你知道<strong>为什么</strong>要在一个系统上安装同一个库的多个版本吗，特别是opencv这种？]</p>
+<p>主要参考了博客<a class="link"   href="https://blog.csdn.net/qq_33764934/article/details/103744689" >【UBUNTU】安装两个不同版本的opencv <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
+<p>核心内容如下：</p>
+<div class="highlight-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="code"><pre><span class="line">在/usr/local/下新建一个文件夹,文件夹名为opencv4.而后cmake的命令如下:</span><br><span class="line">cmake .. -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=/usr/local/opencv4</span><br></pre></td></tr></table></figure></div>
+
+<p><strong>总结</strong>：在linux系统中，默认有两个空间可以供我们安装一些扩展库，位置分别为&#x2F;usr，&#x2F;usr&#x2F;local，前者一般用来存放一些于系统相关的扩展库，而&#x2F;usr&#x2F;local一般用来存放一些实际应用的库。自己查看我们会发现，这两个目录下都存在着lib，include，share，bin四个目录！</p>
+<ul>
+<li><p><code>lib</code> 目录：用于存放本地安装的库文件（动态链接库和静态库），这些库文件可以被其他程序调用。在这个目录下，通常还会有一个子目录<code>pkgconfig</code>，该目录下存放着软件包的配置文件，供其他软件调用。</p>
+</li>
+<li><p><code>include</code> 目录：用于存放本地安装的头文件，这些头文件用于编写程序时包含库函数的声明和定义。</p>
+</li>
+<li><p><code>share</code> 目录：用于存放本地安装的共享文件，如语言环境、文档、图标等。</p>
+</li>
+<li><p><code>bin</code> 目录：用于存放本地安装的可执行文件，这些可执行文件可以直接在命令行中运行。在这个目录下，通常还会有一个子目录<code>sbin</code>，该目录下存放着只有超级用户才能运行的系统管理员工具。</p>
+</li>
+</ul>
+<p>除此之外，我们还可以自行建立一些空间（通过这种方式可以让我们便捷的安装同一个库的多个版本，因为将两个版本安装到两个不同的空间内，要比安装到同一个空间内，用起来方便很多！！），而上述操作就是在自行建立了空间，即&#x2F;usr&#x2F;local&#x2F;opencv4下的空间！！！</p>
+<h4 id="18-sudo免密设置！"><a href="#18-sudo免密设置！" class="headerlink" title="18.sudo免密设置！"></a>18.sudo免密设置！</h4><p>首先修改sudoers文件权限（<strong>建议</strong>自行查询并了解chmod的用法）（注意，&#x2F;etc&#x2F;sudoers这个文件默认<strong>所有用户都没有</strong>写权限，所以我们需要使用chmod命令提权）</p>
+<div class="highlight-container" data-rel="Shell"><figure class="iseeu highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta prompt_">$ </span><span class="language-bash"><span class="built_in">chmod</span> 770 /etc/sudoers</span></span><br></pre></td></tr></table></figure></div>
+
+<p>使用vim，修改sudoers配置文件</p>
+<div class="highlight-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment">#%sudo ALL=(ALL:ALL) ALL 					# 找到这一行，在开头添加&quot;#&quot;</span></span><br><span class="line">%sudo ALL=NOPASSWD: ALL						<span class="comment"># 添加新的一行 %sudo ALL=NOPASSWD:ALL</span></span><br></pre></td></tr></table></figure></div>
+
+<p>将sudoers文件权限改回最初状态（<strong>提问</strong>：chmod 440代表着什么）</p>
+<div class="highlight-container" data-rel="Shell"><figure class="iseeu highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta prompt_">$ </span><span class="language-bash"><span class="built_in">chmod</span> 440 /etc/sudoers</span></span><br></pre></td></tr></table></figure></div>
+
 ]]></content>
       <categories>
         <category>rm</category>
