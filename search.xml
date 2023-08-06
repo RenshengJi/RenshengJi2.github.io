@@ -1224,4 +1224,35 @@
         <tag>科研</tag>
       </tags>
   </entry>
+  <entry>
+    <title>人生几何的科研之旅——第六周周报</title>
+    <url>/2023/08/06/week6/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="开放集识别论文阅读"><a href="#开放集识别论文阅读" class="headerlink" title="开放集识别论文阅读"></a>开放集识别论文阅读</h2><h3 id="Attributes-Guided-and-Pure-Visual-Attention-Alignment-for-Few-Shot-Recognition"><a href="#Attributes-Guided-and-Pure-Visual-Attention-Alignment-for-Few-Shot-Recognition" class="headerlink" title="Attributes-Guided and Pure-Visual Attention Alignment for Few-Shot Recognition"></a>Attributes-Guided and Pure-Visual Attention Alignment for Few-Shot Recognition</h3><h4 id="算法动机"><a href="#算法动机" class="headerlink" title="算法动机"></a>算法动机</h4><p>首先引入文章作者的一段科普：</p>
+<ul>
+<li>“回想一下，你的父母是如何教你认出熊猫的？他们是不是说了“黑眼眶”、“黑白相间的毛”、“吃绿色的竹子”？这些重要信息，成为了无论熊猫在爬树、行走还是坐着，你都能认出这种动物的线索。像这样的语言描述，即为一类语义信息，在样本数据较少的情境下（即小样本情况），能够极大地帮助模型“认出”图像内容，大大提高识别正确率——这正是本研究设计的属性指导的注意力模块（AGAM）的作用（应用在三种经典网络上，提升最高可达22.8%）。简要来讲，机器人将能像人类的小朋友一样去学习，除了张大眼睛“看”，还能通过关键性的语义信息指导，去更好地认识“世界”。”</li>
+</ul>
+<p>但是，在一些多模态（特别是标签语义）指导下的小样本识别方法中，只是在训练过程中，引入了辅助模态的信息，而在测试过程中，仍然只能利用视觉模态的信息去做分类/识别任务，那么随之而来的一个问题是：这个辅助模态信息的加入真的能对测试集上的效果产生积极影响吗？答案是不好说，因为没有任何直接的证据能表明这点。</p>
+<p>如下图所示，虽然在训练集上我们可以利用标签属性带来的丰富语义信息与图像进行<strong>互注意力机制</strong>，从而使模型关注图像的重点部位，但是在测试集上，我们只能对图像进行<strong>自注意力机制</strong>，如果不采取某种措施，我们很可能无法真正利用标签属性的语义信息！除非，通过互注意力机制生成得到的特征向量/特征图和通过自注意力机制得到的在同一个空间内，是相似的，如下图中右下角就是在一个空间内的结果。</p>
+<img src="/images/4/1.png" style="zoom: 40%;">
+
+<h4 id="算法原理"><a href="#算法原理" class="headerlink" title="算法原理"></a>算法原理</h4><ul>
+<li>首先，文章采用了两种注意力机制（通道注意力<strong>channel-wise attention</strong>与空间注意力<strong>spatial attention</strong>），让模型更好的关注重点区域</li>
+<li>其次，文章采用了注意力对齐<strong>attention-alignment</strong>，即最小化在标签语义指导下互注意力与纯图像的自注意力之间的距离，这样便可以在测试过程中间接有效的利用标签语义信息！<img src="/images/4/2.png" style="zoom: 40%;"></li>
+</ul>
+<h4 id="算法复现"><a href="#算法复现" class="headerlink" title="算法复现"></a>算法复现</h4><img src="/images/4/3.png" style="zoom: 40%;">
+
+<ul>
+<li>结论：一定要及时关闭算力平台！</li>
+</ul>
+<h2 id="KF、EKF学习"><a href="#KF、EKF学习" class="headerlink" title="KF、EKF学习"></a>KF、EKF学习</h2><p>这是本周内下功夫最大，花费时间最多的一个任务，但本人能力有限，截止到目前仍未完全理解，故无法进行总结</p>
+<h2 id="开放集识别方法调研（续第五周）"><a href="#开放集识别方法调研（续第五周）" class="headerlink" title="开放集识别方法调研（续第五周）"></a>开放集识别方法调研（续第五周）</h2><p>摸鱼了，并没有任何进度</p>
+]]></content>
+      <categories>
+        <category>科研</category>
+        <category>FSOR</category>
+      </categories>
+      <tags>
+        <tag>科研</tag>
+      </tags>
+  </entry>
 </search>
